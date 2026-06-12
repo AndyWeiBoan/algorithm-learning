@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+.idea/
+.vscode/
+bin/
+obj/
+__pycache__/
+*.pyc
