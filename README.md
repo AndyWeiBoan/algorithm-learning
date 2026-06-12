@@ -19,6 +19,7 @@
 
 ## 導覽
 
+- **[STUDY_PLAN.md](STUDY_PLAN.md)** — 刷題清單，由上往下刷；**下一題 = 第一個沒打勾的題目**。
 - **[ROADMAP.md](ROADMAP.md)** — 學習路線，按主題順序排（參考代码随想录）。
 - **[progress.md](progress.md)** — 進度追蹤：做過哪些、難度、待複習清單。
 - **[templates/problem.md](templates/problem.md)** — 單題筆記模板。
