@@ -350,3 +350,17 @@ AI 在寫第一版計畫時，把使用者說的「三個月一點進步都沒�
 - 重新登入 leetcode.nvim（cookie 寫在 `~/.cache/nvim/leetcode/cookie`）。
 - **冷測 200 Number of Islands — `獨立`，一次寫對、零 bug**，20 萬組 fuzz 0 mismatch。題意忘了，AI 只重述題目。9/3 是 `有小提示`，這次升級成獨立，5 週後還留得住。
 - 下一步：開 W2（207、450 要先補教學再閉卷，146 LRU）。
+
+---
+
+## 2026-10-31～11-01 — 整理 repo、roadmap 重做、冷測 1026
+
+- 整理 repo；查 LeetCode 帳號拿到完整歷史（2019 舊刷 225 題 AC）。roadmap 改由 `scripts/gen_roadmap.py` 產生，加上基石、搜尋、收合。
+- 一刷／二刷定義：**一刷 2026-06-11～09-07，空檔 47 天，二刷 10-24 起**。策略不變，下一步改成「冷測 → 主線二刷佇列 → 主線缺口」（見 CLAUDE.md）。
+- AI 失誤：roadmap 前幾版不完整、又醜，漏掉 2019 紀錄，讓使用者重新對齊目標，使用者非常不滿。幫開 nvim 時用錯啟動方式（應為 `nvim leetcode`），留下 swap 檔。
+- **冷測 1026 Maximum Difference Between Node and Ancestor（沒寫過的 Medium）— `有小提示`**：
+  - 想法自己想出：後序回傳 (子樹 min, 子樹 max, 子樹內答案)，每個節點跟左右子樹的 min/max 比。
+  - bug ①：`max` 那行寫成 `Math.Min`，粗心型（跟 200 的「變數用錯」同一類）。空節點哨兵 `int.MinValue` 被拿去相減 → `Math.Abs` 溢位例外。AI 解釋錯誤訊息，給最小反例 `[0,1]` 並逐步手算到葉子回傳的 max。
+  - 子樹答案要往上傳（`left.res`／`right.res`）是自己補上的。
+  - 20 萬組 fuzz＋5000 節點鏈 0 mismatch。
+- 下一步：二刷佇列，從 106 開始。
