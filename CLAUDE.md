@@ -47,7 +47,8 @@
 | `log.md` | 每次 session 一則，誠實版不美化 |
 | `checklist.md` | **範圍**：代碼隨想錄 12 章＋補充（排序章），🧱 標基石題 |
 | `notes/機制地圖.md` | **分母**：23 個高頻機制、三關驗收狀態、計分板 |
-| `roadmap.html` | 刷題地圖（產生檔，不要手改）。練完題後執行 `python3 scripts/gen_roadmap.py` 更新 |
+| `data/records.json` | **每題練習紀錄**（冷測／閉卷／練習、輔助等級、發生的事）。練完題就在這加一筆 |
+| `roadmap.html` | 刷題地圖（靜態頁），讀 `data/roadmap-data.js`。練完題後執行 `python3 scripts/gen_roadmap.py` 更新資料 |
 | `notes/insight-日誌.md` | 機制心得，複習前先讀這裡 |
 
-範圍以 `checklist.md` 為準；`roadmap.html` 由腳本從 checklist＋帳號提交紀錄＋progress.md 產生。每次練完題就重跑腳本。
+範圍以 `checklist.md` 為準；`data/roadmap-data.js` 由腳本從 checklist＋帳號提交紀錄＋`data/records.json` 產生。每次練完題：records.json 加一筆 → 重跑腳本。

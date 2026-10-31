@@ -15,15 +15,16 @@
 | [CLAUDE.md](CLAUDE.md) | **硬規則**。AI 不給 code 片段、不產線上 HTML、回話要短 |
 | [STUDY_PLAN.md](STUDY_PLAN.md) | 當前計畫。**第零節是最新規則，優先於其餘內容** |
 | [notes/機制地圖.md](notes/機制地圖.md) | **分母**。23 個高頻機制、缺口、計分板 |
-| [roadmap.html](roadmap.html) | **刷題地圖**：代碼隨想錄完整範圍、每題狀態、基石題。由 `scripts/gen_roadmap.py` 產生，不要手改 |
-| [scripts/](scripts/) | `gen_roadmap.py` 與模板。練完題執行 `python3 scripts/gen_roadmap.py` 更新地圖 |
+| [roadmap.html](roadmap.html) | **刷題地圖**：代碼隨想錄完整範圍、2019／一刷／二刷、基石題、練習紀錄。靜態頁，讀 `data/roadmap-data.js` |
+| [data/records.json](data/records.json) | **每題練習紀錄**：冷測／閉卷、輔助等級、發生的事。手改這個 |
+| [scripts/](scripts/) | `gen_roadmap.py`：合併 checklist＋帳號紀錄＋records.json，產生 `data/roadmap-data.js` |
 | [progress.md](progress.md) | 每題狀態、輔助等級、存量審計 |
 | [log.md](log.md) | 每次 session 一則，誠實版不美化。新的在最上面 |
 | [checklist.md](checklist.md) | **範圍**：代碼隨想錄 12 章＋補充，含 ⭐☆ 與 🧱 基石標記（`:LeetNext` 也讀這個） |
 | [notes/insight-日誌.md](notes/insight-日誌.md) | 機制心得，複習前先讀 |
 | [archive-舊計畫.md](archive-舊計畫.md) | 已被取代的舊流程 |
 
-`roadmap.html` 是產生出來的：範圍改 `checklist.md`，狀態來自 LeetCode 帳號與 `progress.md`。
+地圖資料是產生出來的：範圍改 `checklist.md`，紀錄改 `data/records.json`，狀態來自 LeetCode 帳號；改完執行 `python3 scripts/gen_roadmap.py`。
 
 ---
 

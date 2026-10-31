@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""產生 roadmap.html。
+"""產生 data/roadmap-data.js（roadmap.html 讀它來畫地圖）。
 
 範圍：checklist.md（代碼隨想錄 12 章 + 補充）。
-狀態：LeetCode 帳號提交紀錄（用 leetcode.nvim 的 cookie 抓）＋ progress.md 的閉卷存量表。
+狀態：LeetCode 帳號提交紀錄（用 leetcode.nvim 的 cookie 抓）＋ data/records.json（練習紀錄）。
 
 用法：
     python3 scripts/gen_roadmap.py           # 只更新最近 AC 的題，快
@@ -125,15 +125,10 @@ def lm_chinese_names():
     return {str(int(n)): zh for n, zh in re.findall(r'\./problems/(\d{4})\.(.+?)\.md', text)}
 
 
-def closed_book_set():
-    s = open(os.path.join(ROOT, 'progress.md'), encoding='utf-8').read()
-    blk = s[s.index('### 閉卷驗證過的存量'):s.index('### 難 DP')]
-    out = set()
-    for line in blk.splitlines():
-        m = re.match(r'^\| *([\d /]+?) *\|', line)
-        if m:
-            out |= set(re.findall(r'\d+', m.group(1)))
-    return out
+def load_records():
+    with open(os.path.join(ROOT, 'data', 'records.json'), encoding='utf-8') as f:
+        recs = json.load(f)
+    return {k: sorted(v, key=lambda e: e['date']) for k, v in recs.items() if not k.startswith('_')}
 
 
 def build_data():
@@ -141,7 +136,11 @@ def build_data():
     acq = {q['frontendQuestionId']: q for q in load_json('ac_all.json', [])}
     plist = {str(p['frontend_id']): p for p in json.load(open(PROBLEMLIST))['data']}
     zh = lm_chinese_names()
-    grad = closed_book_set()
+    recs = load_records()
+    grad = {n for n, evs in recs.items() if any(e['kind'] in ('閉卷', '冷測') for e in evs)}
+
+    def rec_ts(n):
+        return [datetime.datetime.fromisoformat(e['date']).timestamp() for e in recs.get(n, [])]
 
     def status(n):
         if n in grad:
@@ -153,7 +152,7 @@ def build_data():
 
     def passes(n):
         # (2019 舊刷, 2026 一刷, 2026 二刷)：各時段有沒有 AC
-        ac = [t for t, s in subs.get(n, []) if s == 'Accepted']
+        ac = [t for t, s in subs.get(n, []) if s == 'Accepted'] + rec_ts(n)
         return (any(t < CUT_2026 for t in ac), any(CUT_2026 <= t < CUT_R2 for t in ac),
                 any(t >= CUT_R2 for t in ac))
 
@@ -204,8 +203,22 @@ def build_data():
         it = {'n': n, 't': q['title'], 'slug': q['titleSlug'], 'st': status(n), 'r': passes(n)}
         (sql if any(t['slug'] == 'database' for t in q['topicTags']) else other).append(it)
 
+    # 紀錄裡的題目資訊（含清單外的冷測題）
+    rec_items = {}
+    for n in recs:
+        p = plist.get(n, {})
+        rec_items[n] = {'n': n, 't': p.get('title', n), 'zh': zh.get(n, ''), 'slug': p.get('title_slug', ''),
+                        'd': (p.get('difficulty') or 'Easy')[0], 'st': status(n), 'r': passes(n),
+                        'ev': recs[n]}
+    for c in chapters:
+        for g in c['groups']:
+            for it in g['items']:
+                it['ev'] = recs.get(it['n'], [])
+    for it in sql + other:
+        it['ev'] = recs.get(it['n'], [])
+
     stamp = datetime.date.today().isoformat()
-    return {'chapters': chapters, 'sql': sql, 'other': other, 'stamp': stamp}
+    return {'chapters': chapters, 'sql': sql, 'other': other, 'records': rec_items, 'stamp': stamp}
 
 
 def main():
@@ -214,11 +227,12 @@ def main():
         print('更新帳號資料…')
         refresh_account('--full' in args)
     data = build_data()
-    tpl = open(os.path.join(ROOT, 'scripts', 'roadmap_template.html'), encoding='utf-8').read()
-    out = tpl.replace('/*DATA*/', json.dumps(data, ensure_ascii=False))
-    open(os.path.join(ROOT, 'roadmap.html'), 'w', encoding='utf-8').write(out)
+    # 本地 HTML 不能 fetch 旁邊的 .json，所以包成一行 JS 讓 <script src> 載入
+    out = 'window.ROADMAP = ' + json.dumps(data, ensure_ascii=False, indent=1) + ';\n'
+    open(os.path.join(ROOT, 'data', 'roadmap-data.js'), 'w', encoding='utf-8').write(out)
     items = [i for c in data['chapters'] for g in c['groups'] for i in g['items']]
-    print(f'roadmap.html 已更新：{len(items)} 題，基石 {sum(1 for i in items if i["base"])} 題')
+    print(f'data/roadmap-data.js 已更新：{len(items)} 題，基石 {sum(1 for i in items if i["base"])} 題，'
+          f'有紀錄 {len(data["records"])} 題')
 
 
 if __name__ == '__main__':
