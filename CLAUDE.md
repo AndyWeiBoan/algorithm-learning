@@ -15,9 +15,9 @@
 | `STUDY_PLAN.md` | 當前計畫。**第零節是最新規則，優先於其餘內容** |
 | `progress.md` | 每題狀態、輔助等級、存量審計 |
 | `log.md` | 每次 session 一則，誠實版不美化 |
-| `checklist.md` | 代碼隨想錄 12 章清單（防漏） |
-| `notes/機制地圖.md` | **分母**：22 個高頻招式、三關驗收狀態 |
-| `roadmap.html` | 機制地圖的視覺版（本地單檔） |
+| `checklist.md` | 代碼隨想錄 12 章清單（防漏；`:LeetNext` 讀這個） |
+| `notes/機制地圖.md` | **分母**：23 個高頻機制、三關驗收狀態、計分板 |
+| `roadmaps/index.html` | 機制地圖的視覺版（本地單檔，離線可開） |
 | `notes/insight-日誌.md` | 機制心得，複習前先讀這裡 |
 
-`notes/機制地圖.md` 和 `roadmap.html` 是同一份事實，改一份要同步另一份。
+`notes/機制地圖.md` 和 `roadmaps/index.html` 是同一份事實，改一份要同步另一份。

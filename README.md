@@ -1,37 +1,79 @@
 # LeetCode Study
 
-按演算法主題分類的刷題知識庫。每題記錄**多種解法 + 取捨比較 + 複雜度**，搭配進度追蹤與間隔複習。
+準備台灣後端面試的白板題。
 
-語言：C# / Python / C。
+**目標不是刷題數，是「沒看過的 Medium，現場寫得出來」。**
 
-## 怎麼用
+單位是**機制**不是題目——高頻機制共 23 個，缺口 11 個，約 20 題。不是幾百題。
 
-1. 在 Neovim 用 [leetcode.nvim](https://github.com/kawre/leetcode.nvim) 抓題、寫、`:Leet run` / `:Leet submit`。
-2. 解完後，把定稿解法整理進對應主題資料夾：
-   ```
-   topics/<主題>/<題號>-<題名>/
-   ├── NOTES.md      # 思路 + 解法取捨表 + 複雜度（複製 templates/problem.md）
-   ├── solution.cs
-   ├── solution.py
-   └── solution.c
-   ```
-3. 更新 [progress.md](progress.md) 的狀態與下次複習日。
+---
 
-## 導覽
+## 檔案
 
-- **[STUDY_PLAN.md](STUDY_PLAN.md)** — 刷題清單，由上往下刷；**下一題 = 第一個沒打勾的題目**。
-- **[ROADMAP.md](ROADMAP.md)** — 學習路線，按主題順序排（參考代码随想录）。
-- **[progress.md](progress.md)** — 進度追蹤：做過哪些、難度、待複習清單。
-- **[templates/problem.md](templates/problem.md)** — 單題筆記模板。
-- **topics/** — 各主題資料夾，每個有自己的 README（模式總結 + 題目清單）。
+| 檔案 | 放什麼 |
+|---|---|
+| [CLAUDE.md](CLAUDE.md) | **硬規則**。AI 不給 code 片段、不產線上 HTML、回話要短 |
+| [STUDY_PLAN.md](STUDY_PLAN.md) | 當前計畫。**第零節是最新規則，優先於其餘內容** |
+| [notes/機制地圖.md](notes/機制地圖.md) | **分母**。23 個高頻機制、缺口、計分板 |
+| [roadmaps/index.html](roadmaps/index.html) | 機制地圖的視覺版。瀏覽器直接開，離線單檔 |
+| [progress.md](progress.md) | 每題狀態、輔助等級、存量審計 |
+| [log.md](log.md) | 每次 session 一則，誠實版不美化。新的在最上面 |
+| [checklist.md](checklist.md) | 代碼隨想錄 12 章清單（防漏用，`:LeetNext` 讀這個） |
+| [notes/insight-日誌.md](notes/insight-日誌.md) | 機制心得，複習前先讀 |
+| [archive-舊計畫.md](archive-舊計畫.md) | 已被取代的舊流程 |
 
-## 分工
+`notes/機制地圖.md` 和 `roadmaps/index.html` 是同一份事實，改一份要同步另一份。
 
-| 工具 | 角色 |
-|------|------|
-| leetcode.nvim | 練習場：抓題、寫、測、提交（暫存在 `~/.local/share/nvim/leetcode`） |
-| 本 repo | 知識庫：定稿解法 + 取捨筆記，git 版控、可回顧複習 |
+---
 
-## 核心原則
+## 怎麼練
 
-> 每題不只求 AC，而是問：**有哪幾種解法？各自的時間/空間？什麼情境該用哪個？取捨是什麼？**
+解題在 Neovim（[leetcode.nvim](https://github.com/kawre/leetcode.nvim)），語言 C#。
+檔案在 `~/.local/share/nvim/leetcode/`，**不收進這個 repo**——這裡只放紀錄與計畫。
+
+### 每題流程（不准跳）
+
+```
+① 先講想法（文字，不寫 code）
+② 先講時間／空間複雜度
+③ 才動手寫
+④ AI 跑 fuzz，只給最小反例
+```
+
+②在寫 code 之前，不是寫完才補。
+
+### 三關驗收
+
+| 關 | 條件 |
+|---|---|
+| 關 1 | 閉卷重解代表題，fuzz 0 mismatch |
+| 關 2 | 同一個機制換另一題 |
+| 關 3 | **隔 ≥2 天，AI 丟沒看過的變形，不預告** |
+
+### 輔助等級
+
+`獨立` ｜ `有小提示` ｜ `靠引導` ｜ `看答案`
+**只有前兩者算進存量。** 絕不把被引導的成果寫成獨立完成。
+
+---
+
+## 計分板
+
+| | 量什麼 |
+|---|---|
+| **關 3 通過數** | **目標**（陌生題現場寫出來） |
+| 每週冷測結果 | 唯一誠實的刻度，照實記，交白卷就記交白卷 |
+| 存量（關 1 過的題數） | 量的是**記憶**，不是目標 |
+
+目前數字在 [notes/機制地圖.md](notes/機制地圖.md)。
+
+---
+
+## 已知的事（實證，不是推測）
+
+- **瓶頸是連續性，不是能力。** 三次中斷：6 週、5 週、13 天。不中斷時五週做了 57 題。
+  → 每天 20 分鐘是底線，單次 60~90 分鐘就停。
+- **失誤是粗心型不是觀念型。** 變數寫錯、漏符號；觀念關幾乎都過。
+  → 靠 [STUDY_PLAN 第六節](STUDY_PLAN.md) 的送出前自查清單擋，不靠記性。
+- **AI 用文字講新的抽象概念 → 失敗。** 拿具體案例問具體一點 → 有效。
+- **寫過 ≠ 會。** 6/12–7/18 做了 57 題，存量只有 7。差的是驗證。
