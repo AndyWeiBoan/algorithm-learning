@@ -36,9 +36,9 @@
 | `STUDY_PLAN.md` | 當前計畫。**第零節是最新規則，優先於其餘內容** |
 | `progress.md` | 每題狀態、輔助等級、存量審計 |
 | `log.md` | 每次 session 一則，誠實版不美化 |
-| `checklist.md` | 代碼隨想錄 12 章清單（防漏；`:LeetNext` 讀這個） |
+| `checklist.md` | **範圍**：代碼隨想錄 12 章＋補充（排序章），🧱 標基石題 |
 | `notes/機制地圖.md` | **分母**：23 個高頻機制、三關驗收狀態、計分板 |
-| `roadmap.html` | 機制地圖的視覺版（本地單檔，離線可開，含三關狀態） |
+| `roadmap.html` | 刷題地圖（產生檔，不要手改）。練完題後執行 `python3 scripts/gen_roadmap.py` 更新 |
 | `notes/insight-日誌.md` | 機制心得，複習前先讀這裡 |
 
-`notes/機制地圖.md` 和 `roadmap.html` 是同一份事實，改一份要同步另一份。
+範圍以 `checklist.md` 為準；`roadmap.html` 由腳本從 checklist＋帳號提交紀錄＋progress.md 產生。每次練完題就重跑腳本。
