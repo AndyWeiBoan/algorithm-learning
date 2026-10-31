@@ -15,14 +15,14 @@
 | [CLAUDE.md](CLAUDE.md) | **硬規則**。AI 不給 code 片段、不產線上 HTML、回話要短 |
 | [STUDY_PLAN.md](STUDY_PLAN.md) | 當前計畫。**第零節是最新規則，優先於其餘內容** |
 | [notes/機制地圖.md](notes/機制地圖.md) | **分母**。23 個高頻機制、缺口、計分板 |
-| [roadmaps/index.html](roadmaps/index.html) | 機制地圖的視覺版。瀏覽器直接開，離線單檔 |
+| [roadmap.html](roadmap.html) | 機制地圖的視覺版。瀏覽器直接開，離線單檔，含三關狀態與計分板 |
 | [progress.md](progress.md) | 每題狀態、輔助等級、存量審計 |
 | [log.md](log.md) | 每次 session 一則，誠實版不美化。新的在最上面 |
 | [checklist.md](checklist.md) | 代碼隨想錄 12 章清單（防漏用，`:LeetNext` 讀這個） |
 | [notes/insight-日誌.md](notes/insight-日誌.md) | 機制心得，複習前先讀 |
 | [archive-舊計畫.md](archive-舊計畫.md) | 已被取代的舊流程 |
 
-`notes/機制地圖.md` 和 `roadmaps/index.html` 是同一份事實，改一份要同步另一份。
+`notes/機制地圖.md` 和 `roadmap.html` 是同一份事實，改一份要同步另一份。
 
 ---
 
