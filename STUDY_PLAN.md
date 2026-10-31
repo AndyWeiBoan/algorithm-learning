@@ -1,191 +1,173 @@
-# 刷題計畫 STUDY_PLAN
+# 刷題計畫
 
-順序參考 [代码随想录](https://github.com/youngyangyang04/leetcode-master)，由易到難建立每個 pattern。
-
-## 怎麼用
-
-- **由上往下刷。下一題 = 第一個還沒打勾 `[ ]` 的題目。**
-- ⭐ = **必刷核心**（先把每個主題的 ⭐ 都刷完，建立 pattern 直覺）
-- ☆ = **進階加強**（核心熟了再回頭補）
-- 建議路線：**第一輪只刷 ⭐**，跑完一遍 12 主題後，第二輪再補 ☆。
-- 解完：把 `[ ]` 改成 `[x]`，並到 [progress.md](progress.md) 補上難度與下次複習日。
-- 開題：nvim 裡 `:Leet list`，輸入題號或題名即可。
-
-> 圖論章節原版是卡碼網（kamacoder.com）題目，leetcode.nvim 開不了，已替換為 LeetCode 對應經典題。
+> 2026-09-01 第二版（第一版當天寫廢了：前提是「三個月練錯背包」，查日期後證明是錯的）。
+>
+> | 檔案 | 放什麼 |
+> |------|--------|
+> | **STUDY_PLAN.md**（本檔） | 當前計畫 |
+> | [log.md](log.md) | 過程紀錄，每次 session 一則 |
+> | [progress.md](progress.md) | 每題狀態、輔助等級、複習到期日 |
+> | [checklist.md](checklist.md) | 代碼隨想錄 12 章清單（防漏用） |
+> | [notes/](notes/) | pattern 筆記與 insight 日誌 |
+> | [archive-舊計畫.md](archive-舊計畫.md) | 已被取代的舊流程 |
 
 ---
 
-## 1. 陣列 Array
-- [x] ⭐ 704 Binary Search
-- [ ] ⭐ 27 Remove Element
-- [ ] ⭐ 977 Squares of a Sorted Array
-- [ ] ⭐ 209 Minimum Size Subarray Sum
-- [ ] ☆ 59 Spiral Matrix II
+## 零、2026-10-25 規則修訂（使用者定，優先於以下所有排程）
 
-## 2. 鏈結串列 Linked List
-- [ ] ⭐ 203 Remove Linked List Elements
-- [ ] ☆ 707 Design Linked List
-- [ ] ⭐ 206 Reverse Linked List
-- [ ] ⭐ 24 Swap Nodes in Pairs
-- [ ] ⭐ 19 Remove Nth Node From End of List
-- [ ] ☆ 面試題 02.07 Intersection of Two Linked Lists
-- [ ] ⭐ 142 Linked List Cycle II
+### 1. 範圍：只做常考的
 
-## 3. 雜湊表 Hash Table
-- [x] ⭐ 242 Valid Anagram
-- [ ] ☆ 1002 Find Common Characters
-- [ ] ⭐ 349 Intersection of Two Arrays
-- [ ] ⭐ 202 Happy Number
-- [ ] ⭐ 1 Two Sum
-- [ ] ⭐ 454 4Sum II
-- [ ] ☆ 383 Ransom Note
-- [x] ⭐ 15 3Sum
-- [ ] ⭐ 18 4Sum
+依 2026-10-25 實查（PTT 2026 new grad 面試紀錄、HiSKIO 面試調查、Dcard 心得、台達/Synology/趨勢/Nvidia 實際考題）：
 
-## 4. 字串 String
-- [ ] ⭐ 344 Reverse String
-- [ ] ☆ 541 Reverse String II
-- [ ] ⭐ 151 Reverse Words in a String
-- [ ] ⭐ 28 Find the Index of the First Occurrence (strStr / KMP)
-- [ ] ☆ 459 Repeated Substring Pattern
+- **難度**：Easy ~ Medium 為主，沒看到 Hard。白板題落在 Medium。
+- **最常考**：堆疊（後端必考）、鏈結串列、二元樹（被問「哪個幫助最大」時的答案）、雜湊、佇列、排序。
+- **2026 紀錄裡指名出現的**：**LRU 146**（趨勢二面、Nvidia GPU，同一輪兩次）、**SQL**（Cyberlink、LINE EC）、語言基礎（C 語法陷阱、Python 觀念）、hash map 自己實作。
+- 只有約 25% 的人會被考到 LeetCode 題。
+- **DP**：調查有列為常見題型，但 2026 實際紀錄裡沒出現。會基本款即可，不久留。
 
-## 5. 雙指針 Two Pointers
-> 多與陣列/字串/鏈結串列交叉，這裡補幾題經典。
-- [x] ⭐ 11 Container With Most Water
-- [ ] ⭐ 283 Move Zeroes
-- [ ] ☆ 26 Remove Duplicates from Sorted Array
+**排序改依頻率，不依到期日。** 低頻的（背包 DP 416/494/343/63、拓撲 207、並查集）移到最後，不擋路。
+**「複習債沒清完不開新題」這條作廢** —— 10/25 查證：債的內容幾乎全是低頻題，這條規則變成在擋人。
 
-## 6. 堆疊與佇列 Stack & Queue
-- [ ] ⭐ 232 Implement Queue using Stacks
-- [ ] ⭐ 225 Implement Stack using Queues
-- [ ] ⭐ 20 Valid Parentheses
-- [ ] ⭐ 1047 Remove All Adjacent Duplicates In String
-- [ ] ⭐ 150 Evaluate Reverse Polish Notation
-- [ ] ☆ 239 Sliding Window Maximum
-- [ ] ⭐ 347 Top K Frequent Elements
+### 2. 每題流程（不准跳）
 
-## 7. 二元樹 Binary Tree
-- [ ] ⭐ 102 Binary Tree Level Order Traversal
-- [ ] ⭐ 226 Invert Binary Tree
-- [ ] ⭐ 101 Symmetric Tree
-- [ ] ⭐ 104 Maximum Depth of Binary Tree
-- [ ] ☆ 111 Minimum Depth of Binary Tree
-- [ ] ☆ 222 Count Complete Tree Nodes
-- [ ] ⭐ 110 Balanced Binary Tree
-- [ ] ☆ 257 Binary Tree Paths
-- [ ] ☆ 404 Sum of Left Leaves
-- [ ] ☆ 513 Find Bottom Left Tree Value
-- [ ] ⭐ 112 Path Sum
-- [ ] ⭐ 106 Construct Binary Tree from Inorder and Postorder
-- [ ] ☆ 654 Maximum Binary Tree
-- [ ] ☆ 617 Merge Two Binary Trees
-- [ ] ⭐ 700 Search in a Binary Search Tree
-- [ ] ⭐ 98 Validate Binary Search Tree
-- [ ] ☆ 530 Minimum Absolute Difference in BST
-- [ ] ☆ 501 Find Mode in Binary Search Tree
-- [ ] ⭐ 236 Lowest Common Ancestor of a Binary Tree
-- [ ] ⭐ 235 Lowest Common Ancestor of a BST
-- [ ] ⭐ 701 Insert into a Binary Search Tree
-- [ ] ⭐ 450 Delete Node in a BST
-- [ ] ☆ 669 Trim a Binary Search Tree
-- [ ] ⭐ 108 Convert Sorted Array to Binary Search Tree
-- [ ] ☆ 538 Convert BST to Greater Tree
+```
+① 先講想法（文字，不寫 code）
+② 先講時間複雜度 / 空間複雜度
+③ 才動手寫
+④ AI 跑 fuzz，只給最小反例
+```
 
-## 8. 回溯 Backtracking
-- [ ] ⭐ 77 Combinations
-- [ ] ☆ 216 Combination Sum III
-- [ ] ⭐ 17 Letter Combinations of a Phone Number
-- [ ] ⭐ 39 Combination Sum
-- [ ] ⭐ 40 Combination Sum II
-- [ ] ⭐ 131 Palindrome Partitioning
-- [ ] ☆ 93 Restore IP Addresses
-- [ ] ⭐ 78 Subsets
-- [ ] ⭐ 90 Subsets II
-- [ ] ☆ 491 Non-decreasing Subsequences
-- [ ] ⭐ 46 Permutations
-- [ ] ⭐ 47 Permutations II
-- [ ] ☆ 332 Reconstruct Itinerary
-- [ ] ⭐ 51 N-Queens
-- [ ] ☆ 37 Sudoku Solver
+②放在寫 code 之前，不是寫完才補。
 
-## 9. 貪心 Greedy
-- [ ] ⭐ 455 Assign Cookies
-- [ ] ☆ 376 Wiggle Subsequence
-- [ ] ⭐ 53 Maximum Subarray
-- [ ] ⭐ 122 Best Time to Buy and Sell Stock II
-- [ ] ⭐ 55 Jump Game
-- [ ] ⭐ 45 Jump Game II
-- [ ] ☆ 1005 Maximize Sum of Array After K Negations
-- [ ] ⭐ 134 Gas Station
-- [ ] ☆ 135 Candy
-- [ ] ☆ 860 Lemonade Change
-- [ ] ☆ 406 Queue Reconstruction by Height
-- [ ] ⭐ 452 Minimum Number of Arrows to Burst Balloons
-- [ ] ⭐ 435 Non-overlapping Intervals
-- [ ] ⭐ 763 Partition Labels
-- [ ] ⭐ 56 Merge Intervals
-- [ ] ☆ 738 Monotone Increasing Digits
-- [ ] ☆ 968 Binary Tree Cameras
+### 3. AI 的硬規則（2026-10-25 加，當天踩過）
 
-## 10. 動態規劃 DP
-### 基礎
-- [ ] ⭐ 509 Fibonacci Number
-- [ ] ⭐ 70 Climbing Stairs
-- [ ] ☆ 746 Min Cost Climbing Stairs
-- [ ] ⭐ 62 Unique Paths
-- [ ] ☆ 63 Unique Paths II
-- [ ] ☆ 343 Integer Break
-- [ ] ☆ 96 Unique Binary Search Trees
-### 背包 Knapsack
-- [ ] ⭐ 416 Partition Equal Subset Sum
-- [ ] ☆ 1049 Last Stone Weight II
-- [ ] ⭐ 494 Target Sum
-- [ ] ☆ 474 Ones and Zeroes
-- [ ] ☆ 518 Coin Change II
-- [ ] ☆ 377 Combination Sum IV
-- [ ] ⭐ 322 Coin Change
-- [ ] ☆ 279 Perfect Squares
-- [ ] ⭐ 139 Word Break
-### 打家劫舍 House Robber
-- [ ] ⭐ 198 House Robber
-- [ ] ⭐ 213 House Robber II
-- [ ] ☆ 337 House Robber III
-### 股票 Stock
-- [ ] ⭐ 121 Best Time to Buy and Sell Stock
-- [ ] ⭐ 123 Best Time to Buy and Sell Stock III
-- [ ] ⭐ 188 Best Time to Buy and Sell Stock IV
-- [ ] ☆ 309 Best Time to Buy and Sell Stock with Cooldown
-- [ ] ☆ 714 Best Time to Buy and Sell Stock with Transaction Fee
-### 子序列 Subsequence
-- [ ] ⭐ 300 Longest Increasing Subsequence
-- [ ] ☆ 674 Longest Continuous Increasing Subsequence
-- [ ] ☆ 718 Maximum Length of Repeated Subarray
-- [ ] ⭐ 1143 Longest Common Subsequence
-- [ ] ☆ 1035 Uncrossed Lines
-- [ ] ⭐ 392 Is Subsequence
-- [ ] ☆ 115 Distinct Subsequences
-- [ ] ☆ 583 Delete Operation for Two Strings
-- [ ] ⭐ 72 Edit Distance
-- [ ] ⭐ 647 Palindromic Substrings
-- [ ] ☆ 516 Longest Palindromic Subsequence
+- **不給 code 片段。** 10/25 的 15 3Sum 就是這樣毀的：AI 丟 code → 使用者貼上 → 結構壞掉 → 不知道為什麼。只能給：最小反例、手填表的對錯確認、以及使用者拿具體案例問的具體回答。
+- **卡住時走手填表**，不是再解釋一次。文字講抽象概念 8/30 與 10/25 兩次證實失敗。
+- **回話要短。**
+- 選材料錯了才換題；使用者說「難」不是換題的理由。
 
-## 11. 單調堆疊 Monotonic Stack
-- [ ] ⭐ 739 Daily Temperatures
-- [ ] ⭐ 496 Next Greater Element I
-- [ ] ☆ 503 Next Greater Element II
-- [ ] ⭐ 42 Trapping Rain Water
-- [ ] ⭐ 84 Largest Rectangle in Histogram
+### 4. 下一個優先序（依 10/25 實查）
 
-## 12. 圖論 Graph（LeetCode 對應題）
-- [ ] ⭐ 200 Number of Islands
-- [ ] ⭐ 695 Max Area of Island
-- [ ] ☆ 130 Surrounded Regions
-- [ ] ☆ 417 Pacific Atlantic Water Flow
-- [ ] ⭐ 994 Rotting Oranges (BFS)
-- [ ] ⭐ 547 Number of Provinces (並查集)
-- [ ] ☆ 684 Redundant Connection (並查集)
-- [ ] ⭐ 207 Course Schedule (拓撲排序)
-- [ ] ☆ 210 Course Schedule II
-- [ ] ⭐ 127 Word Ladder (BFS 最短路)
-- [ ] ☆ 743 Network Delay Time (Dijkstra)
-- [ ] ☆ 787 Cheapest Flights Within K Stops (Bellman-Ford)
+1. **146 LRU** — 2026 紀錄出現兩次，⬜ 沒做過
+2. **二元樹的 🔸 驗證** — 最大缺口（144/94/145、110/543、106、236/235 全是做過沒驗）
+3. **堆疊剩下的 🔸** — 20、232、225
+4. **SQL** — LeetCode SQL 50（帳號現成）
+
+---
+
+## 一、事實基礎（全部查自 progress.md，不是推測）
+
+**時間軸**
+
+| 期間 | 紀錄筆數 | 內容 |
+|---|---|---|
+| 6/12 – 7/18（約 5 週） | 約 57 筆 | 陣列、雜湊、滑動窗口、鏈結串列、樹、堆疊、圖、二分、回溯、DP 第一波、Heap |
+| 7/18 – 8/24（約 5~6 週） | **0 筆** | 空白 |
+| 8/24 – 9/1（約 1 週） | 7 筆 | 62 複習、63、343、416、494 — 全是硬 DP，過程痛苦 |
+
+**存量**：閉卷驗證過 **7 題**（39/40/78/22 回溯、70/746/62 DP 基礎）。難 DP 獨立完成 **0 題**。
+
+**複習債 7 筆**：207（7/20 到期，逾期 6 週）、450（7/21，逾期 6 週）、343（9/1 重解失敗）、63、416、494、98。
+
+**已畢業 4 張卡**：滑動窗口、鏈結串列、二分、回溯 — 全部在 6/12–7/18 那五週內完成。
+
+**大量「做過但沒驗過」（🔸）**：樹的遍歷／層序／構造／LCA、圖的 flood fill／多源 BFS、堆疊佇列、雜湊、Heap/Top-K、雙指針、前綴和。學習成本已經付了，只差驗證。
+
+**方法上已被證實的事**
+- 由 AI 用文字完整講一個新抽象概念 → **失敗**（8/30 背包）
+- 拿著具體案例問具體一點 → **有效**（9/1 的 `nums=[1,1]` 手填表、「為什麼 dp[2] 能重用」）
+- 「自己撐 → 卡死看 editorial → AI 只 fuzz」用在**已學過**的 pattern → 有效（四張卡）；用在**沒教過**的 → 失敗
+- 現場生成的 pattern 變形（8/30 斜走網格）→ 他成功遷移，是唯一能區分「認得題」與「會 pattern」的工具
+
+---
+
+## 二、從事實推出的四個結論
+
+1. **有效的方法已經存在，不用重新發明。** 6/12–7/18 那五週用同一套流程畢業了四張卡。壞掉的不是方法，是把它用在沒教過的材料上。
+2. **真正的斷點是連續性，不是理解力。** 中間六週空白 → 沒累積、還衰退。所以**任何需要每天一到兩小時的計畫，已經被實證推翻**（那正是 7/18 之後發生的事）。計畫必須用最小劑量設計。
+3. **343 三天就忘，不是資質問題。** 那三天你同時在啃 63、416、494——六週沒碰之後兩三天硬塞四題最難的 DP，忘掉是必然。
+4. **最便宜的成長在「已經做過但沒驗過」那一堆。** 學習成本付過了，一題 20~30 分鐘就能把 🔸 轉成 🎓，直接長存量。比學新 pattern 划算得多，而且不用碰新的痛苦材料。
+
+---
+
+## 三、計畫
+
+### 每日最小劑量：20 分鐘（這是底線，不是目標）
+
+```
+10 分鐘 — 推導 drill（不寫程式碼）
+   只寫四行：① dp 定義 ② 最後一個決定有哪些可能 ③ 轉移方程 ④ base case
+   → 我照你寫的方程原封不動實作 + 跑十萬組 fuzz
+   → 錯了給你最小反例，不給你正確方程
+   目的：你的瓶頸是「起手」，而它現在一題只練到十分鐘、被 debug 吃掉。拆開練，
+        一小時能練 8~10 次，每次都有客觀對錯。
+
+10 分鐘 — 一題驗證（閉卷，把 🔸 轉成 🎓）
+```
+
+**有多的時間再往上加。沒有也照跑 20 分鐘。** 20 分鐘 × 每天 ≫ 5 小時 × 偶爾。
+
+### 每週一次冷測（40 分鐘）
+
+一題沒看過的 Medium，我只給題號，**其他什麼都不給**。結果照實記，交白卷就記交白卷。這是唯一誠實的刻度。
+
+### 四週排程
+
+| 週 | 主線 | 每日 drill 材料 | 存量目標 |
+|---|---|---|---|
+| **W1** 9/2–9/8 | **存量修復**：驗 102（樹 BFS 母模板）、200（flood fill）、150 或 20（堆疊）、49（雜湊）。**不開新 pattern、不碰背包** | 已做過的線性 DP（70/198/53）——先讓你看見 drill 怎麼運作 | 7 → **10~11** |
+| **W2** 9/9–9/15 | **清逾期債**：207、450（兩題都標 `靠引導`/`看答案`，所以先補教學再驗）＋ 開 **146 LRU**（機制清楚、幾乎必考） | 沒做過的 DP 題，只推導不寫 code | → **13~14** |
+| **W3** | **單調棧** 739✓ → 496 → 42 ＋ **樹變化題** 199/103/513（都是 102 模板換幾行） | 開始推**股票系列** | → **17+** |
+| **W4** | **股票** 121✓ → 122 → 123 ＋ **1143 LCS**（都先補教學再做） | 繼續股票／子序列 | → **20+** |
+
+### 背包：停在這裡
+
+目標降到「看懂 2D 引擎、講得出拿/不拿」，寫成 `notes/背包-knapsack.md` 存檔，**不再刷背包題**。
+
+理由是事實：416 是 8/30、494 是 9/1，總共兩天，而且它是 DP 裡最難、面試最少考的一塊（你自己 7/18 的實查筆記：「DP 台灣考得比 FAANG 少 → 會基本款就好，別在 DP 久留」）。416/494/343/63 沒有一題是高頻題。
+
+### 新主題的流程（照順序，不准跳）
+
+| 階段 | 誰做 | 標記 |
+|---|---|---|
+| ① 教學 | **代碼隨想錄影片／圖解**為主教材。AI 不當主講（8/30 證實失敗），只回答你拿著具體案例問的具體一點 | 不記題 |
+| ② 筆記 | 寫 `notes/<主題>.md`，只寫你已確認理解的部分 | 不記題 |
+| ③ 帶著做 | 1~2 題，明確是被引導的 | `靠引導` |
+| ④ 獨立＋間隔驗證 | 這階段才輪到「AI 只 fuzz」。**同 pattern 換不同題**、間隔著做（不是同一題三刷） | `獨立` / `閉卷過(日期)` |
+
+---
+
+## 四、計分板（兩個數字，都不需要問 AI）
+
+1. **存量** — progress.md 裡標 `獨立` 或 `閉卷過` 的題數。現在是 **7**。
+2. **每週冷測結果** — 照實記。
+
+輔助等級：`獨立` ｜ `有小提示` ｜ `靠引導`（含 Socratic）｜ `看答案`。**只有前兩者的「獨立」和「閉卷過」算進存量。**
+
+---
+
+## 五、AI 的角色（能做／不能做，依實證）
+
+**做得穩**
+- 跑 fuzz、給最小反例（今天的 63155/200000、`nums=[0] target=0` 該是 2、LeetCode 的負數維度 OverflowException，都是真數字）
+- **照你寫的方程實作並驗證**（drill 的核心機制）
+- **生成你沒見過的 pattern 變形**＋暴力解對照（唯一能區分「認得」與「會」的工具）
+- 維護 progress.md / log.md、追複習日期、每次開頭報到期題目
+- 回答你拿著具體案例問的具體問題
+
+**不做**
+- 當主講（8/30 失敗）
+- 對你的能力／進度下結論（9/1 兩次證實會編：挑好聽的句子拼鼓勵、編出「三個月練錯背包」）
+- 說「你果然可以自己做出來」——計分板說了才算
+
+**規則**：單次上限 60~90 分鐘。複習債沒清完不開新題。絕不把被引導的成果寫成獨立完成。
+
+---
+
+## 六、送出前自查（bug 慣性）
+
+- `> 0` vs `>= 0`、`= -1` vs `-= 1`
+- 迴圈起點／上界（`j` 從 0 還是 1？上界 `< i` 還是 `< i-1`？）
+- 陣列維度別搞混（`dp[物品數, 容量]`，別拿容量當物品維度的 index）
+- **running-best idiom**：`best = Math.Max(best, 候選)` — 累積變數自己一定要在裡面（**已踩三次，這是要背的，不要再推**）
+- 送出前手跑一個有重複值／邊界的小測資

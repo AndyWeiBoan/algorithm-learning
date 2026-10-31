@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>543 直徑反例</title>
+<style>
+  :root{
+    --bg:#fbfbf9; --panel:#ffffff; --ink:#1d2328; --muted:#6b7780;
+    --line:#dfe4e6; --edge:#b9c3c8;
+    --root:#c2762a; --root-soft:#fdf2e3;
+    --dia:#2f7d5d; --dia-soft:#eaf5ef;
+    --node:#ffffff; --node-ink:#2b3236;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --bg:#14181a; --panel:#1b2124; --ink:#e7edef; --muted:#93a0a6;
+      --line:#2b3438; --edge:#49565c;
+      --root:#e0a765; --root-soft:#2e2318;
+      --dia:#6cc49a; --dia-soft:#16291f;
+      --node:#222a2e; --node-ink:#e7edef;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14181a; --panel:#1b2124; --ink:#e7edef; --muted:#93a0a6;
+    --line:#2b3438; --edge:#49565c;
+    --root:#e0a765; --root-soft:#2e2318;
+    --dia:#6cc49a; --dia-soft:#16291f;
+    --node:#222a2e; --node-ink:#e7edef;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.75 system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    padding:28px 16px 60px;
+  }
+  .wrap{max-width:1000px;margin:0 auto}
+  h1{font-size:21px;font-weight:600;margin:0 0 4px;letter-spacing:.01em}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 24px}
+  .tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .tabs button{
+    font:inherit;font-size:13px;padding:7px 14px;border-radius:5px;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;
+  }
+  .tabs button[aria-selected="true"]{border-color:var(--ink);font-weight:600}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:7px;
+    padding:18px;margin-bottom:18px;
+  }
+  .input{
+    font:12px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:var(--muted);word-break:break-all;margin:0 0 14px;
+  }
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 14px;font-size:13px}
+  .legend span{display:flex;align-items:center;gap:7px}
+  .swatch{width:22px;height:4px;border-radius:2px;display:inline-block}
+  .scroller{overflow-x:auto;padding-bottom:6px}
+  svg{display:block}
+  .edge{stroke:var(--edge);stroke-width:1.6;fill:none}
+  .edge.rootpath{stroke:var(--root);stroke-width:4}
+  .edge.diapath{stroke:var(--dia);stroke-width:4}
+  .nodebox{fill:var(--node);stroke:var(--edge);stroke-width:1.3}
+  .nodebox.onroot{stroke:var(--root);stroke-width:2.4;fill:var(--root-soft)}
+  .nodebox.ondia{stroke:var(--dia);stroke-width:2.4;fill:var(--dia-soft)}
+  .nodebox.apex{stroke-width:3.4}
+  .val{fill:var(--node-ink);font:600 13px/1 ui-monospace,Menlo,monospace;text-anchor:middle}
+  .hh{fill:var(--muted);font:10px/1 ui-monospace,Menlo,monospace;text-anchor:middle}
+  .tag{font:600 10px/1 ui-monospace,Menlo,monospace;text-anchor:middle}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin-top:4px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{font-weight:600;font-size:12px;color:var(--muted);letter-spacing:.04em}
+  td.num{font:600 15px/1 ui-monospace,Menlo,monospace}
+  .mark-root{color:var(--root)}
+  .mark-dia{color:var(--dia)}
+  .note{font-size:13px;color:var(--muted);margin:14px 0 0}
+  code{font:12px/1.6 ui-monospace,Menlo,monospace;background:var(--bg);padding:1px 5px;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>543 直徑 — 為什麼只量根節點會少算</h1>
+  <p class="sub">2026-10-27 · 本地檔，離線可開 · 數字 <code>h=</code> 是那個節點底下那棵子樹的高度</p>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-i="0">LeetCode 測資（18 節點）</button>
+    <button role="tab" aria-selected="false" data-i="1">最小反例（6 節點）</button>
+  </div>
+
+  <div class="card">
+    <p class="input" id="input"></p>
+    <div class="legend">
+      <span><i class="swatch" style="background:var(--root)"></i>經過<strong>根節點</strong>的最長路徑</span>
+      <span><i class="swatch" style="background:var(--dia)"></i>真正的最長路徑（直徑）</span>
+    </div>
+    <div class="scroller"><svg id="svg"></svg></div>
+    <p class="note" id="apexnote"></p>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead><tr><th>量什麼</th><th>算法</th><th>邊數</th></tr></thead>
+      <tbody id="tbl"></tbody>
+    </table>
+    <p class="note" id="concl"></p>
+  </div>
+
+</div>
+
+<script>
+const CASES = [
+  {
+    name: "LeetCode 測資",
+    arr: [4,-7,-3,null,null,-9,-3,9,-7,-4,null,6,null,-6,-6,null,null,0,6,5,null,9,null,null,-1,-4,null,null,null,-2]
+  },
+  {
+    name: "最小反例",
+    arr: [1,null,2,3,4,null,5,null,6]
+  }
+];
+
+function build(arr){
+  if(!arr.length || arr[0]===null) return null;
+  const root = {v:arr[0], l:null, r:null};
+  const q=[root]; let i=1;
+  while(q.length && i<arr.length){
+    const n=q.shift();
+    if(i<arr.length){ const v=arr[i++]; if(v!==null){ n.l={v,l:null,r:null}; q.push(n.l);} }
+    if(i<arr.length){ const v=arr[i++]; if(v!==null){ n.r={v,l:null,r:null}; q.push(n.r);} }
+  }
+  return root;
+}
+
+function height(n){ return n===null ? 0 : 1 + Math.max(height(n.l), height(n.r)); }
+
+// 最深的一條往下的路徑（節點陣列）
+function deepestChain(n){
+  if(n===null) return [];
+  const a=deepestChain(n.l), b=deepestChain(n.r);
+  return [n].concat(a.length>=b.length ? a : b);
+}
+
+// 直徑的最高點
+function apexOf(root){
+  let best=-1, apex=null;
+  (function go(n){
+    if(n===null) return 0;
+    const L=go(n.l), R=go(n.r);
+    if(L+R>best){ best=L+R; apex=n; }
+    return 1+Math.max(L,R);
+  })(root);
+  return {apex, edges:best};
+}
+
+// 以某節點為最高點的完整路徑
+function pathThrough(n){
+  if(n===null) return [];
+  const left = deepestChain(n.l).reverse();
+  const right = deepestChain(n.r);
+  return left.concat([n], right);
+}
+
+function layout(root){
+  const nodes=[]; let x=0;
+  (function go(n, depth){
+    if(n===null) return;
+    go(n.l, depth+1);
+    n._x = x++; n._y = depth;
+    nodes.push(n);
+    go(n.r, depth+1);
+  })(root, 0);
+  return nodes;
+}
+
+const svg = document.getElementById('svg');
+const NS = 'http://www.w3.org/2000/svg';
+function mk(tag, attrs){
+  const e=document.createElementNS(NS,tag);
+  for(const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+function render(idx){
+  const c = CASES[idx];
+  const root = build(c.arr);
+  const nodes = layout(root);
+
+  const {apex, edges:diaEdges} = apexOf(root);
+  const diaPath = pathThrough(apex);
+  const rootPath = pathThrough(root);
+  const rootEdges = height(root.l) + height(root.r);
+
+  const diaSet  = new Set(diaPath);
+  const rootSet = new Set(rootPath);
+  const diaEdgeSet  = new Set();
+  const rootEdgeSet = new Set();
+  for(let i=0;i<diaPath.length-1;i++)  diaEdgeSet.add(key(diaPath[i], diaPath[i+1]));
+  for(let i=0;i<rootPath.length-1;i++) rootEdgeSet.add(key(rootPath[i], rootPath[i+1]));
+  function key(a,b){ return a._x+","+a._y+"|"+b._x+","+b._y; }
+
+  const GX=66, GY=74, PADX=40, PADY=36, RW=46, RH=30;
+  const maxX = Math.max(...nodes.map(n=>n._x));
+  const maxY = Math.max(...nodes.map(n=>n._y));
+  const W = PADX*2 + maxX*GX + RW;
+  const H = PADY*2 + maxY*GY + RH + 16;
+  svg.setAttribute('width', W);
+  svg.setAttribute('height', H);
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.replaceChildren();
+
+  const cx = n => PADX + n._x*GX + RW/2;
+  const cy = n => PADY + n._y*GY + RH/2;
+
+  // edges first
+  for(const n of nodes){
+    for(const ch of [n.l, n.r]){
+      if(!ch) continue;
+      const k1 = key(n,ch), k2 = key(ch,n);
+      let cls='edge';
+      if(diaEdgeSet.has(k1)||diaEdgeSet.has(k2)) cls='edge diapath';
+      else if(rootEdgeSet.has(k1)||rootEdgeSet.has(k2)) cls='edge rootpath';
+      svg.append(mk('path',{
+        d:`M ${cx(n)} ${cy(n)+RH/2} L ${cx(ch)} ${cy(ch)-RH/2}`,
+        class:cls
+      }));
+    }
+  }
+  // nodes
+  for(const n of nodes){
+    let cls='nodebox';
+    if(diaSet.has(n)) cls+=' ondia';
+    else if(rootSet.has(n)) cls+=' onroot';
+    if(n===apex) cls+=' apex';
+    svg.append(mk('rect',{
+      x:cx(n)-RW/2, y:cy(n)-RH/2, width:RW, height:RH, rx:5, class:cls
+    }));
+    const t=mk('text',{x:cx(n), y:cy(n)-1, class:'val'}); t.textContent=n.v; svg.append(t);
+    const s=mk('text',{x:cx(n), y:cy(n)+11, class:'hh'}); s.textContent='h='+height(n); svg.append(s);
+    if(n===apex){
+      const g=mk('text',{x:cx(n), y:cy(n)-RH/2-7, class:'tag', fill:'var(--dia)'});
+      g.textContent='最高點'; svg.append(g);
+    }
+    if(n===root && n!==apex){
+      const g=mk('text',{x:cx(n), y:cy(n)-RH/2-7, class:'tag', fill:'var(--root)'});
+      g.textContent='根'; svg.append(g);
+    }
+  }
+
+  document.getElementById('input').textContent =
+    'root = [' + c.arr.map(v=>v===null?'null':v).join(',') + ']';
+
+  const chain = diaPath.map(n=>n.v).join(' — ');
+  document.getElementById('apexnote').innerHTML =
+    `綠色那條最長路徑的<strong>最高點是節點 <code>${apex.v}</code></strong>` +
+    (apex===root ? '（剛好就是根）' : '，<strong>不是根節點</strong>') +
+    `。<br>路徑：<code>${chain}</code>（${diaPath.length} 個節點 = ${diaEdges} 條邊）`;
+
+  document.getElementById('tbl').innerHTML = `
+    <tr>
+      <td class="mark-root">只量根節點（你現在的寫法）</td>
+      <td><code>h(root.left) + h(root.right)</code> = ${height(root.l)} + ${height(root.r)}</td>
+      <td class="num mark-root">${rootEdges}</td>
+    </tr>
+    <tr>
+      <td class="mark-dia">每個節點都量，取最大</td>
+      <td>在節點 <code>${apex.v}</code> 上取到 ${diaEdges}</td>
+      <td class="num mark-dia">${diaEdges}</td>
+    </tr>`;
+
+  document.getElementById('concl').innerHTML = apex===root
+    ? '這棵樹的最長路徑剛好經過根，所以兩種算法同分。'
+    : `差 <strong>${diaEdges - rootEdges}</strong> 條邊。最長的那條路整條都躲在節點 <code>${apex.v}</code> 的底下，根本沒經過根，所以站在根上往左右看是看不到它的。`;
+}
+
+document.querySelectorAll('.tabs button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected','false'));
+    b.setAttribute('aria-selected','true');
+    render(Number(b.dataset.i));
+  });
+});
+render(0);
+</script>
+</body>
+</html>

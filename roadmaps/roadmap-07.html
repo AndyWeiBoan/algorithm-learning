@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>招式地圖 07 · 熱力格</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F6F3EC;--surface:#fff;--surface-2:#FBF9F4;--ink:#1B1E22;--muted:#6E6A62;
+  --line:#E3DED3;--line-soft:#EEEAE1;--accent:#9A5B2E;--accent-soft:#F0E2D4;
+  --ok:#2F7D62;--ok-bg:#E3F0EA;--warn:#A8761A;--warn-bg:#F6EBD4;
+  --todo:#9AA0A8;--todo-bg:#ECEDEF;--miss:#A83A36;--miss-bg:#F6E0DE;
+  --grad:#3B6EA8;--grad-bg:#E2EAF4;--spine:#CFC7B8;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14161A;--surface:#1C1F25;--surface-2:#20242B;--ink:#E9E5DC;--muted:#9A958B;
+  --line:#2E333C;--line-soft:#262B33;--accent:#D79A5B;--accent-soft:#3A2D20;
+  --ok:#58B08C;--ok-bg:#1B3029;--warn:#D9A441;--warn-bg:#352B14;
+  --todo:#6E747E;--todo-bg:#252931;--miss:#D97672;--miss-bg:#36211F;
+  --grad:#7FA8D9;--grad-bg:#1E2A38;--spine:#39404B;
+}}
+:root[data-theme="dark"]{
+  --bg:#14161A;--surface:#1C1F25;--surface-2:#20242B;--ink:#E9E5DC;--muted:#9A958B;
+  --line:#2E333C;--line-soft:#262B33;--accent:#D79A5B;--accent-soft:#3A2D20;
+  --ok:#58B08C;--ok-bg:#1B3029;--warn:#D9A441;--warn-bg:#352B14;
+  --todo:#6E747E;--todo-bg:#252931;--miss:#D97672;--miss-bg:#36211F;
+  --grad:#7FA8D9;--grad-bg:#1E2A38;--spine:#39404B;
+}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.5;padding-inline:16px;padding-block:24px 64px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto}
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.nav a{font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line);border-radius:6px;padding:4px 9px;background:var(--surface)}
+.nav a.cur{background:var(--accent);border-color:var(--accent);color:#fff}
+.hd{margin:0 0 6px;font-size:clamp(22px,4vw,32px);font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 4px;max-width:66ch}
+.kpi{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0 26px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.kpi b{font-size:20px;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.kpi .s1 b{color:var(--ok)} .kpi .s2 b{color:var(--warn)} .kpi .s3 b{color:var(--miss)}
+.lg{display:flex;gap:6px 9px;flex-wrap:wrap;margin:0 0 24px}
+.lg span{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:5px}
+.l-ok{background:var(--ok-bg);color:var(--ok)} .l-grad{background:var(--grad-bg);color:var(--grad)}
+.l-warn{background:var(--warn-bg);color:var(--warn)} .l-todo{background:var(--todo-bg);color:var(--todo)}
+.l-miss{background:var(--miss-bg);color:var(--miss)}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.scroll{overflow-x:auto;padding-bottom:8px}
+.ft{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.6}
+.ft code{font-family:var(--mono);color:var(--accent)}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="roadmap-01.html">01 主幹分支</a><a href="roadmap-02.html">02 科技樹</a><a href="roadmap-03.html">03 地鐵圖</a><a href="roadmap-04.html">04 橫向樹</a><a href="roadmap-05.html">05 放射狀</a><a href="roadmap-06.html">06 軌道進度</a><a href="roadmap-07.html" class="cur">07 熱力格</a><a href="roadmap-08.html">08 泳道</a><a href="roadmap-09.html">09 同心圓</a><a href="roadmap-10.html">10 依賴鏈</a></div>
+<h1 class="hd">熱力格</h1>
+<p class="sub">每格一個招式，顏色＝狀態，底下三條＝三關。整面看過去，亮的區塊和暗的區塊一目了然。</p>
+<div class="kpi">
+  <span>招式 <b>59</b></span>
+  <span class="s1">關1 <b>21</b></span>
+  <span class="s2">關2 <b>7</b></span>
+  <span class="s3">關3 <b>1</b></span>
+  <span>題目 <b>83</b>/166</span>
+</div>
+<div class="lg">
+  <span class="l-ok">關1過</span><span class="l-grad">已畢業</span>
+  <span class="l-warn">做過沒驗</span><span class="l-todo">沒做過</span><span class="l-miss">沒進過清單</span>
+</div>
+<style>
+.gh{margin:26px 0 10px;font-size:15px;font-weight:700;color:var(--accent)}
+.gh small{font-weight:400;font-size:12px;color:var(--muted);margin-left:9px}
+.row{display:flex;gap:12px;align-items:flex-start;margin-bottom:7px}
+.rl{width:118px;flex:none;padding-top:5px}
+.rl b{display:block;font-size:13px;font-weight:600}
+.rl small{font-family:var(--mono);font-size:10px;color:var(--muted)}
+.cs{display:flex;gap:5px;flex-wrap:wrap}
+.c{width:92px;height:50px;border-radius:7px;padding:6px 7px;display:flex;flex-direction:column;
+  justify-content:space-between;border:1px solid var(--line);background:var(--surface-2)}
+.cn{font-size:10.5px;line-height:1.25;color:var(--ink)}
+.cg{display:flex;gap:3px}
+.cg i{width:14px;height:5px;border-radius:2px;background:var(--line);display:block}
+.s-ok{background:var(--ok-bg);border-color:var(--ok)} .s-ok i.on{background:var(--ok)}
+.s-grad{background:var(--grad-bg);border-color:var(--grad)} .s-grad i.on{background:var(--grad)}
+.s-warn{background:var(--warn-bg);border-color:var(--warn)} .s-warn i.on{background:var(--warn)}
+.s-todo{background:var(--todo-bg);border-color:var(--line)} .s-todo i.on{background:var(--todo)}
+.s-miss{background:var(--miss-bg);border-color:var(--miss)} .s-miss i.on{background:var(--miss)}
+</style><div class="grid"><div class="gh">該練的<small>高頻缺口 · 2026-10-25 實查</small></div><div class="row"><div class="rl"><b>鏈結串列</b><small>5/8</small></div><div class="cs"><div class="c s-ok" title="整條反轉 · 206"><span class="cn">整條反轉</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-ok" title="dummy 刪點 · 19·203"><span class="cn">dummy 刪點</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-ok" title="固定步長重接 · 24"><span class="cn">固定步長重接</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-ok" title="快慢指針找環 · 142"><span class="cn">快慢指針找環</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-miss" title="區間反轉重接 · 92"><span class="cn">區間反轉重接</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="合併有序鏈表 · 21"><span class="cn">合併有序鏈表</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>二元樹</b><small>24/29</small></div><div class="cs"><div class="c s-ok" title="遍歷 遞迴 · 144·94·145"><span class="cn">遍歷 遞迴</span><span class="cg"><i class="on"></i><i class="on"></i><i class=""></i></span></div><div class="c s-ok" title="遍歷 迭代 · 144·94·145"><span class="cn">遍歷 迭代</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-ok" title="層序 count 鎖層 · 102·199·103"><span class="cn">層序 count</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="自底向上聚合 · 110·543"><span class="cn">自底向上聚合</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="構造 中+後序 · 106"><span class="cn">構造 中+後序</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-ok" title="LCA 後序合併 · 236·235"><span class="cn">LCA 後序合併</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="BST 性質 · 98·450·108"><span class="cn">BST 性質</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>堆疊／佇列</b><small>7/8</small></div><div class="cs"><div class="c s-warn" title="配對消除 · 20·1047"><span class="cn">配對消除</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-ok" title="RPN 求值 · 150"><span class="cn">RPN 求值</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="棧⇄佇列互實作 · 232·225"><span class="cn">棧⇄佇列互實作</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>雜湊</b><small>5/9</small></div><div class="cs"><div class="c s-ok" title="計數分組建 key · 49·242"><span class="cn">計數分組建 ke</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="HashSet 應用 · 128"><span class="cn">HashSet </span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="補數查表 · 1·454"><span class="cn">補數查表</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>排序</b><small>0/2</small></div><div class="cs"><div class="c s-todo" title="手寫 quicksort · —"><span class="cn">手寫 quick</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="手寫 mergesort · —"><span class="cn">手寫 merge</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>設計題</b><small>0/1</small></div><div class="cs"><div class="c s-todo" title="LRU 雜湊+雙向鏈表 · 146"><span class="cn">LRU 雜湊+雙</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="gh">已畢業<small>6/12–7/18 那五週拿下的 · 不用再練</small></div><div class="row"><div class="rl"><b>滑動窗口</b><small>7/8</small></div><div class="cs"><div class="c s-grad" title="固定視窗 · 438·567"><span class="cn">固定視窗</span><span class="cg"><i class="on"></i><i class="on"></i><i class=""></i></span></div><div class="c s-grad" title="可變視窗 · 3·209·424·904"><span class="cn">可變視窗</span><span class="cg"><i class="on"></i><i class="on"></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>二分搜尋</b><small>5/7</small></div><div class="cs"><div class="c s-grad" title="找特定值 · 704"><span class="cn">找特定值</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-grad" title="找邊界/插入點 · 34·35"><span class="cn">找邊界/插入點</span><span class="cg"><i class="on"></i><i class="on"></i><i class=""></i></span></div><div class="c s-grad" title="收斂到答案 · 153·33"><span class="cn">收斂到答案</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="對答案二分 · 875·69"><span class="cn">對答案二分</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>回溯</b><small>8/18</small></div><div class="cs"><div class="c s-grad" title="組合 同層去重 · 77·39·40"><span class="cn">組合 同層去重</span><span class="cg"><i class="on"></i><i class="on"></i><i class=""></i></span></div><div class="c s-grad" title="子集 收集時機 · 78·90"><span class="cn">子集 收集時機</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-grad" title="離散選擇式 · 22"><span class="cn">離散選擇式</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="棋盤回溯 哨兵 · 79"><span class="cn">棋盤回溯 哨兵</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="排列 visited · 46·47"><span class="cn">排列 visit</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="gh">排最後<small>低頻 · 複習債幾乎全在這層</small></div><div class="row"><div class="rl"><b>陣列</b><small>11/15</small></div><div class="cs"><div class="c s-warn" title="前綴和+雜湊 · 560·974·238"><span class="cn">前綴和+雜湊</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="N-Sum 夾擊去重 · 15·18"><span class="cn">N-Sum 夾擊</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>圖論</b><small>6/12</small></div><div class="cs"><div class="c s-ok" title="洪水填充 · 200·695·130"><span class="cn">洪水填充</span><span class="cg"><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="多源 BFS · 994"><span class="cn">多源 BFS</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="連通分量 · 547"><span class="cn">連通分量</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="拓撲 Kahn · 207"><span class="cn">拓撲 Kahn</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="並查集 · 684·990"><span class="cn">並查集</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>堆 / Top-K</b><small>4/5</small></div><div class="cs"><div class="c s-warn" title="封頂 k min-heap · 703·215"><span class="cn">封頂 k min</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="最大堆 取負 · 1046"><span class="cn">最大堆 取負</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="頻率 Top-K · 347"><span class="cn">頻率 Top-K</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>動態規劃</b><small>9/35</small></div><div class="cs"><div class="c s-ok" title="線性 DP · 70·746·198·53"><span class="cn">線性 DP</span><span class="cg"><i class="on"></i><i class="on"></i><i class=""></i></span></div><div class="c s-ok" title="二維網格 DP · 62·63·64"><span class="cn">二維網格 DP</span><span class="cg"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="c s-warn" title="完全背包入門 · 322·279"><span class="cn">完全背包入門</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="整數拆分 · 343"><span class="cn">整數拆分</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-warn" title="0/1 背包 · 416·494"><span class="cn">0/1 背包</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="完全背包 組合/排列 · 518·377·139"><span class="cn">完全背包 組合/</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="股票 狀態機 · 121·122·123"><span class="cn">股票 狀態機</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="子序列/編輯距離 · 300·1143·72"><span class="cn">子序列/編輯距離</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="回文 DP · 5·647·516"><span class="cn">回文 DP</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="區間 DP · 312"><span class="cn">區間 DP</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="樹形 DP · 337"><span class="cn">樹形 DP</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div><div class="row"><div class="rl"><b>其他</b><small>6/39</small></div><div class="cs"><div class="c s-warn" title="單調棧 · 739·496·42·84"><span class="cn">單調棧</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="貪心 · 55·45·435"><span class="cn">貪心</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="KMP · 28·459"><span class="cn">KMP</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="位運算 · 136·268·191"><span class="cn">位運算</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div><div class="c s-todo" title="Trie · 208·212"><span class="cn">Trie</span><span class="cg"><i class=""></i><i class=""></i><i class=""></i></span></div></div></div></div>
+<div class="ft">同一份資料生成，數字不會跑掉。來源：<code>progress.md · checklist.md · notes/全景圖 · log.md · 2026-10-25 頻率實查</code></div>
+</div></body></html>

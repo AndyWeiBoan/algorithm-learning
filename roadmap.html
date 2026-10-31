@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>面試招式地圖</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#F6F3EC; --surface:#FFFFFF; --surface-2:#FBF9F4;
+    --ink:#1B1E22; --muted:#6E6A62; --line:#E3DED3; --line-soft:#EEEAE1;
+    --accent:#9A5B2E; --accent-soft:#F0E2D4;
+    --ok:#2F7D62; --ok-bg:#E3F0EA;
+    --warn:#A8761A; --warn-bg:#F6EBD4;
+    --todo:#80848C; --todo-bg:#EBEBED;
+    --miss:#A83A36; --miss-bg:#F6E0DE;
+    --grad:#3B6EA8; --grad-bg:#E2EAF4;
+    --spine:#DAD3C6;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#14161A; --surface:#1C1F25; --surface-2:#20242B;
+      --ink:#E9E5DC; --muted:#9A958B; --line:#2E333C; --line-soft:#262B33;
+      --accent:#D79A5B; --accent-soft:#3A2D20;
+      --ok:#58B08C; --ok-bg:#1B3029;
+      --warn:#D9A441; --warn-bg:#352B14;
+      --todo:#767C87; --todo-bg:#272B32;
+      --miss:#D97672; --miss-bg:#36211F;
+      --grad:#7FA8D9; --grad-bg:#1E2A38;
+      --spine:#2E333C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14161A; --surface:#1C1F25; --surface-2:#20242B;
+    --ink:#E9E5DC; --muted:#9A958B; --line:#2E333C; --line-soft:#262B33;
+    --accent:#D79A5B; --accent-soft:#3A2D20;
+    --ok:#58B08C; --ok-bg:#1B3029;
+    --warn:#D9A441; --warn-bg:#352B14;
+    --todo:#767C87; --todo-bg:#272B32;
+    --miss:#D97672; --miss-bg:#36211F;
+    --grad:#7FA8D9; --grad-bg:#1E2A38;
+    --spine:#2E333C;
+  }
+
+  *{box-sizing:border-box}
+  html{color-scheme:light dark}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.55;
+    padding-inline:16px; padding-block:28px 56px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%}
+  [hidden]{display:none!important}
+  .wrap{max-width:900px;margin:0 auto}
+
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+  h1{font-size:clamp(26px,5.2vw,38px);line-height:1.15;letter-spacing:-.02em;font-weight:700;margin:0 0 10px;text-wrap:balance}
+  .lede{color:var(--muted);margin:0 0 4px;max-width:62ch}
+  .lede b{color:var(--ink);font-weight:600}
+
+  .gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:26px 0 8px}
+  .gate{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 15px}
+  .gate .n{font-family:var(--mono);font-size:30px;font-weight:600;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .gate .n span{font-size:16px;color:var(--muted);font-weight:400}
+  .gate .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+  .gate .d{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.45}
+  .gate.g1 .n{color:var(--ok)} .gate.g2 .n{color:var(--warn)} .gate.g3 .n{color:var(--miss)}
+
+  .note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:12px 15px;border-radius:0 8px 8px 0;margin:18px 0 0;font-size:13.5px;line-height:1.6}
+  .note b{font-weight:600}
+
+  .legend{display:flex;flex-wrap:wrap;gap:7px 10px;margin:28px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+  .chip{font-family:var(--mono);font-size:11px;font-weight:500;padding:3px 8px;border-radius:5px;white-space:nowrap}
+  .chip.ok{background:var(--ok-bg);color:var(--ok)}
+  .chip.warn{background:var(--warn-bg);color:var(--warn)}
+  .chip.todo{background:var(--todo-bg);color:var(--todo)}
+  .chip.miss{background:var(--miss-bg);color:var(--miss)}
+  .chip.grad{background:var(--grad-bg);color:var(--grad)}
+
+  /* tier heading */
+  .tier{margin:40px 0 18px}
+  .tier h2{font-size:19px;font-weight:700;letter-spacing:-.01em;margin:0 0 5px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .tier .cnt{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400;font-variant-numeric:tabular-nums}
+  .tier p{margin:0;font-size:13px;color:var(--muted);max-width:62ch}
+
+  .spine{position:relative;padding-left:26px}
+  .spine::before{content:"";position:absolute;left:7px;top:14px;bottom:14px;width:2px;background:var(--spine);border-radius:1px}
+  .topic{position:relative;margin-bottom:16px}
+  .topic::before{content:"";position:absolute;left:-23px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2.5px solid var(--accent)}
+  .topic.done::before{border-color:var(--grad)}
+  .topic.low::before{border-color:var(--todo)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .thead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:14px 16px;background:var(--surface-2);border-bottom:1px solid var(--line-soft)}
+  .tname{font-size:16.5px;font-weight:600;letter-spacing:-.01em}
+  .tcount{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .tcount b{color:var(--ink);font-weight:600}
+  .tmech{font-family:var(--mono);font-size:11px;color:var(--accent);margin-left:auto;white-space:nowrap}
+  .topic.done .tmech{color:var(--grad)}
+  .topic.low .tmech{color:var(--todo)}
+
+  .mech{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:start;padding:12px 16px;border-top:1px solid var(--line-soft)}
+  .mech:first-of-type{border-top:none}
+  .mech.flag{background:var(--miss-bg)}
+  .mname{font-size:14px;font-weight:500;line-height:1.4}
+  .mname .id{font-family:var(--mono);font-size:11px;color:var(--muted);margin-right:7px;font-variant-numeric:tabular-nums}
+  .mprob{font-family:var(--mono);font-size:11.5px;color:var(--muted);grid-column:1;margin-top:3px}
+  .mright{grid-column:2;grid-row:1 / span 2;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .dots{display:flex;gap:4px}
+  .dot{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--line);background:transparent;display:grid;place-items:center;font-family:var(--mono);font-size:9px;font-weight:600;color:var(--muted)}
+  .dot.on{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+  .mechnote{grid-column:1 / -1;font-size:12.5px;color:var(--muted);line-height:1.55;margin-top:7px;padding-left:11px;border-left:2px solid var(--line)}
+  code{font-family:var(--mono);font-size:12px;color:var(--accent)}
+
+  .foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.65}
+  .foot h2{font-size:14px;color:var(--ink);margin:0 0 8px;font-weight:600}
+  .foot ol{margin:0;padding-left:20px}
+  .foot li{margin-bottom:5px}
+
+  @media (max-width:520px){
+    .mright{grid-column:1;grid-row:auto;justify-content:flex-start;margin-top:8px}
+    .mprob{grid-column:1}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <p class="eyebrow">2026-10-26 · 以機制為單位 · 全主題</p>
+  <h1>面試招式地圖</h1>
+  <p class="lede">
+    主題是節點，節點的分支是<b>招式</b>。一個招式要過三關才算會。
+    題數取自 <code>checklist.md</code>（全部 <b>83 / 166</b> 做過）。
+  </p>
+  <p class="lede">
+    分三層：<b>該練的</b>（高頻缺口）→ <b>已畢業</b>（不用再練）→ <b>排最後</b>（低頻）。
+  </p>
+
+  <div class="gates">
+    <div class="gate g1">
+      <div class="k">關 1 · 閉卷重解原題</div>
+      <div class="n">21<span> / 59</span></div>
+      <div class="d">間隔 ≥ 2 天、無提示、fuzz 0 mismatch</div>
+    </div>
+    <div class="gate g2">
+      <div class="k">關 2 · 同招式換另一題</div>
+      <div class="n">7<span> / 59</span></div>
+      <div class="d">抓「只認得那一題」。92 就是這一關會抓到的</div>
+    </div>
+    <div class="gate g3">
+      <div class="k">關 3 · 沒看過的變形</div>
+      <div class="n">1<span> / 59</span></div>
+      <div class="d">現場生成 ＋ 暴力解對照。目前唯一刻度</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>全部 59 個招式，三關全過的有 1 個</b>（DP 二維網格 — 8/30 斜走變形一次寫對）。
+    舊紀錄的「🎓 已畢業」只過了關 1；鏈結串列標示畢業，但「區間反轉重接」（92）
+    從沒進過任何一份清單——這正是關 2 存在的理由。
+  </div>
+
+  <div class="legend">
+    <span class="chip ok">關 1 過</span>
+    <span class="chip grad">已畢業（不用再練）</span>
+    <span class="chip warn">做過沒驗</span>
+    <span class="chip todo">沒做過</span>
+    <span class="chip miss">從沒進過清單</span>
+    <span class="chip todo">■ ■ ■ ＝ 關 1 / 2 / 3</span>
+  </div>
+
+  <!-- ══════════ 第一層 ══════════ -->
+  <div class="tier">
+    <h2>一 · 該練的 <span class="cnt">22 招式 · 關1 10／關2 1／關3 0</span></h2>
+    <p>2026-10-25 實查的高頻主題。缺口 13 個招式 ≈ 30 題 ≈ 6～8 週。</p>
+  </div>
+
+  <div class="spine">
+
+    <div class="topic"><div class="card">
+      <div class="thead"><span class="tname">鏈結串列</span><span class="tcount">題目 <b>5</b> / 8</span><span class="tmech">6 招式 · 關1 4</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>整條反轉（三指針 prev/curr/next）</div><div class="mprob">206</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>dummy 補前驅 ＋ 刪點</div><div class="mprob">19 · 203</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>固定步長重接（兩兩交換）</div><div class="mprob">24</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">4</span>快慢指針找環 ＋ Floyd 找入口</div><div class="mprob">142</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech flag"><div class="mname"><span class="id">5</span>區間反轉 ＋ 三處重接</div><div class="mprob">92</div>
+        <div class="mright"><span class="chip miss">從沒進過清單</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">走到 <code>left-1</code> → 反轉中間段 → 前段接新頭 → 舊頭接後段。206 整條、24 固定兩兩、19 找位置刪——<b>沒有一題練到「反轉一段後把三個斷點接回去」</b>。2026-10-26 發現，不在 progress.md、checklist.md、全景圖任何一份裡。</div></div>
+      <div class="mech"><div class="mname"><span class="id">6</span>合併兩條有序鏈表</div><div class="mprob">21</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+    </div></div>
+
+    <div class="topic"><div class="card">
+      <div class="thead"><span class="tname">二元樹</span><span class="tcount">題目 <b>24</b> / 29</span><span class="tmech">7 招式 · 關1 4／關2 1</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>三種遍歷（遞迴 · 差在 Add 根的位置）</div><div class="mprob">144 ✓ · 94 ✓ · 145</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot on">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">唯一過關 2 的招式——144 和 94 是<b>兩題不同的題、都閉卷獨立過</b>（2026-10-26）。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>三種遍歷（迭代）</div><div class="mprob">144 ✓ · 94 · 145</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">前序迭代已過。<b>中序迭代面試極少考，優先度最低</b>——不要卡在這裡。</div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>層序 BFS「count 鎖當層大小」</div><div class="mprob">102 ✓ · 199 · 103 · 513</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">關 2 很便宜：199 右視圖、103 鋸齒、513 最左下，全是同模板改幾行。</div></div>
+      <div class="mech"><div class="mname"><span class="id">4</span>自底向上聚合（回傳高度 ＋ 外部變數累積）</div><div class="mprob">110 · 543</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">鐵則：要往上傳的（高度）跟要的答案（直徑）是兩個不同的東西——答案擺外面。</div></div>
+      <div class="mech"><div class="mname"><span class="id">5</span>構造（中序切左右 ＋ 後序定根）</div><div class="mprob">106</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">6</span>LCA（後序回傳合併）</div><div class="mprob">236 ✓ · 235</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">2026-10-25 閉卷過，<b>有小提示</b>。關 2 可用 235（BST 版）。</div></div>
+      <div class="mech"><div class="mname"><span class="id">7</span>BST 性質（中序遞增／範圍往下傳）</div><div class="mprob">98 · 235 · 450 · 108 · 700 · 701</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">450 當初幾乎看答案；98 的 min/max 範圍法還沒補。</div></div>
+    </div></div>
+
+    <div class="topic"><div class="card">
+      <div class="thead"><span class="tname">堆疊／佇列</span><span class="tcount">題目 <b>7</b> / 8</span><span class="tmech">3 招式 · 關1 1</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>配對消除（開閉括號／相鄰消去）</div><div class="mprob">20 · 1047</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">調查裡「後端必考堆疊」。兩題同招，關 1 ＋ 關 2 一次收掉。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>RPN 求值（運算元順序、往零截斷）</div><div class="mprob">150 ✓</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>棧 ⇄ 佇列互實作（攤還 O(1)）</div><div class="mprob">232 · 225</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+    </div></div>
+
+    <div class="topic"><div class="card">
+      <div class="thead"><span class="tname">雜湊</span><span class="tcount">題目 <b>5</b> / 9</span><span class="tmech">3 招式 · 關1 1</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>計數／分組建 canonical key</div><div class="mprob">49 ✓ · 242</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">49 用 <code>int[26]</code> 計數建 key，O(n·k) 最佳解。關 2 用 242。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>HashSet 應用（最長連續序列）</div><div class="mprob">128</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>補數查表（Two Sum 型）</div><div class="mprob">1 · 454</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+    </div></div>
+
+    <div class="topic"><div class="card">
+      <div class="thead"><span class="tname">排序</span><span class="tcount">題目 <b>0</b> / 2</span><span class="tmech">2 招式 · 全空</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>手寫 quicksort（partition）</div><div class="mprob">—</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>手寫 mergesort（merge）</div><div class="mprob">—</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote"><b>2026-10-25 實查：HiSKIO 調查「面試者最常遇到的題型」第一名是排序。你完全沒練過。</b></div></div>
+    </div></div>
+
+    <div class="topic"><div class="card">
+      <div class="thead"><span class="tname">設計題</span><span class="tcount">題目 <b>0</b> / 1</span><span class="tmech">1 招式 · 全空</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>LRU：HashMap ＋ 雙向鏈表，get/put 都 O(1)</div><div class="mprob">146</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">2026 面試紀錄裡<b>同一輪出現兩次</b>（趨勢二面、Nvidia GPU 組）。缺口裡頻率最高的一個，而且用的是你唯一完整畢業的鏈結串列。</div></div>
+    </div></div>
+
+  </div>
+
+  <!-- ══════════ 第二層 ══════════ -->
+  <div class="tier">
+    <h2>二 · 已畢業 <span class="cnt">11 招式 · 關1 8／關2 4／關3 0</span></h2>
+    <p>6/12–7/18 那五週拿下的。不用再練，只在面試前抽查。<b>這一層存在的理由：分母不是只有缺口。</b></p>
+  </div>
+
+  <div class="spine">
+
+    <div class="topic done"><div class="card">
+      <div class="thead"><span class="tname">滑動窗口</span><span class="tcount">做過 <b>7</b> 題</span><span class="tmech">2 招式 · 已畢業</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>固定視窗（吃一個、吐一個）</div><div class="mprob">438 · 567</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot on">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>可變視窗（擴到違規才縮）</div><div class="mprob">3 · 209 · 424 · 904 · 1004</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot on">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">求最長＝違規縮一步；求最短（76）＝覆蓋後拚命縮。抽查挑 904 或 424。</div></div>
+    </div></div>
+
+    <div class="topic done"><div class="card">
+      <div class="thead"><span class="tname">二分搜尋</span><span class="tcount">做過 <b>5</b> 題</span><span class="tmech">4 招式 · 3 已畢業</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>找特定值（命中就 return）</div><div class="mprob">704 ✓</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>找邊界／插入點（lower / upper bound）</div><div class="mprob">34 ✓ · 35</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot on">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>收斂到答案（mid 可能是答案要留）</div><div class="mprob">153 ✓ · 33</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">核心決策：<b>mid 留不留</b>——同時定了 <code>&lt;</code> vs <code>&lt;=</code> 和 <code>mid±1</code> vs <code>mid</code>。</div></div>
+      <div class="mech"><div class="mname"><span class="id">4</span>對答案二分（沒有 target 可比）</div><div class="mprob">875 · 69</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">唯一非換皮的新形狀。有空再補，不急。</div></div>
+    </div></div>
+
+    <div class="topic done"><div class="card">
+      <div class="thead"><span class="tname">回溯</span><span class="tcount">題目 <b>8</b> / 18</span><span class="tmech">5 招式 · 3 已畢業</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>組合（for 傳 i+1／傳 i，同層去重 <code>i&gt;idx</code>）</div><div class="mprob">77 ✓ · 39 ✓ · 40 ✓</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot on">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">40 在 7/13 需要看答案才想起 <code>i&gt;idx</code>，7/16 隔三天自己寫出來——<b>間隔重解生效的實例</b>。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>子集（收集時機：進節點就 Add）</div><div class="mprob">78 ✓ · 90</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>離散選擇式（可以放 ≠ 一定放）</div><div class="mprob">22 ✓</div>
+        <div class="mright"><span class="chip grad">已畢業</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">4</span>棋盤／矩陣回溯（in-place 哨兵）</div><div class="mprob">79</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">哨兵值不能是資料域裡出現得了的值——79 拿 <code>'x'</code> 當標記撞到真的 <code>'x'</code>，自己抓到。</div></div>
+      <div class="mech"><div class="mname"><span class="id">5</span>排列（0 起點 ＋ visited）</div><div class="mprob">46 · 47</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+    </div></div>
+
+  </div>
+
+  <!-- ══════════ 第三層 ══════════ -->
+  <div class="tier">
+    <h2>三 · 排最後 <span class="cnt">26 招式 · 關1 3／關2 2／關3 1</span></h2>
+    <p>做過但低頻，或低頻且沒做。<b>不要讓這一層佔注意力</b>——複習債幾乎全在這裡，而 10/26 的規則已經把「債沒清完不開新題」作廢。</p>
+  </div>
+
+  <div class="spine">
+
+    <div class="topic low"><div class="card">
+      <div class="thead"><span class="tname">陣列（前綴和 · N-Sum）</span><span class="tcount">題目 <b>11</b> / 15</span><span class="tmech">2 招式 · 關1 0</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>前綴和 ＋ 雜湊（presum 差）</div><div class="mprob">560 · 974 · 930 · 523 · 525 · 238</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>N-Sum（排序 ＋ 固定一個 ＋ 左右夾擊 ＋ 三處去重）</div><div class="mprob">15 · 18</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">2026-10-25 重做 15：骨架自己寫對（fuzz 答案 0 錯），卡在去重，記 <b>看答案</b>。擇日閉卷重做才算數。</div></div>
+    </div></div>
+
+    <div class="topic low"><div class="card">
+      <div class="thead"><span class="tname">圖論</span><span class="tcount">題目 <b>6</b> / 12</span><span class="tmech">5 招式 · 關1 1</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>洪水填充（掃描找起點 ＋ flood 標記）</div><div class="mprob">200 ✓ · 695 · 130 · 417</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">2026-10-11 停練 5 週後冷測 <b>獨立、零 bug</b>。全紀錄裡 retention 最乾淨的一筆。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>多源 BFS（全部起點先入隊 ＋ count 鎖層）</div><div class="mprob">994</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>連通分量</div><div class="mprob">547</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">4</span>拓撲排序 Kahn（入度陣列 ＋ 鄰接表 ＋ 入度 0 佇列）</div><div class="mprob">207</div>
+        <div class="mright"><span class="chip warn">靠提示過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">逾期 3 個月。你自己的 checklist 定位：<b>「必學但排最後——面試少考」</b>。</div></div>
+      <div class="mech"><div class="mname"><span class="id">5</span>並查集 Union-Find</div><div class="mprob">684 · 990</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+    </div></div>
+
+    <div class="topic low"><div class="card">
+      <div class="thead"><span class="tname">堆 / Top-K</span><span class="tcount">做過 <b>4</b> 題</span><span class="tmech">3 招式 · 關1 0</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>封頂 k 的 min-heap</div><div class="mprob">703 · 215</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">215 閉卷過一次（7/18），策略自己從 347 遷移過去。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>最大堆（取負模擬）</div><div class="mprob">1046</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>頻率 Top-K（桶排序 O(n)／手刻 heap）</div><div class="mprob">347</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">7/18 手刻 min-heap 全程沒看答案、bug 自修。</div></div>
+    </div></div>
+
+    <div class="topic low"><div class="card">
+      <div class="thead"><span class="tname">動態規劃</span><span class="tcount">題目 <b>9</b> / 35</span><span class="tmech">11 招式 · 關1 2／關3 1</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>線性 DP（盯最後一個決定）</div><div class="mprob">70 ✓ · 746 ✓ · 198 ✓ · 213 · 53</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot on">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">198 在 2026-10-24 drill <b>獨立</b>——方程一次寫對，隔了 3.5 個月。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>二維網格 DP</div><div class="mprob">62 ✓ · 63 · 64</div>
+        <div class="mright"><span class="chip ok">關 1 過</span><span class="dots"><i class="dot on">1</i><i class="dot on">2</i><i class="dot on">3</i></span></div>
+        <div class="mechnote"><b>全圖唯一三關全過的招式。</b>8/30 丟沒看過的斜走變形（可往右／下／右下），自己推出轉移多一項 <code>dp[i-1][j-1]</code>、一次寫對、對照暴力解 0 mismatch。</div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>完全背包入門（枚舉切法取 min）</div><div class="mprob">322 · 279</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">4</span>整數拆分</div><div class="mprob">343</div>
+        <div class="mright"><span class="chip warn">靠引導過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">8/29 做過，<b>9/1 閉卷重解失敗</b>（三天就忘）。關 1 需要間隔的證據就是它。</div></div>
+      <div class="mech"><div class="mname"><span class="id">5</span>0/1 背包（倒序防重複用）</div><div class="mprob">416 · 494 · 474</div>
+        <div class="mright"><span class="chip warn">靠引導過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">6</span>完全背包 組合／排列</div><div class="mprob">518 · 377 · 139</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">7</span>股票系列（狀態機）</div><div class="mprob">121 · 122 · 123 · 188 · 309 · 714</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">8</span>子序列／編輯距離</div><div class="mprob">300 · 1143 · 72 · 718</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">9</span>回文 DP</div><div class="mprob">5 · 647 · 516</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">10</span>區間 DP</div><div class="mprob">312</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">11</span>樹形 DP</div><div class="mprob">337</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+    </div></div>
+
+    <div class="topic low"><div class="card">
+      <div class="thead"><span class="tname">單調棧 · 貪心 · 字串 · 其他</span><span class="tcount">題目 <b>6</b> / 39</span><span class="tmech">5 招式 · 關1 0</span></div>
+      <div class="mech"><div class="mname"><span class="id">1</span>單調棧（找下一個更大／更小）</div><div class="mprob">739 · 496 · 503 · 42 · 84</div>
+        <div class="mright"><span class="chip warn">做過沒驗</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div>
+        <div class="mechnote">只做了 739，其餘 4 題沒做。</div></div>
+      <div class="mech"><div class="mname"><span class="id">2</span>貪心（區間／跳躍／分糖）</div><div class="mprob">55 · 45 · 435 · 452 · 134</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">3</span>字串比對 KMP</div><div class="mprob">28 · 459</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">4</span>位運算</div><div class="mprob">136 · 268 · 191</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+      <div class="mech"><div class="mname"><span class="id">5</span>Trie 字典樹</div><div class="mprob">208 · 212</div>
+        <div class="mright"><span class="chip todo">沒做過</span><span class="dots"><i class="dot">1</i><i class="dot">2</i><i class="dot">3</i></span></div></div>
+    </div></div>
+
+  </div>
+
+  <div class="foot">
+    <h2>三關的定義</h2>
+    <ol>
+      <li><b>關 1 · 閉卷重解原題</b> — 間隔 ≥ 2 天、無提示、fuzz 0 mismatch。<br>
+        為什麼不能只有一次：343 當場 fuzz 全綠，<b>三天後重寫 56/57 crash</b>。</li>
+      <li><b>關 2 · 同招式的另一題</b> — 無提示。<br>
+        為什麼需要：206/24/19 全過，但沒有一題是「區間反轉重接」。只要求「同招換題」，92 這個洞當時就會現形。</li>
+      <li><b>關 3 · 沒看過的變形</b> — 現場生成 ＋ 暴力解對照跑 fuzz。<br>
+        為什麼是刻度：STUDY_PLAN 自己寫的——「現場生成的 pattern 變形是<b>唯一能區分『認得題』與『會 pattern』的工具</b>」。四個月只用過一次。</li>
+    </ol>
+    <h2 style="margin-top:18px">數字</h2>
+    <p style="margin:0">
+      全部 <b>59 個招式</b>／題目 <b>83 / 166</b>。第一層缺口 13 個招式 ≈ 30 題 ≈ 6～8 週（每天 20 分鐘不中斷）。<br>
+      這個估算被推翻過兩次（7/18 停 5 週、9/8 停 5 週），兩次都不是因為太難。<br>
+      <span style="font-family:var(--mono);font-size:12px">資料來源：progress.md · checklist.md · notes/全景圖-coverage-map.md · log.md · 2026-10-25 面試頻率實查</span>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
