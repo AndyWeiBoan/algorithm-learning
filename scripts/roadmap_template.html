@@ -49,6 +49,7 @@ h1{font-size:34px;line-height:1.2;margin:8px 0 10px;font-weight:700}
 .stat .v small{font-size:15px;color:var(--ink3);font-weight:400;margin-left:4px}
 .sw{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none;vertical-align:-1px}
 .sw.grad{background:var(--grad)} .sw.y26{background:var(--y26)} .sw.y19{background:var(--y19)}
+.sw.r2{background:var(--accent)}
 .sw.none{background:var(--none);border:1.5px dashed var(--none-b)}
 .bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--rule2)}
 .bar i{display:block;height:100%}
@@ -129,9 +130,10 @@ h2{font-size:13px;letter-spacing:.14em;color:var(--ink3);font-weight:700;margin:
 .tag.star{border:0;color:var(--accent);padding:0 2px;font-size:13px}
 .ps{display:flex;gap:5px;white-space:nowrap;justify-content:flex-end}
 .p{font-size:11.5px;padding:2px 8px;border-radius:999px;border:1.5px dashed var(--none-b);color:var(--ink3)}
-.p.r1.on{border:1.5px solid var(--ink3);background:var(--y19);color:var(--ink)}
-.p.r2.on{border:1.5px solid var(--y26);background:var(--y26);color:#fff}
-.p.r2.on.grad{border-color:var(--grad);background:var(--grad)}
+.p.r0.on{border:1.5px solid var(--ink3);background:var(--y19);color:var(--ink)}
+.p.r1.on{border:1.5px solid var(--y26);background:var(--y26);color:#fff}
+.p.r2.on{border:1.5px solid var(--accent);background:var(--accent);color:#fff}
+.p.cb{border:1.5px solid var(--grad);background:var(--grad);color:#fff}
 .cbox .chip .pp{font-size:10.5px;color:var(--ink3)}
 [hidden]{display:none!important}
 mark{background:#f3d98a;color:inherit;border-radius:2px;padding:0 1px}
@@ -171,11 +173,11 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
   <div class="eyebrow">LEETCODE · 代碼隨想錄完整範圍</div>
   <h1>刷題地圖</h1>
   <p class="intro">範圍是<b>代碼隨想錄 12 章</b>（圖論換成 LeetCode 對應題），加上後來補的前綴和、滑動窗口、LRU 與排序，共 <b id="total"></b> 題。
-  每題狀態從 LeetCode 帳號提交紀錄算出：<b>一刷</b>＝2018～2021 有 AC，<b>二刷</b>＝2026 有 AC（或在閉卷存量表）。</p>
+  每題狀態從 LeetCode 帳號提交紀錄算出：<b>2019 舊刷</b>＝2018～2021；<b>一刷</b>＝2026-06-11～09-07；中間空檔 47 天；<b>二刷</b>＝2026-10-24 起。各時段有 AC 就算。</p>
 
   <div class="stats" id="stats"></div>
   <div class="bar" id="bigbar"></div>
-  <p class="barnote">「閉卷過」＝二刷時不看任何東西重寫，並跑 fuzz 驗證過。其他只代表「寫過」，不代表現在還會。</p>
+  <p class="barnote">「閉卷過」＝2026 不看任何東西重寫，並跑 fuzz 驗證過。其他只代表「寫過」，不代表現在還會。</p>
 
   <div class="duo">
     <div class="panel base">
@@ -184,7 +186,7 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
       <div class="bar" id="basebar"></div>
       <div class="legendline" id="baselegend"></div>
       <p class="s">基石＝某個演算法概念的第一題，學那個概念從它開始。不見得簡單、也不見得是面試題。沒標的是延伸題。</p>
-      <button class="link" id="go-base">只看二刷還沒寫的基石 →</button>
+      <button class="link" id="go-base">只看 2026 還沒寫的基石 →</button>
     </div>
     <div class="panel next">
       <div class="lab">下一步</div>
@@ -196,10 +198,10 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
   <h2>總覽 · 每一格是一題</h2>
   <div class="ov" id="ov"></div>
   <div class="keys">
-    <span><span class="sw grad"></span>二刷・閉卷過</span>
-    <span><span class="sw y26"></span>二刷做過</span>
-    <span><span class="sw y19"></span>只有一刷</span>
-    <span><span class="sw none"></span>兩輪都沒做</span>
+    <span><span class="sw grad"></span>閉卷過</span>
+    <span><span class="sw y26"></span>2026 做過</span>
+    <span><span class="sw y19"></span>只有 2019</span>
+    <span><span class="sw none"></span>從沒做過</span>
     <span><span class="t y19 base"></span>中間有點＝基石</span>
     <span><span class="t y19 hi"></span>紅框＝面試高頻</span>
   </div>
@@ -219,10 +221,10 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
     <div class="chips" id="chips">
       <button data-f="all" aria-pressed="true">全部</button>
       <button data-f="base" class="b" aria-pressed="false">🧱 基石</button>
-      <button data-f="basetodo" class="b" aria-pressed="false">🧱 基石・二刷還沒寫</button>
-      <button data-f="no2" aria-pressed="false">二刷還沒</button>
-      <button data-f="y19" aria-pressed="false">一刷有、二刷還沒</button>
-      <button data-f="none" aria-pressed="false">兩輪都沒做</button>
+      <button data-f="basetodo" class="b" aria-pressed="false">🧱 基石・2026 還沒寫</button>
+      <button data-f="no2" aria-pressed="false">一刷有、二刷還沒</button>
+      <button data-f="no1" aria-pressed="false">2026 還沒寫</button>
+      <button data-f="none" aria-pressed="false">從沒做過</button>
       <button data-f="hi" aria-pressed="false">面試高頻</button>
       <button data-f="star" aria-pressed="false">⭐ 必刷</button>
       <span class="count" id="count"></span>
@@ -243,9 +245,11 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
 
 <script>
 const D = /*DATA*/;
-const ST = {grad:'二刷・閉卷過', y26:'二刷做過', y19:'只有一刷', none:'兩輪都沒做'};
-const pr = arr => ({r1: arr.filter(i=>i.r[0]).length, r2: arr.filter(i=>i.r[1]).length});
-const pills = i => `<span class="p r1${i.r[0]?' on':''}">一刷 ${i.r[0]?'✓':'—'}</span><span class="p r2${i.r[1]?' on':''}${i.st==='grad'?' grad':''}">二刷 ${i.st==='grad'?'閉卷':i.r[1]?'✓':'—'}</span>`;
+const ST = {grad:'閉卷過', y26:'2026 做過', y19:'只有 2019', none:'從沒做過'};
+const pr = arr => ({r0: arr.filter(i=>i.r[0]).length, r1: arr.filter(i=>i.r[1]).length, r2: arr.filter(i=>i.r[2]).length});
+const mk = (b) => b ? '✓' : '—';
+const ptxt = i => `2019 ${mk(i.r[0])}　一刷 ${mk(i.r[1])}　二刷 ${mk(i.r[2])}${i.st==='grad'?'　閉卷過':''}`;
+const pills = i => `<span class="p r0${i.r[0]?' on':''}">2019 ${mk(i.r[0])}</span><span class="p r1${i.r[1]?' on':''}">一刷 ${mk(i.r[1])}</span><span class="p r2${i.r[2]?' on':''}">二刷 ${mk(i.r[2])}</span>${i.st==='grad'?'<span class="p cb">閉卷</span>':''}`;
 const ORDER = ['grad','y26','y19','none'];
 const COLOR = {grad:'var(--grad)', y26:'var(--y26)', y19:'var(--y19)', none:'transparent'};
 const DIFF = {E:'Easy', M:'Medium', H:'Hard'};
@@ -264,7 +268,7 @@ document.getElementById('stamp').textContent = D.stamp;
 const T = cnt(all), P = pr(all);
 document.getElementById('total').textContent = all.length;
 document.getElementById('stats').innerHTML = [
-  ['y19','一刷做過',P.r1], ['y26','二刷做過',P.r2], ['grad','二刷・閉卷過',T.grad], ['none','兩輪都沒做',T.none]
+  ['y19','2019 舊刷',P.r0], ['y26','2026 一刷',P.r1], ['r2','2026 二刷',P.r2], ['grad','閉卷過',T.grad]
 ].map(([k,lab,v]) =>
   `<div class="stat"><div class="k"><span class="sw ${k}"></span>${lab}</div>
    <div class="v num">${v}<small>/ ${all.length}</small></div></div>`).join('');
@@ -275,7 +279,7 @@ const seen = new Set();
 const bases = all.filter(i => i.base && !seen.has(i.n) && seen.add(i.n));
 const B = cnt(bases);
 document.getElementById('basehead').innerHTML =
-  `共 <b class="num">${bases.length}</b> 題基石：一刷做過 <b class="num">${pr(bases).r1}</b>，二刷做過 <b class="num">${B.grad+B.y26}</b>，<b class="num">${B.y19+B.none}</b> 題二刷還沒寫。`;
+  `共 <b class="num">${bases.length}</b> 題基石：一刷 <b class="num">${pr(bases).r1}</b>，二刷 <b class="num">${pr(bases).r2}</b>，<b class="num">${B.y19+B.none}</b> 題 2026 還沒寫。`;
 document.getElementById('basebar').innerHTML = bar(B, bases.length);
 document.getElementById('baselegend').innerHTML = ORDER.map(k => `<span><span class="sw ${k}"></span>${ST[k]} ${B[k]}</span>`).join('');
 
@@ -289,12 +293,12 @@ for (const c of D.chapters) {
   for (const i of its) {
     const t = el('a', `t ${i.st}${i.hi?' hi':''}${i.base?' base':''}`);
     t.href = url(i.slug); t.target='_blank'; t.rel='noopener';
-    t.title = `${i.n}. ${i.t}${i.zh?'（'+i.zh+'）':''}\n一刷 ${i.r[0]?'✓':'—'}　二刷 ${i.st==='grad'?'閉卷':i.r[1]?'✓':'—'}${i.base?'\n🧱 基石：'+i.base:''}${i.hi?'\n面試高頻':''}`;
+    t.title = `${i.n}. ${i.t}${i.zh?'（'+i.zh+'）':''}\n${ptxt(i)}${i.base?'\n🧱 基石：'+i.base:''}${i.hi?'\n面試高頻':''}`;
     tiles.append(t);
   }
   const nb = its.filter(i=>i.base).length;
   const pp = pr(its);
-  ov.append(a, tiles, el('div','ct', `一刷 <b class="num">${pp.r1}</b>　二刷 <b class="num">${pp.r2}</b>　／<span class="num">${its.length}</span>`));
+  ov.append(a, tiles, el('div','ct', `一刷 <b class="num">${pp.r1}</b>　二刷 <b class="num">${pp.r2}</b>　2019 <span class="num">${pp.r0}</span>　／<span class="num">${its.length}</span>`));
 }
 
 // 逐章
@@ -305,7 +309,7 @@ for (const c of D.chapters) {
   const det = el('details','ch'); det.id = 'ch'+c.no; det.open = true; det.dataset.no = c.no;
   det.append(el('summary','',
     `<span class="no num">${pad(c.no)}</span><h3>${esc(c.zh)}</h3>
-     <span class="meta">一刷 <b>${pr(its).r1}</b>／${its.length} · 二刷 <b>${pr(its).r2}</b>／${its.length}（閉卷 ${k.grad}） · 兩輪都沒做 ${k.none}</span>
+     <span class="meta">一刷 <b>${pr(its).r1}</b>／${its.length} · 二刷 <b>${pr(its).r2}</b>／${its.length} · 閉卷 ${k.grad} · 2019 ${pr(its).r0}</span>
      <span class="chev"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 2l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
      <span class="minibar">${bar(k, its.length)}</span>`));
   const body = el('div','body');
@@ -337,11 +341,11 @@ function chipBox(title, sub, arr, open){
   const d = el('details','ex'); if (open) d.open = true;
   const k = cnt(arr);
   const pp = pr(arr);
-  d.append(el('summary','', `${esc(title)} <small>${arr.length} 題 · 一刷 ${pp.r1} · 二刷 ${pp.r2} · ${esc(sub)}</small>`));
+  d.append(el('summary','', `${esc(title)} <small>${arr.length} 題 · 2019 ${pp.r0} · 一刷 ${pp.r1} · 二刷 ${pp.r2} · ${esc(sub)}</small>`));
   const t = el('div','cbox');
   for (const i of arr) {
-    const a = el('a','chip', `<span class="dot" style="background:${COLOR[i.st]}"></span><span class="num">${esc(i.n)}</span>${esc(i.t)}<span class="pp">${i.r[0]?'一':''}${i.r[1]?'二':''}</span>`);
-    a.href = url(i.slug); a.target='_blank'; a.rel='noopener'; a.title = `一刷 ${i.r[0]?'✓':'—'}　二刷 ${i.r[1]?'✓':'—'}`;
+    const a = el('a','chip', `<span class="dot" style="background:${COLOR[i.st]}"></span><span class="num">${esc(i.n)}</span>${esc(i.t)}<span class="pp">${i.r[1]?'一':''}${i.r[2]?'二':''}</span>`);
+    a.href = url(i.slug); a.target='_blank'; a.rel='noopener'; a.title = ptxt(i);
     t.append(a);
   }
   d.append(t); ex.append(d);
@@ -357,7 +361,8 @@ function match(i, f){
   if (f==='base') return !!i.base;
   if (f==='basetodo') return !!i.base && (i.st==='y19' || i.st==='none');
   if (f==='none') return i.st==='none';
-  if (f==='no2') return !i.r[1];
+  if (f==='no2') return i.r[1] && !i.r[2];
+  if (f==='no1') return !i.r[1] && !i.r[2];
   if (f==='y19') return i.st==='y19';
   if (f==='hi') return i.hi;
   if (f==='star') return i.star==='⭐';
@@ -368,7 +373,7 @@ function apply(){
   let shown = 0;
   for (const r of rows) {
     const i = r._i;
-    const hay = norm(`${i.n} ${i.t} ${i.zh} ${i.base} ${i.base?'基石':''} ${DIFF[i.d]} ${i.r[0]?'一刷':''} ${i.r[1]?'二刷':''}`);
+    const hay = norm(`${i.n} ${i.t} ${i.zh} ${i.base} ${i.base?'基石':''} ${DIFF[i.d]} ${i.r[1]?'一刷':''} ${i.r[2]?'二刷':''}`);
     const ok = match(i, F) && (!s || hay.includes(s));
     r.hidden = !ok; if (ok) shown++;
     r._en.innerHTML = s && ok && norm(i.t).includes(s)

@@ -23,6 +23,8 @@ COOKIE = os.path.expanduser('~/.cache/nvim/leetcode/cookie')
 PROBLEMLIST = os.path.expanduser('~/.cache/nvim/leetcode/problemlist')
 LM_README = 'https://raw.githubusercontent.com/youngyangyang04/leetcode-master/master/README.md'
 CUT_2026 = datetime.datetime(2026, 1, 1).timestamp()
+# 2026 一刷 06-11～09-07，空檔 47 天，二刷 10-24 起
+CUT_R2 = datetime.datetime(2026, 10, 1).timestamp()
 
 # 面試高頻（notes/機制地圖.md 的主線範圍）
 HIGH = set('206 19 203 24 142 92 21 144 94 145 102 104 110 543 106 236 98 235 450 108 '
@@ -150,9 +152,10 @@ def build_data():
         return 'y26' if any(t >= CUT_2026 for t, _ in ts) else 'y19'
 
     def passes(n):
-        # 一刷＝2018～2021 有 AC；二刷＝2026 有 AC 或在閉卷存量表
+        # (2019 舊刷, 2026 一刷, 2026 二刷)：各時段有沒有 AC
         ac = [t for t, s in subs.get(n, []) if s == 'Accepted']
-        return any(t < CUT_2026 for t in ac), n in grad or any(t >= CUT_2026 for t in ac)
+        return (any(t < CUT_2026 for t in ac), any(CUT_2026 <= t < CUT_R2 for t in ac),
+                any(t >= CUT_R2 for t in ac))
 
     text = open(os.path.join(ROOT, 'checklist.md'), encoding='utf-8').read()
     base_of = {n: c for n, c in re.findall(r'^- \[[ x]\] .*?(\d+) .*?〔🧱基石：(.+?)〕', text, re.M)}
