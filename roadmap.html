@@ -3,334 +3,257 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>機制地圖</title>
+<title>刷題全貌</title>
 <style>
   :root{
-    --bg:#fafaf8; --panel:#fff; --ink:#1c2226; --muted:#6e7a82; --faint:#95a1a8;
-    --line:#e2e7e9; --line2:#eef1f2;
-    --pass:#2f7d5d; --pass-bg:#eaf5ef; --pass-line:#9fc9b4;
-    --warn:#b5832c; --warn-bg:#fdf5e6; --warn-line:#e0c488;
-    --todo:#8b949b; --todo-bg:#f3f5f6; --todo-line:#d6dcdf;
-    --next:#9a4f22; --next-bg:#fdefe6; --next-line:#e0a884;
+    --bg:#fafaf8; --panel:#fff; --ink:#1c2226; --muted:#6b777f; --faint:#98a3a9;
+    --line:#e2e7e9;
+    --pass:#2f7d5d; --pass-bg:#e9f5ee; --pass-line:#9fc9b4;
+    --rec:#3f6f9e; --rec-bg:#eaf1f8; --rec-line:#a9c3dc;
+    --warn:#b07a22; --warn-bg:#fcf4e4; --warn-line:#e0c488;
+    --todo:#8b949b; --todo-bg:#f2f4f5; --todo-line:#d6dcdf;
+    --next:#9a4f22; --next-bg:#fcefe6; --next-line:#e0a884;
+    --old:#c9d2d7; --now:#3f6f9e;
   }
   :root:not([data-theme="light"]){
     @media (prefers-color-scheme: dark){
-      --bg:#131719; --panel:#1a2023; --ink:#e6ecee; --muted:#93a0a7; --faint:#6f7d85;
-      --line:#2a3337; --line2:#232b2f;
-      --pass:#6cc49a; --pass-bg:#16291f; --pass-line:#2f5c45;
-      --warn:#e0b162; --warn-bg:#2b2317; --warn-line:#5c4a28;
-      --todo:#7e8a91; --todo-bg:#20272a; --todo-line:#333d42;
-      --next:#e6a177; --next-bg:#2e2018; --next-line:#6b452e;
+      --bg:#131719; --panel:#1a2023; --ink:#e6ecee; --muted:#93a0a7; --faint:#6c7980;
+      --line:#2a3337;
+      --pass:#6cc49a; --pass-bg:#15281e; --pass-line:#2f5c45;
+      --rec:#7fb0e0; --rec-bg:#17222e; --rec-line:#2f4a66;
+      --warn:#e0b162; --warn-bg:#2a2216; --warn-line:#5c4a28;
+      --todo:#7e8a91; --todo-bg:#1f262a; --todo-line:#333d42;
+      --next:#e6a177; --next-bg:#2d1f17; --next-line:#6b452e;
+      --old:#3a454b; --now:#7fb0e0;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#131719; --panel:#1a2023; --ink:#e6ecee; --muted:#93a0a7; --faint:#6f7d85;
-    --line:#2a3337; --line2:#232b2f;
-    --pass:#6cc49a; --pass-bg:#16291f; --pass-line:#2f5c45;
-    --warn:#e0b162; --warn-bg:#2b2317; --warn-line:#5c4a28;
-    --todo:#7e8a91; --todo-bg:#20272a; --todo-line:#333d42;
-    --next:#e6a177; --next-bg:#2e2018; --next-line:#6b452e;
+    --bg:#131719; --panel:#1a2023; --ink:#e6ecee; --muted:#93a0a7; --faint:#6c7980;
+    --line:#2a3337;
+    --pass:#6cc49a; --pass-bg:#15281e; --pass-line:#2f5c45;
+    --rec:#7fb0e0; --rec-bg:#17222e; --rec-line:#2f4a66;
+    --warn:#e0b162; --warn-bg:#2a2216; --warn-line:#5c4a28;
+    --todo:#7e8a91; --todo-bg:#1f262a; --todo-line:#333d42;
+    --next:#e6a177; --next-bg:#2d1f17; --next-line:#6b452e;
+    --old:#3a454b; --now:#7fb0e0;
   }
   *{box-sizing:border-box}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);
+  body{margin:0;background:var(--bg);color:var(--ink);
     font:15px/1.7 system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
-    padding:30px 16px 80px;
-  }
-  .wrap{max-width:900px;margin:0 auto}
-  h1{font-size:23px;font-weight:600;margin:0 0 6px;letter-spacing:.01em}
-  .goal{color:var(--muted);font-size:14px;margin:0 0 3px}
-  .synced{color:var(--faint);font-size:12px;margin:0 0 26px;font-family:ui-monospace,Menlo,monospace}
+    padding:30px 16px 80px}
+  .wrap{max-width:940px;margin:0 auto}
+  h1{font-size:23px;font-weight:600;margin:0 0 6px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 22px;max-width:720px}
+  .lead strong{color:var(--ink)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:16px}
+  .card h3{font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:600;margin:0 0 12px}
 
-  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px}
-  .stat{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:13px 15px}
-  .stat b{display:block;font:600 26px/1.15 ui-monospace,Menlo,monospace}
-  .stat small{display:block;color:var(--muted);font-size:11.5px;margin-top:3px;line-height:1.5}
-  .stat.hero{border-color:var(--pass-line);background:var(--pass-bg)}
-  .stat.hero b{color:var(--pass)}
-  .stat.alert{border-color:var(--next-line);background:var(--next-bg)}
-  .stat.alert b{color:var(--next)}
+  /* timeline */
+  .tl{display:flex;align-items:flex-end;gap:2px;height:110px;margin:4px 0 8px}
+  .tl i{flex:1;min-width:2px;background:var(--old);border-radius:2px 2px 0 0;display:block}
+  .tl i.now{background:var(--now)}
+  .tl-axis{display:flex;justify-content:space-between;font:11px ui-monospace,Menlo,monospace;color:var(--faint)}
+  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:14px}
+  .phase{font-size:13px;line-height:1.65;padding:10px 12px;border-radius:6px;background:var(--todo-bg)}
+  .phase b{display:block;font-size:13.5px}
+  .phase.now{background:var(--rec-bg)}
 
-  .callout{
-    background:var(--next-bg);border:1px solid var(--next-line);border-left-width:3px;
-    border-radius:6px;padding:14px 16px;margin-bottom:26px;font-size:14px;
-  }
-  .callout strong{color:var(--next)}
-  .callout p{margin:0}
-  .callout p+p{margin-top:7px;color:var(--muted);font-size:13px}
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px;margin-bottom:16px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+  .stat b{display:block;font:600 25px/1.15 ui-monospace,Menlo,monospace}
+  .stat small{display:block;color:var(--muted);font-size:11.5px;margin-top:4px;line-height:1.5}
+  .stat.good b{color:var(--pass)} .stat.bad b{color:var(--next)}
 
-  .bar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px;align-items:center}
-  .bar button{
-    font:inherit;font-size:12.5px;padding:6px 13px;border-radius:5px;cursor:pointer;
-    border:1px solid var(--line);background:var(--panel);color:var(--ink);
-  }
-  .bar button[aria-pressed="true"]{border-color:var(--ink);font-weight:600}
-  .bar .spacer{flex:1}
+  .callout{background:var(--next-bg);border:1px solid var(--next-line);border-left-width:3px;border-radius:7px;padding:14px 16px;margin-bottom:24px;font-size:14px}
+  .callout strong{color:var(--next)} .callout p{margin:0} .callout p+p{margin-top:7px;color:var(--muted);font-size:13px}
 
-  section{margin-bottom:12px}
-  h2{
-    font-size:13px;font-weight:600;letter-spacing:.09em;color:var(--muted);
-    margin:28px 0 10px;text-transform:uppercase;
-    display:flex;align-items:baseline;gap:10px;
-  }
-  h2 em{font-style:normal;font-size:11px;color:var(--faint);letter-spacing:0;text-transform:none}
+  .tabs{display:flex;gap:7px;flex-wrap:wrap;margin:6px 0 16px;align-items:center}
+  .tabs button{font:inherit;font-size:13px;padding:7px 14px;border-radius:6px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+  .tabs button[aria-pressed="true"]{border-color:var(--ink);font-weight:600}
+  .tabs .sp{flex:1}
+  .sub{display:flex;gap:6px;flex-wrap:wrap;margin:-6px 0 14px}
+  .sub button{font:inherit;font-size:12px;padding:4px 11px;border-radius:5px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--muted)}
+  .sub button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
 
-  .mech{
-    background:var(--panel);border:1px solid var(--line);border-radius:7px;
-    padding:13px 15px;margin-bottom:8px;
-    display:grid;grid-template-columns:1fr auto;gap:10px 16px;align-items:start;
-  }
-  .mech.pass{border-left:3px solid var(--pass)}
-  .mech.unver{border-left:3px solid var(--warn)}
-  .mech.todo{border-left:3px solid var(--todo-line)}
-  .mech.next{border-color:var(--next-line);background:var(--next-bg)}
-  .mech[hidden]{display:none}
+  h2{font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--muted);margin:26px 0 10px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  h2 em{font-style:normal;font-size:11.5px;color:var(--faint);letter-spacing:0}
+  .role{font:600 10.5px/1 system-ui;letter-spacing:.04em;padding:4px 7px;border-radius:4px;background:var(--todo-bg);color:var(--muted)}
+  .role.main{background:var(--next-bg);color:var(--next)}
+  .role.grad{background:var(--pass-bg);color:var(--pass)}
+  .role.sql{background:var(--warn-bg);color:var(--warn)}
 
+  .mech{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:8px 16px}
+  .mech.pass{border-left:3px solid var(--pass)} .mech.unver{border-left:3px solid var(--warn)} .mech.todo{border-left:3px solid var(--todo-line)}
+  .mech[hidden],section[hidden]{display:none}
   .nm{font-weight:600;font-size:14.5px;line-height:1.5}
-  .probs{margin-top:5px;display:flex;gap:6px;flex-wrap:wrap}
-  .probs a{
-    font:11.5px/1 ui-monospace,Menlo,monospace;text-decoration:none;
-    border:1px solid var(--line);border-radius:4px;padding:4px 7px;color:var(--muted);
-  }
+  .probs{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap}
+  .probs a{font:11.5px/1 ui-monospace,Menlo,monospace;text-decoration:none;border:1px solid var(--line);border-radius:4px;padding:4px 7px;color:var(--muted)}
   .probs a:hover{border-color:var(--ink);color:var(--ink)}
   .probs a.hard{border-color:var(--warn-line);color:var(--warn)}
-  .note{color:var(--muted);font-size:12.5px;margin-top:7px;line-height:1.65}
-
-  .gates{display:flex;gap:5px;align-items:center}
-  .g{
-    width:30px;height:30px;border-radius:5px;border:1px solid var(--todo-line);
-    background:var(--todo-bg);color:var(--faint);
-    font:600 12px/28px ui-monospace,Menlo,monospace;text-align:center;
-  }
-  .g.on{background:var(--pass-bg);border-color:var(--pass-line);color:var(--pass)}
-  .lvl{
-    font:10.5px/1 ui-monospace,Menlo,monospace;color:var(--muted);
-    text-align:right;margin-top:6px;white-space:nowrap;
-  }
+  .note{color:var(--muted);font-size:12.5px;margin:7px 0 0;line-height:1.65}
   .right{display:flex;flex-direction:column;align-items:flex-end}
+  .gates{display:flex;gap:5px}
+  .g{width:30px;height:30px;border-radius:5px;border:1px solid var(--todo-line);background:var(--todo-bg);color:var(--faint);font:600 12px/28px ui-monospace,Menlo,monospace;text-align:center}
+  .g.on{background:var(--pass-bg);border-color:var(--pass-line);color:var(--pass)}
+  .lvl{font:10.5px/1.4 ui-monospace,Menlo,monospace;color:var(--muted);text-align:right;margin-top:7px;max-width:210px}
 
-  .legend{
-    border-top:1px solid var(--line);margin-top:34px;padding-top:18px;
-    color:var(--muted);font-size:12.5px;line-height:1.9;
-  }
+  .chips{display:flex;flex-wrap:wrap;gap:5px}
+  .chip{font:11.5px/1 ui-monospace,Menlo,monospace;text-decoration:none;padding:5px 7px;border-radius:4px;border:1px solid var(--line);color:var(--faint);background:transparent}
+  .chip.M{font-weight:600}
+  .chip.rec{border-color:var(--rec-line);background:var(--rec-bg);color:var(--rec)}
+  .chip.grad{border-color:var(--pass-line);background:var(--pass-bg);color:var(--pass)}
+  .chip:hover{border-color:var(--ink);color:var(--ink)}
+  .tcount{font:11.5px ui-monospace,Menlo,monospace;color:var(--faint)}
+
+  .legend{border-top:1px solid var(--line);margin-top:34px;padding-top:18px;color:var(--muted);font-size:12.5px;line-height:1.95}
   .legend b{color:var(--ink)}
   .legend code{font:11.5px/1.6 ui-monospace,Menlo,monospace;background:var(--todo-bg);padding:1px 5px;border-radius:3px}
-  @media (max-width:560px){
-    .mech{grid-template-columns:1fr}
-    .right{align-items:flex-start}
-    .lvl{text-align:left}
-  }
+  .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:4px;border:1px solid var(--line)}
+  @media (max-width:560px){.mech{grid-template-columns:1fr}.right{align-items:flex-start}.lvl{text-align:left}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <h1>機制地圖</h1>
-  <p class="goal">目標不是刷題數，是<strong>沒看過的 Medium 現場寫得出來</strong>。單位是機制，不是題目。</p>
-  <p class="synced" id="synced"></p>
+  <h1>刷題全貌</h1>
+  <p class="lead">目的：準備台灣後端面試白板題。目標是<strong>沒看過的 Medium 現場寫得出來</strong>。<br>
+  你不是零基礎——<strong>2019 年刷過一輪，停了 5 年，2026 年 6 月重啟</strong>。很多題「好像寫過但沒把握」，是因為真的寫過，只是隔太久。</p>
+
+  <div class="card">
+    <h3>帳號提交時間軸（每月提交次數）</h3>
+    <div class="tl" id="tl"></div>
+    <div class="tl-axis"><span>2018-07</span><span>2020</span><span>2022</span><span>2024</span><span>2026-10</span></div>
+    <div class="phases">
+      <div class="phase"><b>第一刷 2018-07 ～ 2020-02</b>約 1,600 次提交。高峰 2019 年 7、8 月。225 題 AC 大多在這段，<strong>這個 repo 原本完全沒有它們的紀錄</strong>。</div>
+      <div class="phase"><b>停 2020-03 ～ 2026-05</b>5 年幾乎沒碰（只有 2021-03 一小段）。</div>
+      <div class="phase now"><b>重啟 2026-06 ～ 現在</b>約 400 次提交。repo 從 6/12 開始記。6/12–7/18 最順，之後中斷 3 次。</div>
+    </div>
+  </div>
 
   <div class="board" id="board"></div>
 
   <div class="callout">
-    <p><strong>下一步：一題陌生 Medium 冷測。</strong>只給題號，其他什麼都不給，40 分鐘。</p>
-    <p>不是再開新機制。關 1 目前占了練習的 100%，而冷測是唯一在量目標的東西——定於 2026-09-01，至今跑過 0 次。</p>
-    <p>關 3 在這 23 個機制裡是 <strong>0</strong>。紀錄上唯一通過的那 1 次（2026-08-30，DP 二維網格斜走變形）屬於低頻主題，不在這張表內。</p>
+    <p><strong>下一步：一題陌生 Medium 冷測。</strong>只給題號，40 分鐘。</p>
+    <p>冷測是唯一在量目標的東西，定於 2026-09-01，至今 0 次。主線（下方第一個分頁）缺口 11 個機制，排在冷測之後交錯做。</p>
   </div>
 
-  <div class="bar">
-    <button data-f="all" aria-pressed="true">全部</button>
-    <button data-f="gap" aria-pressed="false">只看缺口</button>
-    <button data-f="pass" aria-pressed="false">只看過了的</button>
-    <span class="spacer"></span>
+  <div class="tabs">
+    <button data-tab="main" aria-pressed="true">主線：面試高頻 23 個機制</button>
+    <button data-tab="all" aria-pressed="false">全部 225 題（依主題）</button>
+    <span class="sp"></span>
     <button id="theme">切換深淺</button>
   </div>
 
-  <div id="list"></div>
-
-  <div class="legend">
-    <p><b>三關驗收</b>　<code>1</code> 閉卷重解代表題，fuzz 0 mismatch　<code>2</code> 同機制換另一題　<code>3</code> 隔 ≥2 天，沒看過的變形、不預告</p>
-    <p><b>左邊那條色帶</b>　綠＝關 1 過　黃＝做過沒驗（🔸）　灰＝沒做過</p>
-    <p><b>輔助等級</b>　<code>獨立</code> <code>有小提示</code> 才算進存量。<strong>顏色不代表等級</strong>——`獨立` 和 `有小提示` 在這張圖上長得一樣，真實等級看 <code>progress.md</code>。</p>
-    <p><b>這張圖是手動快照</b>，不會自動讀 Markdown。事實以 <code>notes/機制地圖.md</code>、<code>progress.md</code>、<code>log.md</code> 為準，改進度時兩邊都要改。</p>
+  <div id="pane-main">
+    <div class="sub">
+      <button data-f="all" aria-pressed="true">全部</button>
+      <button data-f="gap" aria-pressed="false">只看缺口</button>
+      <button data-f="pass" aria-pressed="false">只看過了的</button>
+    </div>
+    <div id="mlist"></div>
   </div>
 
+  <div id="pane-all" hidden>
+    <div id="alist"></div>
+  </div>
+
+  <div class="legend">
+    <p><b>三關</b>　<code>1</code> 閉卷重解代表題、fuzz 0 mismatch　<code>2</code> 同機制換另一題　<code>3</code> 隔 ≥2 天、沒看過的變形、不預告</p>
+    <p><b>主線色帶</b>　<span class="sw" style="background:var(--pass)"></span>關 1 過　<span class="sw" style="background:var(--warn)"></span>做過沒驗（含 2019 寫過、2026 沒重寫）　<span class="sw" style="background:var(--todo-line)"></span>沒寫過</p>
+    <p><b>題號方塊</b>　<span class="sw" style="background:var(--pass-bg);border-color:var(--pass-line)"></span>2026 閉卷過　<span class="sw" style="background:var(--rec-bg);border-color:var(--rec-line)"></span>repo 有紀錄　<span class="sw"></span>只有帳號 AC（多為 2019）　粗體＝Medium</p>
+    <p><b>這是手動快照</b>，最後同步 2026-10-31。事實以 <code>progress.md</code>、<code>notes/機制地圖.md</code>、<code>log.md</code> 為準。顏色不代表輔助等級，真實等級看 <code>progress.md</code>。</p>
+  </div>
 </div>
 
 <script>
-const SYNCED = "2026-10-31";
+const MECH = [{"topic": "鏈結串列", "mechs": [{"nm": "整條反轉（三指針 prev/curr/next）", "state": "pass", "g": [1, 0, 0], "lvl": "閉卷 2026-06-20", "probs": [["206", "reverse-linked-list"]], "note": ""}, {"nm": "dummy 補前驅 ＋ 刪點", "state": "pass", "g": [1, 0, 0], "lvl": "19 閉卷過 · 203 只有 2019 AC", "probs": [["19", "remove-nth-node-from-end-of-list"], ["203", "remove-linked-list-elements"]], "note": ""}, {"nm": "固定步長重接（兩兩交換）", "state": "pass", "g": [1, 0, 0], "lvl": "閉卷重解過", "probs": [["24", "swap-nodes-in-pairs"]], "note": ""}, {"nm": "快慢指針找環 ＋ Floyd 找入口", "state": "pass", "g": [1, 0, 0], "lvl": "閉卷過", "probs": [["142", "linked-list-cycle-ii"], ["141", "linked-list-cycle"]], "note": ""}, {"nm": "區間反轉 ＋ 三處重接", "state": "todo", "g": [0, 0, 0], "lvl": "從沒寫過（帳號也沒有）", "probs": [["92", "reverse-linked-list-ii"]], "note": "走到 left-1 → 反轉中間段 → 前段接新頭 → 舊頭接後段。206 是整條、24 是固定兩兩——沒有一題練到「反轉一段後把三個斷點接回去」。"}, {"nm": "合併兩條有序鏈表", "state": "unver", "g": [0, 0, 0], "lvl": "2019-08 AC · 2026 未驗", "probs": [["21", "merge-two-sorted-lists"]], "note": "2019-08-03 寫過（10 次提交，第 1 次 WA）。2026-10-26 討論過但沒重寫。"}]}, {"topic": "二元樹", "mechs": [{"nm": "三種遍歷（遞迴，差在 Add 根的位置）", "state": "pass", "g": [1, 1, 0], "lvl": "獨立 · 2026-10-26", "probs": [["144", "binary-tree-preorder-traversal"], ["94", "binary-tree-inorder-traversal"], ["145", "binary-tree-postorder-traversal"]], "note": "三題都閉卷過。"}, {"nm": "遍歷（迭代）", "state": "pass", "g": [1, 0, 0], "lvl": "144 獨立 / 94 提示後", "probs": [["144", "binary-tree-preorder-traversal"], ["94", "binary-tree-inorder-traversal"]], "note": "145 loop 面試極少考，2026-10-26 決定先擱著。"}, {"nm": "層序 BFS「count 鎖當層大小」", "state": "pass", "g": [1, 0, 0], "lvl": "2026-09-02 · 10-26 重驗", "probs": [["102", "binary-tree-level-order-traversal"]], "note": "199、429、513、1161、1302 帳號都 AC 過（2019），可當關 2 換題。"}, {"nm": "最大深度（遞迴回傳一個聚合值）", "state": "pass", "g": [1, 0, 0], "lvl": "有小提示 · 2026-10-26", "probs": [["104", "maximum-depth-of-binary-tree"]], "note": ""}, {"nm": "自底向上聚合（回傳高度 ＋ 同時判斷）", "state": "pass", "g": [1, 1, 0], "lvl": "有小提示 · 10-26 / 10-27", "probs": [["110", "balanced-binary-tree"], ["543", "diameter-of-binary-tree"], ["124", "binary-tree-maximum-path-sum", "hard"]], "note": "關 1（110）＋ 關 2（543）都過。天花板 124（Hard），同一副骨架。"}, {"nm": "構造（中序切左右 ＋ 後序定根）", "state": "unver", "g": [0, 0, 0], "lvl": "做過沒驗", "probs": [["106", "construct-binary-tree-from-inorder-and-postorder-traversal"], ["654", "maximum-binary-tree"]], "note": ""}, {"nm": "LCA（後序回傳合併）", "state": "pass", "g": [1, 0, 0], "lvl": "有小提示 · 2026-10-25", "probs": [["236", "lowest-common-ancestor-of-a-binary-tree"]], "note": ""}, {"nm": "BST 性質（中序遞增／範圍往下傳）", "state": "unver", "g": [0, 0, 0], "lvl": "做過沒驗 · 450 看答案", "probs": [["98", "validate-binary-search-tree"], ["235", "lowest-common-ancestor-of-a-binary-search-tree"], ["450", "delete-node-in-a-bst"], ["230", "kth-smallest-element-in-a-bst"]], "note": ""}]}, {"topic": "堆疊／佇列", "mechs": [{"nm": "配對消除（開閉括號／相鄰消去）", "state": "unver", "g": [0, 0, 0], "lvl": "做過沒驗", "probs": [["20", "valid-parentheses"], ["1047", "remove-all-adjacent-duplicates-in-string"]], "note": ""}, {"nm": "RPN 求值（運算元順序、往零截斷）", "state": "pass", "g": [1, 0, 0], "lvl": "獨立 · 2026-09-04", "probs": [["150", "evaluate-reverse-polish-notation"]], "note": ""}, {"nm": "棧 ⇄ 佇列互實作（攤還 O(1)）", "state": "unver", "g": [0, 0, 0], "lvl": "做過沒驗", "probs": [["232", "implement-queue-using-stacks"], ["225", "implement-stack-using-queues"]], "note": ""}]}, {"topic": "雜湊", "mechs": [{"nm": "計數／分組建 canonical key", "state": "pass", "g": [1, 0, 0], "lvl": "49 獨立 2026-09-07", "probs": [["49", "group-anagrams"], ["242", "valid-anagram"]], "note": ""}, {"nm": "HashSet 應用（最長連續序列）", "state": "unver", "g": [0, 0, 0], "lvl": "2019 AC · 未驗", "probs": [["128", "longest-consecutive-sequence"]], "note": ""}, {"nm": "補數查表（Two Sum 型）", "state": "unver", "g": [0, 0, 0], "lvl": "2019 AC · 未驗", "probs": [["1", "two-sum"], ["454", "4sum-ii"]], "note": ""}]}, {"topic": "排序", "mechs": [{"nm": "手寫 quicksort（partition）", "state": "todo", "g": [0, 0, 0], "lvl": "2026 沒寫過", "probs": [["912", "sort-an-array"]], "note": "912 在 2019-12-15 AC 過一次，但當時怎麼寫的不知道（可能直接呼叫內建排序），不能當作手寫過。HiSKIO 調查「最常遇到的題型」第一名是排序。"}, {"nm": "手寫 mergesort（merge）", "state": "todo", "g": [0, 0, 0], "lvl": "2026 沒寫過", "probs": [["912", "sort-an-array"]], "note": "merge 的那一步就是 21 合併兩條有序鏈表的陣列版。"}]}, {"topic": "設計題", "mechs": [{"nm": "LRU：HashMap ＋ 雙向鏈表，get/put 都 O(1)", "state": "todo", "g": [0, 0, 0], "lvl": "從沒寫過（帳號也沒有）", "probs": [["146", "lru-cache"]], "note": "2026 面試紀錄同一輪出現兩次（趨勢二面、Nvidia GPU）。155 Min Stack、208 Trie 帳號都 AC 過，設計題不是零。"}]}];
+const TOPICS = [{"name": "二元樹", "role": "主線", "probs": [["94", "binary-tree-inorder-traversal", "Binary Tree Inorder Traversal", "E", "grad"], ["98", "validate-binary-search-tree", "Validate Binary Search Tree", "M", "rec"], ["100", "same-tree", "Same Tree", "E", "acc"], ["101", "symmetric-tree", "Symmetric Tree", "E", "acc"], ["102", "binary-tree-level-order-traversal", "Binary Tree Level Order Traversal", "M", "grad"], ["104", "maximum-depth-of-binary-tree", "Maximum Depth of Binary Tree", "E", "grad"], ["106", "construct-binary-tree-from-inorder-and-postorder-traversal", "Construct Binary Tree from Inorder and Postorder Traversal", "M", "rec"], ["108", "convert-sorted-array-to-binary-search-tree", "Convert Sorted Array to Binary Search Tree", "E", "rec"], ["110", "balanced-binary-tree", "Balanced Binary Tree", "E", "grad"], ["112", "path-sum", "Path Sum", "E", "acc"], ["144", "binary-tree-preorder-traversal", "Binary Tree Preorder Traversal", "E", "grad"], ["145", "binary-tree-postorder-traversal", "Binary Tree Postorder Traversal", "E", "grad"], ["199", "binary-tree-right-side-view", "Binary Tree Right Side View", "M", "acc"], ["222", "count-complete-tree-nodes", "Count Complete Tree Nodes", "M", "acc"], ["226", "invert-binary-tree", "Invert Binary Tree", "E", "acc"], ["230", "kth-smallest-element-in-a-bst", "Kth Smallest Element in a BST", "M", "acc"], ["235", "lowest-common-ancestor-of-a-binary-search-tree", "Lowest Common Ancestor of a Binary Search Tree", "M", "rec"], ["236", "lowest-common-ancestor-of-a-binary-tree", "Lowest Common Ancestor of a Binary Tree", "M", "grad"], ["404", "sum-of-left-leaves", "Sum of Left Leaves", "E", "acc"], ["429", "n-ary-tree-level-order-traversal", "N-ary Tree Level Order Traversal", "M", "acc"], ["450", "delete-node-in-a-bst", "Delete Node in a BST", "M", "rec"], ["513", "find-bottom-left-tree-value", "Find Bottom Left Tree Value", "M", "acc"], ["538", "convert-bst-to-greater-tree", "Convert BST to Greater Tree", "M", "acc"], ["543", "diameter-of-binary-tree", "Diameter of Binary Tree", "E", "grad"], ["572", "subtree-of-another-tree", "Subtree of Another Tree", "E", "acc"], ["606", "construct-string-from-binary-tree", "Construct String from Binary Tree", "M", "acc"], ["617", "merge-two-binary-trees", "Merge Two Binary Trees", "E", "acc"], ["654", "maximum-binary-tree", "Maximum Binary Tree", "M", "acc"], ["700", "search-in-a-binary-search-tree", "Search in a Binary Search Tree", "E", "acc"], ["701", "insert-into-a-binary-search-tree", "Insert into a Binary Search Tree", "M", "acc"], ["703", "kth-largest-element-in-a-stream", "Kth Largest Element in a Stream", "E", "acc"], ["814", "binary-tree-pruning", "Binary Tree Pruning", "M", "acc"], ["938", "range-sum-of-bst", "Range Sum of BST", "E", "acc"], ["965", "univalued-binary-tree", "Univalued Binary Tree", "E", "acc"], ["1008", "construct-binary-search-tree-from-preorder-traversal", "Construct Binary Search Tree from Preorder Traversal", "M", "acc"], ["1038", "binary-search-tree-to-greater-sum-tree", "Binary Search Tree to Greater Sum Tree", "M", "acc"], ["1110", "delete-nodes-and-return-forest", "Delete Nodes And Return Forest", "M", "acc"], ["1161", "maximum-level-sum-of-a-binary-tree", "Maximum Level Sum of a Binary Tree", "M", "acc"], ["1302", "deepest-leaves-sum", "Deepest Leaves Sum", "M", "acc"], ["1305", "all-elements-in-two-binary-search-trees", "All Elements in Two Binary Search Trees", "M", "acc"]]}, {"name": "鏈結串列", "role": "主線", "probs": [["2", "add-two-numbers", "Add Two Numbers", "M", "acc"], ["19", "remove-nth-node-from-end-of-list", "Remove Nth Node From End of List", "M", "rec"], ["21", "merge-two-sorted-lists", "Merge Two Sorted Lists", "E", "rec"], ["24", "swap-nodes-in-pairs", "Swap Nodes in Pairs", "M", "rec"], ["83", "remove-duplicates-from-sorted-list", "Remove Duplicates from Sorted List", "E", "acc"], ["141", "linked-list-cycle", "Linked List Cycle", "E", "acc"], ["142", "linked-list-cycle-ii", "Linked List Cycle II", "M", "rec"], ["160", "intersection-of-two-linked-lists", "Intersection of Two Linked Lists", "E", "acc"], ["203", "remove-linked-list-elements", "Remove Linked List Elements", "E", "acc"], ["206", "reverse-linked-list", "Reverse Linked List", "E", "rec"], ["234", "palindrome-linked-list", "Palindrome Linked List", "E", "acc"], ["237", "delete-node-in-a-linked-list", "Delete Node in a Linked List", "M", "acc"], ["328", "odd-even-linked-list", "Odd Even Linked List", "M", "acc"], ["445", "add-two-numbers-ii", "Add Two Numbers II", "M", "acc"]]}, {"name": "堆疊/佇列", "role": "主線", "probs": [["20", "valid-parentheses", "Valid Parentheses", "E", "rec"], ["150", "evaluate-reverse-polish-notation", "Evaluate Reverse Polish Notation", "M", "grad"], ["225", "implement-stack-using-queues", "Implement Stack using Queues", "E", "rec"], ["232", "implement-queue-using-stacks", "Implement Queue using Stacks", "E", "rec"], ["856", "score-of-parentheses", "Score of Parentheses", "M", "acc"], ["921", "minimum-add-to-make-parentheses-valid", "Minimum Add to Make Parentheses Valid", "M", "acc"], ["950", "reveal-cards-in-increasing-order", "Reveal Cards In Increasing Order", "M", "acc"], ["1047", "remove-all-adjacent-duplicates-in-string", "Remove All Adjacent Duplicates In String", "E", "rec"]]}, {"name": "雜湊", "role": "主線", "probs": [["1", "two-sum", "Two Sum", "E", "acc"], ["49", "group-anagrams", "Group Anagrams", "M", "grad"], ["128", "longest-consecutive-sequence", "Longest Consecutive Sequence", "M", "acc"], ["169", "majority-element", "Majority Element", "E", "acc"], ["217", "contains-duplicate", "Contains Duplicate", "E", "acc"], ["242", "valid-anagram", "Valid Anagram", "E", "rec"], ["290", "word-pattern", "Word Pattern", "E", "acc"], ["383", "ransom-note", "Ransom Note", "E", "acc"], ["771", "jewels-and-stones", "Jewels and Stones", "E", "acc"], ["791", "custom-sort-string", "Custom Sort String", "M", "acc"], ["804", "unique-morse-code-words", "Unique Morse Code Words", "E", "acc"], ["884", "uncommon-words-from-two-sentences", "Uncommon Words from Two Sentences", "E", "acc"], ["890", "find-and-replace-pattern", "Find and Replace Pattern", "M", "acc"], ["916", "word-subsets", "Word Subsets", "M", "acc"], ["929", "unique-email-addresses", "Unique Email Addresses", "E", "acc"], ["961", "n-repeated-element-in-size-2n-array", "N-Repeated Element in Size 2N Array", "E", "acc"], ["1002", "find-common-characters", "Find Common Characters", "E", "acc"], ["1160", "find-words-that-can-be-formed-by-characters", "Find Words That Can Be Formed by Characters", "E", "acc"], ["1189", "maximum-number-of-balloons", "Maximum Number of Balloons", "E", "acc"]]}, {"name": "排序", "role": "主線", "probs": [["561", "array-partition", "Array Partition", "E", "acc"], ["912", "sort-an-array", "Sort an Array", "M", "acc"], ["1122", "relative-sort-array", "Relative Sort Array", "E", "acc"]]}, {"name": "設計題", "role": "主線", "probs": [["155", "min-stack", "Min Stack", "M", "acc"], ["208", "implement-trie-prefix-tree", "Implement Trie (Prefix Tree)", "M", "acc"], ["303", "range-sum-query-immutable", "Range Sum Query - Immutable", "E", "acc"], ["307", "range-sum-query-mutable", "Range Sum Query - Mutable", "M", "acc"], ["729", "my-calendar-i", "My Calendar I", "M", "acc"], ["1381", "design-a-stack-with-increment-operation", "Design a Stack With Increment Operation", "M", "acc"]]}, {"name": "SQL", "role": "面試會考 · 未排", "probs": [["175", "combine-two-tables", "Combine Two Tables", "E", "acc"], ["176", "second-highest-salary", "Second Highest Salary", "M", "acc"], ["177", "nth-highest-salary", "Nth Highest Salary", "M", "acc"], ["178", "rank-scores", "Rank Scores", "M", "acc"], ["180", "consecutive-numbers", "Consecutive Numbers", "M", "acc"], ["181", "employees-earning-more-than-their-managers", "Employees Earning More Than Their Managers", "E", "acc"], ["182", "duplicate-emails", "Duplicate Emails", "E", "acc"], ["183", "customers-who-never-order", "Customers Who Never Order", "E", "acc"], ["184", "department-highest-salary", "Department Highest Salary", "M", "acc"], ["185", "department-top-three-salaries", "Department Top Three Salaries", "H", "acc"], ["196", "delete-duplicate-emails", "Delete Duplicate Emails", "E", "acc"], ["197", "rising-temperature", "Rising Temperature", "E", "acc"], ["595", "big-countries", "Big Countries", "E", "acc"], ["596", "classes-with-at-least-5-students", "Classes With at Least 5 Students", "E", "acc"], ["620", "not-boring-movies", "Not Boring Movies", "E", "acc"], ["627", "swap-sex-of-employees", "Swap Sex of Employees", "E", "acc"], ["1179", "reformat-department-table", "Reformat Department Table", "E", "acc"]]}, {"name": "滑動窗口", "role": "已畢業", "probs": [["3", "longest-substring-without-repeating-characters", "Longest Substring Without Repeating Characters", "M", "rec"], ["209", "minimum-size-subarray-sum", "Minimum Size Subarray Sum", "M", "rec"], ["424", "longest-repeating-character-replacement", "Longest Repeating Character Replacement", "M", "rec"], ["438", "find-all-anagrams-in-a-string", "Find All Anagrams in a String", "M", "rec"], ["567", "permutation-in-string", "Permutation in String", "M", "rec"], ["904", "fruit-into-baskets", "Fruit Into Baskets", "M", "rec"], ["930", "binary-subarrays-with-sum", "Binary Subarrays With Sum", "M", "acc"], ["1004", "max-consecutive-ones-iii", "Max Consecutive Ones III", "M", "rec"]]}, {"name": "回溯", "role": "已畢業", "probs": [["22", "generate-parentheses", "Generate Parentheses", "M", "grad"], ["39", "combination-sum", "Combination Sum", "M", "grad"], ["40", "combination-sum-ii", "Combination Sum II", "M", "grad"], ["46", "permutations", "Permutations", "M", "acc"], ["77", "combinations", "Combinations", "M", "rec"], ["78", "subsets", "Subsets", "M", "grad"], ["79", "word-search", "Word Search", "M", "rec"], ["90", "subsets-ii", "Subsets II", "M", "rec"]]}, {"name": "二分搜尋", "role": "已畢業", "probs": [["33", "search-in-rotated-sorted-array", "Search in Rotated Sorted Array", "M", "rec"], ["34", "find-first-and-last-position-of-element-in-sorted-array", "Find First and Last Position of Element in Sorted Array", "M", "rec"], ["35", "search-insert-position", "Search Insert Position", "E", "rec"], ["74", "search-a-2d-matrix", "Search a 2D Matrix", "M", "acc"], ["81", "search-in-rotated-sorted-array-ii", "Search in Rotated Sorted Array II", "M", "acc"], ["153", "find-minimum-in-rotated-sorted-array", "Find Minimum in Rotated Sorted Array", "M", "rec"], ["167", "two-sum-ii-input-array-is-sorted", "Two Sum II - Input Array Is Sorted", "M", "acc"], ["268", "missing-number", "Missing Number", "E", "acc"], ["704", "binary-search", "Binary Search", "E", "rec"], ["852", "peak-index-in-a-mountain-array", "Peak Index in a Mountain Array", "M", "acc"]]}, {"name": "DP", "role": "低頻", "probs": [["53", "maximum-subarray", "Maximum Subarray", "M", "rec"], ["62", "unique-paths", "Unique Paths", "M", "grad"], ["63", "unique-paths-ii", "Unique Paths II", "M", "rec"], ["64", "minimum-path-sum", "Minimum Path Sum", "M", "rec"], ["70", "climbing-stairs", "Climbing Stairs", "E", "grad"], ["91", "decode-ways", "Decode Ways", "M", "rec"], ["118", "pascals-triangle", "Pascal's Triangle", "E", "acc"], ["120", "triangle", "Triangle", "M", "acc"], ["121", "best-time-to-buy-and-sell-stock", "Best Time to Buy and Sell Stock", "E", "acc"], ["198", "house-robber", "House Robber", "M", "grad"], ["213", "house-robber-ii", "House Robber II", "M", "rec"], ["279", "perfect-squares", "Perfect Squares", "M", "rec"], ["322", "coin-change", "Coin Change", "M", "rec"], ["343", "integer-break", "Integer Break", "M", "rec"], ["392", "is-subsequence", "Is Subsequence", "E", "acc"], ["416", "partition-equal-subset-sum", "Partition Equal Subset Sum", "M", "rec"], ["494", "target-sum", "Target Sum", "M", "acc"], ["509", "fibonacci-number", "Fibonacci Number", "E", "acc"], ["746", "min-cost-climbing-stairs", "Min Cost Climbing Stairs", "E", "grad"], ["931", "minimum-falling-path-sum", "Minimum Falling Path Sum", "M", "acc"], ["1524", "number-of-sub-arrays-with-odd-sum", "Number of Sub-arrays With Odd Sum", "M", "acc"]]}, {"name": "雙指針", "role": "低頻", "probs": [["11", "container-with-most-water", "Container With Most Water", "M", "acc"], ["15", "3sum", "3Sum", "M", "rec"], ["16", "3sum-closest", "3Sum Closest", "M", "acc"], ["18", "4sum", "4Sum", "M", "acc"], ["26", "remove-duplicates-from-sorted-array", "Remove Duplicates from Sorted Array", "E", "acc"], ["27", "remove-element", "Remove Element", "E", "acc"], ["28", "find-the-index-of-the-first-occurrence-in-a-string", "Find the Index of the First Occurrence in a String", "E", "acc"], ["75", "sort-colors", "Sort Colors", "M", "acc"], ["189", "rotate-array", "Rotate Array", "M", "acc"], ["283", "move-zeroes", "Move Zeroes", "E", "acc"], ["344", "reverse-string", "Reverse String", "E", "acc"], ["557", "reverse-words-in-a-string-iii", "Reverse Words in a String III", "E", "acc"], ["821", "shortest-distance-to-a-character", "Shortest Distance to a Character", "E", "acc"], ["832", "flipping-an-image", "Flipping an Image", "E", "acc"], ["905", "sort-array-by-parity", "Sort Array By Parity", "E", "acc"], ["917", "reverse-only-letters", "Reverse Only Letters", "E", "acc"], ["922", "sort-array-by-parity-ii", "Sort Array By Parity II", "E", "acc"], ["942", "di-string-match", "DI String Match", "E", "acc"], ["977", "squares-of-a-sorted-array", "Squares of a Sorted Array", "E", "acc"], ["1089", "duplicate-zeros", "Duplicate Zeros", "E", "acc"]]}, {"name": "陣列/字串/數學", "role": "基礎", "probs": [["7", "reverse-integer", "Reverse Integer", "M", "acc"], ["9", "palindrome-number", "Palindrome Number", "E", "acc"], ["56", "merge-intervals", "Merge Intervals", "M", "acc"], ["66", "plus-one", "Plus One", "E", "acc"], ["67", "add-binary", "Add Binary", "E", "acc"], ["136", "single-number", "Single Number", "E", "acc"], ["171", "excel-sheet-column-number", "Excel Sheet Column Number", "E", "acc"], ["191", "number-of-1-bits", "Number of 1 Bits", "E", "acc"], ["231", "power-of-two", "Power of Two", "E", "acc"], ["263", "ugly-number", "Ugly Number", "E", "acc"], ["342", "power-of-four", "Power of Four", "E", "acc"], ["371", "sum-of-two-integers", "Sum of Two Integers", "M", "acc"], ["412", "fizz-buzz", "Fizz Buzz", "E", "acc"], ["414", "third-maximum-number", "Third Maximum Number", "E", "acc"], ["476", "number-complement", "Number Complement", "E", "acc"], ["485", "max-consecutive-ones", "Max Consecutive Ones", "E", "acc"], ["539", "minimum-time-difference", "Minimum Time Difference", "M", "acc"], ["657", "robot-return-to-origin", "Robot Return to Origin", "E", "acc"], ["709", "to-lower-case", "To Lower Case", "E", "acc"], ["728", "self-dividing-numbers", "Self Dividing Numbers", "E", "acc"], ["796", "rotate-string", "Rotate String", "E", "acc"], ["867", "transpose-matrix", "Transpose Matrix", "E", "acc"], ["989", "add-to-array-form-of-integer", "Add to Array-Form of Integer", "E", "acc"], ["1071", "greatest-common-divisor-of-strings", "Greatest Common Divisor of Strings", "E", "acc"], ["1233", "remove-sub-folders-from-the-filesystem", "Remove Sub-Folders from the Filesystem", "M", "acc"], ["1291", "sequential-digits", "Sequential Digits", "M", "acc"]]}, {"name": "前綴和", "role": "低頻", "probs": [["238", "product-of-array-except-self", "Product of Array Except Self", "M", "acc"], ["523", "continuous-subarray-sum", "Continuous Subarray Sum", "M", "acc"], ["525", "contiguous-array", "Contiguous Array", "M", "acc"], ["560", "subarray-sum-equals-k", "Subarray Sum Equals K", "M", "acc"], ["724", "find-pivot-index", "Find Pivot Index", "E", "acc"], ["848", "shifting-letters", "Shifting Letters", "M", "acc"], ["974", "subarray-sums-divisible-by-k", "Subarray Sums Divisible by K", "M", "acc"], ["1480", "running-sum-of-1d-array", "Running Sum of 1d Array", "E", "acc"]]}, {"name": "圖論", "role": "低頻", "probs": [["130", "surrounded-regions", "Surrounded Regions", "M", "rec"], ["200", "number-of-islands", "Number of Islands", "M", "grad"], ["207", "course-schedule", "Course Schedule", "M", "rec"], ["417", "pacific-atlantic-water-flow", "Pacific Atlantic Water Flow", "M", "rec"], ["695", "max-area-of-island", "Max Area of Island", "M", "rec"], ["994", "rotting-oranges", "Rotting Oranges", "M", "rec"], ["1267", "count-servers-that-communicate", "Count Servers that Communicate", "M", "acc"]]}, {"name": "Heap/Top-K", "role": "低頻", "probs": [["215", "kth-largest-element-in-an-array", "Kth Largest Element in an Array", "M", "rec"], ["347", "top-k-frequent-elements", "Top K Frequent Elements", "M", "rec"], ["378", "kth-smallest-element-in-a-sorted-matrix", "Kth Smallest Element in a Sorted Matrix", "M", "acc"], ["1046", "last-stone-weight", "Last Stone Weight", "E", "acc"]]}, {"name": "貪心", "role": "低頻", "probs": [["179", "largest-number", "Largest Number", "M", "acc"], ["334", "increasing-triplet-subsequence", "Increasing Triplet Subsequence", "M", "acc"], ["860", "lemonade-change", "Lemonade Change", "E", "acc"], ["1013", "partition-array-into-three-parts-with-equal-sum", "Partition Array Into Three Parts With Equal Sum", "E", "acc"]]}, {"name": "單調棧", "role": "低頻", "probs": [["402", "remove-k-digits", "Remove K Digits", "M", "acc"], ["739", "daily-temperatures", "Daily Temperatures", "M", "acc"]]}];
+const MONTHS = [["2018-07", 36], ["2018-08", 87], ["2018-09", 0], ["2018-10", 91], ["2018-11", 0], ["2018-12", 0], ["2019-01", 49], ["2019-02", 0], ["2019-03", 7], ["2019-04", 6], ["2019-05", 5], ["2019-06", 22], ["2019-07", 445], ["2019-08", 221], ["2019-09", 83], ["2019-10", 69], ["2019-11", 79], ["2019-12", 166], ["2020-01", 125], ["2020-02", 101], ["2020-03", 0], ["2020-04", 0], ["2020-05", 2], ["2020-06", 4], ["2020-07", 0], ["2020-08", 12], ["2020-09", 0], ["2020-10", 0], ["2020-11", 0], ["2020-12", 0], ["2021-01", 0], ["2021-02", 0], ["2021-03", 33], ["2021-04", 5], ["2021-05", 0], ["2021-06", 0], ["2021-07", 0], ["2021-08", 0], ["2021-09", 0], ["2021-10", 0], ["2021-11", 0], ["2021-12", 0], ["2022-01", 0], ["2022-02", 0], ["2022-03", 0], ["2022-04", 0], ["2022-05", 0], ["2022-06", 0], ["2022-07", 0], ["2022-08", 0], ["2022-09", 0], ["2022-10", 0], ["2022-11", 0], ["2022-12", 0], ["2023-01", 0], ["2023-02", 0], ["2023-03", 0], ["2023-04", 0], ["2023-05", 0], ["2023-06", 0], ["2023-07", 0], ["2023-08", 0], ["2023-09", 0], ["2023-10", 0], ["2023-11", 0], ["2023-12", 0], ["2024-01", 0], ["2024-02", 0], ["2024-03", 0], ["2024-04", 0], ["2024-05", 0], ["2024-06", 0], ["2024-07", 0], ["2024-08", 0], ["2024-09", 0], ["2024-10", 0], ["2024-11", 0], ["2024-12", 0], ["2025-01", 0], ["2025-02", 0], ["2025-03", 0], ["2025-04", 0], ["2025-05", 0], ["2025-06", 0], ["2025-07", 0], ["2025-08", 0], ["2025-09", 0], ["2025-10", 0], ["2025-11", 0], ["2025-12", 0], ["2026-01", 0], ["2026-02", 0], ["2026-03", 0], ["2026-04", 0], ["2026-05", 0], ["2026-06", 112], ["2026-07", 225], ["2026-08", 21], ["2026-09", 18], ["2026-10", 19]];
 
-// state: pass(關1過) | unver(做過沒驗) | todo(沒做過)
-const DATA = [
-  { topic:"鏈結串列", mechs:[
-    {nm:"整條反轉（三指針 prev/curr/next）", state:"pass", g:[1,0,0], lvl:"2026-06-20",
-     probs:[["206","reverse-linked-list"]], note:""},
-    {nm:"dummy 補前驅 ＋ 刪點", state:"pass", g:[1,1,0], lvl:"兩題同機制",
-     probs:[["19","remove-nth-node-from-end-of-list"],["203","remove-linked-list-elements"]], note:""},
-    {nm:"固定步長重接（兩兩交換）", state:"pass", g:[1,0,0], lvl:"閉卷重解過",
-     probs:[["24","swap-nodes-in-pairs"]], note:""},
-    {nm:"快慢指針找環 ＋ Floyd 找入口", state:"pass", g:[1,0,0], lvl:"",
-     probs:[["142","linked-list-cycle-ii"]], note:""},
-    {nm:"區間反轉 ＋ 三處重接", state:"todo", g:[0,0,0], lvl:"2026-10-26 入表",
-     probs:[["92","reverse-linked-list-ii"]],
-     note:"走到 left-1 → 反轉中間段 → 前段接新頭 → 舊頭接後段。206 是整條、24 是固定兩兩、19 是找位置刪——沒有一題練到「反轉一段之後把三個斷點接回去」。這個機制曾經在三個檔案裡都不存在，是這張表存在的理由。"},
-    {nm:"合併兩條有序鏈表", state:"todo", g:[0,0,0], lvl:"已討論未實作",
-     probs:[["21","merge-two-sorted-lists"]],
-     note:"2026-10-26 討論過 dummy、比大小接哪條、先存下一個節點，當天轉回二元樹主線，暫停。"},
-  ]},
-
-  { topic:"二元樹", mechs:[
-    {nm:"三種遍歷（遞迴，差在 Add 根的位置）", state:"pass", g:[1,1,0], lvl:"獨立 · 2026-10-26",
-     probs:[["144","binary-tree-preorder-traversal"],["94","binary-tree-inorder-traversal"],["145","binary-tree-postorder-traversal"]],
-     note:"三題都過，前中後序只差一行的位置。"},
-    {nm:"遍歷（迭代）", state:"pass", g:[1,0,0], lvl:"144 獨立 / 94 提示後",
-     probs:[["144","binary-tree-preorder-traversal"],["94","binary-tree-inorder-traversal"]],
-     note:"145 loop 版面試極少考、優先度最低（94 迭代曾燒掉一整個下午）。2026-10-26 決定先擱著。"},
-    {nm:"層序 BFS「count 鎖當層大小」", state:"pass", g:[1,0,0], lvl:"2026-09-02 · 10-26 重驗",
-     probs:[["102","binary-tree-level-order-traversal"]], note:""},
-    {nm:"最大深度（遞迴回傳一個聚合值）", state:"pass", g:[1,0,0], lvl:"有小提示 · 2026-10-26",
-     probs:[["104","maximum-depth-of-binary-tree"]],
-     note:"坑：第一版用外部變數累積，跨測資沒重置 → 連續呼叫殘留上一棵樹的值。"},
-    {nm:"自底向上聚合（回傳高度 ＋ 同時判斷）", state:"pass", g:[1,1,0], lvl:"有小提示 · 10-26 / 10-27",
-     probs:[["110","balanced-binary-tree"],["543","diameter-of-binary-tree"],["124","binary-tree-maximum-path-sum","hard"]],
-     note:"關 1（110）＋ 關 2（543）都過。110 的 v1 誤把「離根深度」當高度回傳；543 的 v1 只量根節點，最長那條整條躲在底下沒經過根。天花板是 124（Hard），同一副骨架。"},
-    {nm:"構造（中序切左右 ＋ 後序定根）", state:"unver", g:[0,0,0], lvl:"做過沒驗",
-     probs:[["106","construct-binary-tree-from-inorder-and-postorder-traversal"]], note:""},
-    {nm:"LCA（後序回傳合併）", state:"pass", g:[1,0,0], lvl:"有小提示 · 2026-10-25",
-     probs:[["236","lowest-common-ancestor-of-a-binary-tree"]],
-     note:"v1 只比對原始子節點、沒用遞迴回傳值——跟 543 v1 同一類錯：回傳的不是子問題的答案。"},
-    {nm:"BST 性質（中序遞增／範圍往下傳）", state:"unver", g:[0,0,0], lvl:"450 是看答案",
-     probs:[["98","validate-binary-search-tree"],["235","lowest-common-ancestor-of-a-binary-search-tree"],["450","delete-node-in-a-bst"],["108","convert-sorted-array-to-binary-search-tree"]], note:""},
-  ]},
-
-  { topic:"堆疊／佇列", mechs:[
-    {nm:"配對消除（開閉括號／相鄰消去）", state:"unver", g:[0,0,0], lvl:"做過沒驗",
-     probs:[["20","valid-parentheses"],["1047","remove-all-adjacent-duplicates-in-string"]], note:""},
-    {nm:"RPN 求值（運算元順序、往零截斷）", state:"pass", g:[1,0,0], lvl:"獨立 · 2026-09-04",
-     probs:[["150","evaluate-reverse-polish-notation"]], note:""},
-    {nm:"棧 ⇄ 佇列互實作（攤還 O(1)）", state:"unver", g:[0,0,0], lvl:"做過沒驗",
-     probs:[["232","implement-queue-using-stacks"],["225","implement-stack-using-queues"]], note:""},
-  ]},
-
-  { topic:"雜湊", mechs:[
-    {nm:"計數／分組建 canonical key", state:"pass", g:[1,0,0], lvl:"49 獨立 2026-09-07 / 242 沒驗",
-     probs:[["49","group-anagrams"],["242","valid-anagram"]], note:""},
-    {nm:"HashSet 應用（最長連續序列）", state:"unver", g:[0,0,0], lvl:"做過沒驗",
-     probs:[["128","longest-consecutive-sequence"]], note:""},
-    {nm:"補數查表（Two Sum 型）", state:"unver", g:[0,0,0], lvl:"做過沒驗",
-     probs:[["1","two-sum"],["454","4sum-ii"]], note:""},
-  ]},
-
-  { topic:"排序", mechs:[
-    {nm:"手寫 quicksort（partition）", state:"todo", g:[0,0,0], lvl:"完全沒練過",
-     probs:[], note:"2026-10-25 實查：HiSKIO 調查「面試者最常遇到的題型」第一名是排序。"},
-    {nm:"手寫 mergesort（merge）", state:"todo", g:[0,0,0], lvl:"完全沒練過",
-     probs:[], note:""},
-  ]},
-
-  { topic:"設計題", mechs:[
-    {nm:"LRU：HashMap ＋ 雙向鏈表，get/put 都 O(1)", state:"todo", g:[0,0,0], lvl:"沒做過",
-     probs:[["146","lru-cache"]],
-     note:"2026 面試紀錄裡同一輪出現兩次（趨勢二面、Nvidia GPU）。缺口裡頻率最高的一個。前面的雜湊與鏈結串列練完後它會變便宜。"},
-  ]},
-];
-
-const all = DATA.flatMap(t => t.mechs);
-const n1 = all.filter(m => m.g[0]).length;
-const n2 = all.filter(m => m.g[1]).length;
-const n3 = all.filter(m => m.g[2]).length;
-const gap = all.length - n1;
-
-document.getElementById('synced').textContent =
-  `共 ${all.length} 個高頻機制 · 最後同步 ${SYNCED} · 手動快照`;
-
-document.getElementById('board').innerHTML = `
-  <div class="stat hero"><b>${n1}<small style="display:inline;font-size:14px;color:var(--muted)"> / ${all.length}</small></b><small>關 1 過<br>閉卷重解</small></div>
-  <div class="stat"><b>${n2}</b><small>關 2 過<br>同機制換題</small></div>
-  <div class="stat alert"><b>${n3}</b><small>關 3 過<br>這 23 個機制裡</small></div>
-  <div class="stat alert"><b>0</b><small>冷測執行次數<br>定於 2026-09-01</small></div>
-  <div class="stat"><b>${gap}</b><small>缺口機制<br>約 ${gap*2} 題</small></div>`;
-
-const LBL = {pass:"", unver:"做過沒驗", todo:"沒做過"};
-const list = document.getElementById('list');
-
-for(const t of DATA){
-  const sec = document.createElement('section');
-  const done = t.mechs.filter(m=>m.g[0]).length;
-  const h = document.createElement('h2');
-  h.innerHTML = `${t.topic} <em>${done} / ${t.mechs.length} 過關 1</em>`;
-  sec.append(h);
-
-  for(const m of t.mechs){
-    const d = document.createElement('div');
-    d.className = 'mech ' + m.state;
-    d.dataset.state = m.state;
-
-    const left = document.createElement('div');
-    const nm = document.createElement('div');
-    nm.className = 'nm'; nm.textContent = m.nm;
-    left.append(nm);
-
-    if(m.probs.length){
-      const p = document.createElement('div'); p.className='probs';
-      for(const [id,slug,tag] of m.probs){
-        const a = document.createElement('a');
-        a.href = `https://leetcode.com/problems/${slug}/`;
-        a.target = '_blank'; a.rel='noopener';
-        a.textContent = tag==='hard' ? id+' ↑' : id;
-        if(tag==='hard'){ a.className='hard'; a.title='天花板題（Hard），同一副骨架'; }
-        p.append(a);
-      }
-      left.append(p);
-    }
-    if(m.note){
-      const nt = document.createElement('p'); nt.className='note'; nt.textContent=m.note;
-      left.append(nt);
-    }
-
-    const right = document.createElement('div'); right.className='right';
-    const gates = document.createElement('div'); gates.className='gates';
-    m.g.forEach((on,i)=>{
-      const g=document.createElement('div');
-      g.className='g'+(on?' on':'');
-      g.textContent = on ? '✓' : (i+1);
-      g.title = ['關 1：閉卷重解','關 2：同機制換題','關 3：沒看過的變形'][i] + (on?'　已過':'　未過');
-      gates.append(g);
-    });
-    right.append(gates);
-    const lv = document.createElement('div'); lv.className='lvl';
-    lv.textContent = m.lvl || LBL[m.state] || '';
-    right.append(lv);
-
-    d.append(left, right);
-    sec.append(d);
-  }
-  list.append(sec);
+// timeline
+const tl=document.getElementById('tl'); const mx=Math.max(...MONTHS.map(m=>m[1]));
+for(const [k,v] of MONTHS){
+  const i=document.createElement('i');
+  i.style.height = v ? Math.max(3, Math.round(v/mx*100))+'%' : '0';
+  if(k>='2026-06') i.className='now';
+  i.title=`${k}：${v} 次提交`; tl.append(i);
 }
 
-document.querySelectorAll('.bar button[data-f]').forEach(b=>{
-  b.addEventListener('click', ()=>{
-    document.querySelectorAll('.bar button[data-f]').forEach(x=>x.setAttribute('aria-pressed','false'));
-    b.setAttribute('aria-pressed','true');
-    const f = b.dataset.f;
-    document.querySelectorAll('.mech').forEach(el=>{
-      const s = el.dataset.state;
-      el.hidden = f==='gap'  ? s==='pass'
-                : f==='pass' ? s!=='pass'
-                : false;
-    });
-    document.querySelectorAll('section').forEach(sec=>{
-      sec.hidden = !sec.querySelector('.mech:not([hidden])');
-    });
-  });
-});
+// board
+const allM=MECH.flatMap(t=>t.mechs);
+const n1=allM.filter(m=>m.g[0]).length, n2=allM.filter(m=>m.g[1]).length;
+const totalAC=TOPICS.reduce((a,t)=>a+t.probs.length,0);
+const rec=TOPICS.reduce((a,t)=>a+t.probs.filter(p=>p[4]!=='acc').length,0);
+const grad=TOPICS.reduce((a,t)=>a+t.probs.filter(p=>p[4]==='grad').length,0);
+document.getElementById('board').innerHTML=`
+  <div class="stat"><b>${totalAC}</b><small>帳號 AC 總數<br>18 個主題</small></div>
+  <div class="stat"><b>${rec}</b><small>repo 有紀錄<br>其餘 ${totalAC-rec} 題只在帳號</small></div>
+  <div class="stat good"><b>${grad}</b><small>2026 閉卷過<br>（存量）</small></div>
+  <div class="stat good"><b>${n1}<span style="font-size:14px;color:var(--muted)"> / ${allM.length}</span></b><small>主線機制<br>關 1 過</small></div>
+  <div class="stat bad"><b>1</b><small>關 3 過<br>（DP，不在主線）</small></div>
+  <div class="stat bad"><b>0</b><small>冷測次數<br>定於 2026-09-01</small></div>`;
 
-const tb = document.getElementById('theme');
-try{ const sv=localStorage.getItem('rm-theme'); if(sv) document.documentElement.dataset.theme=sv; }catch(e){}
-tb.addEventListener('click', ()=>{
-  const cur = document.documentElement.dataset.theme;
-  const next = cur==='dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = next;
-  try{ localStorage.setItem('rm-theme', next); }catch(e){}
+const LINK=s=>`https://leetcode.com/problems/${s}/`;
+
+// main pane
+const ml=document.getElementById('mlist');
+for(const t of MECH){
+  const sec=document.createElement('section');
+  const done=t.mechs.filter(m=>m.g[0]).length;
+  sec.innerHTML=`<h2>${t.topic} <em>${done} / ${t.mechs.length} 過關 1</em></h2>`;
+  for(const m of t.mechs){
+    const d=document.createElement('div'); d.className='mech '+m.state; d.dataset.state=m.state;
+    const probs=m.probs.map(([id,slug,tag])=>`<a href="${LINK(slug)}" target="_blank" rel="noopener"${tag==='hard'?' class="hard" title="天花板題（Hard），同一副骨架"':''}>${id}${tag==='hard'?' ↑':''}</a>`).join('');
+    const gates=m.g.map((on,i)=>`<div class="g${on?' on':''}" title="${['關 1：閉卷重解','關 2：同機制換題','關 3：沒看過的變形'][i]}${on?'　已過':'　未過'}">${on?'✓':i+1}</div>`).join('');
+    d.innerHTML=`<div><div class="nm"></div>${probs?`<div class="probs">${probs}</div>`:''}${m.note?'<p class="note"></p>':''}</div>
+      <div class="right"><div class="gates">${gates}</div><div class="lvl"></div></div>`;
+    d.querySelector('.nm').textContent=m.nm;
+    if(m.note) d.querySelector('.note').textContent=m.note;
+    d.querySelector('.lvl').textContent=m.lvl;
+    sec.append(d);
+  }
+  ml.append(sec);
+}
+document.querySelectorAll('.sub button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.sub button').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true'); const f=b.dataset.f;
+  document.querySelectorAll('#mlist .mech').forEach(el=>{const s=el.dataset.state;
+    el.hidden = f==='gap'? s==='pass' : f==='pass'? s!=='pass' : false;});
+  document.querySelectorAll('#mlist section').forEach(sec=>sec.hidden=!sec.querySelector('.mech:not([hidden])'));
+}));
+
+// all pane
+const al=document.getElementById('alist');
+const RC={'主線':'main','已畢業':'grad','面試會考 · 未排':'sql'};
+for(const t of TOPICS){
+  const sec=document.createElement('section');
+  const g=t.probs.filter(p=>p[4]==='grad').length, r=t.probs.filter(p=>p[4]!=='acc').length;
+  sec.innerHTML=`<h2>${t.name} <span class="role ${RC[t.role]||''}">${t.role}</span>
+    <em>${t.probs.length} 題 AC · repo 紀錄 ${r} · 閉卷過 ${g}</em></h2><div class="chips"></div>`;
+  const box=sec.querySelector('.chips');
+  for(const [id,slug,title,diff,st] of t.probs){
+    const a=document.createElement('a');
+    a.className=`chip ${st} ${diff}`; a.href=LINK(slug); a.target='_blank'; a.rel='noopener';
+    a.textContent=id;
+    a.title=`${id}. ${title}（${diff==='E'?'Easy':diff==='M'?'Medium':'Hard'}）— ${st==='grad'?'2026 閉卷過':st==='rec'?'repo 有紀錄':'只有帳號 AC'}`;
+    box.append(a);
+  }
+  al.append(sec);
+}
+
+// tabs
+document.querySelectorAll('.tabs button[data-tab]').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs button[data-tab]').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  document.getElementById('pane-main').hidden = b.dataset.tab!=='main';
+  document.getElementById('pane-all').hidden  = b.dataset.tab!=='all';
+}));
+
+// theme
+try{const sv=localStorage.getItem('rm-theme'); if(sv) document.documentElement.dataset.theme=sv;}catch(e){}
+document.getElementById('theme').addEventListener('click',()=>{
+  const n=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=n; try{localStorage.setItem('rm-theme',n);}catch(e){}
 });
 </script>
 </body>
