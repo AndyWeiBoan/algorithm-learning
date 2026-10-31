@@ -149,6 +149,11 @@ def build_data():
             return 'none'
         return 'y26' if any(t >= CUT_2026 for t, _ in ts) else 'y19'
 
+    def passes(n):
+        # 一刷＝2018～2021 有 AC；二刷＝2026 有 AC 或在閉卷存量表
+        ac = [t for t, s in subs.get(n, []) if s == 'Accepted']
+        return any(t < CUT_2026 for t in ac), n in grad or any(t >= CUT_2026 for t in ac)
+
     text = open(os.path.join(ROOT, 'checklist.md'), encoding='utf-8').read()
     base_of = {n: c for n, c in re.findall(r'^- \[[ x]\] .*?(\d+) .*?〔🧱基石：(.+?)〕', text, re.M)}
     chapters, cur = [], None
@@ -185,7 +190,7 @@ def build_data():
         cur['groups'][-1]['items'].append({
             'n': num, 't': p.get('title', rest), 'zh': zh.get(key, ''), 'slug': p.get('title_slug', ''),
             'star': star, 'st': status(key), 'd': (p.get('difficulty') or 'Easy')[0],
-            'hi': key in HIGH, 'base': base_of.get(key, ''),
+            'hi': key in HIGH, 'base': base_of.get(key, ''), 'r': passes(key),
         })
 
     inlist = {i['n'] for c in chapters for g in c['groups'] for i in g['items']} | {'160'}
@@ -193,7 +198,7 @@ def build_data():
     for n, q in sorted(acq.items(), key=lambda kv: int(kv[0])):
         if n in inlist:
             continue
-        it = {'n': n, 't': q['title'], 'slug': q['titleSlug'], 'st': status(n)}
+        it = {'n': n, 't': q['title'], 'slug': q['titleSlug'], 'st': status(n), 'r': passes(n)}
         (sql if any(t['slug'] == 'database' for t in q['topicTags']) else other).append(it)
 
     stamp = datetime.date.today().isoformat()
