@@ -1330,16 +1330,23 @@ window.ROADMAP = {
        "zh": "验证二叉搜索树",
        "slug": "validate-binary-search-tree",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "M",
        "hi": true,
        "base": "",
        "r": [
         true,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-01",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "一開始把 98 和 110 搞混。AI 給反例 5→10→7→12 後，自己想到從上往下帶 (下限, 上限)。兩個坑都靠 fuzz 反例抓到：① 相等要算不合法（[0,null,1,1]）② 用 int.MinValue/MaxValue 當「沒有邊界」會撞到真的極值（[0,-2147483648]），AI 列三種解法、建議改 long。30 萬組 fuzz 0 mismatch。下次 BST 題先問：相等怎麼辦、極值怎麼辦。"
+        }
+       ]
       },
       {
        "n": "530",
@@ -5265,6 +5272,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "二刷閉卷，完全忘記。自己想到：根＝postorder 最後一個、四個 index 鎖範圍。卡在 postorder 怎麼切（要用左子樹的『個數』切，不是拿 inorder 的位置、也不是去 postorder 找值）。AI 多次解釋仍轉不過來，主動跳過。隔 ≥2 天先寫切片版。"
+    }
+   ]
+  },
+  "98": {
+   "n": "98",
+   "t": "Validate Binary Search Tree",
+   "zh": "验证二叉搜索树",
+   "slug": "validate-binary-search-tree",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-01",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "一開始把 98 和 110 搞混。AI 給反例 5→10→7→12 後，自己想到從上往下帶 (下限, 上限)。兩個坑都靠 fuzz 反例抓到：① 相等要算不合法（[0,null,1,1]）② 用 int.MinValue/MaxValue 當「沒有邊界」會撞到真的極值（[0,-2147483648]），AI 列三種解法、建議改 long。30 萬組 fuzz 0 mismatch。下次 BST 題先問：相等怎麼辦、極值怎麼辦。"
     }
    ]
   }
