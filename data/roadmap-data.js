@@ -3187,6 +3187,66 @@ window.ROADMAP = {
      ]
     }
    ]
+  },
+  {
+   "no": 14,
+   "zh": "冷測・清單外",
+   "extra": true,
+   "groups": [
+    {
+     "g": "",
+     "items": [
+      {
+       "n": "49",
+       "t": "Group Anagrams",
+       "zh": "",
+       "slug": "group-anagrams",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        true,
+        true,
+        false
+       ],
+       "ev": [
+        {
+         "date": "2026-09-07",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "計數法建 key。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
+       "n": "1026",
+       "t": "Maximum Difference Between Node and Ancestor",
+       "zh": "",
+       "slug": "maximum-difference-between-node-and-ancestor",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-01",
+         "kind": "冷測",
+         "level": "有小提示",
+         "note": "想法自己想出：後序回傳 (子樹 min, max, 子樹內答案)。max 那行誤寫 Math.Min（粗心型），空節點哨兵 int.MinValue 相減溢位。AI 給最小反例 [0,1]。子樹答案往上傳是自己補的。20 萬組 fuzz 0 mismatch。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      }
+     ]
+    }
+   ]
   }
  ],
  "sql": [
@@ -3491,25 +3551,6 @@ window.ROADMAP = {
     false
    ],
    "ev": []
-  },
-  {
-   "n": "49",
-   "t": "Group Anagrams",
-   "slug": "group-anagrams",
-   "st": "grad",
-   "r": [
-    true,
-    true,
-    false
-   ],
-   "ev": [
-    {
-     "date": "2026-09-07",
-     "kind": "閉卷",
-     "level": "獨立",
-     "note": "計數法建 key。"
-    }
-   ]
   },
   {
    "n": "64",
@@ -4566,25 +4607,6 @@ window.ROADMAP = {
     false
    ],
    "ev": []
-  },
-  {
-   "n": "1026",
-   "t": "Maximum Difference Between Node and Ancestor",
-   "slug": "maximum-difference-between-node-and-ancestor",
-   "st": "grad",
-   "r": [
-    false,
-    false,
-    true
-   ],
-   "ev": [
-    {
-     "date": "2026-11-01",
-     "kind": "冷測",
-     "level": "有小提示",
-     "note": "想法自己想出：後序回傳 (子樹 min, max, 子樹內答案)。max 那行誤寫 Math.Min（粗心型），空節點哨兵 int.MinValue 相減溢位。AI 給最小反例 [0,1]。子樹答案往上傳是自己補的。20 萬組 fuzz 0 mismatch。"
-    }
-   ]
   },
   {
    "n": "1038",

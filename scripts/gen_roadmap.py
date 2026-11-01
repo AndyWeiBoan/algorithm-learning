@@ -198,7 +198,7 @@ def build_data():
     inlist = {i['n'] for c in chapters for g in c['groups'] for i in g['items']} | {'160'}
     sql, other = [], []
     for n, q in sorted(acq.items(), key=lambda kv: int(kv[0])):
-        if n in inlist:
+        if n in inlist or n in recs:
             continue
         it = {'n': n, 't': q['title'], 'slug': q['titleSlug'], 'st': status(n), 'r': passes(n)}
         (sql if any(t['slug'] == 'database' for t in q['topicTags']) else other).append(it)
@@ -217,6 +217,11 @@ def build_data():
     for it in sql + other:
         it['ev'] = recs.get(it['n'], [])
 
+    # 有紀錄但不在清單裡的題（冷測題通常是這種）：另成一章，不算進清單統計
+    outside = [dict(rec_items[n], star='', hi=False, base='') for n in sorted(recs, key=int) if n not in inlist]
+    if outside:
+        chapters.append({'no': 14, 'zh': '冷測・清單外', 'extra': True, 'groups': [{'g': '', 'items': outside}]})
+
     stamp = datetime.date.today().isoformat()
     return {'chapters': chapters, 'sql': sql, 'other': other, 'records': rec_items, 'stamp': stamp}
 
@@ -230,7 +235,7 @@ def main():
     # 本地 HTML 不能 fetch 旁邊的 .json，所以包成一行 JS 讓 <script src> 載入
     out = 'window.ROADMAP = ' + json.dumps(data, ensure_ascii=False, indent=1) + ';\n'
     open(os.path.join(ROOT, 'data', 'roadmap-data.js'), 'w', encoding='utf-8').write(out)
-    items = [i for c in data['chapters'] for g in c['groups'] for i in g['items']]
+    items = [i for c in data['chapters'] if not c.get('extra') for g in c['groups'] for i in g['items']]
     print(f'data/roadmap-data.js 已更新：{len(items)} 題，基石 {sum(1 for i in items if i["base"])} 題，'
           f'有紀錄 {len(data["records"])} 題')
 

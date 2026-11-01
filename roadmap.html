@@ -287,7 +287,7 @@ const COLOR = {grad:'var(--grad)', y26:'var(--y26)', y19:'var(--y19)', none:'tra
 const DIFF = {E:'Easy', M:'Medium', H:'Hard'};
 const url = s => s ? `https://leetcode.com/problems/${s}/` : '#';
 const items = c => c.groups.flatMap(g => g.items);
-const all = D.chapters.flatMap(items);
+const all = D.chapters.filter(c => !c.extra).flatMap(items);
 const cnt = arr => { const o={grad:0,y26:0,y19:0,none:0}; arr.forEach(i=>o[i.st]++); return o; };
 const el = (tag, cls, html) => { const e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; };
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -317,7 +317,7 @@ document.getElementById('baselegend').innerHTML = ORDER.map(k => `<span><span cl
 
 // 總覽
 const ov = document.getElementById('ov');
-for (const c of D.chapters) {
+for (const c of D.chapters.filter(c => !c.extra)) {
   const its = items(c), k = cnt(its);
   const a = el('a','nm', `<span class="no num">${pad(c.no)}</span>${esc(c.zh)}`);
   a.addEventListener('click', () => openChapter(c.no));
