@@ -1262,9 +1262,16 @@ window.ROADMAP = {
        "r": [
         false,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-01",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "二刷閉卷，完全忘記。自己想到：根＝postorder 最後一個、四個 index 鎖範圍。卡在 postorder 怎麼切（要用左子樹的『個數』切，不是拿 inorder 的位置、也不是去 postorder 找值）。AI 多次解釋仍轉不過來，主動跳過。隔 ≥2 天先寫切片版。"
+        }
+       ]
       },
       {
        "n": "654",
@@ -5237,6 +5244,27 @@ window.ROADMAP = {
      "kind": "冷測",
      "level": "有小提示",
      "note": "想法自己想出：後序回傳 (子樹 min, max, 子樹內答案)。max 那行誤寫 Math.Min（粗心型），空節點哨兵 int.MinValue 相減溢位。AI 給最小反例 [0,1]。子樹答案往上傳是自己補的。20 萬組 fuzz 0 mismatch。"
+    }
+   ]
+  },
+  "106": {
+   "n": "106",
+   "t": "Construct Binary Tree from Inorder and Postorder Traversal",
+   "zh": "从中序与后序遍历序列构造二叉树",
+   "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-01",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "二刷閉卷，完全忘記。自己想到：根＝postorder 最後一個、四個 index 鎖範圍。卡在 postorder 怎麼切（要用左子樹的『個數』切，不是拿 inorder 的位置、也不是去 postorder 找值）。AI 多次解釋仍轉不過來，主動跳過。隔 ≥2 天先寫切片版。"
     }
    ]
   }
