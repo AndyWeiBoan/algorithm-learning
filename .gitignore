@@ -6,3 +6,5 @@ bin/
 obj/
 __pycache__/
 *.pyc
+solutions/bin/
+solutions/obj/

@@ -1,0 +1,15 @@
+# leetcode 解題檔用。這裡不是正式專案，style 類建議只是噪音。
+root = true
+
+[*.cs]
+# 'new' 運算式可簡化（叫你把 new List<int>() 改成 new()）
+dotnet_diagnostic.IDE0090.severity = none
+# 下面這些會被標成 "Unnecessary" → 變數在編輯器裡變灰＋虛線底線
+dotnet_diagnostic.IDE0059.severity = none   # 指派了不必要的值（寫到一半必跳）
+dotnet_diagnostic.IDE0060.severity = none   # 未使用的參數
+dotnet_diagnostic.IDE0005.severity = none   # 未使用的 using
+# 其餘 style 噪音
+dotnet_diagnostic.IDE0028.severity = none   # 集合初始化可簡化
+dotnet_diagnostic.IDE0290.severity = none   # 使用主要建構函式
+dotnet_diagnostic.CA1822.severity  = none   # 可標記為靜態（LeetCode 的 Solution 本來就是實例方法）
+dotnet_diagnostic.CA1050.severity  = none   # 在命名空間中宣告類型（LeetCode 不給 namespace）
