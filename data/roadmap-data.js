@@ -1426,9 +1426,16 @@ window.ROADMAP = {
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-02",
+         "kind": "練習",
+         "level": "有小提示",
+         "note": "寫之前 AI 講過 235/236 差別、p q 無大小關係要寫對稱判斷。遞迴版，邏輯對；兩個打字錯（少 ||、roo.val）編譯不過，改了幾輪才存檔對。最後一行 left ?? right 是走不到的死碼（BST 值唯一，所有情況前面都處理了）。20 萬組 fuzz（含鏈狀）0 mismatch。下次閉卷寫 while 版 O(1) 空間。"
+        }
+       ]
       },
       {
        "n": "701",
@@ -3759,6 +3766,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "二刷閉卷，沒有 AI 介入。後序：先遞迴左右，再交換。20 萬組 fuzz＋5000 節點鏈 0 mismatch。"
+    }
+   ]
+  },
+  "235": {
+   "n": "235",
+   "t": "Lowest Common Ancestor of a Binary Search Tree",
+   "zh": "二叉搜索树的最近公共祖先",
+   "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+   "d": "M",
+   "st": "none",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-02",
+     "kind": "練習",
+     "level": "有小提示",
+     "note": "寫之前 AI 講過 235/236 差別、p q 無大小關係要寫對稱判斷。遞迴版，邏輯對；兩個打字錯（少 ||、roo.val）編譯不過，改了幾輪才存檔對。最後一行 left ?? right 是走不到的死碼（BST 值唯一，所有情況前面都處理了）。20 萬組 fuzz（含鏈狀）0 mismatch。下次閉卷寫 while 版 O(1) 空間。"
     }
    ]
   }
