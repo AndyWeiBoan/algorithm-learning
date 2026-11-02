@@ -1395,7 +1395,7 @@ window.ROADMAP = {
        "zh": "二叉树的最近公共祖先",
        "slug": "lowest-common-ancestor-of-a-binary-tree",
        "star": "⭐",
-       "st": "grad",
+       "st": "none",
        "d": "M",
        "hi": true,
        "base": "LCA：後序合併",
@@ -1406,10 +1406,10 @@ window.ROADMAP = {
        ],
        "ev": [
         {
-         "date": "2026-10-25",
-         "kind": "閉卷",
+         "date": "2026-11-02",
+         "kind": "練習",
          "level": "有小提示",
-         "note": "6 月做過，首次閉卷驗。"
+         "note": "忘了解法，寫之前 AI 講過 235/236 差別（後序、左右回報往上收）。bug：right 那行遞迴進 root.left（粗心型，跟 1026 Min/Max 同類）；[1,2,3] 這種小例子剛好對，AI 給反例 [1,null,2,null,3] p=2 q=3 才抓到。修正後 20 萬組 fuzz 0 mismatch。隔 ≥2 天要閉卷重寫。"
         }
        ]
       },
@@ -3537,7 +3537,7 @@ window.ROADMAP = {
    "zh": "二叉树的最近公共祖先",
    "slug": "lowest-common-ancestor-of-a-binary-tree",
    "d": "M",
-   "st": "grad",
+   "st": "none",
    "r": [
     false,
     false,
@@ -3545,10 +3545,10 @@ window.ROADMAP = {
    ],
    "ev": [
     {
-     "date": "2026-10-25",
-     "kind": "閉卷",
+     "date": "2026-11-02",
+     "kind": "練習",
      "level": "有小提示",
-     "note": "6 月做過，首次閉卷驗。"
+     "note": "忘了解法，寫之前 AI 講過 235/236 差別（後序、左右回報往上收）。bug：right 那行遞迴進 root.left（粗心型，跟 1026 Min/Max 同類）；[1,2,3] 這種小例子剛好對，AI 給反例 [1,null,2,null,3] p=2 q=3 才抓到。修正後 20 萬組 fuzz 0 mismatch。隔 ≥2 天要閉卷重寫。"
     }
    ]
   },
