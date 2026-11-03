@@ -13,13 +13,13 @@ window.ROADMAP = {
        "zh": "二分查找",
        "slug": "binary-search",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "二分搜尋：區間不變量",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -30,13 +30,13 @@ window.ROADMAP = {
        "zh": "移除元素",
        "slug": "remove-element",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "快慢指針：原地覆寫",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -47,12 +47,12 @@ window.ROADMAP = {
        "zh": "有序数组的平方",
        "slug": "squares-of-a-sorted-array",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -70,7 +70,7 @@ window.ROADMAP = {
        "base": "可變滑動窗口",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -99,7 +99,7 @@ window.ROADMAP = {
        "base": "可變滑動窗口",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -117,13 +117,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "longest-substring-without-repeating-characters",
        "star": "",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -134,13 +134,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "max-consecutive-ones-iii",
        "star": "",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -151,13 +151,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "fruit-into-baskets",
        "star": "",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -168,13 +168,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "find-all-anagrams-in-a-string",
        "star": "",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "固定滑動窗口＋計數",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -185,13 +185,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "permutation-in-string",
        "star": "",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -202,13 +202,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "longest-repeating-character-replacement",
        "star": "",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -258,13 +258,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "product-of-array-except-self",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -275,13 +275,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "subarray-sum-equals-k",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "前綴和＋雜湊",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -303,12 +303,12 @@ window.ROADMAP = {
        "zh": "移除链表元素",
        "slug": "remove-linked-list-elements",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": true,
        "base": "dummy head 虛擬頭節點",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -337,13 +337,13 @@ window.ROADMAP = {
        "zh": "翻转链表",
        "slug": "reverse-linked-list",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": true,
        "base": "鏈結串列反轉（三指針）",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -354,13 +354,13 @@ window.ROADMAP = {
        "zh": "两两交换链表中的节点",
        "slug": "swap-nodes-in-pairs",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -371,13 +371,13 @@ window.ROADMAP = {
        "zh": "删除链表的倒数第N个节点",
        "slug": "remove-nth-node-from-end-of-list",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "快慢指針：固定間距",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -388,12 +388,12 @@ window.ROADMAP = {
        "zh": "",
        "slug": "intersection-of-two-linked-lists",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -405,13 +405,13 @@ window.ROADMAP = {
        "zh": "环形链表II",
        "slug": "linked-list-cycle-ii",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "Floyd 判環找入口",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -450,13 +450,13 @@ window.ROADMAP = {
        "zh": "有效的字母异位词",
        "slug": "valid-anagram",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": true,
        "base": "計數陣列",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -467,12 +467,12 @@ window.ROADMAP = {
        "zh": "查找常用字符",
        "slug": "find-common-characters",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -518,12 +518,12 @@ window.ROADMAP = {
        "zh": "两数之和",
        "slug": "two-sum",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": true,
        "base": "HashMap 補數查表",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -552,12 +552,12 @@ window.ROADMAP = {
        "zh": "赎金信",
        "slug": "ransom-note",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -569,13 +569,13 @@ window.ROADMAP = {
        "zh": "三数之和",
        "slug": "3sum",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "排序＋雙指針（N-Sum 骨架）",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -586,13 +586,13 @@ window.ROADMAP = {
        "zh": "四数之和",
        "slug": "4sum",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -614,12 +614,12 @@ window.ROADMAP = {
        "zh": "反转字符串",
        "slug": "reverse-string",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "雙指針反轉",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -665,12 +665,12 @@ window.ROADMAP = {
        "zh": "实现strStr",
        "slug": "find-the-index-of-the-first-occurrence-in-a-string",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "KMP 字串匹配",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -710,13 +710,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "container-with-most-water",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "對撞指針",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -727,12 +727,12 @@ window.ROADMAP = {
        "zh": "",
        "slug": "move-zeroes",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -744,13 +744,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "remove-duplicates-from-sorted-array",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -766,13 +766,13 @@ window.ROADMAP = {
        "zh": "三数之和",
        "slug": "3sum",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "排序＋雙指針（N-Sum 骨架）",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -783,13 +783,13 @@ window.ROADMAP = {
        "zh": "四数之和",
        "slug": "4sum",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -811,13 +811,13 @@ window.ROADMAP = {
        "zh": "用栈实现队列",
        "slug": "implement-queue-using-stacks",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": true,
        "base": "棧⇄佇列互換",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -828,13 +828,13 @@ window.ROADMAP = {
        "zh": "用队列实现栈",
        "slug": "implement-stack-using-queues",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": true,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -845,13 +845,13 @@ window.ROADMAP = {
        "zh": "有效的括号",
        "slug": "valid-parentheses",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": true,
        "base": "棧：括號配對",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -862,13 +862,13 @@ window.ROADMAP = {
        "zh": "删除字符串中的所有相邻重复项",
        "slug": "remove-all-adjacent-duplicates-in-string",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": true,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -903,13 +903,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "kth-largest-element-in-an-array",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "Heap／Top-K",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -937,13 +937,13 @@ window.ROADMAP = {
        "zh": "前K个高频元素",
        "slug": "top-k-frequent-elements",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -970,8 +970,8 @@ window.ROADMAP = {
        "hi": true,
        "base": "DFS 遞迴遍歷",
        "r": [
-        false,
-        false,
+        true,
+        true,
         true
        ],
        "ev": [
@@ -994,8 +994,8 @@ window.ROADMAP = {
        "hi": true,
        "base": "",
        "r": [
-        false,
-        false,
+        true,
+        true,
         true
        ],
        "ev": [
@@ -1019,7 +1019,7 @@ window.ROADMAP = {
        "base": "",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1042,9 +1042,9 @@ window.ROADMAP = {
        "hi": true,
        "base": "BFS 層序遍歷",
        "r": [
-        false,
         true,
-        false
+        true,
+        true
        ],
        "ev": [
         {
@@ -1066,7 +1066,7 @@ window.ROADMAP = {
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         true
        ],
@@ -1085,12 +1085,12 @@ window.ROADMAP = {
        "zh": "对称二叉树",
        "slug": "symmetric-tree",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         true
        ],
@@ -1114,7 +1114,7 @@ window.ROADMAP = {
        "hi": true,
        "base": "遞迴回傳值（後序聚合）",
        "r": [
-        false,
+        true,
         false,
         true
        ],
@@ -1150,12 +1150,12 @@ window.ROADMAP = {
        "zh": "完全二叉树的节点个数",
        "slug": "count-complete-tree-nodes",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1173,7 +1173,7 @@ window.ROADMAP = {
        "base": "",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1197,7 +1197,7 @@ window.ROADMAP = {
        "base": "",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1232,12 +1232,12 @@ window.ROADMAP = {
        "zh": "左叶子之和",
        "slug": "sum-of-left-leaves",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1249,12 +1249,12 @@ window.ROADMAP = {
        "zh": "找树左下角的值",
        "slug": "find-bottom-left-tree-value",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1266,12 +1266,12 @@ window.ROADMAP = {
        "zh": "路径总和",
        "slug": "path-sum",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1283,13 +1283,13 @@ window.ROADMAP = {
        "zh": "从中序与后序遍历序列构造二叉树",
        "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "構造二元樹",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1307,12 +1307,12 @@ window.ROADMAP = {
        "zh": "最大二叉树",
        "slug": "maximum-binary-tree",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1324,12 +1324,12 @@ window.ROADMAP = {
        "zh": "合并二叉树",
        "slug": "merge-two-binary-trees",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1341,12 +1341,12 @@ window.ROADMAP = {
        "zh": "二叉搜索树中的搜索",
        "slug": "search-in-a-binary-search-tree",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "BST 性質",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1363,8 +1363,8 @@ window.ROADMAP = {
        "hi": true,
        "base": "",
        "r": [
-        false,
-        false,
+        true,
+        true,
         true
        ],
        "ev": [
@@ -1416,13 +1416,13 @@ window.ROADMAP = {
        "zh": "二叉树的最近公共祖先",
        "slug": "lowest-common-ancestor-of-a-binary-tree",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "LCA：後序合併",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1440,13 +1440,13 @@ window.ROADMAP = {
        "zh": "二叉搜索树的最近公共祖先",
        "slug": "lowest-common-ancestor-of-a-binary-search-tree",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1470,12 +1470,12 @@ window.ROADMAP = {
        "zh": "二叉搜索树中的插入操作",
        "slug": "insert-into-a-binary-search-tree",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1487,13 +1487,13 @@ window.ROADMAP = {
        "zh": "删除二叉搜索树中的节点",
        "slug": "delete-node-in-a-bst",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1528,13 +1528,13 @@ window.ROADMAP = {
        "zh": "将有序数组转换为二叉搜索树",
        "slug": "convert-sorted-array-to-binary-search-tree",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": true,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -1545,12 +1545,12 @@ window.ROADMAP = {
        "zh": "把二叉搜索树转换为累加树",
        "slug": "convert-bst-to-greater-tree",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1573,13 +1573,13 @@ window.ROADMAP = {
        "zh": "组合优化",
        "slug": "combinations",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "回溯模板：組合",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -1696,13 +1696,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "word-search",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -1769,7 +1769,7 @@ window.ROADMAP = {
        "hi": false,
        "base": "回溯：子集",
        "r": [
-        false,
+        true,
         true,
         false
        ],
@@ -1788,13 +1788,13 @@ window.ROADMAP = {
        "zh": "子集II",
        "slug": "subsets-ii",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -1822,12 +1822,12 @@ window.ROADMAP = {
        "zh": "全排列",
        "slug": "permutations",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "回溯：排列（used 陣列）",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -1952,13 +1952,13 @@ window.ROADMAP = {
        "zh": "最大子序和（动态规划）",
        "slug": "maximum-subarray",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -2071,12 +2071,12 @@ window.ROADMAP = {
        "zh": "柠檬水找零",
        "slug": "lemonade-change",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -2156,12 +2156,12 @@ window.ROADMAP = {
        "zh": "合并区间",
        "slug": "merge-intervals",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -2218,12 +2218,12 @@ window.ROADMAP = {
        "zh": "斐波那契数",
        "slug": "fibonacci-number",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "DP 五部曲入門",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -2288,7 +2288,7 @@ window.ROADMAP = {
        "hi": false,
        "base": "二維網格 DP",
        "r": [
-        false,
+        true,
         true,
         false
        ],
@@ -2307,13 +2307,13 @@ window.ROADMAP = {
        "zh": "不同路径II",
        "slug": "unique-paths-ii",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -2324,13 +2324,13 @@ window.ROADMAP = {
        "zh": "整数拆分",
        "slug": "integer-break",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -2363,13 +2363,13 @@ window.ROADMAP = {
        "zh": "分割等和子集",
        "slug": "partition-equal-subset-sum",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "0-1 背包",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -2397,13 +2397,13 @@ window.ROADMAP = {
        "zh": "目标和",
        "slug": "target-sum",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -2465,13 +2465,13 @@ window.ROADMAP = {
        "zh": "零钱兑换",
        "slug": "coin-change",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
-        false,
+        true,
+        true,
         false
        ],
        "ev": []
@@ -2482,13 +2482,13 @@ window.ROADMAP = {
        "zh": "完全平方数",
        "slug": "perfect-squares",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -2526,8 +2526,8 @@ window.ROADMAP = {
        "hi": false,
        "base": "選／不選 DP",
        "r": [
-        false,
-        false,
+        true,
+        true,
         true
        ],
        "ev": [
@@ -2545,13 +2545,13 @@ window.ROADMAP = {
        "zh": "打家劫舍II",
        "slug": "house-robber-ii",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -2584,12 +2584,12 @@ window.ROADMAP = {
        "zh": "买卖股票的最佳时机",
        "slug": "best-time-to-buy-and-sell-stock",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "股票狀態機 DP",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -2759,12 +2759,12 @@ window.ROADMAP = {
        "zh": "判断子序列",
        "slug": "is-subsequence",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -2872,12 +2872,12 @@ window.ROADMAP = {
        "zh": "每日温度",
        "slug": "daily-temperatures",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "單調棧",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -2998,13 +2998,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "max-area-of-island",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -3015,13 +3015,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "surrounded-regions",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -3032,13 +3032,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "pacific-atlantic-water-flow",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -3049,13 +3049,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "rotting-oranges",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "多源 BFS",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -3071,13 +3071,13 @@ window.ROADMAP = {
        "zh": "",
        "slug": "course-schedule",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "拓撲排序",
        "r": [
         false,
-        false,
+        true,
         false
        ],
        "ev": []
@@ -3201,12 +3201,12 @@ window.ROADMAP = {
        "zh": "",
        "slug": "sort-an-array",
        "star": "⭐",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": true,
        "base": "手寫排序（merge／quick）",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -3218,12 +3218,12 @@ window.ROADMAP = {
        "zh": "",
        "slug": "sort-colors",
        "star": "☆",
-       "st": "none",
+       "st": "y19",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         false
        ],
@@ -3266,7 +3266,7 @@ window.ROADMAP = {
        "d": "M",
        "st": "grad",
        "r": [
-        false,
+        true,
         true,
         false
        ],
@@ -3311,8 +3311,1570 @@ window.ROADMAP = {
    ]
   }
  ],
- "sql": [],
- "other": [],
+ "sql": [
+  {
+   "n": "175",
+   "t": "Combine Two Tables",
+   "slug": "combine-two-tables",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "176",
+   "t": "Second Highest Salary",
+   "slug": "second-highest-salary",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "177",
+   "t": "Nth Highest Salary",
+   "slug": "nth-highest-salary",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "178",
+   "t": "Rank Scores",
+   "slug": "rank-scores",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "180",
+   "t": "Consecutive Numbers",
+   "slug": "consecutive-numbers",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "181",
+   "t": "Employees Earning More Than Their Managers",
+   "slug": "employees-earning-more-than-their-managers",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "182",
+   "t": "Duplicate Emails",
+   "slug": "duplicate-emails",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "183",
+   "t": "Customers Who Never Order",
+   "slug": "customers-who-never-order",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "184",
+   "t": "Department Highest Salary",
+   "slug": "department-highest-salary",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "185",
+   "t": "Department Top Three Salaries",
+   "slug": "department-top-three-salaries",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "196",
+   "t": "Delete Duplicate Emails",
+   "slug": "delete-duplicate-emails",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "197",
+   "t": "Rising Temperature",
+   "slug": "rising-temperature",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "595",
+   "t": "Big Countries",
+   "slug": "big-countries",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "596",
+   "t": "Classes With at Least 5 Students",
+   "slug": "classes-with-at-least-5-students",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "620",
+   "t": "Not Boring Movies",
+   "slug": "not-boring-movies",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "627",
+   "t": "Swap Sex of Employees",
+   "slug": "swap-sex-of-employees",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1179",
+   "t": "Reformat Department Table",
+   "slug": "reformat-department-table",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  }
+ ],
+ "other": [
+  {
+   "n": "2",
+   "t": "Add Two Numbers",
+   "slug": "add-two-numbers",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "7",
+   "t": "Reverse Integer",
+   "slug": "reverse-integer",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "9",
+   "t": "Palindrome Number",
+   "slug": "palindrome-number",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "16",
+   "t": "3Sum Closest",
+   "slug": "3sum-closest",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "21",
+   "t": "Merge Two Sorted Lists",
+   "slug": "merge-two-sorted-lists",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "33",
+   "t": "Search in Rotated Sorted Array",
+   "slug": "search-in-rotated-sorted-array",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "34",
+   "t": "Find First and Last Position of Element in Sorted Array",
+   "slug": "find-first-and-last-position-of-element-in-sorted-array",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "35",
+   "t": "Search Insert Position",
+   "slug": "search-insert-position",
+   "st": "y26",
+   "r": [
+    true,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "64",
+   "t": "Minimum Path Sum",
+   "slug": "minimum-path-sum",
+   "st": "y26",
+   "r": [
+    true,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "66",
+   "t": "Plus One",
+   "slug": "plus-one",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "67",
+   "t": "Add Binary",
+   "slug": "add-binary",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "74",
+   "t": "Search a 2D Matrix",
+   "slug": "search-a-2d-matrix",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "81",
+   "t": "Search in Rotated Sorted Array II",
+   "slug": "search-in-rotated-sorted-array-ii",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "83",
+   "t": "Remove Duplicates from Sorted List",
+   "slug": "remove-duplicates-from-sorted-list",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "91",
+   "t": "Decode Ways",
+   "slug": "decode-ways",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "100",
+   "t": "Same Tree",
+   "slug": "same-tree",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "118",
+   "t": "Pascal's Triangle",
+   "slug": "pascals-triangle",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "120",
+   "t": "Triangle",
+   "slug": "triangle",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "128",
+   "t": "Longest Consecutive Sequence",
+   "slug": "longest-consecutive-sequence",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "136",
+   "t": "Single Number",
+   "slug": "single-number",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "141",
+   "t": "Linked List Cycle",
+   "slug": "linked-list-cycle",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "153",
+   "t": "Find Minimum in Rotated Sorted Array",
+   "slug": "find-minimum-in-rotated-sorted-array",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "155",
+   "t": "Min Stack",
+   "slug": "min-stack",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "167",
+   "t": "Two Sum II - Input Array Is Sorted",
+   "slug": "two-sum-ii-input-array-is-sorted",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "169",
+   "t": "Majority Element",
+   "slug": "majority-element",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "171",
+   "t": "Excel Sheet Column Number",
+   "slug": "excel-sheet-column-number",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "179",
+   "t": "Largest Number",
+   "slug": "largest-number",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "189",
+   "t": "Rotate Array",
+   "slug": "rotate-array",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "191",
+   "t": "Number of 1 Bits",
+   "slug": "number-of-1-bits",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "199",
+   "t": "Binary Tree Right Side View",
+   "slug": "binary-tree-right-side-view",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "208",
+   "t": "Implement Trie (Prefix Tree)",
+   "slug": "implement-trie-prefix-tree",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "217",
+   "t": "Contains Duplicate",
+   "slug": "contains-duplicate",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "230",
+   "t": "Kth Smallest Element in a BST",
+   "slug": "kth-smallest-element-in-a-bst",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "231",
+   "t": "Power of Two",
+   "slug": "power-of-two",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "234",
+   "t": "Palindrome Linked List",
+   "slug": "palindrome-linked-list",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "237",
+   "t": "Delete Node in a Linked List",
+   "slug": "delete-node-in-a-linked-list",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "263",
+   "t": "Ugly Number",
+   "slug": "ugly-number",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "268",
+   "t": "Missing Number",
+   "slug": "missing-number",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "290",
+   "t": "Word Pattern",
+   "slug": "word-pattern",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "303",
+   "t": "Range Sum Query - Immutable",
+   "slug": "range-sum-query-immutable",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "307",
+   "t": "Range Sum Query - Mutable",
+   "slug": "range-sum-query-mutable",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "328",
+   "t": "Odd Even Linked List",
+   "slug": "odd-even-linked-list",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "334",
+   "t": "Increasing Triplet Subsequence",
+   "slug": "increasing-triplet-subsequence",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "342",
+   "t": "Power of Four",
+   "slug": "power-of-four",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "371",
+   "t": "Sum of Two Integers",
+   "slug": "sum-of-two-integers",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "378",
+   "t": "Kth Smallest Element in a Sorted Matrix",
+   "slug": "kth-smallest-element-in-a-sorted-matrix",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "402",
+   "t": "Remove K Digits",
+   "slug": "remove-k-digits",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "412",
+   "t": "Fizz Buzz",
+   "slug": "fizz-buzz",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "414",
+   "t": "Third Maximum Number",
+   "slug": "third-maximum-number",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "429",
+   "t": "N-ary Tree Level Order Traversal",
+   "slug": "n-ary-tree-level-order-traversal",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "445",
+   "t": "Add Two Numbers II",
+   "slug": "add-two-numbers-ii",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "476",
+   "t": "Number Complement",
+   "slug": "number-complement",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "485",
+   "t": "Max Consecutive Ones",
+   "slug": "max-consecutive-ones",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "523",
+   "t": "Continuous Subarray Sum",
+   "slug": "continuous-subarray-sum",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "525",
+   "t": "Contiguous Array",
+   "slug": "contiguous-array",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "539",
+   "t": "Minimum Time Difference",
+   "slug": "minimum-time-difference",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "557",
+   "t": "Reverse Words in a String III",
+   "slug": "reverse-words-in-a-string-iii",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "561",
+   "t": "Array Partition",
+   "slug": "array-partition",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "572",
+   "t": "Subtree of Another Tree",
+   "slug": "subtree-of-another-tree",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "606",
+   "t": "Construct String from Binary Tree",
+   "slug": "construct-string-from-binary-tree",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "657",
+   "t": "Robot Return to Origin",
+   "slug": "robot-return-to-origin",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "703",
+   "t": "Kth Largest Element in a Stream",
+   "slug": "kth-largest-element-in-a-stream",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "709",
+   "t": "To Lower Case",
+   "slug": "to-lower-case",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "724",
+   "t": "Find Pivot Index",
+   "slug": "find-pivot-index",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "728",
+   "t": "Self Dividing Numbers",
+   "slug": "self-dividing-numbers",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "729",
+   "t": "My Calendar I",
+   "slug": "my-calendar-i",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "771",
+   "t": "Jewels and Stones",
+   "slug": "jewels-and-stones",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "791",
+   "t": "Custom Sort String",
+   "slug": "custom-sort-string",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "796",
+   "t": "Rotate String",
+   "slug": "rotate-string",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "804",
+   "t": "Unique Morse Code Words",
+   "slug": "unique-morse-code-words",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "814",
+   "t": "Binary Tree Pruning",
+   "slug": "binary-tree-pruning",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "821",
+   "t": "Shortest Distance to a Character",
+   "slug": "shortest-distance-to-a-character",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "832",
+   "t": "Flipping an Image",
+   "slug": "flipping-an-image",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "848",
+   "t": "Shifting Letters",
+   "slug": "shifting-letters",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "852",
+   "t": "Peak Index in a Mountain Array",
+   "slug": "peak-index-in-a-mountain-array",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "856",
+   "t": "Score of Parentheses",
+   "slug": "score-of-parentheses",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "867",
+   "t": "Transpose Matrix",
+   "slug": "transpose-matrix",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "884",
+   "t": "Uncommon Words from Two Sentences",
+   "slug": "uncommon-words-from-two-sentences",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "890",
+   "t": "Find and Replace Pattern",
+   "slug": "find-and-replace-pattern",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "905",
+   "t": "Sort Array By Parity",
+   "slug": "sort-array-by-parity",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "916",
+   "t": "Word Subsets",
+   "slug": "word-subsets",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "917",
+   "t": "Reverse Only Letters",
+   "slug": "reverse-only-letters",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "921",
+   "t": "Minimum Add to Make Parentheses Valid",
+   "slug": "minimum-add-to-make-parentheses-valid",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "922",
+   "t": "Sort Array By Parity II",
+   "slug": "sort-array-by-parity-ii",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "929",
+   "t": "Unique Email Addresses",
+   "slug": "unique-email-addresses",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "930",
+   "t": "Binary Subarrays With Sum",
+   "slug": "binary-subarrays-with-sum",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "931",
+   "t": "Minimum Falling Path Sum",
+   "slug": "minimum-falling-path-sum",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "938",
+   "t": "Range Sum of BST",
+   "slug": "range-sum-of-bst",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "942",
+   "t": "DI String Match",
+   "slug": "di-string-match",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "950",
+   "t": "Reveal Cards In Increasing Order",
+   "slug": "reveal-cards-in-increasing-order",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "961",
+   "t": "N-Repeated Element in Size 2N Array",
+   "slug": "n-repeated-element-in-size-2n-array",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "965",
+   "t": "Univalued Binary Tree",
+   "slug": "univalued-binary-tree",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "974",
+   "t": "Subarray Sums Divisible by K",
+   "slug": "subarray-sums-divisible-by-k",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "989",
+   "t": "Add to Array-Form of Integer",
+   "slug": "add-to-array-form-of-integer",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1008",
+   "t": "Construct Binary Search Tree from Preorder Traversal",
+   "slug": "construct-binary-search-tree-from-preorder-traversal",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1013",
+   "t": "Partition Array Into Three Parts With Equal Sum",
+   "slug": "partition-array-into-three-parts-with-equal-sum",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1038",
+   "t": "Binary Search Tree to Greater Sum Tree",
+   "slug": "binary-search-tree-to-greater-sum-tree",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1046",
+   "t": "Last Stone Weight",
+   "slug": "last-stone-weight",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1071",
+   "t": "Greatest Common Divisor of Strings",
+   "slug": "greatest-common-divisor-of-strings",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1089",
+   "t": "Duplicate Zeros",
+   "slug": "duplicate-zeros",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1110",
+   "t": "Delete Nodes And Return Forest",
+   "slug": "delete-nodes-and-return-forest",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1122",
+   "t": "Relative Sort Array",
+   "slug": "relative-sort-array",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1160",
+   "t": "Find Words That Can Be Formed by Characters",
+   "slug": "find-words-that-can-be-formed-by-characters",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1161",
+   "t": "Maximum Level Sum of a Binary Tree",
+   "slug": "maximum-level-sum-of-a-binary-tree",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1189",
+   "t": "Maximum Number of Balloons",
+   "slug": "maximum-number-of-balloons",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1233",
+   "t": "Remove Sub-Folders from the Filesystem",
+   "slug": "remove-sub-folders-from-the-filesystem",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1267",
+   "t": "Count Servers that Communicate",
+   "slug": "count-servers-that-communicate",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1291",
+   "t": "Sequential Digits",
+   "slug": "sequential-digits",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1302",
+   "t": "Deepest Leaves Sum",
+   "slug": "deepest-leaves-sum",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1305",
+   "t": "All Elements in Two Binary Search Trees",
+   "slug": "all-elements-in-two-binary-search-trees",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1381",
+   "t": "Design a Stack With Increment Operation",
+   "slug": "design-a-stack-with-increment-operation",
+   "st": "y19",
+   "r": [
+    true,
+    false,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1480",
+   "t": "Running Sum of 1d Array",
+   "slug": "running-sum-of-1d-array",
+   "st": "y26",
+   "r": [
+    true,
+    true,
+    false
+   ],
+   "ev": []
+  },
+  {
+   "n": "1524",
+   "t": "Number of Sub-arrays With Odd Sum",
+   "slug": "number-of-sub-arrays-with-odd-sum",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    false
+   ],
+   "ev": []
+  }
+ ],
  "records": {
   "39": {
    "n": "39",
@@ -3364,7 +4926,7 @@ window.ROADMAP = {
    "d": "M",
    "st": "grad",
    "r": [
-    false,
+    true,
     true,
     false
    ],
@@ -3448,7 +5010,7 @@ window.ROADMAP = {
    "d": "M",
    "st": "grad",
    "r": [
-    false,
+    true,
     true,
     false
    ],
@@ -3469,9 +5031,9 @@ window.ROADMAP = {
    "d": "M",
    "st": "grad",
    "r": [
-    false,
     true,
-    false
+    true,
+    true
    ],
    "ev": [
     {
@@ -3538,7 +5100,7 @@ window.ROADMAP = {
    "d": "M",
    "st": "grad",
    "r": [
-    false,
+    true,
     true,
     false
    ],
@@ -3559,8 +5121,8 @@ window.ROADMAP = {
    "d": "M",
    "st": "grad",
    "r": [
-    false,
-    false,
+    true,
+    true,
     true
    ],
    "ev": [
@@ -3578,10 +5140,10 @@ window.ROADMAP = {
    "zh": "二叉树的最近公共祖先",
    "slug": "lowest-common-ancestor-of-a-binary-tree",
    "d": "M",
-   "st": "none",
+   "st": "y26",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3601,8 +5163,8 @@ window.ROADMAP = {
    "d": "E",
    "st": "grad",
    "r": [
-    false,
-    false,
+    true,
+    true,
     true
    ],
    "ev": [
@@ -3622,8 +5184,8 @@ window.ROADMAP = {
    "d": "E",
    "st": "grad",
    "r": [
-    false,
-    false,
+    true,
+    true,
     true
    ],
    "ev": [
@@ -3644,7 +5206,7 @@ window.ROADMAP = {
    "st": "grad",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3664,7 +5226,7 @@ window.ROADMAP = {
    "d": "E",
    "st": "grad",
    "r": [
-    false,
+    true,
     false,
     true
    ],
@@ -3686,7 +5248,7 @@ window.ROADMAP = {
    "st": "grad",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3707,7 +5269,7 @@ window.ROADMAP = {
    "st": "grad",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3746,10 +5308,10 @@ window.ROADMAP = {
    "zh": "从中序与后序遍历序列构造二叉树",
    "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
    "d": "M",
-   "st": "none",
+   "st": "y26",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3769,8 +5331,8 @@ window.ROADMAP = {
    "d": "M",
    "st": "grad",
    "r": [
-    false,
-    false,
+    true,
+    true,
     true
    ],
    "ev": [
@@ -3790,7 +5352,7 @@ window.ROADMAP = {
    "d": "E",
    "st": "grad",
    "r": [
-    false,
+    true,
     false,
     true
    ],
@@ -3809,10 +5371,10 @@ window.ROADMAP = {
    "zh": "二叉搜索树的最近公共祖先",
    "slug": "lowest-common-ancestor-of-a-binary-search-tree",
    "d": "M",
-   "st": "none",
+   "st": "y26",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3839,7 +5401,7 @@ window.ROADMAP = {
    "st": "grad",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3857,10 +5419,10 @@ window.ROADMAP = {
    "zh": "删除二叉搜索树中的节点",
    "slug": "delete-node-in-a-bst",
    "d": "M",
-   "st": "none",
+   "st": "y26",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -3878,9 +5440,9 @@ window.ROADMAP = {
    "zh": "对称二叉树",
    "slug": "symmetric-tree",
    "d": "E",
-   "st": "none",
+   "st": "y26",
    "r": [
-    false,
+    true,
     false,
     true
    ],

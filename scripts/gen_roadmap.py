@@ -145,6 +145,9 @@ def build_data():
     def status(n):
         if n in grad:
             return 'grad'
+        # 練習紀錄也算「2026 做過」，不必等帳號提交紀錄抓回來
+        if any(t >= CUT_2026 for t in rec_ts(n)):
+            return 'y26'
         ts = subs.get(n)
         if not ts:
             return 'none'
