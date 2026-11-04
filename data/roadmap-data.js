@@ -1440,13 +1440,13 @@ window.ROADMAP = {
        "zh": "二叉搜索树的最近公共祖先",
        "slug": "lowest-common-ancestor-of-a-binary-search-tree",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "M",
        "hi": true,
        "base": "",
        "r": [
         false,
-        true,
+        false,
         true
        ],
        "ev": [
@@ -1461,6 +1461,12 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "有小提示",
          "note": "接著寫迭代版：先 queue 版、再 while 單變數版。兩版都犯同一個錯：分岔時回傳 root 而不是 current（反例 [5,3,6,2,4,null,null,1] p=1 q=4 得 5）。AI 指出後修正，20 萬組 fuzz 0 mismatch。遞迴版也精簡成三種情況。 最終提交版：拿掉 current 直接移動 root，O(h)/O(1)。LeetCode Runtime 101～124 ms 起伏是雜訊（演算法本身 <0.001 ms），不用追。"
+        },
+        {
+         "date": "2026-11-04",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "隔 2 天閉卷，AI 沒介入。寫遞迴三情況版（不是原定的 while 版）。第一行 root==p||root==q 多餘（else 已涵蓋）但無害。20 萬組 fuzz（含鏈狀）0 mismatch。"
         }
        ]
       },
@@ -5378,10 +5384,10 @@ window.ROADMAP = {
    "zh": "二叉搜索树的最近公共祖先",
    "slug": "lowest-common-ancestor-of-a-binary-search-tree",
    "d": "M",
-   "st": "y26",
+   "st": "grad",
    "r": [
     false,
-    true,
+    false,
     true
    ],
    "ev": [
@@ -5396,6 +5402,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "有小提示",
      "note": "接著寫迭代版：先 queue 版、再 while 單變數版。兩版都犯同一個錯：分岔時回傳 root 而不是 current（反例 [5,3,6,2,4,null,null,1] p=1 q=4 得 5）。AI 指出後修正，20 萬組 fuzz 0 mismatch。遞迴版也精簡成三種情況。 最終提交版：拿掉 current 直接移動 root，O(h)/O(1)。LeetCode Runtime 101～124 ms 起伏是雜訊（演算法本身 <0.001 ms），不用追。"
+    },
+    {
+     "date": "2026-11-04",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "隔 2 天閉卷，AI 沒介入。寫遞迴三情況版（不是原定的 while 版）。第一行 root==p||root==q 多餘（else 已涵蓋）但無害。20 萬組 fuzz（含鏈狀）0 mismatch。"
     }
    ]
   },
@@ -5484,5 +5496,5 @@ window.ROADMAP = {
    ]
   }
  },
- "stamp": "2026-11-03"
+ "stamp": "2026-11-04"
 };
