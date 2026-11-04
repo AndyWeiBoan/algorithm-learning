@@ -1416,7 +1416,7 @@ window.ROADMAP = {
        "zh": "二叉树的最近公共祖先",
        "slug": "lowest-common-ancestor-of-a-binary-tree",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "M",
        "hi": true,
        "base": "LCA：後序合併",
@@ -1431,6 +1431,12 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "有小提示",
          "note": "忘了解法，寫之前 AI 講過 235/236 差別（後序、左右回報往上收）。bug：right 那行遞迴進 root.left（粗心型，跟 1026 Min/Max 同類）；[1,2,3] 這種小例子剛好對，AI 給反例 [1,null,2,null,3] p=2 q=3 才抓到。修正後 20 萬組 fuzz 0 mismatch。隔 ≥2 天要閉卷重寫。"
+        },
+        {
+         "date": "2026-11-04",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "隔 2 天閉卷。① 用 left ?? right 只問到一邊（反例 [1,2,3,null,4] p=4 q=3 得 4），AI 畫圖手算。② 改成兩邊都問，但把結果寫回 root.left/root.right，會改壞輸入的樹（把 450/701 的「接回」用到查詢題上）；LeetCode 不抓，AI 實跑證明。③ 改區域變數後最後一行誤回 root.left ?? root.right。④ 最終版自己整理乾淨（去掉多餘的 p/q 配對判斷），20 萬組 fuzz 0 mismatch、樹不被改動。"
         }
        ]
       },
@@ -5153,7 +5159,7 @@ window.ROADMAP = {
    "zh": "二叉树的最近公共祖先",
    "slug": "lowest-common-ancestor-of-a-binary-tree",
    "d": "M",
-   "st": "y26",
+   "st": "grad",
    "r": [
     false,
     true,
@@ -5165,6 +5171,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "有小提示",
      "note": "忘了解法，寫之前 AI 講過 235/236 差別（後序、左右回報往上收）。bug：right 那行遞迴進 root.left（粗心型，跟 1026 Min/Max 同類）；[1,2,3] 這種小例子剛好對，AI 給反例 [1,null,2,null,3] p=2 q=3 才抓到。修正後 20 萬組 fuzz 0 mismatch。隔 ≥2 天要閉卷重寫。"
+    },
+    {
+     "date": "2026-11-04",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "隔 2 天閉卷。① 用 left ?? right 只問到一邊（反例 [1,2,3,null,4] p=4 q=3 得 4），AI 畫圖手算。② 改成兩邊都問，但把結果寫回 root.left/root.right，會改壞輸入的樹（把 450/701 的「接回」用到查詢題上）；LeetCode 不抓，AI 實跑證明。③ 改區域變數後最後一行誤回 root.left ?? root.right。④ 最終版自己整理乾淨（去掉多餘的 p/q 配對判斷），20 萬組 fuzz 0 mismatch、樹不被改動。"
     }
    ]
   },
