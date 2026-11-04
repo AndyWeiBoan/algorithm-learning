@@ -207,7 +207,7 @@
       "date": "2026-11-04",
       "kind": "閉卷",
       "level": "獨立",
-      "note": "隔 2 天閉卷，AI 沒介入。寫遞迴三情況版（不是原定的 while 版）。第一行 root==p||root==q 多餘（else 已涵蓋）但無害。20 萬組 fuzz（含鏈狀）0 mismatch。"
+      "note": "隔 2 天閉卷，AI 沒介入。寫遞迴三情況版（不是原定的 while 版）。第一行 root==p||root==q 多餘（else 已涵蓋）但無害。20 萬組 fuzz（含鏈狀）0 mismatch。 接著閉卷寫 while 版：漏了 else，迴圈內 return 每圈都執行（LeetCode 範例 p=3 q=5 得 2）。AI 畫圖手算後自己補 else，20 萬組 fuzz 0 mismatch。"
     }
   ],
   "209": [
