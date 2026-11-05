@@ -1535,6 +1535,12 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "靠引導",
          "note": "一刷看答案，這次等於第一次自己寫。自己做到：照 BST 大小往一邊找、沒右子樹回傳左、遞迴回傳值接回父節點、FindMin 最後改成回傳 (min, 刪掉最小後的子樹根) 而且寫對。卡住：① 以為 FindMin 回傳的是最小節點的父節點 ② 中途從 A（左子樹接到右子樹最小節點）換成 B（後繼值替代）③ 沒用 found.node 接回 root.right，反例 [1,null,2] key=1 得 [2,null,2]。AI 講了 A 的兩步、畫圖解釋為什麼要接回 root.right。挫折到想放棄，但最後自己補上 root.right = found.node 寫完。26 萬組 fuzz（0～12 節點、含刪不存在的 key）0 mismatch。11-05 後閉卷重寫，先畫圖再寫。"
+        },
+        {
+         "date": "2026-11-05",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "閉卷重寫第三次，未完成。方向反、右子樹 null 的情況已自己修好；卡在換值後要對右子樹遞迴 DeleteNode 刪掉最小值，試了 root.right=node 和 root.right=node.right 都錯。最後口頭給答案。11-06 再閉卷重寫。"
         }
        ]
       },
@@ -5476,6 +5482,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "一刷看答案，這次等於第一次自己寫。自己做到：照 BST 大小往一邊找、沒右子樹回傳左、遞迴回傳值接回父節點、FindMin 最後改成回傳 (min, 刪掉最小後的子樹根) 而且寫對。卡住：① 以為 FindMin 回傳的是最小節點的父節點 ② 中途從 A（左子樹接到右子樹最小節點）換成 B（後繼值替代）③ 沒用 found.node 接回 root.right，反例 [1,null,2] key=1 得 [2,null,2]。AI 講了 A 的兩步、畫圖解釋為什麼要接回 root.right。挫折到想放棄，但最後自己補上 root.right = found.node 寫完。26 萬組 fuzz（0～12 節點、含刪不存在的 key）0 mismatch。11-05 後閉卷重寫，先畫圖再寫。"
+    },
+    {
+     "date": "2026-11-05",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "閉卷重寫第三次，未完成。方向反、右子樹 null 的情況已自己修好；卡在換值後要對右子樹遞迴 DeleteNode 刪掉最小值，試了 root.right=node 和 root.right=node.right 都錯。最後口頭給答案。11-06 再閉卷重寫。"
     }
    ]
   },
