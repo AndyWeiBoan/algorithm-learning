@@ -1587,9 +1587,16 @@ window.ROADMAP = {
        "r": [
         false,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-06",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "想法自己講對（取中間當根、左右遞迴）。第一版把 root 從外面傳進去補、mid 括號錯、左右範圍含 mid；我用文字講了「給範圍、函數內 new、左右接上、回傳」的結構後重寫。再卡在停止條件 start>=end（end 含在內，[0] 回 null）的差一錯誤，提示後改好，fuzz 20000 組全過。start==end 那行多餘但不影響。"
+        }
+       ]
       },
       {
        "n": "538",
@@ -5612,6 +5619,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "有小提示",
      "note": "沒寫過的同機制題（關 2）。自己想到「小於 low 左邊整串刪」，一開始以為要像 450 找右樹最小補上；提示「讓它消失、回傳修剪後的右子樹」後一次寫對，fuzz 30000 組全過。理解：每次剪等於 450 只有一個孩子的情況。"
+    }
+   ]
+  },
+  "108": {
+   "n": "108",
+   "t": "Convert Sorted Array to Binary Search Tree",
+   "zh": "将有序数组转换为二叉搜索树",
+   "slug": "convert-sorted-array-to-binary-search-tree",
+   "d": "E",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-06",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "想法自己講對（取中間當根、左右遞迴）。第一版把 root 從外面傳進去補、mid 括號錯、左右範圍含 mid；我用文字講了「給範圍、函數內 new、左右接上、回傳」的結構後重寫。再卡在停止條件 start>=end（end 含在內，[0] 回 null）的差一錯誤，提示後改好，fuzz 20000 組全過。start==end 那行多餘但不影響。"
     }
    ]
   }
