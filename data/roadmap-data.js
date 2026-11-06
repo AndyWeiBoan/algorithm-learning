@@ -3363,6 +3363,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "100",
+       "t": "Same Tree",
+       "zh": "",
+       "slug": "same-tree",
+       "d": "E",
+       "st": "grad",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "結構一開始就對（兩邊都 null 回 true、左右遞迴 &&）。卡在用 p == q 比較（C# 比的是參考不是值），指出後改成兩邊非 null 且 val 相等，fuzz 30000 組全過。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "1026",
        "t": "Maximum Difference Between Node and Ancestor",
        "zh": "",
@@ -3774,18 +3798,6 @@ window.ROADMAP = {
    "r": [
     false,
     true,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "100",
-   "t": "Same Tree",
-   "slug": "same-tree",
-   "st": "y19",
-   "r": [
-    true,
-    false,
     false
    ],
    "ev": []
@@ -5724,6 +5736,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "只看了題目兩個例子的圖，沒有解法提示。自己處理「單邊為空不算葉子」的陷阱（空的一邊當 int.MaxValue），一次寫對，fuzz 30000 組全過。"
+    }
+   ]
+  },
+  "100": {
+   "n": "100",
+   "t": "Same Tree",
+   "zh": "",
+   "slug": "same-tree",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "結構一開始就對（兩邊都 null 回 true、左右遞迴 &&）。卡在用 p == q 比較（C# 比的是參考不是值），指出後改成兩邊非 null 且 val 相等，fuzz 30000 組全過。"
     }
    ]
   }
