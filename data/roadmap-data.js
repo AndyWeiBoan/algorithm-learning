@@ -1376,16 +1376,23 @@ window.ROADMAP = {
        "zh": "二叉搜索树中的搜索",
        "slug": "search-in-a-binary-search-tree",
        "star": "⭐",
-       "st": "y19",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "BST 性質",
        "r": [
         true,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "沒有提示，一次寫對（方向正確、找到回傳節點、null 回傳 null），fuzz 30000 組全過，比對回傳的是同一個節點。"
+        }
+       ]
       },
       {
        "n": "98",
@@ -5757,6 +5764,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "有小提示",
      "note": "結構一開始就對（兩邊都 null 回 true、左右遞迴 &&）。卡在用 p == q 比較（C# 比的是參考不是值），指出後改成兩邊非 null 且 val 相等，fuzz 30000 組全過。"
+    }
+   ]
+  },
+  "700": {
+   "n": "700",
+   "t": "Search in a Binary Search Tree",
+   "zh": "二叉搜索树中的搜索",
+   "slug": "search-in-a-binary-search-tree",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "沒有提示，一次寫對（方向正確、找到回傳節點、null 回傳 null），fuzz 30000 組全過，比對回傳的是同一個節點。"
     }
    ]
   }
