@@ -1239,16 +1239,23 @@ window.ROADMAP = {
        "zh": "左叶子之和",
        "slug": "sum-of-left-leaves",
        "star": "☆",
-       "st": "y19",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         true,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-06",
+         "kind": "練習",
+         "level": "有小提示",
+         "note": "自己選對判斷位置（站在父節點看左孩子是否葉子）。第一版回傳 root.val 且提早 return 沒走右子樹；逐步走例子說明後改成「左葉值＋右子樹遞迴」，fuzz 30000 組全過。"
+        }
+       ]
       },
       {
        "n": "513",
@@ -5640,6 +5647,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "想法自己講對（取中間當根、左右遞迴）。第一版把 root 從外面傳進去補、mid 括號錯、左右範圍含 mid；我用文字講了「給範圍、函數內 new、左右接上、回傳」的結構後重寫。再卡在停止條件 start>=end（end 含在內，[0] 回 null）的差一錯誤，提示後改好，fuzz 20000 組全過。start==end 那行多餘但不影響。"
+    }
+   ]
+  },
+  "404": {
+   "n": "404",
+   "t": "Sum of Left Leaves",
+   "zh": "左叶子之和",
+   "slug": "sum-of-left-leaves",
+   "d": "E",
+   "st": "y26",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-06",
+     "kind": "練習",
+     "level": "有小提示",
+     "note": "自己選對判斷位置（站在父節點看左孩子是否葉子）。第一版回傳 root.val 且提早 return 沒走右子樹；逐步走例子說明後改成「左葉值＋右子樹遞迴」，fuzz 30000 組全過。"
     }
    ]
   }
