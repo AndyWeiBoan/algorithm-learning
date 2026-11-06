@@ -1140,16 +1140,23 @@ window.ROADMAP = {
        "zh": "二叉树的最小深度",
        "slug": "minimum-depth-of-binary-tree",
        "star": "☆",
-       "st": "none",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "只看了題目兩個例子的圖，沒有解法提示。自己處理「單邊為空不算葉子」的陷阱（空的一邊當 int.MaxValue），一次寫對，fuzz 30000 組全過。"
+        }
+       ]
       },
       {
        "n": "222",
@@ -5698,7 +5705,28 @@ window.ROADMAP = {
      "note": "沒有提示，自己寫完（葉子判斷 root.val == targetSum，往下傳 targetSum - root.val），fuzz 30000 組全過。第二個 if 的 root != null 多餘。"
     }
    ]
+  },
+  "111": {
+   "n": "111",
+   "t": "Minimum Depth of Binary Tree",
+   "zh": "二叉树的最小深度",
+   "slug": "minimum-depth-of-binary-tree",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "只看了題目兩個例子的圖，沒有解法提示。自己處理「單邊為空不算葉子」的陷阱（空的一邊當 int.MaxValue），一次寫對，fuzz 30000 組全過。"
+    }
+   ]
   }
  },
- "stamp": "2026-11-06"
+ "stamp": "2026-11-07"
 };
