@@ -1280,16 +1280,23 @@ window.ROADMAP = {
        "zh": "路径总和",
        "slug": "path-sum",
        "star": "⭐",
-       "st": "y19",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         true,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-06",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "沒有提示，自己寫完（葉子判斷 root.val == targetSum，往下傳 targetSum - root.val），fuzz 30000 組全過。第二個 if 的 root != null 多餘。"
+        }
+       ]
       },
       {
        "n": "106",
@@ -5668,6 +5675,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "有小提示",
      "note": "自己選對判斷位置（站在父節點看左孩子是否葉子）。第一版回傳 root.val 且提早 return 沒走右子樹；逐步走例子說明後改成「左葉值＋右子樹遞迴」，fuzz 30000 組全過。"
+    }
+   ]
+  },
+  "112": {
+   "n": "112",
+   "t": "Path Sum",
+   "zh": "路径总和",
+   "slug": "path-sum",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-06",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "沒有提示，自己寫完（葉子判斷 root.val == targetSum，往下傳 targetSum - root.val），fuzz 30000 組全過。第二個 if 的 root != null 多餘。"
     }
    ]
   }
