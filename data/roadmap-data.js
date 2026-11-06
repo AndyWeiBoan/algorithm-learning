@@ -1520,7 +1520,7 @@ window.ROADMAP = {
        "zh": "删除二叉搜索树中的节点",
        "slug": "delete-node-in-a-bst",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "M",
        "hi": true,
        "base": "",
@@ -1541,6 +1541,12 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "靠引導",
          "note": "閉卷重寫第三次，未完成。方向反、右子樹 null 的情況已自己修好；卡在換值後要對右子樹遞迴 DeleteNode 刪掉最小值，試了 root.right=node 和 root.right=node.right 都錯。最後口頭給答案。11-06 再閉卷重寫。"
+        },
+        {
+         "date": "2026-11-06",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "第四次重寫，完成。昨晚卡的「換值後對右子樹遞迴 DeleteNode 並接回」這次自己寫出來。手滑兩處：往左右走沒接回傳值、FindMin 遞迴傳 root 沒往左；指出後改好，fuzz 全過。"
         }
        ]
       },
@@ -5470,7 +5476,7 @@ window.ROADMAP = {
    "zh": "删除二叉搜索树中的节点",
    "slug": "delete-node-in-a-bst",
    "d": "M",
-   "st": "y26",
+   "st": "grad",
    "r": [
     false,
     true,
@@ -5488,6 +5494,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "閉卷重寫第三次，未完成。方向反、右子樹 null 的情況已自己修好；卡在換值後要對右子樹遞迴 DeleteNode 刪掉最小值，試了 root.right=node 和 root.right=node.right 都錯。最後口頭給答案。11-06 再閉卷重寫。"
+    },
+    {
+     "date": "2026-11-06",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "第四次重寫，完成。昨晚卡的「換值後對右子樹遞迴 DeleteNode 並接回」這次自己寫出來。手滑兩處：往左右走沒接回傳值、FindMin 遞迴傳 root 沒往左；指出後改好，fuzz 全過。"
     }
    ]
   },
@@ -5576,5 +5588,5 @@ window.ROADMAP = {
    ]
   }
  },
- "stamp": "2026-11-05"
+ "stamp": "2026-11-06"
 };
