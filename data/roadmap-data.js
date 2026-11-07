@@ -3477,6 +3477,30 @@ window.ROADMAP = {
        "star": "",
        "hi": false,
        "base": ""
+      },
+      {
+       "n": "1448",
+       "t": "Count Good Nodes in Binary Tree",
+       "zh": "",
+       "slug": "count-good-nodes-in-binary-tree",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode 樹章，從沒寫過（關 2：同 1026 的「往下帶路徑最大值」）。只問了題意，想法、>= 條件、O(n)/O(h) 都自己講對，一次寫對。用 int.MinValue 當初始最大值（只拿來比較、不相減，所以沒有 1026/98 的溢位坑）。20 萬組 fuzz＋10 萬節點長鏈 0 mismatch。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
       }
      ]
     }
@@ -5906,6 +5930,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "NeetCode 樹章。2019 寫過、2026 第一次。102 層序骨架，每層開始前用 queue.Last() 取這層最右邊。Last() 是 LINQ、會掃整個 queue，但 queue 當下剛好是一層，總共仍 O(n)。20 萬組 fuzz 0 mismatch。"
+    }
+   ]
+  },
+  "1448": {
+   "n": "1448",
+   "t": "Count Good Nodes in Binary Tree",
+   "zh": "",
+   "slug": "count-good-nodes-in-binary-tree",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode 樹章，從沒寫過（關 2：同 1026 的「往下帶路徑最大值」）。只問了題意，想法、>= 條件、O(n)/O(h) 都自己講對，一次寫對。用 int.MinValue 當初始最大值（只拿來比較、不相減，所以沒有 1026/98 的溢位坑）。20 萬組 fuzz＋10 萬節點長鏈 0 mismatch。"
     }
    ]
   }
