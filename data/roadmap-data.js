@@ -3431,6 +3431,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "199",
+       "t": "Binary Tree Right Side View",
+       "zh": "",
+       "slug": "binary-tree-right-side-view",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode 樹章。2019 寫過、2026 第一次。102 層序骨架，每層開始前用 queue.Last() 取這層最右邊。Last() 是 LINQ、會掃整個 queue，但 queue 當下剛好是一層，總共仍 O(n)。20 萬組 fuzz 0 mismatch。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "1026",
        "t": "Maximum Difference Between Node and Ancestor",
        "zh": "",
@@ -3994,18 +4018,6 @@ window.ROADMAP = {
    "n": "191",
    "t": "Number of 1 Bits",
    "slug": "number-of-1-bits",
-   "st": "y19",
-   "r": [
-    true,
-    false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "199",
-   "t": "Binary Tree Right Side View",
-   "slug": "binary-tree-right-side-view",
    "st": "y19",
    "r": [
     true,
@@ -5873,6 +5885,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "回溯版（共用路徑、加入→遞迴→撤銷）。錯誤：AddRange vs Add、Remove(值) vs RemoveAt(位置)、在葉子沒收集、只加葉子、父節點在左右之間幫孩子刪。我用文字列出一次呼叫的 5 步順序後改好，fuzz 30000 組全過。重點：誰加的誰刪，刪在左右都走完之後。"
+    }
+   ]
+  },
+  "199": {
+   "n": "199",
+   "t": "Binary Tree Right Side View",
+   "zh": "",
+   "slug": "binary-tree-right-side-view",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode 樹章。2019 寫過、2026 第一次。102 層序骨架，每層開始前用 queue.Last() 取這層最右邊。Last() 是 LINQ、會掃整個 queue，但 queue 當下剛好是一層，總共仍 O(n)。20 萬組 fuzz 0 mismatch。"
     }
    ]
   }
