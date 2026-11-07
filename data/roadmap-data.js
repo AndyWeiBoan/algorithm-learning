@@ -1059,6 +1059,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "層序母模板。"
+        },
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "二刷閉卷（上次 09-02）。queue＋先記 count 再跑 for 分層，空樹先回傳。20 萬組 fuzz（含 2000 節點）0 mismatch。"
         }
        ]
       },
@@ -5171,6 +5177,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "層序母模板。"
+    },
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "二刷閉卷（上次 09-02）。queue＋先記 count 再跑 for 分層，空樹先回傳。20 萬組 fuzz（含 2000 節點）0 mismatch。"
     }
    ]
   },
