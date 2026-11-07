@@ -1235,16 +1235,23 @@ window.ROADMAP = {
        "zh": "二叉树的所有路径",
        "slug": "binary-tree-paths",
        "star": "☆",
-       "st": "none",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "樹上回溯（路徑）",
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "用後序回傳子樹路徑清單、再在前面加 root.val 的寫法（不是回溯）。一度 WA（[1,2,3,null,null,4] 輸出 1->3->2），只畫了圖沒解釋，自己改好，fuzz 30000 組全過。主函數 res 沒用到。基石要的「由上往下帶路徑＋回溯」版本還沒寫。"
+        }
+       ]
       },
       {
        "n": "404",
@@ -5797,6 +5804,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "沒有提示，一次寫對（方向正確、找到回傳節點、null 回傳 null），fuzz 30000 組全過，比對回傳的是同一個節點。"
+    }
+   ]
+  },
+  "257": {
+   "n": "257",
+   "t": "Binary Tree Paths",
+   "zh": "二叉树的所有路径",
+   "slug": "binary-tree-paths",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "用後序回傳子樹路徑清單、再在前面加 root.val 的寫法（不是回溯）。一度 WA（[1,2,3,null,null,4] 輸出 1->3->2），只畫了圖沒解釋，自己改好，fuzz 30000 組全過。主函數 res 沒用到。基石要的「由上往下帶路徑＋回溯」版本還沒寫。"
     }
    ]
   }
