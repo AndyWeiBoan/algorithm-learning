@@ -1519,7 +1519,7 @@ window.ROADMAP = {
        "base": "",
        "r": [
         false,
-        false,
+        true,
         true
        ],
        "ev": [
@@ -1540,6 +1540,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "隔 2 天閉卷，AI 沒介入。寫遞迴三情況版（不是原定的 while 版）。第一行 root==p||root==q 多餘（else 已涵蓋）但無害。20 萬組 fuzz（含鏈狀）0 mismatch。 接著閉卷寫 while 版：漏了 else，迴圈內 return 每圈都執行（LeetCode 範例 p=3 q=5 得 2）。AI 畫圖手算後自己補 else，20 萬組 fuzz 0 mismatch。"
+        },
+        {
+         "date": "2026-11-07",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "隔 3 天閉卷，自己覺得忘了，但寫出最精簡的三情況遞迴版（都大往右、都小往左、否則就是 root），11-04 那行多餘的 root==p||root==q 也沒了。20 萬組 fuzz（含鏈狀、大數值）0 mismatch。"
         }
        ]
       },
@@ -1614,7 +1620,7 @@ window.ROADMAP = {
        "hi": false,
        "base": "",
        "r": [
-        true,
+        false,
         false,
         true
        ],
@@ -5516,7 +5522,7 @@ window.ROADMAP = {
    "st": "grad",
    "r": [
     false,
-    false,
+    true,
     true
    ],
    "ev": [
@@ -5537,6 +5543,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "隔 2 天閉卷，AI 沒介入。寫遞迴三情況版（不是原定的 while 版）。第一行 root==p||root==q 多餘（else 已涵蓋）但無害。20 萬組 fuzz（含鏈狀）0 mismatch。 接著閉卷寫 while 版：漏了 else，迴圈內 return 每圈都執行（LeetCode 範例 p=3 q=5 得 2）。AI 畫圖手算後自己補 else，20 萬組 fuzz 0 mismatch。"
+    },
+    {
+     "date": "2026-11-07",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "隔 3 天閉卷，自己覺得忘了，但寫出最精簡的三情況遞迴版（都大往右、都小往左、否則就是 root），11-04 那行多餘的 root==p||root==q 也沒了。20 萬組 fuzz（含鏈狀、大數值）0 mismatch。"
     }
    ]
   },
@@ -5686,7 +5698,7 @@ window.ROADMAP = {
    "d": "M",
    "st": "y26",
    "r": [
-    true,
+    false,
     false,
     true
    ],
