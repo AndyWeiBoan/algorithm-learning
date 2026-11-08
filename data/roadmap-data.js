@@ -498,16 +498,23 @@ window.ROADMAP = {
        "zh": "两个数组的交集",
        "slug": "intersection-of-two-arrays",
        "star": "⭐",
-       "st": "none",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "HashSet 去重",
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-08",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "A&H 章第二題。這次有先講想法和複雜度 O(m+n)/O(n)。口頭想法是『第二個陣列 Add 進同一個 set，加不進去的就是答案』——這樣 nums2 自己重複（nums1=[1], nums2=[2,2]）會誤判；但寫的時候自己改成 Contains 查＋結果用另一個 HashSet 去重，所以 code 是對的。30 萬組 fuzz 0 mismatch。開頭判空那行多餘但無害。"
+        }
+       ]
       },
       {
        "n": "202",
@@ -6069,6 +6076,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "新策略（NeetCode 主題順序、先題庫再 NeetCode 測）A&H 章第一題。計數陣列 int[26]，s 加、t 減，減到 <0 提早回 false，最後掃一次 >0。沒先講想法/複雜度就直接寫。30 萬組 fuzz 0 mismatch。O(n)、O(1)。小瑕疵：用 97 魔術數字（寫 'a' 較清楚）；可先比長度就省掉最後那圈。"
+    }
+   ]
+  },
+  "349": {
+   "n": "349",
+   "t": "Intersection of Two Arrays",
+   "zh": "两个数组的交集",
+   "slug": "intersection-of-two-arrays",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-08",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "A&H 章第二題。這次有先講想法和複雜度 O(m+n)/O(n)。口頭想法是『第二個陣列 Add 進同一個 set，加不進去的就是答案』——這樣 nums2 自己重複（nums1=[1], nums2=[2,2]）會誤判；但寫的時候自己改成 Contains 查＋結果用另一個 HashSet 去重，所以 code 是對的。30 萬組 fuzz 0 mismatch。開頭判空那行多餘但無害。"
     }
    ]
   }
