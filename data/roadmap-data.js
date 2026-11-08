@@ -3461,6 +3461,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "230",
+       "t": "Kth Smallest Element in a BST",
+       "zh": "",
+       "slug": "kth-smallest-element-in-a-bst",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-08",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode 樹章收尾。2019 寫過、2026 第一次。中序遍歷＋List 收前 k 個、滿了就不往右走（提早停）。自己覺得解法奇怪，其實就是中序＋提早結束，List 只當計數器用。沒先講想法/複雜度就直接寫。20 萬組 fuzz 0 mismatch，1 萬節點長鏈 OK。時間 O(h+k)、空間 O(h+k)。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "1026",
        "t": "Maximum Difference Between Node and Ancestor",
        "zh": "",
@@ -4072,18 +4096,6 @@ window.ROADMAP = {
    "n": "217",
    "t": "Contains Duplicate",
    "slug": "contains-duplicate",
-   "st": "y19",
-   "r": [
-    true,
-    false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "230",
-   "t": "Kth Smallest Element in a BST",
-   "slug": "kth-smallest-element-in-a-bst",
    "st": "y19",
    "r": [
     true,
@@ -5965,7 +5977,28 @@ window.ROADMAP = {
      "note": "NeetCode 樹章，從沒寫過（關 2：同 1026 的「往下帶路徑最大值」）。只問了題意，想法、>= 條件、O(n)/O(h) 都自己講對，一次寫對。用 int.MinValue 當初始最大值（只拿來比較、不相減，所以沒有 1026/98 的溢位坑）。20 萬組 fuzz＋10 萬節點長鏈 0 mismatch。"
     }
    ]
+  },
+  "230": {
+   "n": "230",
+   "t": "Kth Smallest Element in a BST",
+   "zh": "",
+   "slug": "kth-smallest-element-in-a-bst",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-08",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode 樹章收尾。2019 寫過、2026 第一次。中序遍歷＋List 收前 k 個、滿了就不往右走（提早停）。自己覺得解法奇怪，其實就是中序＋提早結束，List 只當計數器用。沒先講想法/複雜度就直接寫。20 萬組 fuzz 0 mismatch，1 萬節點長鏈 OK。時間 O(h+k)、空間 O(h+k)。"
+    }
+   ]
   }
  },
- "stamp": "2026-11-07"
+ "stamp": "2026-11-08"
 };
