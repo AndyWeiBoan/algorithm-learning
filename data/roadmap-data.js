@@ -3485,6 +3485,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "572",
+       "t": "Subtree of Another Tree",
+       "zh": "",
+       "slug": "subtree-of-another-tree",
+       "d": "E",
+       "st": "grad",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-08",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "NeetCode 樹章收尾。想法自己講對（走訪每個節點當起點＋same tree 比較）；複雜度先講 O(n)，AI 給『全是 1、只有最底形狀不同』的例子後改成 O(m×n)。主函式用迭代前序（stack）、IsSame 遞迴。30 萬組 fuzz 0 mismatch。小瑕疵：一開始先 Push(root) 又拿 current=root，root 會在最後被 pop 再走一次，整棵樹大約掃兩遍——結果對但多做一倍。nvim 中途被關，靠 swap 救回。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "1026",
        "t": "Maximum Difference Between Node and Ancestor",
        "zh": "",
@@ -4396,18 +4420,6 @@ window.ROADMAP = {
    "n": "561",
    "t": "Array Partition",
    "slug": "array-partition",
-   "st": "y19",
-   "r": [
-    true,
-    false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "572",
-   "t": "Subtree of Another Tree",
-   "slug": "subtree-of-another-tree",
    "st": "y19",
    "r": [
     true,
@@ -5996,6 +6008,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "NeetCode 樹章收尾。2019 寫過、2026 第一次。中序遍歷＋List 收前 k 個、滿了就不往右走（提早停）。自己覺得解法奇怪，其實就是中序＋提早結束，List 只當計數器用。沒先講想法/複雜度就直接寫。20 萬組 fuzz 0 mismatch，1 萬節點長鏈 OK。時間 O(h+k)、空間 O(h+k)。"
+    }
+   ]
+  },
+  "572": {
+   "n": "572",
+   "t": "Subtree of Another Tree",
+   "zh": "",
+   "slug": "subtree-of-another-tree",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-08",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "NeetCode 樹章收尾。想法自己講對（走訪每個節點當起點＋same tree 比較）；複雜度先講 O(n)，AI 給『全是 1、只有最底形狀不同』的例子後改成 O(m×n)。主函式用迭代前序（stack）、IsSame 遞迴。30 萬組 fuzz 0 mismatch。小瑕疵：一開始先 Push(root) 又拿 current=root，root 會在最後被 pop 再走一次，整棵樹大約掃兩遍——結果對但多做一倍。nvim 中途被關，靠 swap 救回。"
     }
    ]
   }
