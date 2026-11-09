@@ -453,5 +453,13 @@
       "level": "靠引導",
       "note": "第一次寫（meet in the middle）。自己想到用 dictionary、前兩個陣列相加，也自己提出兩個 dictionary 次數相乘的版本（正確）；value 存次數、後半查 -(c+d) 是引導出來的。寫完 fuzz 5000 組＋極值（2^28 不溢位、答案 16 億）全過。11-12 閉卷重寫驗收。"
     }
+  ],
+  "202": [
+    {
+      "date": "2026-11-09",
+      "kind": "閉卷",
+      "level": "獨立",
+      "note": "想法自己講對（HashSet 記出現過的和，重複＝有環，到 1＝happy）。一次寫對，fuzz 4 萬組（1～20000 全測＋隨機到 int.MaxValue）全過。小地方：最後 return false 執行不到、list 多餘、Math.Pow 走 double 可改 d*d。複雜度沒講。"
+    }
   ]
 }
