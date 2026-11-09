@@ -563,16 +563,23 @@ window.ROADMAP = {
        "zh": "四数相加II",
        "slug": "4sum-ii",
        "star": "⭐",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": true,
        "base": "",
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-09",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "第一次寫（meet in the middle）。自己想到用 dictionary、前兩個陣列相加，也自己提出兩個 dictionary 次數相乘的版本（正確）；value 存次數、後半查 -(c+d) 是引導出來的。寫完 fuzz 5000 組＋極值（2^28 不溢位、答案 16 億）全過。11-12 閉卷重寫驗收。"
+        }
+       ]
       },
       {
        "n": "383",
@@ -6170,6 +6177,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "有小提示",
      "note": "A&H 章基石（HashMap 補數查表）。存『補數→索引』、看到 nums[i] 在表裡就配對，想法對。第一版用 dict.Add，重複補數會丟例外（[1,1,2,3] t=5），指出後改成索引子設值並加 break。這次沒跑 fuzz（使用者擋掉執行），靠讀程式碼確認。"
+    }
+   ]
+  },
+  "454": {
+   "n": "454",
+   "t": "4Sum II",
+   "zh": "四数相加II",
+   "slug": "4sum-ii",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-09",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "第一次寫（meet in the middle）。自己想到用 dictionary、前兩個陣列相加，也自己提出兩個 dictionary 次數相乘的版本（正確）；value 存次數、後半查 -(c+d) 是引導出來的。寫完 fuzz 5000 組＋極值（2^28 不溢位、答案 16 億）全過。11-12 閉卷重寫驗收。"
     }
    ]
   }
