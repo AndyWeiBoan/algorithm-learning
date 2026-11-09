@@ -1551,7 +1551,7 @@ window.ROADMAP = {
        "base": "",
        "r": [
         false,
-        true,
+        false,
         true
        ],
        "ev": [
@@ -1652,7 +1652,7 @@ window.ROADMAP = {
        "hi": false,
        "base": "",
        "r": [
-        false,
+        true,
         false,
         true
        ],
@@ -3450,6 +3450,30 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "有小提示",
          "note": "結構一開始就對（兩邊都 null 回 true、左右遞迴 &&）。卡在用 p == q 比較（C# 比的是參考不是值），指出後改成兩邊非 null 且 val 相等，fuzz 30000 組全過。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
+       "n": "105",
+       "t": "Construct Binary Tree from Preorder and Inorder Traversal",
+       "zh": "",
+       "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-09",
+         "kind": "練習",
+         "level": "有小提示",
+         "note": "未完成，先欠著（晚上補）。一開始以為中序倒數第二個是右樹根；提示後知道前序第一個是根。寫出來只有頂層用前序找根，子樹改成取中序 mid（套 108），[1,2,3]/[3,2,1] WA。卡在：每個子樹的根要從『該子樹那段前序』拿，左子樹節點數由中序切點算出。"
         }
        ],
        "star": "",
@@ -5632,7 +5656,7 @@ window.ROADMAP = {
    "st": "grad",
    "r": [
     false,
-    true,
+    false,
     true
    ],
    "ev": [
@@ -5808,7 +5832,7 @@ window.ROADMAP = {
    "d": "M",
    "st": "y26",
    "r": [
-    false,
+    true,
     false,
     true
    ],
@@ -6099,7 +6123,28 @@ window.ROADMAP = {
      "note": "A&H 章第二題。這次有先講想法和複雜度 O(m+n)/O(n)。口頭想法是『第二個陣列 Add 進同一個 set，加不進去的就是答案』——這樣 nums2 自己重複（nums1=[1], nums2=[2,2]）會誤判；但寫的時候自己改成 Contains 查＋結果用另一個 HashSet 去重，所以 code 是對的。30 萬組 fuzz 0 mismatch。開頭判空那行多餘但無害。"
     }
    ]
+  },
+  "105": {
+   "n": "105",
+   "t": "Construct Binary Tree from Preorder and Inorder Traversal",
+   "zh": "",
+   "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-09",
+     "kind": "練習",
+     "level": "有小提示",
+     "note": "未完成，先欠著（晚上補）。一開始以為中序倒數第二個是右樹根；提示後知道前序第一個是根。寫出來只有頂層用前序找根，子樹改成取中序 mid（套 108），[1,2,3]/[3,2,1] WA。卡在：每個子樹的根要從『該子樹那段前序』拿，左子樹節點數由中序切點算出。"
+    }
+   ]
   }
  },
- "stamp": "2026-11-08"
+ "stamp": "2026-11-09"
 };
