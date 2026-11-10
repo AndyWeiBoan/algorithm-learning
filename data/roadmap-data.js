@@ -279,7 +279,7 @@ window.ROADMAP = {
          "date": "2026-11-09",
          "kind": "閉卷",
          "level": "獨立",
-         "note": "使用者晚上自己做（不在 session 內），LeetCode 22:20 一次 AC。左右兩個前綴積陣列（含自己），答案取 left[i-1]*right[i+1]，頭尾特判。O(n) 時間、O(n) 額外空間；follow-up O(1) 額外空間（輸出陣列存左積、變數掃右積）沒做。"
+         "note": "A&H 章前綴和第一題。想法自己講對（左累乘、右累乘兩陣列，idx 取 a[idx-1]×b[idx+1]、越界當 1），複雜度 O(n)/O(n) 對。一次過，30 萬組 fuzz（含 0、負數）0 mismatch。left/right 存的是『含自己』的累乘，所以合併時要錯一格、首尾特判。自己主動提出『感覺可以 O(1)』，追問待做。 LeetCode 22:20 一次 AC。"
         }
        ]
       },
@@ -543,7 +543,7 @@ window.ROADMAP = {
          "date": "2026-11-09",
          "kind": "閉卷",
          "level": "獨立",
-         "note": "想法自己講對（HashSet 記出現過的和，重複＝有環，到 1＝happy）。一次寫對，fuzz 4 萬組（1～20000 全測＋隨機到 int.MaxValue）全過。小地方：最後 return false 執行不到、list 多餘、Math.Pow 走 double 可改 d*d。複雜度沒講。"
+         "note": "想法自己講對（HashSet 記出現過的和，重複＝有環，到 1＝happy）。一次寫對，fuzz 4 萬組（1～20000 全測＋隨機到 int.MaxValue）全過。小地方：最後 return false 執行不到、list 多餘、Math.Pow 走 double 可改 d*d。複雜度事後補講 O(log n)/O(log n)，正確。"
         }
        ]
       },
@@ -615,7 +615,7 @@ window.ROADMAP = {
          "date": "2026-11-09",
          "kind": "閉卷",
          "level": "獨立",
-         "note": "使用者晚上自己做（不在 session 內，沒觀察到過程），LeetCode 21:51 一次 AC、無 WA。int[26] 計數：magazine 加、ransomNote 減，<0 就 false。O(m+n) 時間、O(1) 空間。2019 第一刷 5 次 WA 才過。"
+         "note": "想法、複雜度 O(n)/O(1) 先講再寫（時間嚴格是 O(m+n)）。int[26] 計 magazine、ransomNote 扣到負就 false，用 'a' 不用魔術數字（242 的建議有吸收）。一次過，30 萬組 fuzz 0 mismatch。 LeetCode 21:51 一次 AC。2019 第一刷 5 次 WA 才過。"
         }
        ]
       },
@@ -630,7 +630,7 @@ window.ROADMAP = {
        "hi": false,
        "base": "排序＋雙指針（N-Sum 骨架）",
        "r": [
-        false,
+        true,
         true,
         true
        ],
@@ -841,7 +841,7 @@ window.ROADMAP = {
        "hi": false,
        "base": "排序＋雙指針（N-Sum 骨架）",
        "r": [
-        false,
+        true,
         true,
         true
        ],
@@ -3549,6 +3549,12 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "有小提示",
          "note": "未完成，先欠著（晚上補）。一開始以為中序倒數第二個是右樹根；提示後知道前序第一個是根。寫出來只有頂層用前序找根，子樹改成取中序 mid（套 108），[1,2,3]/[3,2,1] WA。卡在：每個子樹的根要從『該子樹那段前序』拿，左子樹節點數由中序切點算出。"
+        },
+        {
+         "date": "2026-11-09",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "晚上補寫仍未完成，明天再寫。停止條件改了三版（start<end → 加 start==end → start>end）才對，fuzz 反例依序 [1]（stack overflow）、[1]（回 null）、[2,1]/[1,2]（回 null）。結構問題：只用一組 start/end 同時當 preorder 和 inorder 的範圍。口頭演算法自己講對（preorder 頭＝根 → inorder 算左邊幾個 k → 回 preorder 切），但不懂『同一子樹在兩陣列長度一樣、起點不一樣』。AI 用表格逐層列 pre/in 位置後理解。建議明天先寫切片版（傳小陣列，不用 index）。"
         }
        ],
        "star": "",
@@ -6229,6 +6235,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "有小提示",
      "note": "未完成，先欠著（晚上補）。一開始以為中序倒數第二個是右樹根；提示後知道前序第一個是根。寫出來只有頂層用前序找根，子樹改成取中序 mid（套 108），[1,2,3]/[3,2,1] WA。卡在：每個子樹的根要從『該子樹那段前序』拿，左子樹節點數由中序切點算出。"
+    },
+    {
+     "date": "2026-11-09",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "晚上補寫仍未完成，明天再寫。停止條件改了三版（start<end → 加 start==end → start>end）才對，fuzz 反例依序 [1]（stack overflow）、[1]（回 null）、[2,1]/[1,2]（回 null）。結構問題：只用一組 start/end 同時當 preorder 和 inorder 的範圍。口頭演算法自己講對（preorder 頭＝根 → inorder 算左邊幾個 k → 回 preorder 切），但不懂『同一子樹在兩陣列長度一樣、起點不一樣』。AI 用表格逐層列 pre/in 位置後理解。建議明天先寫切片版（傳小陣列，不用 index）。"
     }
    ]
   },
@@ -6291,7 +6303,7 @@ window.ROADMAP = {
      "date": "2026-11-09",
      "kind": "閉卷",
      "level": "獨立",
-     "note": "想法自己講對（HashSet 記出現過的和，重複＝有環，到 1＝happy）。一次寫對，fuzz 4 萬組（1～20000 全測＋隨機到 int.MaxValue）全過。小地方：最後 return false 執行不到、list 多餘、Math.Pow 走 double 可改 d*d。複雜度沒講。"
+     "note": "想法自己講對（HashSet 記出現過的和，重複＝有環，到 1＝happy）。一次寫對，fuzz 4 萬組（1～20000 全測＋隨機到 int.MaxValue）全過。小地方：最後 return false 執行不到、list 多餘、Math.Pow 走 double 可改 d*d。複雜度事後補講 O(log n)/O(log n)，正確。"
     }
    ]
   },
@@ -6312,7 +6324,7 @@ window.ROADMAP = {
      "date": "2026-11-09",
      "kind": "閉卷",
      "level": "獨立",
-     "note": "使用者晚上自己做（不在 session 內，沒觀察到過程），LeetCode 21:51 一次 AC、無 WA。int[26] 計數：magazine 加、ransomNote 減，<0 就 false。O(m+n) 時間、O(1) 空間。2019 第一刷 5 次 WA 才過。"
+     "note": "想法、複雜度 O(n)/O(1) 先講再寫（時間嚴格是 O(m+n)）。int[26] 計 magazine、ransomNote 扣到負就 false，用 'a' 不用魔術數字（242 的建議有吸收）。一次過，30 萬組 fuzz 0 mismatch。 LeetCode 21:51 一次 AC。2019 第一刷 5 次 WA 才過。"
     }
    ]
   },
@@ -6333,7 +6345,7 @@ window.ROADMAP = {
      "date": "2026-11-09",
      "kind": "閉卷",
      "level": "獨立",
-     "note": "使用者晚上自己做（不在 session 內），LeetCode 22:20 一次 AC。左右兩個前綴積陣列（含自己），答案取 left[i-1]*right[i+1]，頭尾特判。O(n) 時間、O(n) 額外空間；follow-up O(1) 額外空間（輸出陣列存左積、變數掃右積）沒做。"
+     "note": "A&H 章前綴和第一題。想法自己講對（左累乘、右累乘兩陣列，idx 取 a[idx-1]×b[idx+1]、越界當 1），複雜度 O(n)/O(n) 對。一次過，30 萬組 fuzz（含 0、負數）0 mismatch。left/right 存的是『含自己』的累乘，所以合併時要錯一格、首尾特判。自己主動提出『感覺可以 O(1)』，追問待做。 LeetCode 22:20 一次 AC。"
     }
    ]
   },
@@ -6345,7 +6357,7 @@ window.ROADMAP = {
    "d": "M",
    "st": "y26",
    "r": [
-    false,
+    true,
     true,
     true
    ],
