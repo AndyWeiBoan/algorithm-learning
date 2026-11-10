@@ -272,7 +272,7 @@ window.ROADMAP = {
        "r": [
         true,
         true,
-        false
+        true
        ],
        "ev": []
       },
@@ -594,14 +594,14 @@ window.ROADMAP = {
        "zh": "赎金信",
        "slug": "ransom-note",
        "star": "☆",
-       "st": "y19",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         true,
         false,
-        false
+        true
        ],
        "ev": []
       },
@@ -1178,6 +1178,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "基石題重寫（遞迴回傳值）。沒有提示，fuzz 30000 組全過。第二個 if 寫成 root == null && ...，永遠不成立的死碼（本意應是判斷葉子，但葉子不需要特判）。"
+        },
+        {
+         "date": "2026-11-10",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "複習（距 11-07 三天）。一次寫對，標準寫法：null 回 0，回 1+max(左,右)。"
         }
        ]
       },
@@ -5521,6 +5527,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "基石題重寫（遞迴回傳值）。沒有提示，fuzz 30000 組全過。第二個 if 寫成 root == null && ...，永遠不成立的死碼（本意應是判斷葉子，但葉子不需要特判）。"
+    },
+    {
+     "date": "2026-11-10",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "複習（距 11-07 三天）。一次寫對，標準寫法：null 回 0，回 1+max(左,右)。"
     }
    ]
   },
@@ -6230,5 +6242,5 @@ window.ROADMAP = {
    ]
   }
  },
- "stamp": "2026-11-09"
+ "stamp": "2026-11-10"
 };
