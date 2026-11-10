@@ -594,7 +594,7 @@ window.ROADMAP = {
        "zh": "赎金信",
        "slug": "ransom-note",
        "star": "☆",
-       "st": "y26",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "",
@@ -603,7 +603,14 @@ window.ROADMAP = {
         false,
         true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-09",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "使用者晚上自己做（不在 session 內，沒觀察到過程），LeetCode 21:51 一次 AC、無 WA。int[26] 計數：magazine 加、ransomNote 減，<0 就 false。O(m+n) 時間、O(1) 空間。2019 第一刷 5 次 WA 才過。"
+        }
+       ]
       },
       {
        "n": "15",
@@ -6250,6 +6257,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "想法自己講對（HashSet 記出現過的和，重複＝有環，到 1＝happy）。一次寫對，fuzz 4 萬組（1～20000 全測＋隨機到 int.MaxValue）全過。小地方：最後 return false 執行不到、list 多餘、Math.Pow 走 double 可改 d*d。複雜度沒講。"
+    }
+   ]
+  },
+  "383": {
+   "n": "383",
+   "t": "Ransom Note",
+   "zh": "赎金信",
+   "slug": "ransom-note",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-09",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "使用者晚上自己做（不在 session 內，沒觀察到過程），LeetCode 21:51 一次 AC、無 WA。int[26] 計數：magazine 加、ransomNote 減，<0 就 false。O(m+n) 時間、O(1) 空間。2019 第一刷 5 次 WA 才過。"
     }
    ]
   }
