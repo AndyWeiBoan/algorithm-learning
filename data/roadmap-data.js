@@ -265,7 +265,7 @@ window.ROADMAP = {
        "zh": "",
        "slug": "product-of-array-except-self",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "M",
        "hi": false,
        "base": "",
@@ -274,7 +274,14 @@ window.ROADMAP = {
         true,
         true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-09",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "使用者晚上自己做（不在 session 內），LeetCode 22:20 一次 AC。左右兩個前綴積陣列（含自己），答案取 left[i-1]*right[i+1]，頭尾特判。O(n) 時間、O(n) 額外空間；follow-up O(1) 額外空間（輸出陣列存左積、變數掃右積）沒做。"
+        }
+       ]
       },
       {
        "n": "560",
@@ -6278,6 +6285,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "使用者晚上自己做（不在 session 內，沒觀察到過程），LeetCode 21:51 一次 AC、無 WA。int[26] 計數：magazine 加、ransomNote 減，<0 就 false。O(m+n) 時間、O(1) 空間。2019 第一刷 5 次 WA 才過。"
+    }
+   ]
+  },
+  "238": {
+   "n": "238",
+   "t": "Product of Array Except Self",
+   "zh": "",
+   "slug": "product-of-array-except-self",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-09",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "使用者晚上自己做（不在 session 內），LeetCode 22:20 一次 AC。左右兩個前綴積陣列（含自己），答案取 left[i-1]*right[i+1]，頭尾特判。O(n) 時間、O(n) 額外空間；follow-up O(1) 額外空間（輸出陣列存左積、變數掃右積）沒做。"
     }
    ]
   }
