@@ -35,7 +35,7 @@
 
 ### 🔥 前綴和 Prefix Sum（2026-07-18 校準新增，高頻缺口，優先）
 - [ ] ⭐ 238 Product of Array Except Self（除自己外全部乘積，不准用除法：左前綴×右後綴）
-- [ ] ⭐ 560 Subarray Sum Equals K（前綴和 + 雜湊：套路題，先暴力 O(n²) 再用「presum 差」壓到 O(n)） 〔🧱基石：前綴和＋雜湊〕
+- [x] ⭐ 560 Subarray Sum Equals K（前綴和 + 雜湊：套路題，先暴力 O(n²) 再用「presum 差」壓到 O(n)） 〔🧱基石：前綴和＋雜湊〕
 
 ## 2. 鏈結串列 Linked List
 - [x] ⭐ 203 Remove Linked List Elements 〔🧱基石：dummy head 虛擬頭節點〕
