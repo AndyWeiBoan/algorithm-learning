@@ -50,6 +50,7 @@
 
 - **不准產 Claude Artifact / 線上 HTML。這個專案只用本地檔案。**
   視覺化要做就做成 `*.html` 放在 repo 裡，自己補 doctype/head/body，單檔可離線開。
+- **難題清單**：以前 AC 過、重寫時靠引導或寫不出來的題，記錄 records.json 時同時加進 `notes/難題.md`（寫清卡點）；難題重寫後更新該題的「經過」和「下次」。
 - 回話要短。
 - 不給 code 片段（見 STUDY_PLAN.md 第零節）。
 - 145 後序遍歷迭代（loop）版：使用者 2026-10-26 決定「先擱著」。不主動排、不再反問；使用者自己提起才做。
@@ -66,5 +67,6 @@
 | `data/records.json` | **每題練習紀錄**（冷測／閉卷／練習、輔助等級、發生的事）。練完題就在這加一筆 |
 | `roadmap.html` | 刷題地圖（靜態頁），讀 `data/roadmap-data.js`。練完題後執行 `python3 scripts/gen_roadmap.py` 更新資料 |
 | `notes/insight-日誌.md` | 機制心得，複習前先讀這裡 |
+| `notes/難題.md` | **會了又忘的題**（使用者 11-11 定）。排複習先看這份，優先於一般到期題；進出規則寫在檔案裡 |
 
 範圍以 `checklist.md` 為準；`data/roadmap-data.js` 由腳本從 checklist＋帳號提交紀錄＋`data/records.json` 產生。每次練完題：records.json 加一筆 → 重跑腳本。
