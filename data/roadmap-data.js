@@ -3616,6 +3616,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "128",
+       "t": "Longest Consecutive Sequence",
+       "zh": "",
+       "slug": "longest-consecutive-sequence",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        false,
+        true,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-11",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "07-30 寫過（TLE 一次後 AC）。這次 HashSet 自己想到，但兩版都是每個數往後數 O(n²)（第二版只改上限、沒改起點）。關鍵「x-1 在 set 裡就跳過、只從串頭數」是我直接講的。第三版 fuzz 10 萬組全過、10 萬連續數 4ms。使用者自評：忘記可以往前看、想複雜了。小地方：hashset.ToArray 多餘，可直接 foreach set。進難題清單。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "199",
        "t": "Binary Tree Right Side View",
        "zh": "",
@@ -4147,18 +4171,6 @@ window.ROADMAP = {
    "r": [
     true,
     false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "128",
-   "t": "Longest Consecutive Sequence",
-   "slug": "longest-consecutive-sequence",
-   "st": "y26",
-   "r": [
-    false,
-    true,
     false
    ],
    "ev": []
@@ -6472,6 +6484,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "隔天驗收。LeetCode 09:06 一次 AC（15 是 08:53 交，中間約 13 分鐘）。排序、i/j 去重（j>i+1）、命中後 k/l 先移再 while 跳過並守 l>k、long 防溢位全部自己寫對。target−兩數和的寫法讓方向變成 val>0→k++，也對。fuzz 20 萬組（含 ±1e9）全過。"
+    }
+   ]
+  },
+  "128": {
+   "n": "128",
+   "t": "Longest Consecutive Sequence",
+   "zh": "",
+   "slug": "longest-consecutive-sequence",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-11",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "07-30 寫過（TLE 一次後 AC）。這次 HashSet 自己想到，但兩版都是每個數往後數 O(n²)（第二版只改上限、沒改起點）。關鍵「x-1 在 set 裡就跳過、只從串頭數」是我直接講的。第三版 fuzz 10 萬組全過、10 萬連續數 4ms。使用者自評：忘記可以往前看、想複雜了。小地方：hashset.ToArray 多餘，可直接 foreach set。進難題清單。"
     }
    ]
   }
