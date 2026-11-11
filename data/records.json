@@ -98,6 +98,12 @@
       "kind": "閉卷",
       "level": "獨立",
       "note": "計數法建 key。"
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "閉卷",
+      "level": "獨立",
+      "note": "沒先講想法直接寫，一次寫對（含空字串），fuzz 10 萬組全過。key＝26 格字母計數用 # 串起來（O(k) 建 key，比排序 O(k log k) 好）。複雜度答 O(n)/O(n) 不精確：應為 O(n·k) 時間、O(n·k) 空間，k＝最長字串長度。小地方：ContainsKey 後的 `?? new List` 多餘、可用 TryGetValue；回傳可直接 dict.Values。"
     }
   ],
   "198": [
