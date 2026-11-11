@@ -3671,6 +3671,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "217",
+       "t": "Contains Duplicate",
+       "zh": "",
+       "slug": "contains-duplicate",
+       "d": "E",
+       "st": "grad",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-11",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode A&H 測驗暖身（2019-08 寫過）。HashSet.Add 回 false 就 true，一次寫對，標準解。O(n)/O(n)，沒先講。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "230",
        "t": "Kth Smallest Element in a BST",
        "zh": "",
@@ -4306,18 +4330,6 @@ window.ROADMAP = {
    "n": "208",
    "t": "Implement Trie (Prefix Tree)",
    "slug": "implement-trie-prefix-tree",
-   "st": "y19",
-   "r": [
-    true,
-    false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "217",
-   "t": "Contains Duplicate",
-   "slug": "contains-duplicate",
    "st": "y19",
    "r": [
     true,
@@ -6533,6 +6545,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "07-20、07-23 AC 過。這次骨架（累加 sum、dict 先放 (0,1)、查 sum-k）自己寫出，但「查」和「存」混在一起，改四版：①存 sum-k 且先加再算 ②查到只 count++、存 sum 放 else ③拆成兩個迴圈先存完再查 ④一個迴圈先查再存，fuzz 20 萬組全過。我第三輪的解釋太長、使用者看不懂，改用白話（先問前面有幾個 sum-k、再把自己記下來）才通。進難題清單。"
+    }
+   ]
+  },
+  "217": {
+   "n": "217",
+   "t": "Contains Duplicate",
+   "zh": "",
+   "slug": "contains-duplicate",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-11",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode A&H 測驗暖身（2019-08 寫過）。HashSet.Add 回 false 就 true，一次寫對，標準解。O(n)/O(n)，沒先講。"
     }
    ]
   }
