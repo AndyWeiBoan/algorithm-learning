@@ -23,6 +23,7 @@
 - 然後**主題順序照 NeetCode roadmap、由淺入深**：Arrays & Hashing → Two Pointers → Stack → Binary Search → Sliding Window → Linked List →（Trees 已做）→ Heap → Backtracking → Intervals → Graphs → DP。二分／滑窗／回溯／圖／DP 照順序過但少刷。
 - **每章兩段**：① 先刷**我們題庫**（`checklist.md` 對應章，從基石／Easy 開始）打基礎 ② 刷完後用**該章 NeetCode 150 的題當測驗**，全部閉卷。
 - **不管以前寫過沒**：使用者 11-08 說「之前刷過不代表真的有內化，說不定我看答案；最近刷的還是會寫不出來」。所以 2019／2026 AC 過的題照樣排、照樣測，不要因為寫過就跳過或當冷測排除。
+- **前綴和／前綴積延後**（使用者 11-11 定：「有點煩，拉到後面再搞」）：560 重寫、238 O(1) 空間 follow-up、974/523 變形先不排；A&H 測驗也先跳過 238。等主線幾章做完再回來，不要主動提早排。
 - 章對應：A&H ← 雜湊章＋陣列章前綴和（238、560）；Two Pointers ← 雙指針章＋344、27、977；Stack ← 堆疊佇列章＋單調堆疊章；Binary Search ← 704、35、34；Sliding Window ← 陣列章滑窗區；Linked List ← 鏈結串列章＋146。
 - 每週冷測照做（陌生題，輪流抽主題）。
 
