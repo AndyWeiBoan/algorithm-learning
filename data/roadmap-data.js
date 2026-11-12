@@ -1076,16 +1076,23 @@ window.ROADMAP = {
        "zh": "前K个高频元素",
        "slug": "top-k-frequent-elements",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         true,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-12",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode A&H 測驗（07 月寫過，隔 4 個月）。零提示一次寫對：dict 計次數 → 大小 k 的 min-heap（PriorityQueue 以次數為 priority，超過 k 就 Dequeue 最小）→ 剩下的就是答案。fuzz 10 萬組全過。也可用 451/1338 的 bucket 做到 O(n)。"
+        }
+       ]
       }
      ]
     }
@@ -6770,6 +6777,27 @@ window.ROADMAP = {
      "kind": "冷測",
      "level": "獨立",
      "note": "陣列冷題清單第 4 題（沒寫過）。沒講想法直接寫，零提示、一次寫對：dict 計次數 → 次數當索引做 bucket（沿用 451 的招）→ 從最大次數往下貪心扣，扣到 ≤ 一半就回傳。fuzz 20 萬組全過、10 萬全不同 3ms。"
+    }
+   ]
+  },
+  "347": {
+   "n": "347",
+   "t": "Top K Frequent Elements",
+   "zh": "前K个高频元素",
+   "slug": "top-k-frequent-elements",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-12",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode A&H 測驗（07 月寫過，隔 4 個月）。零提示一次寫對：dict 計次數 → 大小 k 的 min-heap（PriorityQueue 以次數為 priority，超過 k 就 Dequeue 最小）→ 剩下的就是答案。fuzz 10 萬組全過。也可用 451/1338 的 bucket 做到 O(n)。"
     }
    ]
   }
