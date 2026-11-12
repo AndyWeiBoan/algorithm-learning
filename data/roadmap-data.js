@@ -3628,7 +3628,7 @@ window.ROADMAP = {
        "zh": "",
        "slug": "longest-consecutive-sequence",
        "d": "M",
-       "st": "y26",
+       "st": "grad",
        "r": [
         false,
         true,
@@ -3640,6 +3640,12 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "靠引導",
          "note": "07-30 寫過（TLE 一次後 AC）。這次 HashSet 自己想到，但兩版都是每個數往後數 O(n²)（第二版只改上限、沒改起點）。關鍵「x-1 在 set 裡就跳過、只從串頭數」是我直接講的。第三版 fuzz 10 萬組全過、10 萬連續數 4ms。使用者自評：忘記可以往前看、想複雜了。小地方：hashset.ToArray 多餘，可直接 foreach set。進難題清單。"
+        },
+        {
+         "date": "2026-11-12",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "難題清單隔天重寫（1/3）。一次寫對：外層直接跑 set、x-1 在 set 就跳過、只從串頭往後數。昨天的小地方（ToArray 多餘）也改掉了。fuzz 10 萬組全過、10 萬連續數 3ms。"
         }
        ],
        "star": "",
@@ -6536,7 +6542,7 @@ window.ROADMAP = {
    "zh": "",
    "slug": "longest-consecutive-sequence",
    "d": "M",
-   "st": "y26",
+   "st": "grad",
    "r": [
     false,
     true,
@@ -6548,6 +6554,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "07-30 寫過（TLE 一次後 AC）。這次 HashSet 自己想到，但兩版都是每個數往後數 O(n²)（第二版只改上限、沒改起點）。關鍵「x-1 在 set 裡就跳過、只從串頭數」是我直接講的。第三版 fuzz 10 萬組全過、10 萬連續數 4ms。使用者自評：忘記可以往前看、想複雜了。小地方：hashset.ToArray 多餘，可直接 foreach set。進難題清單。"
+    },
+    {
+     "date": "2026-11-12",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "難題清單隔天重寫（1/3）。一次寫對：外層直接跑 set、x-1 在 set 就跳過、只從串頭往後數。昨天的小地方（ToArray 多餘）也改掉了。fuzz 10 萬組全過、10 萬連續數 3ms。"
     }
    ]
   },
