@@ -3797,6 +3797,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "1347",
+       "t": "Minimum Number of Steps to Make Two Strings Anagram",
+       "zh": "",
+       "slug": "minimum-number-of-steps-to-make-two-strings-anagram",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-12",
+         "kind": "冷測",
+         "level": "有小提示",
+         "note": "陣列冷題清單第 1 題（沒寫過）。一開始不確定「最少」在哪、只想看 t 有 s 沒有的字元；我用範例 1 指出要比次數不是比有沒有，之後自己講出「每個字母多出來的加總」。一次寫對：int[26] s 加 t 減、加總正數，fuzz 20 萬組全過。加的是正數（s 比 t 多）而我講的是 t 多出來的，兩者相等因為等長——沒說明。複雜度 O(n)/O(1) 沒講。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "1448",
        "t": "Count Good Nodes in Binary Tree",
        "zh": "",
@@ -6623,6 +6647,27 @@ window.ROADMAP = {
      "kind": "冷測",
      "level": "有小提示",
      "note": "陣列冷題清單第 2 題（沒寫過）。想法自己講對：計數＋bucket sort（次數當索引）再組字串。過程：①最後迴圈 i++ 寫成往上 → 任何輸入越界（給反例 \"a\"）②修好後正確但 map 存整串 string 用 += → 50 萬同字母 20 秒，O(n²)（我提示 += 每次複製、問「需要存整串嗎」）③改存次數＋StringBuilder，編譯錯 4 個（?? 用在 int、殘留變數 m、沒 ToString）④bucket 索引寫成 map.Length → 越界 ⑤bucket[map[i]] 過：10 萬組正確、50 萬字元 6ms。複雜度 O(n)/O(n) 沒講。跨 11-11 晚～11-12 早。"
+    }
+   ]
+  },
+  "1347": {
+   "n": "1347",
+   "t": "Minimum Number of Steps to Make Two Strings Anagram",
+   "zh": "",
+   "slug": "minimum-number-of-steps-to-make-two-strings-anagram",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-12",
+     "kind": "冷測",
+     "level": "有小提示",
+     "note": "陣列冷題清單第 1 題（沒寫過）。一開始不確定「最少」在哪、只想看 t 有 s 沒有的字元；我用範例 1 指出要比次數不是比有沒有，之後自己講出「每個字母多出來的加總」。一次寫對：int[26] s 加 t 減、加總正數，fuzz 20 萬組全過。加的是正數（s 比 t 多）而我講的是 t 多出來的，兩者相等因為等長——沒說明。複雜度 O(n)/O(1) 沒講。"
     }
    ]
   }
