@@ -3719,6 +3719,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "451",
+       "t": "Sort Characters By Frequency",
+       "zh": "",
+       "slug": "sort-characters-by-frequency",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-12",
+         "kind": "冷測",
+         "level": "有小提示",
+         "note": "陣列冷題清單第 2 題（沒寫過）。想法自己講對：計數＋bucket sort（次數當索引）再組字串。過程：①最後迴圈 i++ 寫成往上 → 任何輸入越界（給反例 \"a\"）②修好後正確但 map 存整串 string 用 += → 50 萬同字母 20 秒，O(n²)（我提示 += 每次複製、問「需要存整串嗎」）③改存次數＋StringBuilder，編譯錯 4 個（?? 用在 int、殘留變數 m、沒 ToString）④bucket 索引寫成 map.Length → 越界 ⑤bucket[map[i]] 過：10 萬組正確、50 萬字元 6ms。複雜度 O(n)/O(n) 沒講。跨 11-11 晚～11-12 早。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "572",
        "t": "Subtree of Another Tree",
        "zh": "",
@@ -6568,7 +6592,28 @@ window.ROADMAP = {
      "note": "NeetCode A&H 測驗暖身（2019-08 寫過）。HashSet.Add 回 false 就 true，一次寫對，標準解。O(n)/O(n)，沒先講。"
     }
    ]
+  },
+  "451": {
+   "n": "451",
+   "t": "Sort Characters By Frequency",
+   "zh": "",
+   "slug": "sort-characters-by-frequency",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-12",
+     "kind": "冷測",
+     "level": "有小提示",
+     "note": "陣列冷題清單第 2 題（沒寫過）。想法自己講對：計數＋bucket sort（次數當索引）再組字串。過程：①最後迴圈 i++ 寫成往上 → 任何輸入越界（給反例 \"a\"）②修好後正確但 map 存整串 string 用 += → 50 萬同字母 20 秒，O(n²)（我提示 += 每次複製、問「需要存整串嗎」）③改存次數＋StringBuilder，編譯錯 4 個（?? 用在 int、殘留變數 m、沒 ToString）④bucket 索引寫成 map.Length → 越界 ⑤bucket[map[i]] 過：10 萬組正確、50 萬字元 6ms。複雜度 O(n)/O(n) 沒講。跨 11-11 晚～11-12 早。"
+    }
+   ]
   }
  },
- "stamp": "2026-11-11"
+ "stamp": "2026-11-12"
 };
