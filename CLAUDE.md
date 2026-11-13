@@ -49,7 +49,7 @@
 
 ## 硬規則
 
-- **每寫完一題（過 fuzz 或使用者說寫完）就更新 roadmap，不用等使用者提醒**：① `data/records.json` 加一筆（日期、kind、level、發生的事）② 執行 `python3 scripts/gen_roadmap.py` ③ commit。使用者 2026-11-01 定的規定。
+- **每寫完一題（過 fuzz 或使用者說寫完）就更新 roadmap，不用等使用者提醒**：① `data/records.json` 加一筆（日期、kind、level、發生的事）② 執行 `python3 scripts/gen_roadmap.py` ③ commit ④ push（先 `git pull --rebase`）。使用者 2026-11-01 定、11-13 加上 push，不用等使用者說。
 
 - **不准產 Claude Artifact / 線上 HTML。這個專案只用本地檔案。**
   視覺化要做就做成 `*.html` 放在 repo 裡，自己補 doctype/head/body，單檔可離線開。
