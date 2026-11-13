@@ -54,16 +54,23 @@ window.ROADMAP = {
        "zh": "有序数组的平方",
        "slug": "squares-of-a-sorted-array",
        "star": "⭐",
-       "st": "y19",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         true,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-13",
+         "kind": "練習",
+         "level": "有小提示",
+         "note": "Two Pointers 章。自己的想法是分正負情況處理，方向被打斷；AI 提示『平方最大一定在頭或尾、從結果尾端往前填』後一次寫對，30 萬組 fuzz（含全負數）0 mismatch。小地方：Math.Pow 走 double 再轉 int，直接 x*x 較好；idx>=0 條件多餘。同晚 27 卡很久、情緒很差，自評『簡單題想不到＝沒天份』。"
+        }
+       ]
       },
       {
        "n": "209",
@@ -6947,6 +6954,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "後來改快慢指針（一個變數記放到第幾格、不是 val 就覆蓋過去）寫完，20 萬組 fuzz 全過。選了兩頭夾（left/right 交換），卡在邊界：① while left<right 導致最後一格沒檢查（[2] val=1 回 0）② 內層 while 只擋 right>0，right 退過 left 再交換把 val 換回前面（[2,3,3] val=3 → [3,2,3]）。另外搞不懂 judge 為何 Expected 顯示陣列（它印 nums 前 k 格）。AI 失誤：讀到舊版 code、太晚解釋 judge、太晚建議換寫法，使用者情緒失控，先停。"
+    }
+   ]
+  },
+  "977": {
+   "n": "977",
+   "t": "Squares of a Sorted Array",
+   "zh": "有序数组的平方",
+   "slug": "squares-of-a-sorted-array",
+   "d": "E",
+   "st": "y26",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-13",
+     "kind": "練習",
+     "level": "有小提示",
+     "note": "Two Pointers 章。自己的想法是分正負情況處理，方向被打斷；AI 提示『平方最大一定在頭或尾、從結果尾端往前填』後一次寫對，30 萬組 fuzz（含全負數）0 mismatch。小地方：Math.Pow 走 double 再轉 int，直接 x*x 較好；idx>=0 條件多餘。同晚 27 卡很久、情緒很差，自評『簡單題想不到＝沒天份』。"
     }
    ]
   }
