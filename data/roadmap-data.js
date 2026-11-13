@@ -727,16 +727,23 @@ window.ROADMAP = {
        "zh": "反转字符串",
        "slug": "reverse-string",
        "star": "⭐",
-       "st": "y19",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "雙指針反轉",
        "r": [
         true,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-13",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Two Pointers 章第一題。第一版用 Array.Reverse 不算，改成左右指針交換、left<right 停。fuzz 10 萬筆全過。"
+        }
+       ]
       },
       {
        "n": "541",
@@ -6879,6 +6886,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "NeetCode A&H。想法：列、行、小九宮格各一組 HashSet，一次走完 81 格；小格編號 i/3*3+j/3（寫了多餘的 <3 判斷，結果仍正確）。fuzz 20 萬筆全過，一次就對。"
+    }
+   ]
+  },
+  "344": {
+   "n": "344",
+   "t": "Reverse String",
+   "zh": "反转字符串",
+   "slug": "reverse-string",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-13",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Two Pointers 章第一題。第一版用 Array.Reverse 不算，改成左右指針交換、left<right 停。fuzz 10 萬筆全過。"
     }
    ]
   }
