@@ -867,16 +867,23 @@ window.ROADMAP = {
        "zh": "",
        "slug": "move-zeroes",
        "star": "⭐",
-       "st": "y19",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         true,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "緊接 27/26 之後使用者主動要『類似的一題』。沒講想法直接寫，一次寫對：left 記寫到第幾格，非 0 就跟 nums[left] 交換、left++。20 萬組 fuzz 0 mismatch。同一招（寫入位置變數）當晚就自己用出來了。"
+        }
+       ]
       },
       {
        "n": "26",
@@ -7003,6 +7010,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "Two Pointers 章，接在 27、977 後的深夜。關鍵『已排序→重複的一定相鄰、跟前一個比』是自己想到；第一版寫的位置從 0 開始、多了 left=i 和內層 while，[1] 回 0。AI 直接講三處改法後寫完，20 萬組 fuzz 全過。使用者情緒很低：『沒有一題是自己寫的』。原地改陣列的 index（寫到第幾格）是當前弱點，27/26/283/80 同一招，隔天要閉卷再寫。"
+    }
+   ]
+  },
+  "283": {
+   "n": "283",
+   "t": "Move Zeroes",
+   "zh": "",
+   "slug": "move-zeroes",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "緊接 27/26 之後使用者主動要『類似的一題』。沒講想法直接寫，一次寫對：left 記寫到第幾格，非 0 就跟 nums[left] 交換、left++。20 萬組 fuzz 0 mismatch。同一招（寫入位置變數）當晚就自己用出來了。"
     }
    ]
   }
