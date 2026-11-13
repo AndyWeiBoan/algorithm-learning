@@ -37,9 +37,16 @@ window.ROADMAP = {
        "r": [
         true,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-13",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "未完成，明天用快慢指針重寫。選了兩頭夾（left/right 交換），卡在邊界：① while left<right 導致最後一格沒檢查（[2] val=1 回 0）② 內層 while 只擋 right>0，right 退過 left 再交換把 val 換回前面（[2,3,3] val=3 → [3,2,3]）。另外搞不懂 judge 為何 Expected 顯示陣列（它印 nums 前 k 格）。AI 失誤：讀到舊版 code、太晚解釋 judge、太晚建議換寫法，使用者情緒失控，先停。"
+        }
+       ]
       },
       {
        "n": "977",
@@ -6919,6 +6926,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "Two Pointers 章第一題。第一版用 Array.Reverse 不算，改成左右指針交換、left<right 停。fuzz 10 萬筆全過。"
+    }
+   ]
+  },
+  "27": {
+   "n": "27",
+   "t": "Remove Element",
+   "zh": "移除元素",
+   "slug": "remove-element",
+   "d": "E",
+   "st": "y26",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-13",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "未完成，明天用快慢指針重寫。選了兩頭夾（left/right 交換），卡在邊界：① while left<right 導致最後一格沒檢查（[2] val=1 回 0）② 內層 while 只擋 right>0，right 退過 left 再交換把 val 換回前面（[2,3,3] val=3 → [3,2,3]）。另外搞不懂 judge 為何 Expected 顯示陣列（它印 nums 前 k 格）。AI 失誤：讀到舊版 code、太晚解釋 judge、太晚建議換寫法，使用者情緒失控，先停。"
     }
    ]
   }
