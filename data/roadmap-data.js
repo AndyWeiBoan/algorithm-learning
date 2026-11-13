@@ -3558,6 +3558,30 @@ window.ROADMAP = {
      "g": "",
      "items": [
       {
+       "n": "36",
+       "t": "Valid Sudoku",
+       "zh": "",
+       "slug": "valid-sudoku",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-13",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode A&H。想法：列、行、小九宮格各一組 HashSet，一次走完 81 格；小格編號 i/3*3+j/3（寫了多餘的 <3 判斷，結果仍正確）。fuzz 20 萬筆全過，一次就對。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "49",
        "t": "Group Anagrams",
        "zh": "",
@@ -6834,6 +6858,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "NeetCode A&H 測驗（07 月寫過，隔 4 個月）。零提示一次寫對：dict 計次數 → 大小 k 的 min-heap（PriorityQueue 以次數為 priority，超過 k 就 Dequeue 最小）→ 剩下的就是答案。fuzz 10 萬組全過。也可用 451/1338 的 bucket 做到 O(n)。"
+    }
+   ]
+  },
+  "36": {
+   "n": "36",
+   "t": "Valid Sudoku",
+   "zh": "",
+   "slug": "valid-sudoku",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-13",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode A&H。想法：列、行、小九宮格各一組 HashSet，一次走完 81 格；小格編號 i/3*3+j/3（寫了多餘的 <3 判斷，結果仍正確）。fuzz 20 萬筆全過，一次就對。"
     }
    ]
   }
