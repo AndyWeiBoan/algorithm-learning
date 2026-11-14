@@ -889,6 +889,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "Two Pointers 章題庫最後一題（對撞型）。沒講想法直接寫，一次寫對：兩頭夾、面積＝min 高×寬、短的那邊往內移。20 萬組 fuzz（對暴力解）0 mismatch，含 10 萬格大陣列。"
+        },
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "同日第二次（傍晚，當 NeetCode TP 章測驗）。一次寫對，fuzz 0 mismatch。"
         }
        ]
       },
@@ -7173,6 +7179,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "Two Pointers 章題庫最後一題（對撞型）。沒講想法直接寫，一次寫對：兩頭夾、面積＝min 高×寬、短的那邊往內移。20 萬組 fuzz（對暴力解）0 mismatch，含 10 萬格大陣列。"
+    },
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "同日第二次（傍晚，當 NeetCode TP 章測驗）。一次寫對，fuzz 0 mismatch。"
     }
    ]
   },
