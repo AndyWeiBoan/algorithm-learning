@@ -1142,16 +1142,23 @@ window.ROADMAP = {
        "zh": "删除字符串中的所有相邻重复项",
        "slug": "remove-all-adjacent-duplicates-in-string",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "E",
        "hi": true,
        "base": "",
        "r": [
         false,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Stack 章題庫。自己聯想到 26/27 的讀寫指標，用 stack 寫：跟頂端相同就 pop，否則 push，最後倒進 char[] 從後往前填。一次寫對，20 萬組 fuzz 0 mismatch。"
+        }
+       ]
       },
       {
        "n": "150",
@@ -7325,6 +7332,27 @@ window.ROADMAP = {
      "note": "Stack 章題庫。沒講想法直接寫，一次寫對：dict 存「閉→開」，開括號 push，閉括號時空 stack 回 false、pop 出來不配對回 false，最後 stack 要空。30 萬組 fuzz 0 mismatch。"
     }
    ]
+  },
+  "1047": {
+   "n": "1047",
+   "t": "Remove All Adjacent Duplicates In String",
+   "zh": "删除字符串中的所有相邻重复项",
+   "slug": "remove-all-adjacent-duplicates-in-string",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Stack 章題庫。自己聯想到 26/27 的讀寫指標，用 stack 寫：跟頂端相同就 pop，否則 push，最後倒進 char[] 從後往前填。一次寫對，20 萬組 fuzz 0 mismatch。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8299,11 +8327,11 @@ window.ROADMAP = {
     "zh": "删除字符串中的所有相邻重复项",
     "slug": "remove-all-adjacent-duplicates-in-string",
     "d": "E",
-    "st": "y26",
+    "st": "grad",
     "r": [
      false,
      true,
-     false
+     true
     ],
     "skip": ""
    },
