@@ -769,7 +769,15 @@
       "date": "2026-11-14",
       "kind": "閉卷",
       "level": "有小提示",
-      "note": "Stack 章題庫。方向自己想對：一個 queue＋_head 記頂；Pop 把前 n-1 個搬到新 queue、最後一個就是答案。bug：① 只剩 2 個時 queue.Peek() 空 queue 例外（push1,push2,pop）② 新 top 取成 queue.Peek()（最舊的），應該是倒數第二個（push1..3,pop,top 回 1）。②使用者問哪裡錯，AI 指出位置後改成 _in.Peek()，fuzz 0 mismatch。"
+      "note": "Stack 章題庫。方向自己想對：一個 queue＋_head 記頂；Pop 把前 n-1 個搬到新 queue、最後一個就是答案。bug：① 只剩 2 個時 queue.Peek() 空 queue 例外（push1,push2,pop）② 新 top 取成 queue.Peek()（最舊的），應該是倒數第二個（push1..3,pop,top 回 1）。②使用者問哪裡錯，AI 指出位置後改成 _in.Peek()，fuzz 0 mismatch。 複雜度 Push/Top/Empty O(1)、Pop O(n) 正確。follow-up（只用一個 queue：前 n-1 個轉到尾巴）AI 講了做法，使用者說『技巧題過兩週會忘』，沒寫，跳過。"
+    }
+  ],
+  "20": [
+    {
+      "date": "2026-11-14",
+      "kind": "閉卷",
+      "level": "獨立",
+      "note": "Stack 章題庫。沒講想法直接寫，一次寫對：dict 存「閉→開」，開括號 push，閉括號時空 stack 回 false、pop 出來不配對回 false，最後 stack 要空。30 萬組 fuzz 0 mismatch。"
     }
   ]
 }
