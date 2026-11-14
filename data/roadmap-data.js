@@ -1064,16 +1064,23 @@ window.ROADMAP = {
        "zh": "用栈实现队列",
        "slug": "implement-queue-using-stacks",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "E",
        "hi": true,
        "base": "棧⇄佇列互換",
        "r": [
         true,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Stack 章題庫第一題。一個 stack＋_head 變數記隊頭：Push O(1)、Peek 直接回 _head；Pop 每次把整個 stack 倒到暫存 stack、取底、再倒回去（O(n)）。20 萬組隨機操作 fuzz 0 mismatch。正確，但不是標準解：兩個 stack（in/out），out 空了才整批倒，攤還 O(1)。"
+        }
+       ]
       },
       {
        "n": "225",
@@ -7229,6 +7236,27 @@ window.ROADMAP = {
      "note": "Two Pointers 章 NeetCode 測驗（Hard 跳過後的最後一題）。只問題意（保證唯一解、1-based），一次寫對：兩頭夾，和太大 right--、太小 left++。fuzz 0 mismatch。複雜度 O(n)/O(1) 正確。"
     }
    ]
+  },
+  "232": {
+   "n": "232",
+   "t": "Implement Queue using Stacks",
+   "zh": "用栈实现队列",
+   "slug": "implement-queue-using-stacks",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Stack 章題庫第一題。一個 stack＋_head 變數記隊頭：Push O(1)、Peek 直接回 _head；Pop 每次把整個 stack 倒到暫存 stack、取底、再倒回去（O(n)）。20 萬組隨機操作 fuzz 0 mismatch。正確，但不是標準解：兩個 stack（in/out），out 空了才整批倒，攤還 O(1)。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8161,11 +8189,11 @@ window.ROADMAP = {
     "zh": "用栈实现队列",
     "slug": "implement-queue-using-stacks",
     "d": "E",
-    "st": "y26",
+    "st": "grad",
     "r": [
      true,
      true,
-     false
+     true
     ],
     "skip": ""
    },
