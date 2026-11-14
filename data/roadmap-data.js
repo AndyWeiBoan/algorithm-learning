@@ -3756,6 +3756,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "125",
+       "t": "Valid Palindrome",
+       "zh": "",
+       "slug": "valid-palindrome",
+       "d": "E",
+       "st": "grad",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Two Pointers 章 NeetCode 測驗。題意要 AI 解釋（只留字母和數字、忽略大小寫，數字也算），解法沒給提示。三版：① 比完沒移動 left/right（\"aa\" 無窮迴圈）② 改用 for i，交叉後還繼續比（\"a.a\" 回 false）③ 改回 while(left<right)，跳過無效字元、比完兩邊各移一格，全 ASCII 可印字元 fuzz 0 mismatch。只靠反例改。使用者：『這一題好搞人』。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "128",
        "t": "Longest Consecutive Sequence",
        "zh": "",
@@ -7119,6 +7143,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "Two Pointers 章題庫最後一題（對撞型）。沒講想法直接寫，一次寫對：兩頭夾、面積＝min 高×寬、短的那邊往內移。20 萬組 fuzz（對暴力解）0 mismatch，含 10 萬格大陣列。"
+    }
+   ]
+  },
+  "125": {
+   "n": "125",
+   "t": "Valid Palindrome",
+   "zh": "",
+   "slug": "valid-palindrome",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Two Pointers 章 NeetCode 測驗。題意要 AI 解釋（只留字母和數字、忽略大小寫，數字也算），解法沒給提示。三版：① 比完沒移動 left/right（\"aa\" 無窮迴圈）② 改用 for i，交叉後還繼續比（\"a.a\" 回 false）③ 改回 while(left<right)，跳過無效字元、比完兩邊各移一格，全 ASCII 可印字元 fuzz 0 mismatch。只靠反例改。使用者：『這一題好搞人』。"
     }
    ]
   }
