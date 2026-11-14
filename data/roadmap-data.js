@@ -739,6 +739,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "隔天驗收。LeetCode 09:06 一次 AC（15 是 08:53 交，中間約 13 分鐘）。排序、i/j 去重（j>i+1）、命中後 k/l 先移再 while 跳過並守 l>k、long 防溢位全部自己寫對。target−兩數和的寫法讓方向變成 val>0→k++，也對。fuzz 20 萬組（含 ±1e9）全過。"
+        },
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "跟 15 一起複習。i/j 去重（含 j > i+1）、long 防溢位都對；但 k/l 那段漏了 while(k<l) 外圈，只比一次（[-1,-1] target=3 越界）。使用者問哪裡錯，AI 指出『少了 while(k<l)』後一次改對，fuzz 0 mismatch。"
         }
        ]
       }
@@ -1007,6 +1013,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "隔天驗收。LeetCode 09:06 一次 AC（15 是 08:53 交，中間約 13 分鐘）。排序、i/j 去重（j>i+1）、命中後 k/l 先移再 while 跳過並守 l>k、long 防溢位全部自己寫對。target−兩數和的寫法讓方向變成 val>0→k++，也對。fuzz 20 萬組（含 ±1e9）全過。"
+        },
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "跟 15 一起複習。i/j 去重（含 j > i+1）、long 防溢位都對；但 k/l 那段漏了 while(k<l) 外圈，只比一次（[-1,-1] target=3 越界）。使用者問哪裡錯，AI 指出『少了 while(k<l)』後一次改對，fuzz 0 mismatch。"
         }
        ]
       }
@@ -6743,6 +6755,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "隔天驗收。LeetCode 09:06 一次 AC（15 是 08:53 交，中間約 13 分鐘）。排序、i/j 去重（j>i+1）、命中後 k/l 先移再 while 跳過並守 l>k、long 防溢位全部自己寫對。target−兩數和的寫法讓方向變成 val>0→k++，也對。fuzz 20 萬組（含 ±1e9）全過。"
+    },
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "跟 15 一起複習。i/j 去重（含 j > i+1）、long 防溢位都對；但 k/l 那段漏了 while(k<l) 外圈，只比一次（[-1,-1] target=3 越界）。使用者問哪裡錯，AI 指出『少了 while(k<l)』後一次改對，fuzz 0 mismatch。"
     }
    ]
   },
