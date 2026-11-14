@@ -11,6 +11,7 @@
   --grad:#2f7a58; --y26:#5a8cc4; --y19:#d8cfbe; --none:#fffdf9; --none-b:#cfc8ba;
   --accent:#b4552d; --accent-soft:#f6e6dc; --hi:#b4552d;
   --base:#3d3a8c; --base-soft:#ebeaf6;
+  --nodebg:#e7e6f6; --nodeline:#b6b3e2; --edge:#bdb6a8; --dot:#dcd6ca; --track:#d3d0ec;
 }
 :root:not([data-theme="light"]){
   @media (prefers-color-scheme: dark){
@@ -19,6 +20,7 @@
     --grad:#4fae82; --y26:#6f9fd6; --y19:#4a4438; --none:#1e1c19; --none-b:#4a463e;
     --accent:#e08a5f; --accent-soft:#3a2a20; --hi:#e08a5f;
     --base:#a9a6f0; --base-soft:#25243a;
+    --nodebg:#3c3d68; --nodeline:#585a94; --edge:#57534b; --dot:#2a2824; --track:#e6e4f5;
   }
 }
 :root[data-theme="dark"]{
@@ -27,6 +29,7 @@
   --grad:#4fae82; --y26:#6f9fd6; --y19:#4a4438; --none:#1e1c19; --none-b:#4a463e;
   --accent:#e08a5f; --accent-soft:#3a2a20; --hi:#e08a5f;
   --base:#a9a6f0; --base-soft:#25243a;
+  --nodebg:#3c3d68; --nodeline:#585a94; --edge:#57534b; --dot:#2a2824; --track:#e6e4f5;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
@@ -34,14 +37,67 @@ body{margin:0;background:var(--paper);color:var(--ink);
   -webkit-font-smoothing:antialiased}
 .num{font-family:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
 a{color:inherit}
-.wrap{max-width:1040px;margin:0 auto;padding:44px 20px 96px}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 20px 96px}
+.wrap.wide{max-width:1440px}
 
 .eyebrow{font-size:12px;letter-spacing:.14em;color:var(--ink3);font-weight:600}
 h1{font-size:34px;line-height:1.2;margin:8px 0 10px;font-weight:700}
-.intro{color:var(--ink2);max-width:700px;margin:0}
+.intro{color:var(--ink2);max-width:760px;margin:0}
 .intro b{color:var(--ink)}
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:34px 0 14px;border-top:2px solid var(--ink)}
+/* 分頁 */
+.tabs{display:flex;gap:4px;margin:26px 0 0;border-bottom:1px solid var(--rule)}
+.tabs button{font:inherit;font-size:14.5px;font-weight:600;padding:10px 16px;background:none;border:0;border-bottom:2.5px solid transparent;margin-bottom:-1px;color:var(--ink3);cursor:pointer}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.tabs .c{font-weight:400;font-size:12px;color:var(--ink3);margin-left:6px}
+
+/* 地圖 */
+.mapwrap{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:20px;margin-top:20px;align-items:start}
+.canvas{border:1px solid var(--rule);border-radius:12px;background-color:var(--card);
+  background-image:radial-gradient(var(--dot) 1.2px,transparent 1.3px);background-size:22px 22px;padding:8px}
+.canvas svg{display:block;width:100%;height:auto}
+.edge{fill:none;stroke:var(--edge);stroke-width:2.5}
+.node{cursor:pointer;outline:none}
+.node rect.bg{fill:var(--nodebg);stroke:var(--nodeline);stroke-width:1.5}
+.node:hover rect.bg,.node:focus-visible rect.bg{stroke:var(--ink2);stroke-width:2.5}
+.node.sel rect.bg{stroke:var(--ink);stroke-width:3.5}
+.node.now rect.bg{stroke:var(--accent);stroke-width:3}
+.node.sel.now rect.bg{stroke-width:4}
+.node text{fill:var(--ink);font-size:17px;font-weight:600;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.node .trk{fill:var(--track);opacity:.55}
+.node .nowtag{fill:var(--accent);font-size:12px;font-weight:700}
+.mapkeys{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:10px 4px 0}
+.mapkeys span{display:inline-flex;align-items:center;gap:7px}
+
+.side{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto;border:1px solid var(--rule);border-radius:12px;background:var(--card);padding:18px 18px 14px}
+.side h3{margin:0;font-size:21px;line-height:1.3}
+.side .sub{color:var(--ink3);font-size:13px;margin-top:2px}
+.side .nowb{display:inline-block;font-size:11px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:0 6px;margin-left:8px;vertical-align:3px}
+.side .sbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--rule2);margin:12px 0 6px}
+.side .sbar i{display:block;height:100%}
+.side .scount{font-size:12.5px;color:var(--ink2)}
+.side .sec{font-size:12px;letter-spacing:.08em;color:var(--ink3);font-weight:700;margin:18px 0 6px;display:flex;justify-content:space-between}
+.side .sec small{font-weight:400;letter-spacing:0}
+.side .none{font-size:13px;color:var(--ink3);padding:6px 0}
+.plist{border:1px solid var(--rule2);border-radius:9px;overflow:hidden}
+.prow{display:grid;grid-template-columns:14px 42px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-top:1px solid var(--rule2);cursor:pointer;width:100%;background:none;border-left:0;border-right:0;border-bottom:0;font:inherit;color:inherit;text-align:left}
+.plist>.prow:first-child{border-top:0}
+.prow:hover,.prow[aria-expanded="true"]{background:var(--rule2)}
+.prow.skip{opacity:.5}
+.prow .n{font-size:12.5px;color:var(--ink2)}
+.prow .tt{min-width:0;font-size:14px;line-height:1.4}
+.prow .tt .zh{display:block;font-size:11.5px;color:var(--ink3)}
+.prow .rt{display:flex;gap:5px;align-items:center}
+.pev{padding:6px 12px 10px;background:var(--paper);border-top:1px dashed var(--rule)}
+.pev .info{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12px;margin:2px 0 4px}
+.pev .info a{color:var(--base);font-weight:600;text-decoration:none;margin-left:auto}
+.pev .info a:hover{text-decoration:underline}
+.pev .ev{grid-template-columns:1fr;gap:2px;padding:7px 0}
+.pev .empty2{font-size:12.5px;color:var(--ink3);padding:4px 0}
+
+/* 共用 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:24px 0 14px;border-top:2px solid var(--ink)}
 .stat{padding:16px 18px 6px 0}
 .stat+.stat{padding-left:18px;border-left:1px solid var(--rule)}
 .stat .k{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2)}
@@ -51,25 +107,25 @@ h1{font-size:34px;line-height:1.2;margin:8px 0 10px;font-weight:700}
 .sw.grad{background:var(--grad)} .sw.y26{background:var(--y26)} .sw.y19{background:var(--y19)}
 .sw.r2{background:var(--accent)}
 .sw.none{background:var(--none);border:1.5px dashed var(--none-b)}
+.sw.now{background:none;border:2.5px solid var(--accent)}
 .bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--rule2)}
 .bar i{display:block;height:100%}
 .barnote{font-size:12.5px;color:var(--ink3);margin:8px 0 0}
 
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.duo{display:grid;grid-template-columns:1fr;gap:16px;margin-top:30px}
 .panel{border-radius:10px;padding:18px 20px}
-.panel.next{background:var(--accent-soft)}
 .panel.base{background:var(--base-soft)}
 .panel .lab{font-size:12px;letter-spacing:.12em;font-weight:700;margin-bottom:6px}
-.panel.next .lab{color:var(--accent)} .panel.base .lab{color:var(--base)}
+.panel.base .lab{color:var(--base)}
 .panel p{margin:0;font-size:14.5px}
 .panel p.s{margin-top:8px;font-size:13px;color:var(--ink2)}
 .panel .bar{margin:12px 0 8px;height:8px;background:var(--card)}
 .panel .legendline{font-size:12.5px;color:var(--ink2);display:flex;gap:14px;flex-wrap:wrap}
 .panel button.link{font:inherit;font-size:13px;background:none;border:0;padding:0;margin-top:10px;color:var(--base);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 
-h2{font-size:13px;letter-spacing:.14em;color:var(--ink3);font-weight:700;margin:56px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+h2{font-size:13px;letter-spacing:.14em;color:var(--ink3);font-weight:700;margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
 
-.ov{display:grid;grid-template-columns:110px 1fr 170px;gap:10px 16px;align-items:center}
+.ov{display:grid;grid-template-columns:110px 1fr 200px;gap:10px 16px;align-items:center}
 .ov .nm{font-weight:600;font-size:14.5px;text-decoration:none;white-space:nowrap;cursor:pointer}
 .ov .nm:hover{color:var(--accent)}
 .ov .nm .no{color:var(--ink3);font-weight:400;font-size:12px;margin-right:6px}
@@ -128,7 +184,8 @@ h2{font-size:13px;letter-spacing:.14em;color:var(--ink3);font-weight:700;margin:
 .tag.hi{border-color:var(--hi);color:var(--hi);font-weight:600}
 .tag.bs{border-color:var(--base);color:var(--base);font-weight:600}
 .tag.star{border:0;color:var(--accent);padding:0 2px;font-size:13px}
-.ps{display:flex;gap:5px;white-space:nowrap;justify-content:flex-end}
+.tag.sk{border-style:dashed}
+.ps{display:flex;gap:5px;white-space:nowrap;justify-content:flex-end;flex-wrap:wrap}
 .p{font-size:11.5px;padding:2px 8px;border-radius:999px;border:1.5px dashed var(--none-b);color:var(--ink3)}
 .p.r0.on{border:1.5px solid var(--ink3);background:var(--y19);color:var(--ink)}
 .p.r1.on{border:1.5px solid var(--y26);background:var(--y26);color:#fff}
@@ -152,8 +209,8 @@ h2{font-size:13px;letter-spacing:.14em;color:var(--ink3);font-weight:700;margin:
 .kd{font-size:11px;padding:1px 7px;border-radius:4px;border:1px solid var(--rule);color:var(--ink2);white-space:nowrap}
 .kd.冷測{border-color:var(--accent);color:var(--accent);font-weight:600}
 .rd{font-size:11px;color:var(--ink3);white-space:nowrap}
-.timeline{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:6px 20px}
-mark{background:#f3d98a;color:inherit;border-radius:2px;padding:0 1px}
+.timeline{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:6px 20px;margin-top:14px}
+mark{background:#f3d98a;color:#22201c;border-radius:2px;padding:0 1px}
 
 details.ex{margin-top:14px;background:var(--card);border:1px solid var(--rule);border-radius:12px}
 details.ex summary{cursor:pointer;padding:14px 20px;font-weight:600;list-style:none;display:flex;gap:10px;align-items:baseline}
@@ -169,16 +226,21 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
 .foot b{color:var(--ink2)} .foot code{font-size:12px}
 .theme{font:inherit;font-size:12px;background:none;border:1px solid var(--rule);color:var(--ink3);border-radius:999px;padding:4px 11px;cursor:pointer}
 
+@media (max-width:1100px){
+  .mapwrap{grid-template-columns:1fr}
+  .side{position:static;max-height:none}
+}
 @media (max-width:760px){
+  .wrap{padding:28px 16px 80px}
   h1{font-size:27px}
+  .tabs button{padding:10px 10px;font-size:14px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(3){border-left:0;padding-left:0}
   .stat .v{font-size:32px}
-  .duo{grid-template-columns:1fr}
   .ov{grid-template-columns:1fr;gap:4px}
   .ov .ct{text-align:left;margin-bottom:10px}
   .ch>summary{grid-template-columns:auto 1fr auto}
-  .ch .meta{grid-column:1/-1;grid-row:3}
+  .ch .meta{grid-column:1/-1;grid-row:3;white-space:normal}
   .row{grid-template-columns:14px 44px 1fr;gap:10px}
   .row .tags,.row .ps{grid-column:3;justify-content:flex-start}
   .evs{padding-left:14px}
@@ -187,81 +249,124 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" id="wrap">
 
-  <div class="eyebrow">LEETCODE · 代碼隨想錄完整範圍</div>
+  <div class="eyebrow">LEETCODE · NEETCODE ROADMAP ＋ 代碼隨想錄題庫</div>
   <h1>刷題地圖</h1>
-  <p class="intro">範圍是<b>代碼隨想錄 12 章</b>（圖論換成 LeetCode 對應題），加上後來補的前綴和、滑動窗口、LRU 與排序，共 <b id="total"></b> 題。
-  每題狀態從 LeetCode 帳號提交紀錄算出：<b>2019 舊刷</b>＝2018～2021；<b>一刷</b>＝2026-06-11～09-07；中間空檔 47 天；<b>二刷</b>＝2026-10-24 起。各時段有 AC 就算。</p>
+  <p class="intro" id="intro"></p>
 
-  <div class="stats" id="stats"></div>
-  <div class="bar" id="bigbar"></div>
-  <p class="barnote">「閉卷過」＝2026 不看任何東西重寫，並跑 fuzz 驗證過。其他只代表「寫過」，不代表現在還會。</p>
-
-  <div class="duo">
-    <div class="panel base">
-      <div class="lab">🧱 基石題</div>
-      <p id="basehead"></p>
-      <div class="bar" id="basebar"></div>
-      <div class="legendline" id="baselegend"></div>
-      <p class="s">基石＝某個演算法概念的第一題，學那個概念從它開始。不見得簡單、也不見得是面試題。沒標的是延伸題。</p>
-      <button class="link" id="go-base">只看 2026 還沒寫的基石 →</button>
-    </div>
-    <div class="panel next">
-      <div class="lab">下一步</div>
-      <p><b>一題陌生 Medium 冷測</b>：只給題號、40 分鐘。然後回到二元樹，接著做 106、98、235。</p>
-      <p class="s">紅框的題目屬於面試高頻範圍（二元樹、鏈結串列、堆疊佇列、雜湊、排序、LRU），優先練。</p>
-    </div>
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="map" aria-selected="true">地圖</button>
+    <button role="tab" data-tab="log" aria-selected="false">練習紀錄<span class="c num" id="evcount"></span></button>
+    <button role="tab" data-tab="list" aria-selected="false">逐章清單<span class="c num" id="listcount"></span></button>
   </div>
 
-  <h2>總覽 · 每一格是一題</h2>
-  <div class="ov" id="ov"></div>
-  <div class="keys">
-    <span><span class="sw grad"></span>閉卷過</span>
-    <span><span class="sw y26"></span>2026 做過</span>
-    <span><span class="sw y19"></span>只有 2019</span>
-    <span><span class="sw none"></span>從沒做過</span>
-    <span><span class="t y19 base"></span>中間有點＝基石</span>
-    <span><span class="t y19 hi"></span>紅框＝面試高頻</span>
-  </div>
+  <!-- 地圖 -->
+  <section id="tab-map">
+    <div class="mapwrap">
+      <div>
+        <div class="canvas"><svg id="map" viewBox="20 0 1250 1200" role="group" aria-label="NeetCode roadmap"></svg></div>
+        <div class="mapkeys">
+          <span><span class="sw grad"></span>閉卷過</span>
+          <span><span class="sw y26"></span>2026 做過</span>
+          <span><span class="sw now"></span>現在這章</span>
+          <span>進度條＝該章（題庫＋NeetCode）去掉跳過的題</span>
+        </div>
+      </div>
+      <aside class="side" id="side" aria-live="polite"></aside>
+    </div>
+  </section>
 
-  <h2>練習紀錄 · <span id="evcount"></span></h2>
-  <div class="timeline" id="timeline"></div>
-
-  <h2>逐章清單</h2>
-  <div class="tool">
-    <div class="r1">
-      <label class="search">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5" stroke-linecap="round"/></svg>
-        <input id="q" type="search" placeholder="搜尋題號、題名、中文名或概念（例如 背包、二分、206）" autocomplete="off">
-      </label>
-      <div class="act">
-        <button id="expand">全部展開</button>
-        <button id="collapse">全部收合</button>
+  <!-- 練習紀錄 -->
+  <section id="tab-log" hidden>
+    <div class="tool">
+      <div class="r1">
+        <label class="search">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5" stroke-linecap="round"/></svg>
+          <input id="q2" type="search" placeholder="搜尋題號、題名、日期或內容（例如 27、去重、11-14）" autocomplete="off">
+        </label>
+      </div>
+      <div class="chips" id="chips2">
+        <button data-f="all" aria-pressed="true">全部</button>
+        <button data-f="獨立" aria-pressed="false">獨立</button>
+        <button data-f="有小提示" aria-pressed="false">有小提示</button>
+        <button data-f="靠引導" aria-pressed="false">靠引導</button>
+        <button data-f="閉卷" aria-pressed="false">閉卷</button>
+        <button data-f="冷測" aria-pressed="false">冷測</button>
+        <button data-f="練習" aria-pressed="false">練習</button>
+        <span class="count" id="count2"></span>
       </div>
     </div>
-    <div class="chips" id="chips">
-      <button data-f="all" aria-pressed="true">全部</button>
-      <button data-f="base" class="b" aria-pressed="false">🧱 基石</button>
-      <button data-f="basetodo" class="b" aria-pressed="false">🧱 基石・2026 還沒寫</button>
-      <button data-f="no2" aria-pressed="false">一刷有、二刷還沒</button>
-      <button data-f="no1" aria-pressed="false">2026 還沒寫</button>
-      <button data-f="none" aria-pressed="false">從沒做過</button>
-      <button data-f="hi" aria-pressed="false">面試高頻</button>
-      <button data-f="star" aria-pressed="false">⭐ 必刷</button>
-      <button data-f="rec" aria-pressed="false">📝 有紀錄</button>
-      <button data-f="cold" aria-pressed="false">冷測過</button>
-      <span class="count" id="count"></span>
-    </div>
-  </div>
-  <div id="chapters"></div>
-  <div class="empty" id="empty" hidden>沒有符合的題目</div>
+    <div class="timeline" id="timeline"></div>
+    <div class="empty" id="empty2" hidden>沒有符合的紀錄</div>
+  </section>
 
-  <h2>清單之外</h2>
-  <div id="extras"></div>
+  <!-- 逐章清單 -->
+  <section id="tab-list" hidden>
+    <p class="intro" style="margin-top:22px">範圍是<b>代碼隨想錄 12 章</b>（圖論換成 LeetCode 對應題），加上後來補的前綴和、滑動窗口、LRU 與排序，共 <b id="total"></b> 題。
+    <b>2019 舊刷</b>＝2018～2021；<b>一刷</b>＝2026-06-11～09-07；<b>二刷</b>＝2026-10-24 起。各時段有 AC 就算。</p>
+
+    <div class="stats" id="stats"></div>
+    <div class="bar" id="bigbar"></div>
+    <p class="barnote">「閉卷過」＝2026 不看任何東西重寫，並跑 fuzz 驗證過。其他只代表「寫過」，不代表現在還會。</p>
+
+    <div class="duo">
+      <div class="panel base">
+        <div class="lab">🧱 基石題</div>
+        <p id="basehead"></p>
+        <div class="bar" id="basebar"></div>
+        <div class="legendline" id="baselegend"></div>
+        <p class="s">基石＝某個演算法概念的第一題，學那個概念從它開始。不見得簡單、也不見得是面試題。沒標的是延伸題。</p>
+        <button class="link" id="go-base">只看 2026 還沒寫的基石 →</button>
+      </div>
+    </div>
+
+    <h2>總覽 · 每一格是一題</h2>
+    <div class="ov" id="ov"></div>
+    <div class="keys">
+      <span><span class="sw grad"></span>閉卷過</span>
+      <span><span class="sw y26"></span>2026 做過</span>
+      <span><span class="sw y19"></span>只有 2019</span>
+      <span><span class="sw none"></span>從沒做過</span>
+      <span><span class="t y19 base"></span>中間有點＝基石</span>
+      <span><span class="t y19 hi"></span>紅框＝面試高頻</span>
+    </div>
+
+    <h2>逐章清單</h2>
+    <div class="tool">
+      <div class="r1">
+        <label class="search">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5" stroke-linecap="round"/></svg>
+          <input id="q" type="search" placeholder="搜尋題號、題名、中文名或概念（例如 背包、二分、206）" autocomplete="off">
+        </label>
+        <div class="act">
+          <button id="expand">全部展開</button>
+          <button id="collapse">全部收合</button>
+        </div>
+      </div>
+      <div class="chips" id="chips">
+        <button data-f="all" aria-pressed="true">全部</button>
+        <button data-f="base" class="b" aria-pressed="false">🧱 基石</button>
+        <button data-f="basetodo" class="b" aria-pressed="false">🧱 基石・2026 還沒寫</button>
+        <button data-f="no2" aria-pressed="false">一刷有、二刷還沒</button>
+        <button data-f="no1" aria-pressed="false">2026 還沒寫</button>
+        <button data-f="none" aria-pressed="false">從沒做過</button>
+        <button data-f="hi" aria-pressed="false">面試高頻</button>
+        <button data-f="star" aria-pressed="false">⭐ 必刷</button>
+        <button data-f="rec" aria-pressed="false">📝 有紀錄</button>
+        <button data-f="cold" aria-pressed="false">冷測過</button>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <div id="chapters"></div>
+    <div class="empty" id="empty" hidden>沒有符合的題目</div>
+
+    <h2>清單之外</h2>
+    <div id="extras"></div>
+  </section>
 
   <div class="foot">
-    <p>資料來源：<code>checklist.md</code>（範圍與基石標記）、LeetCode 帳號提交紀錄（狀態）、<code>data/records.json</code>（練習紀錄：冷測、閉卷、發生的事）。資料日期 <span id="stamp" class="num"></span>。</p>
+    <p>資料來源：<code>checklist.md</code>（題庫範圍與基石標記）、<code>scripts/gen_roadmap.py</code> 裡的 <code>ROADMAP</code>（NeetCode 150 分章、題庫對應、現在這章）、LeetCode 帳號提交紀錄（狀態）、<code>data/records.json</code>（練習紀錄）。資料日期 <span id="stamp" class="num"></span>。</p>
     <p>更新方式：改 <code>data/records.json</code> 或 <code>checklist.md</code>，然後在 repo 根目錄執行 <code>python3 scripts/gen_roadmap.py</code>（只改紀錄可加 <code>--offline</code>）。它產生 <code>data/roadmap-data.js</code>，這頁讀它來畫。</p>
     <p><button class="theme" id="theme">切換深淺色</button></p>
   </div>
@@ -276,7 +381,7 @@ const round = d => d >= R2 ? '二刷' : d >= R1 ? '一刷' : '2019';
 const isCold = i => (i.ev||[]).some(e => e.kind==='冷測');
 const evHtml = (e, who) => `<div class="ev"><span class="d num">${esc(e.date)}</span>
   <span class="k">${who||''}<span class="kd ${esc(e.kind)}">${esc(e.kind)}</span><span class="lv ${esc(e.level)}">${esc(e.level)}</span><span class="rd">${round(e.date)}</span></span>
-  <span class="note">${esc(e.note)}</span></div>`;
+  <span class="note">${e._hl || esc(e.note)}</span></div>`;
 const ST = {grad:'閉卷過', y26:'2026 做過', y19:'只有 2019', none:'從沒做過'};
 const pr = arr => ({r0: arr.filter(i=>i.r[0]).length, r1: arr.filter(i=>i.r[1]).length, r2: arr.filter(i=>i.r[2]).length});
 const mk = (b) => b ? '✓' : '—';
@@ -293,12 +398,137 @@ const el = (tag, cls, html) => { const e=document.createElement(tag); if(cls) e.
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const bar = (k, n) => ORDER.filter(x=>x!=='none').map(x => `<i style="width:${k[x]/n*100}%;background:${COLOR[x]}" title="${ST[x]} ${k[x]}"></i>`).join('');
 const pad = n => String(n).padStart(2,'0');
+const norm = s => String(s ?? '').toLowerCase();
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+const hl = (text, s) => s ? esc(text).replace(new RegExp(reEsc(esc(s)),'ig'), m=>`<mark>${m}</mark>`) : esc(text);
 
 document.getElementById('stamp').textContent = D.stamp;
 
+// ───────── 地圖 ─────────
+const RM = D.roadmap, PR = RM.probs;
+const evOf = n => (D.records[n] && D.records[n].ev) || [];
+const NODE = Object.fromEntries(RM.nodes.map(n => [n.id, n]));
+// 節點中心座標（照 NeetCode roadmap 排）
+const POS = {ah:[703,48], tp:[567,198], stack:[785,178], bs:[366,353], sw:[596,354], ll:[841,360],
+  trees:[587,505], tries:[383,654], bt:[788,648], heap:[520,780], graphs:[778,815], dp1:[1036,813],
+  intervals:[140,935], greedy:[391,995], adv:[611,963], dp2:[876,1007], bit:[1142,989], math:[1050,1154]};
+const LINES = {heap:['Heap / Priority','Queue'], dp1:['1-D Dynamic','Programming'], dp2:['2-D Dynamic','Programming']};
+const NW = 196, nh = id => LINES[id] ? 80 : 62;
+const uniq = node => [...new Set([...node.bank, ...node.nc])].map(n => PR[n]);
+const counted = node => uniq(node).filter(p => !p.skip);
+const nodeStat = node => { const ps = counted(node); return {k: cnt(ps), n: ps.length}; };
+
+// 標題
+const ncAll = [...new Set(RM.nodes.flatMap(n => n.nc))].map(n => PR[n]);
+const ncK = cnt(ncAll.filter(p => !p.skip)), ncSkip = ncAll.filter(p => p.skip).length;
+document.getElementById('intro').innerHTML =
+  `照 <b>NeetCode roadmap</b> 的順序走，每章先刷<b>題庫</b>（代碼隨想錄對應題）打基礎，再拿該章 <b>NeetCode 150</b> 的題當閉卷測驗。` +
+  `NeetCode 150：閉卷過 <b class="num">${ncK.grad}</b>、2026 做過 <b class="num">${ncK.y26}</b>、跳過 <b class="num">${ncSkip}</b>（Hard 與付費題）。` +
+  `現在在 <b>${esc(NODE[RM.now].zh)}</b>。`;
+
+const SVGNS = 'http://www.w3.org/2000/svg';
+const svg = document.getElementById('map');
+const sv = (tag, attrs, parent) => { const e = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.append(e); return e; };
+for (const [a, b] of RM.edges) {
+  const [x1, y1] = POS[a], [x2, y2] = POS[b];
+  const ya = y1 + nh(a)/2, yb = y2 - nh(b)/2, ym = (ya + yb) / 2;
+  sv('path', {class:'edge', d:`M${x1} ${ya} C${x1} ${ym} ${x2} ${ym} ${x2} ${yb}`}, svg);
+}
+const gOf = {};
+for (const node of RM.nodes) {
+  const [cx, cy] = POS[node.id], h = nh(node.id), {k, n} = nodeStat(node);
+  const g = sv('g', {class:'node' + (node.id===RM.now?' now':''), transform:`translate(${cx - NW/2} ${cy - h/2})`,
+    tabindex:0, role:'button', 'aria-label':`${node.en}（${node.zh}）`}, svg);
+  sv('title', {}, g).textContent = `${node.en}｜${node.zh}\n閉卷 ${k.grad}・2026 做過 ${k.y26}・共 ${n} 題（不含跳過）`;
+  sv('rect', {class:'bg', width:NW, height:h, rx:8}, g);
+  const lines = LINES[node.id] || [node.en];
+  lines.forEach((t, i) => { sv('text', {x:NW/2, y: lines.length===1 ? 26 : 22 + i*22}, g).textContent = t; });
+  const bw = NW - 24, by = h - 13;
+  sv('rect', {class:'trk', x:12, y:by, width:bw, height:5, rx:2.5}, g);
+  let x = 12;
+  for (const s of ['grad','y26']) {
+    const w = n ? bw * k[s] / n : 0;
+    if (w > 0) sv('rect', {x, y:by, width:w, height:5, rx:2.5, fill:COLOR[s]}, g);
+    x += w;
+  }
+  if (node.id === RM.now) { const t = sv('text', {class:'nowtag', x:NW - 8, y:-9}, g); t.style.textAnchor = 'end'; t.textContent = '現在 ▼'; }
+  g.addEventListener('click', () => selectNode(node.id, true));
+  g.addEventListener('keydown', e => { if (e.key==='Enter' || e.key===' ') { e.preventDefault(); selectNode(node.id, true); } });
+  gOf[node.id] = g;
+}
+
+const side = document.getElementById('side');
+function probRows(nums){
+  if (!nums.length) return '<div class="none">沒有題目</div>';
+  return '<div class="plist">' + nums.map(n => {
+    const p = PR[n], ev = evOf(n);
+    return `<button class="prow${p.skip?' skip':''}" data-n="${esc(n)}" aria-expanded="false">
+      <span class="t ${p.st}"></span><span class="n num">${esc(n)}</span>
+      <span class="tt">${esc(p.t)}${p.zh?`<span class="zh">${esc(p.zh)}</span>`:''}</span>
+      <span class="rt">${p.skip?`<span class="tag sk">跳過・${esc(p.skip)}</span>`:`<span class="tag">${DIFF[p.d]}</span>`}${ev.length?`<span class="tag">📝 ${ev.length}</span>`:''}</span>
+    </button><div class="pev" hidden data-for="${esc(n)}"></div>`;
+  }).join('') + '</div>';
+}
+function selectNode(id, push){
+  const node = NODE[id]; if (!node) return;
+  Object.entries(gOf).forEach(([k, g]) => g.classList.toggle('sel', k === id));
+  const {k, n} = nodeStat(node);
+  const done = c => c.filter(x => !PR[x].skip && PR[x].st==='grad').length;
+  const live = c => c.filter(x => !PR[x].skip).length;
+  side.innerHTML =
+    `<h3>${esc(node.zh)}${id===RM.now?'<span class="nowb">現在這章</span>':''}</h3>
+     <div class="sub">${esc(node.en)}</div>
+     <div class="sbar">${n ? bar({...k, y19:0}, n) : ''}</div>
+     <div class="scount">閉卷過 <b class="num">${k.grad}</b>・2026 做過 <b class="num">${k.y26}</b>・共 <span class="num">${n}</span> 題（不含跳過）</div>
+     <div class="sec"><span>① 題庫・先刷</span><small class="num">閉卷 ${done(node.bank)}／${live(node.bank)}</small></div>
+     ${probRows(node.bank)}
+     <div class="sec"><span>② NeetCode 150・測驗</span><small class="num">閉卷 ${done(node.nc)}／${live(node.nc)}</small></div>
+     ${probRows(node.nc)}`;
+  if (push) setHash('map', id);
+}
+side.addEventListener('click', e => {
+  const b = e.target.closest('.prow'); if (!b) return;
+  const box = b.nextElementSibling, open = b.getAttribute('aria-expanded') !== 'true';
+  b.setAttribute('aria-expanded', open); box.hidden = !open;
+  if (open && !box.innerHTML) {
+    const p = PR[b.dataset.n], ev = evOf(b.dataset.n);
+    box.innerHTML = `<div class="info">${pills(p)}<a href="${url(p.slug)}" target="_blank" rel="noopener">LeetCode ↗</a></div>` +
+      (ev.length ? ev.slice().reverse().map(e => evHtml(e)).join('') : '<div class="empty2">還沒有練習紀錄</div>');
+  }
+});
+
+// ───────── 練習紀錄 ─────────
+const evAll = Object.values(D.records).flatMap(i => i.ev.map(e => ({e, i})))
+  .sort((a,b) => b.e.date.localeCompare(a.e.date));
+document.getElementById('evcount').textContent = evAll.length;
+const q2 = document.getElementById('q2'), tl = document.getElementById('timeline');
+let F2 = 'all';
+function applyLog(){
+  const s = q2.value.trim(), ns = norm(s);
+  const shown = evAll.filter(({e, i}) =>
+    (F2==='all' || e.level===F2 || e.kind===F2) &&
+    (!ns || norm(`${i.n} ${i.t} ${i.zh} ${e.date} ${e.kind} ${e.level} ${e.note}`).includes(ns)));
+  tl.innerHTML = shown.map(({e, i}) => evHtml({...e, _hl: hl(e.note, s)},
+    `<a class="who" href="${url(i.slug)}" target="_blank" rel="noopener"><span class="num">${hl(i.n, s)}</span> ${hl(i.zh||i.t, s)}</a>`)).join('');
+  tl.hidden = !shown.length;
+  document.getElementById('empty2').hidden = shown.length > 0;
+  document.getElementById('count2').textContent = `${shown.length} 筆`;
+}
+q2.addEventListener('input', applyLog);
+document.getElementById('chips2').addEventListener('click', e => {
+  const b = e.target.closest('button[data-f]'); if (!b) return;
+  F2 = b.dataset.f;
+  document.querySelectorAll('#chips2 button').forEach(x => x.setAttribute('aria-pressed', x===b ? 'true':'false'));
+  applyLog();
+});
+applyLog();
+
+// ───────── 逐章清單 ─────────
 // 統計
 const T = cnt(all), P = pr(all);
 document.getElementById('total').textContent = all.length;
+document.getElementById('listcount').textContent = all.length;
 document.getElementById('stats').innerHTML = [
   ['y19','2019 舊刷',P.r0], ['y26','2026 一刷',P.r1], ['r2','2026 二刷',P.r2], ['grad','閉卷過',T.grad]
 ].map(([k,lab,v]) =>
@@ -318,7 +548,7 @@ document.getElementById('baselegend').innerHTML = ORDER.map(k => `<span><span cl
 // 總覽
 const ov = document.getElementById('ov');
 for (const c of D.chapters.filter(c => !c.extra)) {
-  const its = items(c), k = cnt(its);
+  const its = items(c);
   const a = el('a','nm', `<span class="no num">${pad(c.no)}</span>${esc(c.zh)}`);
   a.addEventListener('click', () => openChapter(c.no));
   const tiles = el('div','tiles');
@@ -328,7 +558,6 @@ for (const c of D.chapters.filter(c => !c.extra)) {
     t.title = `${i.n}. ${i.t}${i.zh?'（'+i.zh+'）':''}\n${ptxt(i)}${i.base?'\n🧱 基石：'+i.base:''}${i.hi?'\n面試高頻':''}`;
     tiles.append(t);
   }
-  const nb = its.filter(i=>i.base).length;
   const pp = pr(its);
   ov.append(a, tiles, el('div','ct', `一刷 <b class="num">${pp.r1}</b>　二刷 <b class="num">${pp.r2}</b>　2019 <span class="num">${pp.r0}</span>　／<span class="num">${its.length}</span>`));
 }
@@ -379,7 +608,6 @@ for (const c of D.chapters) {
 const ex = document.getElementById('extras');
 function chipBox(title, sub, arr, open){
   const d = el('details','ex'); if (open) d.open = true;
-  const k = cnt(arr);
   const pp = pr(arr);
   d.append(el('summary','', `${esc(title)} <small>${arr.length} 題 · 2019 ${pp.r0} · 一刷 ${pp.r1} · 二刷 ${pp.r2} · ${esc(sub)}</small>`));
   const t = el('div','cbox');
@@ -393,17 +621,9 @@ function chipBox(title, sub, arr, open){
 chipBox('SQL', '面試紀錄指名會考，已有底子', D.sql, true);
 chipBox('清單外做過的其他題', '多為 2019 第一刷', D.other, false);
 
-// 練習紀錄（含清單外的題）
-const evAll = Object.values(D.records).flatMap(i => i.ev.map(e => ({e, i})))
-  .sort((a,b) => b.e.date.localeCompare(a.e.date));
-document.getElementById('evcount').textContent = `${evAll.length} 筆`;
-document.getElementById('timeline').innerHTML = evAll.map(({e,i}) =>
-  evHtml(e, `<a class="who" href="${url(i.slug)}" target="_blank" rel="noopener"><span class="num">${esc(i.n)}</span> ${esc(i.zh||i.t)}</a>`)).join('');
-
 // 篩選＋搜尋
 let F = 'all';
 const q = document.getElementById('q');
-const norm = s => String(s ?? '').toLowerCase();
 function match(i, f){
   if (f==='base') return !!i.base;
   if (f==='basetodo') return !!i.base && (i.st==='y19' || i.st==='none');
@@ -426,9 +646,7 @@ function apply(){
     const ok = match(i, F) && (!s || hay.includes(s));
     r.hidden = !ok; if (ok) shown++;
     if (r._evs) r._evs.hidden = !ok || !r._open;
-    r._en.innerHTML = s && ok && norm(i.t).includes(s)
-      ? esc(i.t).replace(new RegExp(s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'ig'), m=>`<mark>${m}</mark>`)
-      : esc(i.t);
+    r._en.innerHTML = s && ok && norm(i.t).includes(s) ? hl(i.t, s) : esc(i.t);
   }
   document.querySelectorAll('#chapters .list').forEach(l => {
     l.hidden = !l.querySelector('.row:not([hidden])');
@@ -454,7 +672,7 @@ document.getElementById('chips').addEventListener('click', e => {
 q.addEventListener('input', apply);
 document.getElementById('go-base').addEventListener('click', () => {
   setF('basetodo');
-  document.querySelector('.tool').scrollIntoView({behavior:'smooth'});
+  document.querySelector('#tab-list .tool').scrollIntoView({behavior:'smooth'});
 });
 document.getElementById('expand').addEventListener('click', () => document.querySelectorAll('#chapters .ch').forEach(c => c.open = true));
 document.getElementById('collapse').addEventListener('click', () => document.querySelectorAll('#chapters .ch').forEach(c => c.open = false));
@@ -463,11 +681,35 @@ function openChapter(no){
   if (c.hidden) { q.value=''; setF('all'); }
   c.open = true; c.scrollIntoView({behavior:'smooth'});
 }
-document.addEventListener('keydown', e => {
-  if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); }
-  if (e.key === 'Escape' && document.activeElement === q) { q.value=''; apply(); q.blur(); }
-});
 apply();
+
+// ───────── 分頁 ─────────
+let TAB = 'map';
+function showTab(t){
+  TAB = t;
+  document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.tab===t ? 'true':'false'));
+  for (const id of ['map','log','list']) document.getElementById('tab-'+id).hidden = id !== t;
+  document.getElementById('wrap').classList.toggle('wide', t === 'map');
+}
+function setHash(t, node){ history.replaceState(null, '', '#' + t + (node ? '/' + node : '')); }
+document.querySelector('.tabs').addEventListener('click', e => {
+  const b = e.target.closest('button[data-tab]'); if (!b) return;
+  showTab(b.dataset.tab);
+  setHash(b.dataset.tab, b.dataset.tab === 'map' ? document.querySelector('.node.sel')?.dataset?.id : '');
+});
+for (const [id, g] of Object.entries(gOf)) g.dataset.id = id;
+{
+  const [t, node] = location.hash.slice(1).split('/');
+  showTab(['map','log','list'].includes(t) ? t : 'map');
+  selectNode(NODE[node] ? node : RM.now, false);
+}
+
+document.addEventListener('keydown', e => {
+  const input = TAB === 'log' ? q2 : TAB === 'list' ? q : null;
+  if (!input) return;
+  if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+  if (e.key === 'Escape' && document.activeElement === input) { input.value=''; input.dispatchEvent(new Event('input')); input.blur(); }
+});
 
 // 深淺色
 try { const s = localStorage.getItem('map-theme'); if (s) document.documentElement.dataset.theme = s; } catch(e){}

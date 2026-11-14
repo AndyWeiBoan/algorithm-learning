@@ -70,7 +70,7 @@
 | `checklist.md` | **範圍**：代碼隨想錄 12 章＋補充（排序章），🧱 標基石題 |
 | `notes/機制地圖.md` | **分母**：23 個高頻機制、三關驗收狀態、計分板 |
 | `data/records.json` | **每題練習紀錄**（冷測／閉卷／練習、輔助等級、發生的事）。練完題就在這加一筆 |
-| `roadmap.html` | 刷題地圖（靜態頁），讀 `data/roadmap-data.js`。練完題後執行 `python3 scripts/gen_roadmap.py` 更新資料 |
+| `roadmap.html` | 刷題地圖（靜態頁），讀 `data/roadmap-data.js`。三個分頁：地圖（NeetCode roadmap 節點，點開看題庫＋NeetCode 題和紀錄）／練習紀錄（可搜尋）／逐章清單。練完題後執行 `python3 scripts/gen_roadmap.py` 更新資料；**換章時改 `scripts/gen_roadmap.py` 的 `ROADMAP_NOW`** |
 | `notes/insight-日誌.md` | 機制心得，複習前先讀這裡 |
 | `notes/難題.md` | **會了又忘的題**（使用者 11-11 定）。排複習先看這份，優先於一般到期題；進出規則寫在檔案裡 |
 

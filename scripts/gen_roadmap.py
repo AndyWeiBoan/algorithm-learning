@@ -32,6 +32,43 @@ HIGH = set('206 19 203 24 142 92 21 144 94 145 102 104 110 543 106 236 98 235 45
 CH_ZH = {1: '陣列', 2: '鏈結串列', 3: '雜湊表', 4: '字串', 5: '雙指針', 6: '堆疊與佇列', 7: '二元樹',
          8: '回溯', 9: '貪心', 10: '動態規劃', 11: '單調堆疊', 12: '圖論', 13: '排序'}
 
+# NeetCode roadmap：(id, 英文名, 中文名, 題庫題號（先刷）, NeetCode 150 題號（當測驗）)
+# 題庫對應見 CLAUDE.md「章對應」；checklist 裡沒分到的題（字串、排序、59）只出現在逐章清單
+ROADMAP = [
+    ('ah', 'Arrays & Hashing', '陣列與雜湊', '242 1002 349 202 1 454 383 238 560',
+     '217 242 1 49 347 271 238 36 128'),
+    ('tp', 'Two Pointers', '雙指針', '344 27 977 11 283 26 15 18', '125 167 15 11 42'),
+    ('stack', 'Stack', '堆疊', '232 225 20 1047 150 739 496 503 42 84', '20 155 150 22 739 853 84'),
+    ('bs', 'Binary Search', '二分搜尋', '704 35 34', '704 74 875 153 33 981 4'),
+    ('sw', 'Sliding Window', '滑動視窗', '209 3 1004 904 438 567 424 76 239', '121 3 424 567 76 239'),
+    ('ll', 'Linked List', '鏈結串列', '203 707 206 24 19 160 142 146',
+     '206 21 143 19 138 2 141 287 146 23 25'),
+    ('trees', 'Trees', '樹', None,
+     '226 104 543 110 100 572 235 102 199 1448 98 230 105 124 297'),
+    ('tries', 'Tries', '字典樹', '', '208 211 212'),
+    ('heap', 'Heap / Priority Queue', '堆積', '215 347', '703 1046 973 215 621 355 295'),
+    ('bt', 'Backtracking', '回溯', None, '78 39 46 90 40 79 131 17 51'),
+    ('graphs', 'Graphs', '圖', '200 695 130 417 994 207 210 547 684 127',
+     '200 133 695 417 130 994 286 207 210 684 323 261 127'),
+    ('dp1', '1-D Dynamic Programming', '一維 DP', '509 70 746 343 96 416 1049 494 377 322 279 139 198 213 337 '
+     '121 123 188 309 714 300 674 392 647', '70 746 198 213 5 647 91 322 152 139 300 416'),
+    ('intervals', 'Intervals', '區間', '452 435 56', '57 56 435 252 253 1851'),
+    ('greedy', 'Greedy', '貪心', '455 376 53 122 55 45 1005 134 135 860 406 763 738 968',
+     '53 55 45 134 846 1899 763 678'),
+    ('adv', 'Advanced Graphs', '進階圖', '743 787', '332 1584 743 778 269 787'),
+    ('dp2', '2-D Dynamic Programming', '二維 DP', '62 63 474 518 1143 1035 718 115 583 72 516',
+     '62 1143 309 518 494 97 329 115 72 312 10'),
+    ('bit', 'Bit Manipulation', '位元運算', '', '136 191 338 190 268 371 7'),
+    ('math', 'Math & Geometry', '數學與幾何', '', '48 54 73 202 66 50 43 2013'),
+]
+ROADMAP_BANK_CH = {'trees': 7, 'bt': 8}  # 題庫＝整章
+ROADMAP_EDGES = [('ah', 'tp'), ('ah', 'stack'), ('tp', 'bs'), ('tp', 'sw'), ('tp', 'll'), ('bs', 'trees'),
+                 ('ll', 'trees'), ('trees', 'tries'), ('trees', 'heap'), ('trees', 'bt'), ('bt', 'graphs'),
+                 ('bt', 'dp1'), ('heap', 'intervals'), ('heap', 'greedy'), ('heap', 'adv'), ('graphs', 'adv'),
+                 ('graphs', 'dp2'), ('dp1', 'dp2'), ('dp1', 'bit'), ('bit', 'math'), ('dp2', 'math')]
+ROADMAP_NOW = 'stack'  # 現在在哪一章（換章時改這裡）
+SKIP = {'271': '付費題'}  # Hard 另外全部跳過（使用者 11-14 定）
+
 
 def cache_path(name):
     return os.path.join(CACHE, name)
@@ -225,8 +262,34 @@ def build_data():
     if outside:
         chapters.append({'no': 14, 'zh': '冷測・清單外', 'extra': True, 'groups': [{'g': '', 'items': outside}]})
 
+    # NeetCode 地圖：節點只放題號，題目資訊放 probs（紀錄從 records 查）
+    probs, nodes = {}, []
+    for nid, en, zh_name, bank, nc in ROADMAP:
+        if bank is None:
+            ch = next(c for c in chapters if c['no'] == ROADMAP_BANK_CH[nid])
+            bank = [('160' if i['n'] == '02.07' else i['n']) for i in items_of(ch)]
+        else:
+            bank = bank.split()
+        bank = list(dict.fromkeys(bank))
+        nc = nc.split()
+        for n in bank + nc:
+            if n in probs:
+                continue
+            p = plist.get(n, {})
+            d = (p.get('difficulty') or 'Easy')[0]
+            probs[n] = {'n': n, 't': p.get('title', n), 'zh': zh.get(n, '') or p.get('title_cn', ''),
+                        'slug': p.get('title_slug', ''), 'd': d, 'st': status(n), 'r': passes(n),
+                        'skip': SKIP.get(n) or ('Hard' if d == 'H' else '')}
+        nodes.append({'id': nid, 'en': en, 'zh': zh_name, 'bank': bank, 'nc': nc})
+    roadmap = {'nodes': nodes, 'edges': ROADMAP_EDGES, 'now': ROADMAP_NOW, 'probs': probs}
+
     stamp = datetime.date.today().isoformat()
-    return {'chapters': chapters, 'sql': sql, 'other': other, 'records': rec_items, 'stamp': stamp}
+    return {'chapters': chapters, 'sql': sql, 'other': other, 'records': rec_items, 'roadmap': roadmap,
+            'stamp': stamp}
+
+
+def items_of(ch):
+    return [i for g in ch['groups'] for i in g['items']]
 
 
 def main():

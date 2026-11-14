@@ -7231,5 +7231,3857 @@ window.ROADMAP = {
    ]
   }
  },
+ "roadmap": {
+  "nodes": [
+   {
+    "id": "ah",
+    "en": "Arrays & Hashing",
+    "zh": "陣列與雜湊",
+    "bank": [
+     "242",
+     "1002",
+     "349",
+     "202",
+     "1",
+     "454",
+     "383",
+     "238",
+     "560"
+    ],
+    "nc": [
+     "217",
+     "242",
+     "1",
+     "49",
+     "347",
+     "271",
+     "238",
+     "36",
+     "128"
+    ]
+   },
+   {
+    "id": "tp",
+    "en": "Two Pointers",
+    "zh": "雙指針",
+    "bank": [
+     "344",
+     "27",
+     "977",
+     "11",
+     "283",
+     "26",
+     "15",
+     "18"
+    ],
+    "nc": [
+     "125",
+     "167",
+     "15",
+     "11",
+     "42"
+    ]
+   },
+   {
+    "id": "stack",
+    "en": "Stack",
+    "zh": "堆疊",
+    "bank": [
+     "232",
+     "225",
+     "20",
+     "1047",
+     "150",
+     "739",
+     "496",
+     "503",
+     "42",
+     "84"
+    ],
+    "nc": [
+     "20",
+     "155",
+     "150",
+     "22",
+     "739",
+     "853",
+     "84"
+    ]
+   },
+   {
+    "id": "bs",
+    "en": "Binary Search",
+    "zh": "二分搜尋",
+    "bank": [
+     "704",
+     "35",
+     "34"
+    ],
+    "nc": [
+     "704",
+     "74",
+     "875",
+     "153",
+     "33",
+     "981",
+     "4"
+    ]
+   },
+   {
+    "id": "sw",
+    "en": "Sliding Window",
+    "zh": "滑動視窗",
+    "bank": [
+     "209",
+     "3",
+     "1004",
+     "904",
+     "438",
+     "567",
+     "424",
+     "76",
+     "239"
+    ],
+    "nc": [
+     "121",
+     "3",
+     "424",
+     "567",
+     "76",
+     "239"
+    ]
+   },
+   {
+    "id": "ll",
+    "en": "Linked List",
+    "zh": "鏈結串列",
+    "bank": [
+     "203",
+     "707",
+     "206",
+     "24",
+     "19",
+     "160",
+     "142",
+     "146"
+    ],
+    "nc": [
+     "206",
+     "21",
+     "143",
+     "19",
+     "138",
+     "2",
+     "141",
+     "287",
+     "146",
+     "23",
+     "25"
+    ]
+   },
+   {
+    "id": "trees",
+    "en": "Trees",
+    "zh": "樹",
+    "bank": [
+     "144",
+     "94",
+     "145",
+     "102",
+     "226",
+     "101",
+     "104",
+     "111",
+     "222",
+     "110",
+     "543",
+     "257",
+     "404",
+     "513",
+     "112",
+     "106",
+     "654",
+     "617",
+     "700",
+     "98",
+     "530",
+     "501",
+     "236",
+     "235",
+     "701",
+     "450",
+     "669",
+     "108",
+     "538"
+    ],
+    "nc": [
+     "226",
+     "104",
+     "543",
+     "110",
+     "100",
+     "572",
+     "235",
+     "102",
+     "199",
+     "1448",
+     "98",
+     "230",
+     "105",
+     "124",
+     "297"
+    ]
+   },
+   {
+    "id": "tries",
+    "en": "Tries",
+    "zh": "字典樹",
+    "bank": [],
+    "nc": [
+     "208",
+     "211",
+     "212"
+    ]
+   },
+   {
+    "id": "heap",
+    "en": "Heap / Priority Queue",
+    "zh": "堆積",
+    "bank": [
+     "215",
+     "347"
+    ],
+    "nc": [
+     "703",
+     "1046",
+     "973",
+     "215",
+     "621",
+     "355",
+     "295"
+    ]
+   },
+   {
+    "id": "bt",
+    "en": "Backtracking",
+    "zh": "回溯",
+    "bank": [
+     "77",
+     "216",
+     "17",
+     "39",
+     "40",
+     "22",
+     "79",
+     "698",
+     "131",
+     "93",
+     "78",
+     "90",
+     "491",
+     "46",
+     "47",
+     "332",
+     "51",
+     "37"
+    ],
+    "nc": [
+     "78",
+     "39",
+     "46",
+     "90",
+     "40",
+     "79",
+     "131",
+     "17",
+     "51"
+    ]
+   },
+   {
+    "id": "graphs",
+    "en": "Graphs",
+    "zh": "圖",
+    "bank": [
+     "200",
+     "695",
+     "130",
+     "417",
+     "994",
+     "207",
+     "210",
+     "547",
+     "684",
+     "127"
+    ],
+    "nc": [
+     "200",
+     "133",
+     "695",
+     "417",
+     "130",
+     "994",
+     "286",
+     "207",
+     "210",
+     "684",
+     "323",
+     "261",
+     "127"
+    ]
+   },
+   {
+    "id": "dp1",
+    "en": "1-D Dynamic Programming",
+    "zh": "一維 DP",
+    "bank": [
+     "509",
+     "70",
+     "746",
+     "343",
+     "96",
+     "416",
+     "1049",
+     "494",
+     "377",
+     "322",
+     "279",
+     "139",
+     "198",
+     "213",
+     "337",
+     "121",
+     "123",
+     "188",
+     "309",
+     "714",
+     "300",
+     "674",
+     "392",
+     "647"
+    ],
+    "nc": [
+     "70",
+     "746",
+     "198",
+     "213",
+     "5",
+     "647",
+     "91",
+     "322",
+     "152",
+     "139",
+     "300",
+     "416"
+    ]
+   },
+   {
+    "id": "intervals",
+    "en": "Intervals",
+    "zh": "區間",
+    "bank": [
+     "452",
+     "435",
+     "56"
+    ],
+    "nc": [
+     "57",
+     "56",
+     "435",
+     "252",
+     "253",
+     "1851"
+    ]
+   },
+   {
+    "id": "greedy",
+    "en": "Greedy",
+    "zh": "貪心",
+    "bank": [
+     "455",
+     "376",
+     "53",
+     "122",
+     "55",
+     "45",
+     "1005",
+     "134",
+     "135",
+     "860",
+     "406",
+     "763",
+     "738",
+     "968"
+    ],
+    "nc": [
+     "53",
+     "55",
+     "45",
+     "134",
+     "846",
+     "1899",
+     "763",
+     "678"
+    ]
+   },
+   {
+    "id": "adv",
+    "en": "Advanced Graphs",
+    "zh": "進階圖",
+    "bank": [
+     "743",
+     "787"
+    ],
+    "nc": [
+     "332",
+     "1584",
+     "743",
+     "778",
+     "269",
+     "787"
+    ]
+   },
+   {
+    "id": "dp2",
+    "en": "2-D Dynamic Programming",
+    "zh": "二維 DP",
+    "bank": [
+     "62",
+     "63",
+     "474",
+     "518",
+     "1143",
+     "1035",
+     "718",
+     "115",
+     "583",
+     "72",
+     "516"
+    ],
+    "nc": [
+     "62",
+     "1143",
+     "309",
+     "518",
+     "494",
+     "97",
+     "329",
+     "115",
+     "72",
+     "312",
+     "10"
+    ]
+   },
+   {
+    "id": "bit",
+    "en": "Bit Manipulation",
+    "zh": "位元運算",
+    "bank": [],
+    "nc": [
+     "136",
+     "191",
+     "338",
+     "190",
+     "268",
+     "371",
+     "7"
+    ]
+   },
+   {
+    "id": "math",
+    "en": "Math & Geometry",
+    "zh": "數學與幾何",
+    "bank": [],
+    "nc": [
+     "48",
+     "54",
+     "73",
+     "202",
+     "66",
+     "50",
+     "43",
+     "2013"
+    ]
+   }
+  ],
+  "edges": [
+   [
+    "ah",
+    "tp"
+   ],
+   [
+    "ah",
+    "stack"
+   ],
+   [
+    "tp",
+    "bs"
+   ],
+   [
+    "tp",
+    "sw"
+   ],
+   [
+    "tp",
+    "ll"
+   ],
+   [
+    "bs",
+    "trees"
+   ],
+   [
+    "ll",
+    "trees"
+   ],
+   [
+    "trees",
+    "tries"
+   ],
+   [
+    "trees",
+    "heap"
+   ],
+   [
+    "trees",
+    "bt"
+   ],
+   [
+    "bt",
+    "graphs"
+   ],
+   [
+    "bt",
+    "dp1"
+   ],
+   [
+    "heap",
+    "intervals"
+   ],
+   [
+    "heap",
+    "greedy"
+   ],
+   [
+    "heap",
+    "adv"
+   ],
+   [
+    "graphs",
+    "adv"
+   ],
+   [
+    "graphs",
+    "dp2"
+   ],
+   [
+    "dp1",
+    "dp2"
+   ],
+   [
+    "dp1",
+    "bit"
+   ],
+   [
+    "bit",
+    "math"
+   ],
+   [
+    "dp2",
+    "math"
+   ]
+  ],
+  "now": "stack",
+  "probs": {
+   "242": {
+    "n": "242",
+    "t": "Valid Anagram",
+    "zh": "有效的字母异位词",
+    "slug": "valid-anagram",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "1002": {
+    "n": "1002",
+    "t": "Find Common Characters",
+    "zh": "查找常用字符",
+    "slug": "find-common-characters",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "349": {
+    "n": "349",
+    "t": "Intersection of Two Arrays",
+    "zh": "两个数组的交集",
+    "slug": "intersection-of-two-arrays",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "202": {
+    "n": "202",
+    "t": "Happy Number",
+    "zh": "快乐数",
+    "slug": "happy-number",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "1": {
+    "n": "1",
+    "t": "Two Sum",
+    "zh": "两数之和",
+    "slug": "two-sum",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "454": {
+    "n": "454",
+    "t": "4Sum II",
+    "zh": "四数相加II",
+    "slug": "4sum-ii",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "383": {
+    "n": "383",
+    "t": "Ransom Note",
+    "zh": "赎金信",
+    "slug": "ransom-note",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "238": {
+    "n": "238",
+    "t": "Product of Array Except Self",
+    "zh": "",
+    "slug": "product-of-array-except-self",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "560": {
+    "n": "560",
+    "t": "Subarray Sum Equals K",
+    "zh": "",
+    "slug": "subarray-sum-equals-k",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "217": {
+    "n": "217",
+    "t": "Contains Duplicate",
+    "zh": "",
+    "slug": "contains-duplicate",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "49": {
+    "n": "49",
+    "t": "Group Anagrams",
+    "zh": "",
+    "slug": "group-anagrams",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "347": {
+    "n": "347",
+    "t": "Top K Frequent Elements",
+    "zh": "前K个高频元素",
+    "slug": "top-k-frequent-elements",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "271": {
+    "n": "271",
+    "t": "Encode and Decode Strings",
+    "zh": "",
+    "slug": "encode-and-decode-strings",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "付費題"
+   },
+   "36": {
+    "n": "36",
+    "t": "Valid Sudoku",
+    "zh": "",
+    "slug": "valid-sudoku",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "128": {
+    "n": "128",
+    "t": "Longest Consecutive Sequence",
+    "zh": "",
+    "slug": "longest-consecutive-sequence",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "344": {
+    "n": "344",
+    "t": "Reverse String",
+    "zh": "反转字符串",
+    "slug": "reverse-string",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "27": {
+    "n": "27",
+    "t": "Remove Element",
+    "zh": "移除元素",
+    "slug": "remove-element",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "977": {
+    "n": "977",
+    "t": "Squares of a Sorted Array",
+    "zh": "有序数组的平方",
+    "slug": "squares-of-a-sorted-array",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "11": {
+    "n": "11",
+    "t": "Container With Most Water",
+    "zh": "",
+    "slug": "container-with-most-water",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "283": {
+    "n": "283",
+    "t": "Move Zeroes",
+    "zh": "",
+    "slug": "move-zeroes",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "26": {
+    "n": "26",
+    "t": "Remove Duplicates from Sorted Array",
+    "zh": "",
+    "slug": "remove-duplicates-from-sorted-array",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "15": {
+    "n": "15",
+    "t": "3Sum",
+    "zh": "三数之和",
+    "slug": "3sum",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "18": {
+    "n": "18",
+    "t": "4Sum",
+    "zh": "四数之和",
+    "slug": "4sum",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "125": {
+    "n": "125",
+    "t": "Valid Palindrome",
+    "zh": "",
+    "slug": "valid-palindrome",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "167": {
+    "n": "167",
+    "t": "Two Sum II - Input Array Is Sorted",
+    "zh": "",
+    "slug": "two-sum-ii-input-array-is-sorted",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "42": {
+    "n": "42",
+    "t": "Trapping Rain Water",
+    "zh": "接雨水",
+    "slug": "trapping-rain-water",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "232": {
+    "n": "232",
+    "t": "Implement Queue using Stacks",
+    "zh": "用栈实现队列",
+    "slug": "implement-queue-using-stacks",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "225": {
+    "n": "225",
+    "t": "Implement Stack using Queues",
+    "zh": "用队列实现栈",
+    "slug": "implement-stack-using-queues",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "20": {
+    "n": "20",
+    "t": "Valid Parentheses",
+    "zh": "有效的括号",
+    "slug": "valid-parentheses",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "1047": {
+    "n": "1047",
+    "t": "Remove All Adjacent Duplicates In String",
+    "zh": "删除字符串中的所有相邻重复项",
+    "slug": "remove-all-adjacent-duplicates-in-string",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "150": {
+    "n": "150",
+    "t": "Evaluate Reverse Polish Notation",
+    "zh": "逆波兰表达式求值",
+    "slug": "evaluate-reverse-polish-notation",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "739": {
+    "n": "739",
+    "t": "Daily Temperatures",
+    "zh": "每日温度",
+    "slug": "daily-temperatures",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "496": {
+    "n": "496",
+    "t": "Next Greater Element I",
+    "zh": "下一个更大元素I",
+    "slug": "next-greater-element-i",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "503": {
+    "n": "503",
+    "t": "Next Greater Element II",
+    "zh": "下一个更大元素II",
+    "slug": "next-greater-element-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "84": {
+    "n": "84",
+    "t": "Largest Rectangle in Histogram",
+    "zh": "柱状图中最大的矩形",
+    "slug": "largest-rectangle-in-histogram",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "155": {
+    "n": "155",
+    "t": "Min Stack",
+    "zh": "",
+    "slug": "min-stack",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "22": {
+    "n": "22",
+    "t": "Generate Parentheses",
+    "zh": "",
+    "slug": "generate-parentheses",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "853": {
+    "n": "853",
+    "t": "Car Fleet",
+    "zh": "",
+    "slug": "car-fleet",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "704": {
+    "n": "704",
+    "t": "Binary Search",
+    "zh": "二分查找",
+    "slug": "binary-search",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "35": {
+    "n": "35",
+    "t": "Search Insert Position",
+    "zh": "",
+    "slug": "search-insert-position",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "34": {
+    "n": "34",
+    "t": "Find First and Last Position of Element in Sorted Array",
+    "zh": "",
+    "slug": "find-first-and-last-position-of-element-in-sorted-array",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "74": {
+    "n": "74",
+    "t": "Search a 2D Matrix",
+    "zh": "",
+    "slug": "search-a-2d-matrix",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "875": {
+    "n": "875",
+    "t": "Koko Eating Bananas",
+    "zh": "",
+    "slug": "koko-eating-bananas",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "153": {
+    "n": "153",
+    "t": "Find Minimum in Rotated Sorted Array",
+    "zh": "",
+    "slug": "find-minimum-in-rotated-sorted-array",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "33": {
+    "n": "33",
+    "t": "Search in Rotated Sorted Array",
+    "zh": "",
+    "slug": "search-in-rotated-sorted-array",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "981": {
+    "n": "981",
+    "t": "Time Based Key-Value Store",
+    "zh": "",
+    "slug": "time-based-key-value-store",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "4": {
+    "n": "4",
+    "t": "Median of Two Sorted Arrays",
+    "zh": "",
+    "slug": "median-of-two-sorted-arrays",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "209": {
+    "n": "209",
+    "t": "Minimum Size Subarray Sum",
+    "zh": "长度最小的子数组",
+    "slug": "minimum-size-subarray-sum",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "3": {
+    "n": "3",
+    "t": "Longest Substring Without Repeating Characters",
+    "zh": "",
+    "slug": "longest-substring-without-repeating-characters",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "1004": {
+    "n": "1004",
+    "t": "Max Consecutive Ones III",
+    "zh": "",
+    "slug": "max-consecutive-ones-iii",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "904": {
+    "n": "904",
+    "t": "Fruit Into Baskets",
+    "zh": "",
+    "slug": "fruit-into-baskets",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "438": {
+    "n": "438",
+    "t": "Find All Anagrams in a String",
+    "zh": "",
+    "slug": "find-all-anagrams-in-a-string",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "567": {
+    "n": "567",
+    "t": "Permutation in String",
+    "zh": "",
+    "slug": "permutation-in-string",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "424": {
+    "n": "424",
+    "t": "Longest Repeating Character Replacement",
+    "zh": "",
+    "slug": "longest-repeating-character-replacement",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "76": {
+    "n": "76",
+    "t": "Minimum Window Substring",
+    "zh": "",
+    "slug": "minimum-window-substring",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "239": {
+    "n": "239",
+    "t": "Sliding Window Maximum",
+    "zh": "滑动窗口最大值",
+    "slug": "sliding-window-maximum",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "121": {
+    "n": "121",
+    "t": "Best Time to Buy and Sell Stock",
+    "zh": "买卖股票的最佳时机",
+    "slug": "best-time-to-buy-and-sell-stock",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "203": {
+    "n": "203",
+    "t": "Remove Linked List Elements",
+    "zh": "移除链表元素",
+    "slug": "remove-linked-list-elements",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "707": {
+    "n": "707",
+    "t": "Design Linked List",
+    "zh": "设计链表",
+    "slug": "design-linked-list",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "206": {
+    "n": "206",
+    "t": "Reverse Linked List",
+    "zh": "翻转链表",
+    "slug": "reverse-linked-list",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "24": {
+    "n": "24",
+    "t": "Swap Nodes in Pairs",
+    "zh": "两两交换链表中的节点",
+    "slug": "swap-nodes-in-pairs",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "19": {
+    "n": "19",
+    "t": "Remove Nth Node From End of List",
+    "zh": "删除链表的倒数第N个节点",
+    "slug": "remove-nth-node-from-end-of-list",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "160": {
+    "n": "160",
+    "t": "Intersection of Two Linked Lists",
+    "zh": "",
+    "slug": "intersection-of-two-linked-lists",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "142": {
+    "n": "142",
+    "t": "Linked List Cycle II",
+    "zh": "环形链表II",
+    "slug": "linked-list-cycle-ii",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "146": {
+    "n": "146",
+    "t": "LRU Cache",
+    "zh": "",
+    "slug": "lru-cache",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "21": {
+    "n": "21",
+    "t": "Merge Two Sorted Lists",
+    "zh": "",
+    "slug": "merge-two-sorted-lists",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "143": {
+    "n": "143",
+    "t": "Reorder List",
+    "zh": "",
+    "slug": "reorder-list",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "138": {
+    "n": "138",
+    "t": "Copy List with Random Pointer",
+    "zh": "",
+    "slug": "copy-list-with-random-pointer",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "2": {
+    "n": "2",
+    "t": "Add Two Numbers",
+    "zh": "",
+    "slug": "add-two-numbers",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "141": {
+    "n": "141",
+    "t": "Linked List Cycle",
+    "zh": "",
+    "slug": "linked-list-cycle",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "287": {
+    "n": "287",
+    "t": "Find the Duplicate Number",
+    "zh": "",
+    "slug": "find-the-duplicate-number",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "23": {
+    "n": "23",
+    "t": "Merge k Sorted Lists",
+    "zh": "",
+    "slug": "merge-k-sorted-lists",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "25": {
+    "n": "25",
+    "t": "Reverse Nodes in k-Group",
+    "zh": "",
+    "slug": "reverse-nodes-in-k-group",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "144": {
+    "n": "144",
+    "t": "Binary Tree Preorder Traversal",
+    "zh": "",
+    "slug": "binary-tree-preorder-traversal",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "94": {
+    "n": "94",
+    "t": "Binary Tree Inorder Traversal",
+    "zh": "",
+    "slug": "binary-tree-inorder-traversal",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "145": {
+    "n": "145",
+    "t": "Binary Tree Postorder Traversal",
+    "zh": "",
+    "slug": "binary-tree-postorder-traversal",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "102": {
+    "n": "102",
+    "t": "Binary Tree Level Order Traversal",
+    "zh": "二叉树的层序遍历",
+    "slug": "binary-tree-level-order-traversal",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "226": {
+    "n": "226",
+    "t": "Invert Binary Tree",
+    "zh": "翻转二叉树",
+    "slug": "invert-binary-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "101": {
+    "n": "101",
+    "t": "Symmetric Tree",
+    "zh": "对称二叉树",
+    "slug": "symmetric-tree",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "104": {
+    "n": "104",
+    "t": "Maximum Depth of Binary Tree",
+    "zh": "二叉树的最大深度",
+    "slug": "maximum-depth-of-binary-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "111": {
+    "n": "111",
+    "t": "Minimum Depth of Binary Tree",
+    "zh": "二叉树的最小深度",
+    "slug": "minimum-depth-of-binary-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "222": {
+    "n": "222",
+    "t": "Count Complete Tree Nodes",
+    "zh": "完全二叉树的节点个数",
+    "slug": "count-complete-tree-nodes",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "110": {
+    "n": "110",
+    "t": "Balanced Binary Tree",
+    "zh": "平衡二叉树",
+    "slug": "balanced-binary-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "543": {
+    "n": "543",
+    "t": "Diameter of Binary Tree",
+    "zh": "",
+    "slug": "diameter-of-binary-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "257": {
+    "n": "257",
+    "t": "Binary Tree Paths",
+    "zh": "二叉树的所有路径",
+    "slug": "binary-tree-paths",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "404": {
+    "n": "404",
+    "t": "Sum of Left Leaves",
+    "zh": "左叶子之和",
+    "slug": "sum-of-left-leaves",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "513": {
+    "n": "513",
+    "t": "Find Bottom Left Tree Value",
+    "zh": "找树左下角的值",
+    "slug": "find-bottom-left-tree-value",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "112": {
+    "n": "112",
+    "t": "Path Sum",
+    "zh": "路径总和",
+    "slug": "path-sum",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "106": {
+    "n": "106",
+    "t": "Construct Binary Tree from Inorder and Postorder Traversal",
+    "zh": "从中序与后序遍历序列构造二叉树",
+    "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "654": {
+    "n": "654",
+    "t": "Maximum Binary Tree",
+    "zh": "最大二叉树",
+    "slug": "maximum-binary-tree",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "617": {
+    "n": "617",
+    "t": "Merge Two Binary Trees",
+    "zh": "合并二叉树",
+    "slug": "merge-two-binary-trees",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "700": {
+    "n": "700",
+    "t": "Search in a Binary Search Tree",
+    "zh": "二叉搜索树中的搜索",
+    "slug": "search-in-a-binary-search-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "98": {
+    "n": "98",
+    "t": "Validate Binary Search Tree",
+    "zh": "验证二叉搜索树",
+    "slug": "validate-binary-search-tree",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "530": {
+    "n": "530",
+    "t": "Minimum Absolute Difference in BST",
+    "zh": "二叉搜索树的最小绝对差",
+    "slug": "minimum-absolute-difference-in-bst",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "501": {
+    "n": "501",
+    "t": "Find Mode in Binary Search Tree",
+    "zh": "二叉搜索树中的众数",
+    "slug": "find-mode-in-binary-search-tree",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "236": {
+    "n": "236",
+    "t": "Lowest Common Ancestor of a Binary Tree",
+    "zh": "二叉树的最近公共祖先",
+    "slug": "lowest-common-ancestor-of-a-binary-tree",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "235": {
+    "n": "235",
+    "t": "Lowest Common Ancestor of a Binary Search Tree",
+    "zh": "二叉搜索树的最近公共祖先",
+    "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "701": {
+    "n": "701",
+    "t": "Insert into a Binary Search Tree",
+    "zh": "二叉搜索树中的插入操作",
+    "slug": "insert-into-a-binary-search-tree",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "450": {
+    "n": "450",
+    "t": "Delete Node in a BST",
+    "zh": "删除二叉搜索树中的节点",
+    "slug": "delete-node-in-a-bst",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "669": {
+    "n": "669",
+    "t": "Trim a Binary Search Tree",
+    "zh": "修剪二叉搜索树",
+    "slug": "trim-a-binary-search-tree",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "108": {
+    "n": "108",
+    "t": "Convert Sorted Array to Binary Search Tree",
+    "zh": "将有序数组转换为二叉搜索树",
+    "slug": "convert-sorted-array-to-binary-search-tree",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "538": {
+    "n": "538",
+    "t": "Convert BST to Greater Tree",
+    "zh": "把二叉搜索树转换为累加树",
+    "slug": "convert-bst-to-greater-tree",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "100": {
+    "n": "100",
+    "t": "Same Tree",
+    "zh": "",
+    "slug": "same-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "572": {
+    "n": "572",
+    "t": "Subtree of Another Tree",
+    "zh": "",
+    "slug": "subtree-of-another-tree",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "199": {
+    "n": "199",
+    "t": "Binary Tree Right Side View",
+    "zh": "",
+    "slug": "binary-tree-right-side-view",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "1448": {
+    "n": "1448",
+    "t": "Count Good Nodes in Binary Tree",
+    "zh": "",
+    "slug": "count-good-nodes-in-binary-tree",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "230": {
+    "n": "230",
+    "t": "Kth Smallest Element in a BST",
+    "zh": "",
+    "slug": "kth-smallest-element-in-a-bst",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "105": {
+    "n": "105",
+    "t": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "zh": "",
+    "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     false,
+     true
+    ],
+    "skip": ""
+   },
+   "124": {
+    "n": "124",
+    "t": "Binary Tree Maximum Path Sum",
+    "zh": "",
+    "slug": "binary-tree-maximum-path-sum",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "297": {
+    "n": "297",
+    "t": "Serialize and Deserialize Binary Tree",
+    "zh": "",
+    "slug": "serialize-and-deserialize-binary-tree",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "208": {
+    "n": "208",
+    "t": "Implement Trie (Prefix Tree)",
+    "zh": "",
+    "slug": "implement-trie-prefix-tree",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "211": {
+    "n": "211",
+    "t": "Design Add and Search Words Data Structure",
+    "zh": "",
+    "slug": "design-add-and-search-words-data-structure",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "212": {
+    "n": "212",
+    "t": "Word Search II",
+    "zh": "",
+    "slug": "word-search-ii",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "215": {
+    "n": "215",
+    "t": "Kth Largest Element in an Array",
+    "zh": "",
+    "slug": "kth-largest-element-in-an-array",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "703": {
+    "n": "703",
+    "t": "Kth Largest Element in a Stream",
+    "zh": "",
+    "slug": "kth-largest-element-in-a-stream",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "1046": {
+    "n": "1046",
+    "t": "Last Stone Weight",
+    "zh": "",
+    "slug": "last-stone-weight",
+    "d": "E",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "973": {
+    "n": "973",
+    "t": "K Closest Points to Origin",
+    "zh": "",
+    "slug": "k-closest-points-to-origin",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "621": {
+    "n": "621",
+    "t": "Task Scheduler",
+    "zh": "",
+    "slug": "task-scheduler",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "355": {
+    "n": "355",
+    "t": "Design Twitter",
+    "zh": "",
+    "slug": "design-twitter",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "295": {
+    "n": "295",
+    "t": "Find Median from Data Stream",
+    "zh": "",
+    "slug": "find-median-from-data-stream",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "77": {
+    "n": "77",
+    "t": "Combinations",
+    "zh": "组合优化",
+    "slug": "combinations",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "216": {
+    "n": "216",
+    "t": "Combination Sum III",
+    "zh": "组合总和III",
+    "slug": "combination-sum-iii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "17": {
+    "n": "17",
+    "t": "Letter Combinations of a Phone Number",
+    "zh": "电话号码的字母组合",
+    "slug": "letter-combinations-of-a-phone-number",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "39": {
+    "n": "39",
+    "t": "Combination Sum",
+    "zh": "组合总和",
+    "slug": "combination-sum",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "40": {
+    "n": "40",
+    "t": "Combination Sum II",
+    "zh": "组合总和II",
+    "slug": "combination-sum-ii",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "79": {
+    "n": "79",
+    "t": "Word Search",
+    "zh": "",
+    "slug": "word-search",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "698": {
+    "n": "698",
+    "t": "Partition to K Equal Sum Subsets",
+    "zh": "",
+    "slug": "partition-to-k-equal-sum-subsets",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "131": {
+    "n": "131",
+    "t": "Palindrome Partitioning",
+    "zh": "分割回文串",
+    "slug": "palindrome-partitioning",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "93": {
+    "n": "93",
+    "t": "Restore IP Addresses",
+    "zh": "复原IP地址",
+    "slug": "restore-ip-addresses",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "78": {
+    "n": "78",
+    "t": "Subsets",
+    "zh": "子集",
+    "slug": "subsets",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "90": {
+    "n": "90",
+    "t": "Subsets II",
+    "zh": "子集II",
+    "slug": "subsets-ii",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "491": {
+    "n": "491",
+    "t": "Non-decreasing Subsequences",
+    "zh": "递增子序列",
+    "slug": "non-decreasing-subsequences",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "46": {
+    "n": "46",
+    "t": "Permutations",
+    "zh": "全排列",
+    "slug": "permutations",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "47": {
+    "n": "47",
+    "t": "Permutations II",
+    "zh": "全排列II",
+    "slug": "permutations-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "332": {
+    "n": "332",
+    "t": "Reconstruct Itinerary",
+    "zh": "重新安排行程",
+    "slug": "reconstruct-itinerary",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "51": {
+    "n": "51",
+    "t": "N-Queens",
+    "zh": "N皇后",
+    "slug": "n-queens",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "37": {
+    "n": "37",
+    "t": "Sudoku Solver",
+    "zh": "解数独",
+    "slug": "sudoku-solver",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "200": {
+    "n": "200",
+    "t": "Number of Islands",
+    "zh": "",
+    "slug": "number-of-islands",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "695": {
+    "n": "695",
+    "t": "Max Area of Island",
+    "zh": "",
+    "slug": "max-area-of-island",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "130": {
+    "n": "130",
+    "t": "Surrounded Regions",
+    "zh": "",
+    "slug": "surrounded-regions",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "417": {
+    "n": "417",
+    "t": "Pacific Atlantic Water Flow",
+    "zh": "",
+    "slug": "pacific-atlantic-water-flow",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "994": {
+    "n": "994",
+    "t": "Rotting Oranges",
+    "zh": "",
+    "slug": "rotting-oranges",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "207": {
+    "n": "207",
+    "t": "Course Schedule",
+    "zh": "",
+    "slug": "course-schedule",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "210": {
+    "n": "210",
+    "t": "Course Schedule II",
+    "zh": "",
+    "slug": "course-schedule-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "547": {
+    "n": "547",
+    "t": "Number of Provinces",
+    "zh": "",
+    "slug": "number-of-provinces",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "684": {
+    "n": "684",
+    "t": "Redundant Connection",
+    "zh": "",
+    "slug": "redundant-connection",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "127": {
+    "n": "127",
+    "t": "Word Ladder",
+    "zh": "",
+    "slug": "word-ladder",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "133": {
+    "n": "133",
+    "t": "Clone Graph",
+    "zh": "",
+    "slug": "clone-graph",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "286": {
+    "n": "286",
+    "t": "Walls and Gates",
+    "zh": "",
+    "slug": "walls-and-gates",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "323": {
+    "n": "323",
+    "t": "Number of Connected Components in an Undirected Graph",
+    "zh": "",
+    "slug": "number-of-connected-components-in-an-undirected-graph",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "261": {
+    "n": "261",
+    "t": "Graph Valid Tree",
+    "zh": "",
+    "slug": "graph-valid-tree",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "509": {
+    "n": "509",
+    "t": "Fibonacci Number",
+    "zh": "斐波那契数",
+    "slug": "fibonacci-number",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "70": {
+    "n": "70",
+    "t": "Climbing Stairs",
+    "zh": "爬楼梯完全背包版本",
+    "slug": "climbing-stairs",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "746": {
+    "n": "746",
+    "t": "Min Cost Climbing Stairs",
+    "zh": "使用最小花费爬楼梯",
+    "slug": "min-cost-climbing-stairs",
+    "d": "E",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "343": {
+    "n": "343",
+    "t": "Integer Break",
+    "zh": "整数拆分",
+    "slug": "integer-break",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "96": {
+    "n": "96",
+    "t": "Unique Binary Search Trees",
+    "zh": "不同的二叉搜索树",
+    "slug": "unique-binary-search-trees",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "416": {
+    "n": "416",
+    "t": "Partition Equal Subset Sum",
+    "zh": "分割等和子集",
+    "slug": "partition-equal-subset-sum",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "1049": {
+    "n": "1049",
+    "t": "Last Stone Weight II",
+    "zh": "最后一块石头的重量II",
+    "slug": "last-stone-weight-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "494": {
+    "n": "494",
+    "t": "Target Sum",
+    "zh": "目标和",
+    "slug": "target-sum",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "377": {
+    "n": "377",
+    "t": "Combination Sum IV",
+    "zh": "组合总和Ⅳ",
+    "slug": "combination-sum-iv",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "322": {
+    "n": "322",
+    "t": "Coin Change",
+    "zh": "零钱兑换",
+    "slug": "coin-change",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "279": {
+    "n": "279",
+    "t": "Perfect Squares",
+    "zh": "完全平方数",
+    "slug": "perfect-squares",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "139": {
+    "n": "139",
+    "t": "Word Break",
+    "zh": "单词拆分",
+    "slug": "word-break",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "198": {
+    "n": "198",
+    "t": "House Robber",
+    "zh": "打家劫舍",
+    "slug": "house-robber",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     true
+    ],
+    "skip": ""
+   },
+   "213": {
+    "n": "213",
+    "t": "House Robber II",
+    "zh": "打家劫舍II",
+    "slug": "house-robber-ii",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "337": {
+    "n": "337",
+    "t": "House Robber III",
+    "zh": "打家劫舍III",
+    "slug": "house-robber-iii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "123": {
+    "n": "123",
+    "t": "Best Time to Buy and Sell Stock III",
+    "zh": "买卖股票的最佳时机III",
+    "slug": "best-time-to-buy-and-sell-stock-iii",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "188": {
+    "n": "188",
+    "t": "Best Time to Buy and Sell Stock IV",
+    "zh": "买卖股票的最佳时机IV",
+    "slug": "best-time-to-buy-and-sell-stock-iv",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "309": {
+    "n": "309",
+    "t": "Best Time to Buy and Sell Stock with Cooldown",
+    "zh": "最佳买卖股票时机含冷冻期",
+    "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "714": {
+    "n": "714",
+    "t": "Best Time to Buy and Sell Stock with Transaction Fee",
+    "zh": "买卖股票的最佳时机含手续费（动态规划）",
+    "slug": "best-time-to-buy-and-sell-stock-with-transaction-fee",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "300": {
+    "n": "300",
+    "t": "Longest Increasing Subsequence",
+    "zh": "最长上升子序列",
+    "slug": "longest-increasing-subsequence",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "674": {
+    "n": "674",
+    "t": "Longest Continuous Increasing Subsequence",
+    "zh": "最长连续递增序列",
+    "slug": "longest-continuous-increasing-subsequence",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "392": {
+    "n": "392",
+    "t": "Is Subsequence",
+    "zh": "判断子序列",
+    "slug": "is-subsequence",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "647": {
+    "n": "647",
+    "t": "Palindromic Substrings",
+    "zh": "回文子串",
+    "slug": "palindromic-substrings",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "5": {
+    "n": "5",
+    "t": "Longest Palindromic Substring",
+    "zh": "",
+    "slug": "longest-palindromic-substring",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "91": {
+    "n": "91",
+    "t": "Decode Ways",
+    "zh": "",
+    "slug": "decode-ways",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "152": {
+    "n": "152",
+    "t": "Maximum Product Subarray",
+    "zh": "",
+    "slug": "maximum-product-subarray",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "452": {
+    "n": "452",
+    "t": "Minimum Number of Arrows to Burst Balloons",
+    "zh": "用最少数量的箭引爆气球",
+    "slug": "minimum-number-of-arrows-to-burst-balloons",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "435": {
+    "n": "435",
+    "t": "Non-overlapping Intervals",
+    "zh": "无重叠区间",
+    "slug": "non-overlapping-intervals",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "56": {
+    "n": "56",
+    "t": "Merge Intervals",
+    "zh": "合并区间",
+    "slug": "merge-intervals",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "57": {
+    "n": "57",
+    "t": "Insert Interval",
+    "zh": "",
+    "slug": "insert-interval",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "252": {
+    "n": "252",
+    "t": "Meeting Rooms",
+    "zh": "",
+    "slug": "meeting-rooms",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "253": {
+    "n": "253",
+    "t": "Meeting Rooms II",
+    "zh": "",
+    "slug": "meeting-rooms-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "1851": {
+    "n": "1851",
+    "t": "Minimum Interval to Include Each Query",
+    "zh": "",
+    "slug": "minimum-interval-to-include-each-query",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "455": {
+    "n": "455",
+    "t": "Assign Cookies",
+    "zh": "分发饼干",
+    "slug": "assign-cookies",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "376": {
+    "n": "376",
+    "t": "Wiggle Subsequence",
+    "zh": "摆动序列",
+    "slug": "wiggle-subsequence",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "53": {
+    "n": "53",
+    "t": "Maximum Subarray",
+    "zh": "最大子序和（动态规划）",
+    "slug": "maximum-subarray",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "122": {
+    "n": "122",
+    "t": "Best Time to Buy and Sell Stock II",
+    "zh": "买卖股票的最佳时机II（动态规划）",
+    "slug": "best-time-to-buy-and-sell-stock-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "55": {
+    "n": "55",
+    "t": "Jump Game",
+    "zh": "跳跃游戏",
+    "slug": "jump-game",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "45": {
+    "n": "45",
+    "t": "Jump Game II",
+    "zh": "跳跃游戏II",
+    "slug": "jump-game-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "1005": {
+    "n": "1005",
+    "t": "Maximize Sum Of Array After K Negations",
+    "zh": "K次取反后最大化的数组和",
+    "slug": "maximize-sum-of-array-after-k-negations",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "134": {
+    "n": "134",
+    "t": "Gas Station",
+    "zh": "加油站",
+    "slug": "gas-station",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "135": {
+    "n": "135",
+    "t": "Candy",
+    "zh": "分发糖果",
+    "slug": "candy",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "860": {
+    "n": "860",
+    "t": "Lemonade Change",
+    "zh": "柠檬水找零",
+    "slug": "lemonade-change",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "406": {
+    "n": "406",
+    "t": "Queue Reconstruction by Height",
+    "zh": "根据身高重建队列",
+    "slug": "queue-reconstruction-by-height",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "763": {
+    "n": "763",
+    "t": "Partition Labels",
+    "zh": "划分字母区间",
+    "slug": "partition-labels",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "738": {
+    "n": "738",
+    "t": "Monotone Increasing Digits",
+    "zh": "单调递增的数字",
+    "slug": "monotone-increasing-digits",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "968": {
+    "n": "968",
+    "t": "Binary Tree Cameras",
+    "zh": "监控二叉树",
+    "slug": "binary-tree-cameras",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "846": {
+    "n": "846",
+    "t": "Hand of Straights",
+    "zh": "",
+    "slug": "hand-of-straights",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "1899": {
+    "n": "1899",
+    "t": "Merge Triplets to Form Target Triplet",
+    "zh": "",
+    "slug": "merge-triplets-to-form-target-triplet",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "678": {
+    "n": "678",
+    "t": "Valid Parenthesis String",
+    "zh": "",
+    "slug": "valid-parenthesis-string",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "743": {
+    "n": "743",
+    "t": "Network Delay Time",
+    "zh": "",
+    "slug": "network-delay-time",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "787": {
+    "n": "787",
+    "t": "Cheapest Flights Within K Stops",
+    "zh": "",
+    "slug": "cheapest-flights-within-k-stops",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "1584": {
+    "n": "1584",
+    "t": "Min Cost to Connect All Points",
+    "zh": "",
+    "slug": "min-cost-to-connect-all-points",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "778": {
+    "n": "778",
+    "t": "Swim in Rising Water",
+    "zh": "",
+    "slug": "swim-in-rising-water",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "269": {
+    "n": "269",
+    "t": "Alien Dictionary",
+    "zh": "",
+    "slug": "alien-dictionary",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "62": {
+    "n": "62",
+    "t": "Unique Paths",
+    "zh": "不同路径",
+    "slug": "unique-paths",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     true,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "63": {
+    "n": "63",
+    "t": "Unique Paths II",
+    "zh": "不同路径II",
+    "slug": "unique-paths-ii",
+    "d": "M",
+    "st": "y26",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "474": {
+    "n": "474",
+    "t": "Ones and Zeroes",
+    "zh": "一和零",
+    "slug": "ones-and-zeroes",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "518": {
+    "n": "518",
+    "t": "Coin Change II",
+    "zh": "零钱兑换II",
+    "slug": "coin-change-ii",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "1143": {
+    "n": "1143",
+    "t": "Longest Common Subsequence",
+    "zh": "最长公共子序列",
+    "slug": "longest-common-subsequence",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "1035": {
+    "n": "1035",
+    "t": "Uncrossed Lines",
+    "zh": "不相交的线",
+    "slug": "uncrossed-lines",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "718": {
+    "n": "718",
+    "t": "Maximum Length of Repeated Subarray",
+    "zh": "最长重复子数组",
+    "slug": "maximum-length-of-repeated-subarray",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "115": {
+    "n": "115",
+    "t": "Distinct Subsequences",
+    "zh": "不同的子序列",
+    "slug": "distinct-subsequences",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "583": {
+    "n": "583",
+    "t": "Delete Operation for Two Strings",
+    "zh": "两个字符串的删除操作",
+    "slug": "delete-operation-for-two-strings",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "72": {
+    "n": "72",
+    "t": "Edit Distance",
+    "zh": "编辑距离",
+    "slug": "edit-distance",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "516": {
+    "n": "516",
+    "t": "Longest Palindromic Subsequence",
+    "zh": "最长回文子序列",
+    "slug": "longest-palindromic-subsequence",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "97": {
+    "n": "97",
+    "t": "Interleaving String",
+    "zh": "",
+    "slug": "interleaving-string",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "329": {
+    "n": "329",
+    "t": "Longest Increasing Path in a Matrix",
+    "zh": "",
+    "slug": "longest-increasing-path-in-a-matrix",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "312": {
+    "n": "312",
+    "t": "Burst Balloons",
+    "zh": "",
+    "slug": "burst-balloons",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "10": {
+    "n": "10",
+    "t": "Regular Expression Matching",
+    "zh": "",
+    "slug": "regular-expression-matching",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
+   },
+   "136": {
+    "n": "136",
+    "t": "Single Number",
+    "zh": "",
+    "slug": "single-number",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "191": {
+    "n": "191",
+    "t": "Number of 1 Bits",
+    "zh": "",
+    "slug": "number-of-1-bits",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "338": {
+    "n": "338",
+    "t": "Counting Bits",
+    "zh": "",
+    "slug": "counting-bits",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "190": {
+    "n": "190",
+    "t": "Reverse Bits",
+    "zh": "",
+    "slug": "reverse-bits",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "268": {
+    "n": "268",
+    "t": "Missing Number",
+    "zh": "",
+    "slug": "missing-number",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "371": {
+    "n": "371",
+    "t": "Sum of Two Integers",
+    "zh": "",
+    "slug": "sum-of-two-integers",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "7": {
+    "n": "7",
+    "t": "Reverse Integer",
+    "zh": "",
+    "slug": "reverse-integer",
+    "d": "M",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "48": {
+    "n": "48",
+    "t": "Rotate Image",
+    "zh": "",
+    "slug": "rotate-image",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "54": {
+    "n": "54",
+    "t": "Spiral Matrix",
+    "zh": "",
+    "slug": "spiral-matrix",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "73": {
+    "n": "73",
+    "t": "Set Matrix Zeroes",
+    "zh": "",
+    "slug": "set-matrix-zeroes",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "66": {
+    "n": "66",
+    "t": "Plus One",
+    "zh": "",
+    "slug": "plus-one",
+    "d": "E",
+    "st": "y19",
+    "r": [
+     true,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "50": {
+    "n": "50",
+    "t": "Pow(x, n)",
+    "zh": "",
+    "slug": "powx-n",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "43": {
+    "n": "43",
+    "t": "Multiply Strings",
+    "zh": "",
+    "slug": "multiply-strings",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
+   "2013": {
+    "n": "2013",
+    "t": "Detect Squares",
+    "zh": "",
+    "slug": "detect-squares",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   }
+  }
+ },
  "stamp": "2026-11-14"
 };
