@@ -41,6 +41,10 @@ html{scrollbar-gutter:stable}
 .wrap{max-width:1440px;margin:0 auto;padding:36px 20px 96px}
 
 .eyebrow{font-size:12px;letter-spacing:.14em;color:var(--ink3);font-weight:600}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.refresh{font:inherit;font-size:13px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid var(--rule);background:var(--card);color:var(--ink2);cursor:pointer;white-space:nowrap}
+.refresh:hover{border-color:var(--ink2);color:var(--ink)}
+.refresh small{color:var(--ink3);font-size:11.5px}
 h1{font-size:34px;line-height:1.2;margin:8px 0 10px;font-weight:700}
 .intro{color:var(--ink2);max-width:760px;margin:0}
 .intro b{color:var(--ink)}
@@ -260,7 +264,10 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
 <body>
 <div class="wrap" id="wrap">
 
-  <div class="eyebrow">LEETCODE · NEETCODE ROADMAP ＋ 代碼隨想錄題庫</div>
+  <div class="top">
+    <div class="eyebrow">LEETCODE · NEETCODE ROADMAP ＋ 代碼隨想錄題庫</div>
+    <button class="refresh" id="refresh" title="重新載入 data/roadmap-data.js（先跑 python3 scripts/gen_roadmap.py 才會有新資料）"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9"/><path d="M13.5 2.5v3h-3"/></svg>刷新 <small class="num" id="stamp2"></small></button>
+  </div>
   <h1>刷題地圖</h1>
   <p class="intro" id="intro"></p>
 
@@ -414,6 +421,8 @@ const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const hl = (text, s) => s ? esc(text).replace(new RegExp(reEsc(esc(s)),'ig'), m=>`<mark>${m}</mark>`) : esc(text);
 
 document.getElementById('stamp').textContent = D.stamp;
+document.getElementById('stamp2').textContent = D.stamp;
+document.getElementById('refresh').addEventListener('click', () => location.reload());
 
 // ───────── 地圖 ─────────
 const RM = D.roadmap, PR = RM.probs;
