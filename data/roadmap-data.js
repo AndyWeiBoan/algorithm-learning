@@ -1094,16 +1094,23 @@ window.ROADMAP = {
        "zh": "用队列实现栈",
        "slug": "implement-stack-using-queues",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "E",
        "hi": true,
        "base": "",
        "r": [
         false,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "Stack 章題庫。方向自己想對：一個 queue＋_head 記頂；Pop 把前 n-1 個搬到新 queue、最後一個就是答案。bug：① 只剩 2 個時 queue.Peek() 空 queue 例外（push1,push2,pop）② 新 top 取成 queue.Peek()（最舊的），應該是倒數第二個（push1..3,pop,top 回 1）。②使用者問哪裡錯，AI 指出位置後改成 _in.Peek()，fuzz 0 mismatch。"
+        }
+       ]
       },
       {
        "n": "20",
@@ -7269,6 +7276,27 @@ window.ROADMAP = {
      "note": "改寫成攤還 O(1) 版：in/out 兩個 stack，Push 只進 in，Pop/Peek 在 out 空時才把 in 整批倒過去。兩 stack 分工是 AI 講的；『攤還』AI 講了好幾輪才講清楚（最後用逐步操作表），使用者很不滿解說品質。fuzz 0 mismatch。使用者疑問：單次最糟仍 O(n)，算不算 O(1)。"
     }
    ]
+  },
+  "225": {
+   "n": "225",
+   "t": "Implement Stack using Queues",
+   "zh": "用队列实现栈",
+   "slug": "implement-stack-using-queues",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "Stack 章題庫。方向自己想對：一個 queue＋_head 記頂；Pop 把前 n-1 個搬到新 queue、最後一個就是答案。bug：① 只剩 2 個時 queue.Peek() 空 queue 例外（push1,push2,pop）② 新 top 取成 queue.Peek()（最舊的），應該是倒數第二個（push1..3,pop,top 回 1）。②使用者問哪裡錯，AI 指出位置後改成 _in.Peek()，fuzz 0 mismatch。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8215,11 +8243,11 @@ window.ROADMAP = {
     "zh": "用队列实现栈",
     "slug": "implement-stack-using-queues",
     "d": "E",
-    "st": "y26",
+    "st": "grad",
     "r": [
      false,
      true,
-     false
+     true
     ],
     "skip": ""
    },
