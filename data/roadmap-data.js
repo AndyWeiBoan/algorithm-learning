@@ -3816,6 +3816,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "167",
+       "t": "Two Sum II - Input Array Is Sorted",
+       "zh": "",
+       "slug": "two-sum-ii-input-array-is-sorted",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Two Pointers 章 NeetCode 測驗（Hard 跳過後的最後一題）。只問題意（保證唯一解、1-based），一次寫對：兩頭夾，和太大 right--、太小 left++。fuzz 0 mismatch。複雜度 O(n)/O(1) 正確。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "199",
        "t": "Binary Tree Right Side View",
        "zh": "",
@@ -4511,18 +4535,6 @@ window.ROADMAP = {
    "n": "155",
    "t": "Min Stack",
    "slug": "min-stack",
-   "st": "y19",
-   "r": [
-    true,
-    false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "167",
-   "t": "Two Sum II - Input Array Is Sorted",
-   "slug": "two-sum-ii-input-array-is-sorted",
    "st": "y19",
    "r": [
     true,
@@ -7164,6 +7176,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "Two Pointers 章 NeetCode 測驗。題意要 AI 解釋（只留字母和數字、忽略大小寫，數字也算），解法沒給提示。三版：① 比完沒移動 left/right（\"aa\" 無窮迴圈）② 改用 for i，交叉後還繼續比（\"a.a\" 回 false）③ 改回 while(left<right)，跳過無效字元、比完兩邊各移一格，全 ASCII 可印字元 fuzz 0 mismatch。只靠反例改。使用者：『這一題好搞人』。"
+    }
+   ]
+  },
+  "167": {
+   "n": "167",
+   "t": "Two Sum II - Input Array Is Sorted",
+   "zh": "",
+   "slug": "two-sum-ii-input-array-is-sorted",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Two Pointers 章 NeetCode 測驗（Hard 跳過後的最後一題）。只問題意（保證唯一解、1-based），一次寫對：兩頭夾，和太大 right--、太小 left++。fuzz 0 mismatch。複雜度 O(n)/O(1) 正確。"
     }
    ]
   }
