@@ -868,16 +868,23 @@ window.ROADMAP = {
        "zh": "",
        "slug": "container-with-most-water",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "M",
        "hi": false,
        "base": "對撞指針",
        "r": [
         true,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-14",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Two Pointers 章題庫最後一題（對撞型）。沒講想法直接寫，一次寫對：兩頭夾、面積＝min 高×寬、短的那邊往內移。20 萬組 fuzz（對暴力解）0 mismatch，含 10 萬格大陣列。"
+        }
+       ]
       },
       {
        "n": "283",
@@ -7091,6 +7098,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "緊接 27/26 之後使用者主動要『類似的一題』。沒講想法直接寫，一次寫對：left 記寫到第幾格，非 0 就跟 nums[left] 交換、left++。20 萬組 fuzz 0 mismatch。同一招（寫入位置變數）當晚就自己用出來了。"
+    }
+   ]
+  },
+  "11": {
+   "n": "11",
+   "t": "Container With Most Water",
+   "zh": "",
+   "slug": "container-with-most-water",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-14",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Two Pointers 章題庫最後一題（對撞型）。沒講想法直接寫，一次寫對：兩頭夾、面積＝min 高×寬、短的那邊往內移。20 萬組 fuzz（對暴力解）0 mismatch，含 10 萬格大陣列。"
     }
    ]
   }
