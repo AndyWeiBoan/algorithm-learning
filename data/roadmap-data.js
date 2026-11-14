@@ -1079,6 +1079,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "Stack 章題庫第一題。一個 stack＋_head 變數記隊頭：Push O(1)、Peek 直接回 _head；Pop 每次把整個 stack 倒到暫存 stack、取底、再倒回去（O(n)）。20 萬組隨機操作 fuzz 0 mismatch。正確，但不是標準解：兩個 stack（in/out），out 空了才整批倒，攤還 O(1)。"
+        },
+        {
+         "date": "2026-11-14",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "改寫成攤還 O(1) 版：in/out 兩個 stack，Push 只進 in，Pop/Peek 在 out 空時才把 in 整批倒過去。兩 stack 分工是 AI 講的；『攤還』AI 講了好幾輪才講清楚（最後用逐步操作表），使用者很不滿解說品質。fuzz 0 mismatch。使用者疑問：單次最糟仍 O(n)，算不算 O(1)。"
         }
        ]
       },
@@ -7255,6 +7261,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "Stack 章題庫第一題。一個 stack＋_head 變數記隊頭：Push O(1)、Peek 直接回 _head；Pop 每次把整個 stack 倒到暫存 stack、取底、再倒回去（O(n)）。20 萬組隨機操作 fuzz 0 mismatch。正確，但不是標準解：兩個 stack（in/out），out 空了才整批倒，攤還 O(1)。"
+    },
+    {
+     "date": "2026-11-14",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "改寫成攤還 O(1) 版：in/out 兩個 stack，Push 只進 in，Pop/Peek 在 out 空時才把 in 整批倒過去。兩 stack 分工是 AI 講的；『攤還』AI 講了好幾輪才講清楚（最後用逐步操作表），使用者很不滿解說品質。fuzz 0 mismatch。使用者疑問：單次最糟仍 O(n)，算不算 O(1)。"
     }
    ]
   }
