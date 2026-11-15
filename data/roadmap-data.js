@@ -51,6 +51,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "靠引導",
          "note": "隔天閉卷重寫。第一版條件寫反：遇到 == val 才動作，還從 nums[left] 抄回 nums[i]（[1] val=2 回 0）。使用者問『是要找與 val 相等的？』，AI 講『找不等於 val 的、寫到 left、left++』後一次改對，fuzz 全過。283 昨晚獨立用出同一招，但換成 27 就把『留哪些』搞反。"
+        },
+        {
+         "date": "2026-11-15",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "難題複習。快慢指針：left＝下一個寫入位置，nums[i]!=val 就寫到 nums[left++]，條件和方向都對了；20 萬組 fuzz 0 錯。"
         }
        ]
       },
@@ -7135,6 +7141,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "靠引導",
      "note": "隔天閉卷重寫。第一版條件寫反：遇到 == val 才動作，還從 nums[left] 抄回 nums[i]（[1] val=2 回 0）。使用者問『是要找與 val 相等的？』，AI 講『找不等於 val 的、寫到 left、left++』後一次改對，fuzz 全過。283 昨晚獨立用出同一招，但換成 27 就把『留哪些』搞反。"
+    },
+    {
+     "date": "2026-11-15",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "難題複習。快慢指針：left＝下一個寫入位置，nums[i]!=val 就寫到 nums[left++]，條件和方向都對了；20 萬組 fuzz 0 錯。"
     }
    ]
   },
