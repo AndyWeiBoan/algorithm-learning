@@ -3367,16 +3367,23 @@ window.ROADMAP = {
        "zh": "下一个更大元素II",
        "slug": "next-greater-element-ii",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "",
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-15",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "Stack 章單調堆疊（環狀版）。第一輪照 496 寫對；方向「處理最後 stack 剩下的」自己想到，但剩下的拿來彼此比 index → 無窮迴圈（反例 [3,3]）。「從 nums[0] 正序再掃一次去比」是我講的。之後內層找到答案沒 break、被蓋回 -1（反例 [3,1]）。修完 fuzz 0 錯。卡點：環狀＝剩下的要回頭跟陣列開頭比。隔 ≥2 天閉卷重寫。"
+        }
+       ]
       },
       {
        "n": "42",
@@ -7445,6 +7452,27 @@ window.ROADMAP = {
      "note": "Stack 章單調堆疊，739 之後換題。想法自己講出：先對 nums2 用單調堆疊算每個數的下一個更大值存 dict，再用 nums1 查表、查不到給 -1。一次過，20 萬組 fuzz 0 錯。"
     }
    ]
+  },
+  "503": {
+   "n": "503",
+   "t": "Next Greater Element II",
+   "zh": "下一个更大元素II",
+   "slug": "next-greater-element-ii",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-15",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "Stack 章單調堆疊（環狀版）。第一輪照 496 寫對；方向「處理最後 stack 剩下的」自己想到，但剩下的拿來彼此比 index → 無窮迴圈（反例 [3,3]）。「從 nums[0] 正序再掃一次去比」是我講的。之後內層找到答案沒 break、被蓋回 -1（反例 [3,1]）。修完 fuzz 0 錯。卡點：環狀＝剩下的要回頭跟陣列開頭比。隔 ≥2 天閉卷重寫。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8475,11 +8503,11 @@ window.ROADMAP = {
     "zh": "下一个更大元素II",
     "slug": "next-greater-element-ii",
     "d": "M",
-    "st": "none",
+    "st": "y26",
     "r": [
      false,
      false,
-     false
+     true
     ],
     "skip": ""
    },
