@@ -34,7 +34,7 @@
 - [ ] ☆ 59 Spiral Matrix II 〔🧱基石：模擬：邊界不變量〕
 
 ### 🔥 前綴和 Prefix Sum（2026-07-18 校準新增，高頻缺口，優先）
-- [ ] ⭐ 238 Product of Array Except Self（除自己外全部乘積，不准用除法：左前綴×右後綴）
+- [x] ⭐ 238 Product of Array Except Self（除自己外全部乘積，不准用除法：左前綴×右後綴）
 - [x] ⭐ 560 Subarray Sum Equals K（前綴和 + 雜湊：套路題，先暴力 O(n²) 再用「presum 差」壓到 O(n)） 〔🧱基石：前綴和＋雜湊〕
 
 ## 2. 鏈結串列 Linked List
@@ -50,13 +50,13 @@
 ## 3. 雜湊表 Hash Table
 - [x] ⭐ 242 Valid Anagram 〔🧱基石：計數陣列〕
 - [x] ☆ 1002 Find Common Characters
-- [ ] ⭐ 349 Intersection of Two Arrays 〔🧱基石：HashSet 去重〕
-- [ ] ⭐ 202 Happy Number
+- [x] ⭐ 349 Intersection of Two Arrays 〔🧱基石：HashSet 去重〕
+- [x] ⭐ 202 Happy Number
 - [x] ⭐ 1 Two Sum 〔🧱基石：HashMap 補數查表〕
-- [ ] ⭐ 454 4Sum II
+- [x] ⭐ 454 4Sum II
 - [x] ☆ 383 Ransom Note
 - [x] ⭐ 15 3Sum 〔🧱基石：排序＋雙指針（N-Sum 骨架）〕
-- [ ] ⭐ 18 4Sum
+- [x] ⭐ 18 4Sum
 
 ## 4. 字串 String
 - [x] ⭐ 344 Reverse String 〔🧱基石：雙指針反轉〕
@@ -69,11 +69,11 @@
 > 多與陣列/字串/鏈結串列交叉，這裡補幾題經典。
 - [x] ⭐ 11 Container With Most Water 〔🧱基石：對撞指針〕
 - [x] ⭐ 283 Move Zeroes
-- [ ] ☆ 26 Remove Duplicates from Sorted Array
+- [x] ☆ 26 Remove Duplicates from Sorted Array
 
 **N-Sum 家族 — 必學，排最後（經典、面試偶爾追問，難在去重邊界）**
-- [ ] ⭐ 15 3Sum（排序 + 固定 a + 左右雙指針找 -a；三處去重：固定值跳、找到解後左右跳）
-- [ ] ☆ 18 4Sum（3Sum 外再包一層迴圈）
+- [x] ⭐ 15 3Sum（排序 + 固定 a + 左右雙指針找 -a；三處去重：固定值跳、找到解後左右跳）
+- [x] ☆ 18 4Sum（3Sum 外再包一層迴圈）
 - 註：2Sum(1) 用雜湊已是另一路；N-Sum 這串正好練你最弱的「邊界去重」。
 
 ## 6. 堆疊與佇列 Stack & Queue
@@ -94,11 +94,11 @@
 - [x] ⭐ 226 Invert Binary Tree
 - [x] ⭐ 101 Symmetric Tree
 - [x] ⭐ 104 Maximum Depth of Binary Tree 〔🧱基石：遞迴回傳值（後序聚合）〕
-- [ ] ☆ 111 Minimum Depth of Binary Tree
+- [x] ☆ 111 Minimum Depth of Binary Tree
 - [x] ☆ 222 Count Complete Tree Nodes
 - [x] ⭐ 110 Balanced Binary Tree（後序自底向上算高度，-1 哨兵兼判斷，O(n) 單趟）
 - [x] ⭐ 543 Diameter of Binary Tree（自底向上聚合：遞迴回傳高度、外部變數追蹤 max(左高+右高)）
-- [ ] ☆ 257 Binary Tree Paths 〔🧱基石：樹上回溯（路徑）〕
+- [x] ☆ 257 Binary Tree Paths 〔🧱基石：樹上回溯（路徑）〕
 - [x] ☆ 404 Sum of Left Leaves
 - [x] ☆ 513 Find Bottom Left Tree Value
 - [x] ⭐ 112 Path Sum
@@ -113,7 +113,7 @@
 - [x] ⭐ 235 Lowest Common Ancestor of a BST — ✅ 2026-07-15 fuzz 50萬過(BST 大小性質、一個 while 往下走不用遞迴;坑:root.val 該用 node.val 死迴圈)
 - [x] ⭐ 701 Insert into a Binary Search Tree
 - [x] ⭐ 450 Delete Node in a BST — ✅ 2026-07-18 fuzz 50萬過(三情況;兩小孩用 FindMin 找後繼抄值+DeleteNode 丟回遞迴刪原節點)
-- [ ] ☆ 669 Trim a Binary Search Tree
+- [x] ☆ 669 Trim a Binary Search Tree
 - [x] ⭐ 108 Convert Sorted Array to Binary Search Tree — ✅ 2026-07-16 fuzz 30萬過(遞迴每段取中間當 root,傳 lo/hi index;悟:取中間要遞迴對每段做非只做一次)
 - [x] ☆ 538 Convert BST to Greater Tree
 
@@ -162,18 +162,18 @@
 - [x] ⭐ 70 Climbing Stairs — ✅ 2026-07-11 memo+邊界磨過,45階0ms(見 progress.md)
 - [x] ☆ 746 Min Cost Climbing Stairs — ✅ 2026-07-12 fuzz 30萬過(DP主體自己寫;悟強制vs可選,見 progress.md)
 - [x] ⭐ 62 Unique Paths 〔🧱基石：二維網格 DP〕
-- [ ] ☆ 63 Unique Paths II
-- [ ] ☆ 343 Integer Break
+- [x] ☆ 63 Unique Paths II
+- [x] ☆ 343 Integer Break
 - [ ] ☆ 96 Unique Binary Search Trees
 ### 背包 Knapsack
-- [ ] ⭐ 416 Partition Equal Subset Sum 〔🧱基石：0-1 背包〕
+- [x] ⭐ 416 Partition Equal Subset Sum 〔🧱基石：0-1 背包〕
 - [ ] ☆ 1049 Last Stone Weight II
-- [ ] ⭐ 494 Target Sum
+- [x] ⭐ 494 Target Sum
 - [ ] ☆ 474 Ones and Zeroes
 - [ ] ☆ 518 Coin Change II 〔🧱基石：完全背包〕
 - [ ] ☆ 377 Combination Sum IV
 - [x] ⭐ 322 Coin Change
-- [ ] ☆ 279 Perfect Squares
+- [x] ☆ 279 Perfect Squares
 - [ ] ⭐ 139 Word Break
 ### 打家劫舍 House Robber
 - [x] ⭐ 198 House Robber 〔🧱基石：選／不選 DP〕
@@ -226,6 +226,6 @@
 
 ## 13. 排序 Sorting（補充，代碼隨想錄沒有這章）
 > 2026-10-25 實查：HiSKIO 調查「面試最常遇到的題型」第一名是排序。手寫 quick／merge 是基石。
-- [ ] ⭐ 912 Sort an Array（手寫 mergesort 與 quicksort 各一次，不准呼叫內建排序） 〔🧱基石：手寫排序（merge／quick）〕
-- [ ] ☆ 75 Sort Colors（三路 partition，quicksort 的 partition 變形）
+- [x] ⭐ 912 Sort an Array（手寫 mergesort 與 quicksort 各一次，不准呼叫內建排序） 〔🧱基石：手寫排序（merge／quick）〕
+- [x] ☆ 75 Sort Colors（三路 partition，quicksort 的 partition 變形）
 - [ ] ☆ 148 Sort List（mergesort 用在鏈結串列，接 21 的 merge）
