@@ -3343,16 +3343,23 @@ window.ROADMAP = {
        "zh": "下一个更大元素I",
        "slug": "next-greater-element-i",
        "star": "⭐",
-       "st": "none",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-15",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Stack 章單調堆疊，739 之後換題。想法自己講出：先對 nums2 用單調堆疊算每個數的下一個更大值存 dict，再用 nums1 查表、查不到給 -1。一次過，20 萬組 fuzz 0 錯。"
+        }
+       ]
       },
       {
        "n": "503",
@@ -7417,6 +7424,27 @@ window.ROADMAP = {
      "note": "Stack 章單調堆疊。自己想到單調堆疊（後一天檢查前一天），原本放溫度、算不出天數；問 agent 才知道堆疊放 index。寫法：當天比 top 大就 pop 並填答案、i-- 重比。20 萬組 fuzz 0 錯。要隔天閉卷重寫。"
     }
    ]
+  },
+  "496": {
+   "n": "496",
+   "t": "Next Greater Element I",
+   "zh": "下一个更大元素I",
+   "slug": "next-greater-element-i",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-15",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Stack 章單調堆疊，739 之後換題。想法自己講出：先對 nums2 用單調堆疊算每個數的下一個更大值存 dict，再用 nums1 查表、查不到給 -1。一次過，20 萬組 fuzz 0 錯。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8433,11 +8461,11 @@ window.ROADMAP = {
     "zh": "下一个更大元素I",
     "slug": "next-greater-element-i",
     "d": "E",
-    "st": "none",
+    "st": "grad",
     "r": [
      false,
      false,
-     false
+     true
     ],
     "skip": ""
    },
