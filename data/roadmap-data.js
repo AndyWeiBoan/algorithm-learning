@@ -1173,7 +1173,7 @@ window.ROADMAP = {
        "r": [
         false,
         true,
-        false
+        true
        ],
        "ev": [
         {
@@ -1181,6 +1181,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "RPN 求值。"
+        },
+        {
+         "date": "2026-11-15",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Stack 章題庫。Stack<string>，遇運算子 pop 兩個（先 pop 的是右運算元），一次過；20 萬組 fuzz 0 錯。"
         }
        ]
       },
@@ -5828,7 +5834,7 @@ window.ROADMAP = {
    "r": [
     false,
     true,
-    false
+    true
    ],
    "ev": [
     {
@@ -5836,6 +5842,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "RPN 求值。"
+    },
+    {
+     "date": "2026-11-15",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Stack 章題庫。Stack<string>，遇運算子 pop 兩個（先 pop 的是右運算元），一次過；20 萬組 fuzz 0 錯。"
     }
    ]
   },
@@ -8345,7 +8357,7 @@ window.ROADMAP = {
     "r": [
      false,
      true,
-     false
+     true
     ],
     "skip": ""
    },
@@ -11207,5 +11219,5 @@ window.ROADMAP = {
    }
   }
  },
- "stamp": "2026-11-14"
+ "stamp": "2026-11-15"
 };
