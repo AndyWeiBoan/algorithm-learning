@@ -3319,16 +3319,23 @@ window.ROADMAP = {
        "zh": "每日温度",
        "slug": "daily-temperatures",
        "star": "⭐",
-       "st": "y19",
+       "st": "y26",
        "d": "M",
        "hi": false,
        "base": "單調棧",
        "r": [
         true,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-15",
+         "kind": "練習",
+         "level": "有小提示",
+         "note": "Stack 章單調堆疊。自己想到單調堆疊（後一天檢查前一天），原本放溫度、算不出天數；問 agent 才知道堆疊放 index。寫法：當天比 top 大就 pop 並填答案、i-- 重比。20 萬組 fuzz 0 錯。要隔天閉卷重寫。"
+        }
+       ]
       },
       {
        "n": "496",
@@ -7389,6 +7396,27 @@ window.ROADMAP = {
      "note": "Stack 章題庫。自己聯想到 26/27 的讀寫指標，用 stack 寫：跟頂端相同就 pop，否則 push，最後倒進 char[] 從後往前填。一次寫對，20 萬組 fuzz 0 mismatch。"
     }
    ]
+  },
+  "739": {
+   "n": "739",
+   "t": "Daily Temperatures",
+   "zh": "每日温度",
+   "slug": "daily-temperatures",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-15",
+     "kind": "練習",
+     "level": "有小提示",
+     "note": "Stack 章單調堆疊。自己想到單調堆疊（後一天檢查前一天），原本放溫度、算不出天數；問 agent 才知道堆疊放 index。寫法：當天比 top 大就 pop 並填答案、i-- 重比。20 萬組 fuzz 0 錯。要隔天閉卷重寫。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8391,11 +8419,11 @@ window.ROADMAP = {
     "zh": "每日温度",
     "slug": "daily-temperatures",
     "d": "M",
-    "st": "y19",
+    "st": "y26",
     "r": [
      true,
      false,
-     false
+     true
     ],
     "skip": ""
    },
