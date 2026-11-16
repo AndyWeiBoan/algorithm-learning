@@ -796,6 +796,12 @@
       "kind": "閉卷",
       "level": "獨立",
       "note": "Stack 章題庫。沒講想法直接寫，一次寫對：dict 存「閉→開」，開括號 push，閉括號時空 stack 回 false、pop 出來不配對回 false，最後 stack 要空。30 萬組 fuzz 0 mismatch。"
+    },
+    {
+      "date": "2026-11-16",
+      "kind": "閉卷",
+      "level": "獨立",
+      "note": "NeetCode Stack 測驗。沒有提示，dict 存閉括號對應的開括號；遇開括號 push，遇閉括號先擋空 stack、再 pop 比對，收尾確認 stack 為空。30 萬組隨機括號字串對照標準解，0 mismatch。使用 Stack<int> 接 char 會隱式轉型，結果正確；Stack<char> 語意更清楚。"
     }
   ],
   "1047": [
