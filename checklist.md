@@ -201,7 +201,7 @@
 
 ## 11. 單調堆疊 Monotonic Stack
 > 2026-11-16 補 1475、901 並重排：原本沒有暖身就直接上 739，496 之後直接跳 503／Hard，中間斷層。順序：1475 → 739 → 496 →（隔 ≥2 天）503 → 901 → NeetCode 853。
-- [ ] ☆ 1475 Final Prices With a Special Discount in a Shop（Easy 暖身：往右第一個 ≤ 自己的）
+- [x] ☆ 1475 Final Prices With a Special Discount in a Shop（Easy 暖身：往右第一個 ≤ 自己的）
 - [x] ⭐ 739 Daily Temperatures 〔🧱基石：單調棧〕
 - [ ] ⭐ 496 Next Greater Element I
 - [ ] ☆ 503 Next Greater Element II（環狀變形，跟 496 隔 ≥2 天）

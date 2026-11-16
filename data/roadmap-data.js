@@ -3336,16 +3336,23 @@ window.ROADMAP = {
        "zh": "",
        "slug": "final-prices-with-a-special-discount-in-a-shop",
        "star": "☆",
-       "st": "none",
+       "st": "y26",
        "d": "E",
        "hi": false,
        "base": "",
        "r": [
         false,
         false,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-16",
+         "kind": "練習",
+         "level": "獨立",
+         "note": "單調堆疊 Easy 暖身。只解釋題意，沒有演算法提示；自己用 stack 存 index，遇到第一個較小或相等價格就結算折扣，並用 i-- 讓同一個價格繼續處理前面的 index。20 萬組隨機測試對照 O(n²) 暴力解，0 mismatch。"
+        }
+       ]
       },
       {
        "n": "739",
@@ -7486,6 +7493,27 @@ window.ROADMAP = {
     }
    ]
   },
+  "1475": {
+   "n": "1475",
+   "t": "Final Prices With a Special Discount in a Shop",
+   "zh": "",
+   "slug": "final-prices-with-a-special-discount-in-a-shop",
+   "d": "E",
+   "st": "y26",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-16",
+     "kind": "練習",
+     "level": "獨立",
+     "note": "單調堆疊 Easy 暖身。只解釋題意，沒有演算法提示；自己用 stack 存 index，遇到第一個較小或相等價格就結算折扣，並用 i-- 讓同一個價格繼續處理前面的 index。20 萬組隨機測試對照 O(n²) 暴力解，0 mismatch。"
+    }
+   ]
+  },
   "739": {
    "n": "739",
    "t": "Daily Temperatures",
@@ -8586,11 +8614,11 @@ window.ROADMAP = {
     "zh": "",
     "slug": "final-prices-with-a-special-discount-in-a-shop",
     "d": "E",
-    "st": "none",
+    "st": "y26",
     "r": [
      false,
      false,
-     false
+     true
     ],
     "skip": ""
    },
