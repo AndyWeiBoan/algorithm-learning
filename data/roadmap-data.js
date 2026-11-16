@@ -1216,6 +1216,12 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "獨立",
          "note": "Stack 章題庫。Stack<string>，遇運算子 pop 兩個（先 pop 的是右運算元），一次過；20 萬組 fuzz 0 錯。"
+        },
+        {
+         "date": "2026-11-16",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode Stack 測驗。沒有提示，HashSet 判斷運算子，Stack<string> 保存運算元；先 pop 的放右邊、後 pop 的放左邊，四則運算與往零截斷皆正確。20 萬組隨機合法 RPN 表達式對照生成時答案，0 mismatch。"
         }
        ]
       },
@@ -5969,6 +5975,12 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "Stack 章題庫。Stack<string>，遇運算子 pop 兩個（先 pop 的是右運算元），一次過；20 萬組 fuzz 0 錯。"
+    },
+    {
+     "date": "2026-11-16",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode Stack 測驗。沒有提示，HashSet 判斷運算子，Stack<string> 保存運算元；先 pop 的放右邊、後 pop 的放左邊，四則運算與往零截斷皆正確。20 萬組隨機合法 RPN 表達式對照生成時答案，0 mismatch。"
     }
    ]
   },
