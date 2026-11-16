@@ -4132,7 +4132,7 @@ window.ROADMAP = {
        "zh": "",
        "slug": "car-fleet",
        "d": "M",
-       "st": "y26",
+       "st": "grad",
        "r": [
         false,
         false,
@@ -4144,6 +4144,12 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "靠引導",
          "note": "Stack 章 NeetCode 測驗，原本當冷測（11-15 深夜、已練 9 小時）。自己想到：(target-position)/speed＝各自抵達時間、車隊頭放 stack；處理順序與先按位置排列是引導得到的。最終用 bucket 依位置由近到遠掃，stack 保存車隊頭；釐清距離÷速度是抵達時間、後車時間 <= 前車時間才會合併，並改用 double 除法。20 萬組隨機測試對照排序標準解，0 mismatch。"
+        },
+        {
+         "date": "2026-11-16",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "同日 NeetCode 再次重寫，作答途中沒有提示。自行用 bucket 依位置由近到遠處理，double 計算抵達時間，後車時間 <= 前車隊時間就合併，否則 push 成新車隊。20 萬組隨機測試對照排序標準解，0 mismatch。同日重寫只算短期驗收，仍需間隔後才能證明留存。"
         }
        ],
        "star": "",
@@ -7619,7 +7625,7 @@ window.ROADMAP = {
    "zh": "",
    "slug": "car-fleet",
    "d": "M",
-   "st": "y26",
+   "st": "grad",
    "r": [
     false,
     false,
@@ -7631,6 +7637,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "Stack 章 NeetCode 測驗，原本當冷測（11-15 深夜、已練 9 小時）。自己想到：(target-position)/speed＝各自抵達時間、車隊頭放 stack；處理順序與先按位置排列是引導得到的。最終用 bucket 依位置由近到遠掃，stack 保存車隊頭；釐清距離÷速度是抵達時間、後車時間 <= 前車時間才會合併，並改用 double 除法。20 萬組隨機測試對照排序標準解，0 mismatch。"
+    },
+    {
+     "date": "2026-11-16",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "同日 NeetCode 再次重寫，作答途中沒有提示。自行用 bucket 依位置由近到遠處理，double 計算抵達時間，後車時間 <= 前車隊時間就合併，否則 push 成新車隊。20 萬組隨機測試對照排序標準解，0 mismatch。同日重寫只算短期驗收，仍需間隔後才能證明留存。"
     }
    ]
   }
@@ -8748,7 +8760,7 @@ window.ROADMAP = {
     "zh": "",
     "slug": "car-fleet",
     "d": "M",
-    "st": "y26",
+    "st": "grad",
     "r": [
      false,
      false,
