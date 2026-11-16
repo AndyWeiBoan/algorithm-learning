@@ -81,6 +81,7 @@
 - [x] ⭐ 225 Implement Stack using Queues（兩 queue 輪流當 active：pop 倒到另一條剩最後一個取出、翻 flag；top 再塞回去）
 - [x] ⭐ 20 Valid Parentheses（stack：開括號 push、閉括號 pop 比對；空棧即 false，收尾檢查 stack 必須空） 〔🧱基石：棧：括號配對〕
 - [x] ⭐ 1047 Remove All Adjacent Duplicates In String（stack：頂==當前就消一對，否則推回；輸出反轉。坑：char[] 的 .Reverse() 是 LINQ 不就地改，用 Array.Reverse 或倒進另一個 stack）
+- [ ] ⭐ 71 Simplify Path（字串解析＋stack：依路徑 token 更新目前所在層級）
 - [x] ⭐ 150 Evaluate Reverse Polish Notation（stack：數字 push、運算子 pop 兩個 right 先 left 後算完推回。標準解，面試官要的就是這個）
 - [x] ⭐ 215 Kth Largest Element in an Array — ✅ 2026-07-18 heap 封頂 k O(n log k)(策略自己從 347 遷移)+ sort 版 + 深理解上浮傳遞性,fuzz 50萬過。Heap/Top-K 第二題 〔🧱基石：Heap／Top-K〕
 - [ ] ☆ 239 Sliding Window Maximum 〔🧱基石：單調佇列〕

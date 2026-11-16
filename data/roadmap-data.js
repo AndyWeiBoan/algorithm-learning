@@ -1167,6 +1167,23 @@ window.ROADMAP = {
        ]
       },
       {
+       "n": "71",
+       "t": "Simplify Path",
+       "zh": "",
+       "slug": "simplify-path",
+       "star": "⭐",
+       "st": "none",
+       "d": "M",
+       "hi": false,
+       "base": "",
+       "r": [
+        false,
+        false,
+        false
+       ],
+       "ev": []
+      },
+      {
        "n": "150",
        "t": "Evaluate Reverse Polish Notation",
        "zh": "逆波兰表达式求值",
@@ -7614,12 +7631,13 @@ window.ROADMAP = {
      "225",
      "20",
      "1047",
+     "71",
      "150",
+     "1475",
      "739",
      "496",
      "503",
-     "42",
-     "84"
+     "901"
     ],
     "nc": [
      "20",
@@ -8534,6 +8552,20 @@ window.ROADMAP = {
     ],
     "skip": ""
    },
+   "71": {
+    "n": "71",
+    "t": "Simplify Path",
+    "zh": "",
+    "slug": "simplify-path",
+    "d": "M",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": ""
+   },
    "150": {
     "n": "150",
     "t": "Evaluate Reverse Polish Notation",
@@ -8545,6 +8577,20 @@ window.ROADMAP = {
      false,
      true,
      true
+    ],
+    "skip": ""
+   },
+   "1475": {
+    "n": "1475",
+    "t": "Final Prices With a Special Discount in a Shop",
+    "zh": "",
+    "slug": "final-prices-with-a-special-discount-in-a-shop",
+    "d": "E",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
     ],
     "skip": ""
    },
@@ -8590,19 +8636,19 @@ window.ROADMAP = {
     ],
     "skip": ""
    },
-   "84": {
-    "n": "84",
-    "t": "Largest Rectangle in Histogram",
-    "zh": "柱状图中最大的矩形",
-    "slug": "largest-rectangle-in-histogram",
-    "d": "H",
+   "901": {
+    "n": "901",
+    "t": "Online Stock Span",
+    "zh": "",
+    "slug": "online-stock-span",
+    "d": "M",
     "st": "none",
     "r": [
      false,
      false,
      false
     ],
-    "skip": "Hard"
+    "skip": ""
    },
    "155": {
     "n": "155",
@@ -8645,6 +8691,20 @@ window.ROADMAP = {
      true
     ],
     "skip": ""
+   },
+   "84": {
+    "n": "84",
+    "t": "Largest Rectangle in Histogram",
+    "zh": "柱状图中最大的矩形",
+    "slug": "largest-rectangle-in-histogram",
+    "d": "H",
+    "st": "none",
+    "r": [
+     false,
+     false,
+     false
+    ],
+    "skip": "Hard"
    },
    "704": {
     "n": "704",
