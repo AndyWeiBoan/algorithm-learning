@@ -4051,6 +4051,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "853",
+       "t": "Car Fleet",
+       "zh": "",
+       "slug": "car-fleet",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-16",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "Stack 章 NeetCode 測驗，原本當冷測（11-15 深夜、已練 9 小時）。自己想到：(target-position)/speed＝各自抵達時間、車隊頭放 stack。我給了相關題號（739、56）；處理順序先答「照時間快到慢」被打斷，改成照位置由近到遠；「資料沒排序要自己排」是我講的。沒寫完。卡點：答案跟『誰在誰前面』有關、資料卻是亂的 → 先排序。已寫進 notes/看題線索.md。11-18 閉卷完整寫。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "1026",
        "t": "Maximum Difference Between Node and Ancestor",
        "zh": "",
@@ -7473,6 +7497,27 @@ window.ROADMAP = {
      "note": "Stack 章單調堆疊（環狀版）。第一輪照 496 寫對；方向「處理最後 stack 剩下的」自己想到，但剩下的拿來彼此比 index → 無窮迴圈（反例 [3,3]）。「從 nums[0] 正序再掃一次去比」是我講的。之後內層找到答案沒 break、被蓋回 -1（反例 [3,1]）。修完 fuzz 0 錯。卡點：環狀＝剩下的要回頭跟陣列開頭比。隔 ≥2 天閉卷重寫。"
     }
    ]
+  },
+  "853": {
+   "n": "853",
+   "t": "Car Fleet",
+   "zh": "",
+   "slug": "car-fleet",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-16",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "Stack 章 NeetCode 測驗，原本當冷測（11-15 深夜、已練 9 小時）。自己想到：(target-position)/speed＝各自抵達時間、車隊頭放 stack。我給了相關題號（739、56）；處理順序先答「照時間快到慢」被打斷，改成照位置由近到遠；「資料沒排序要自己排」是我講的。沒寫完。卡點：答案跟『誰在誰前面』有關、資料卻是亂的 → 先排序。已寫進 notes/看題線索.md。11-18 閉卷完整寫。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8559,11 +8604,11 @@ window.ROADMAP = {
     "zh": "",
     "slug": "car-fleet",
     "d": "M",
-    "st": "none",
+    "st": "y26",
     "r": [
      false,
      false,
-     false
+     true
     ],
     "skip": ""
    },
@@ -11327,5 +11372,5 @@ window.ROADMAP = {
    }
   }
  },
- "stamp": "2026-11-15"
+ "stamp": "2026-11-16"
 };
