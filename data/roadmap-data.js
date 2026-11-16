@@ -3314,6 +3314,23 @@ window.ROADMAP = {
      "g": "",
      "items": [
       {
+       "n": "1475",
+       "t": "Final Prices With a Special Discount in a Shop",
+       "zh": "",
+       "slug": "final-prices-with-a-special-discount-in-a-shop",
+       "star": "☆",
+       "st": "none",
+       "d": "E",
+       "hi": false,
+       "base": "",
+       "r": [
+        false,
+        false,
+        false
+       ],
+       "ev": []
+      },
+      {
        "n": "739",
        "t": "Daily Temperatures",
        "zh": "每日温度",
@@ -3384,6 +3401,23 @@ window.ROADMAP = {
          "note": "Stack 章單調堆疊（環狀版）。第一輪照 496 寫對；方向「處理最後 stack 剩下的」自己想到，但剩下的拿來彼此比 index → 無窮迴圈（反例 [3,3]）。「從 nums[0] 正序再掃一次去比」是我講的。之後內層找到答案沒 break、被蓋回 -1（反例 [3,1]）。修完 fuzz 0 錯。卡點：環狀＝剩下的要回頭跟陣列開頭比。隔 ≥2 天閉卷重寫。"
         }
        ]
+      },
+      {
+       "n": "901",
+       "t": "Online Stock Span",
+       "zh": "",
+       "slug": "online-stock-span",
+       "star": "☆",
+       "st": "none",
+       "d": "M",
+       "hi": false,
+       "base": "",
+       "r": [
+        false,
+        false,
+        false
+       ],
+       "ev": []
       },
       {
        "n": "42",
