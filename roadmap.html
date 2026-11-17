@@ -390,7 +390,8 @@ details.ex summary small{color:var(--ink3);font-weight:400;font-size:12.5px}
   </div>
 </div>
 
-<script src="data/roadmap-data.js"></script>
+<!-- 加時間戳，避免瀏覽器拿到快取的舊資料 -->
+<script>document.write('<script src="data/roadmap-data.js?t=' + Date.now() + '"><\/script>');</script>
 <script>
 const D = window.ROADMAP;
 if (!D) document.querySelector('.wrap').innerHTML = '<p class="empty">找不到 data/roadmap-data.js，請先執行 python3 scripts/gen_roadmap.py</p>';
