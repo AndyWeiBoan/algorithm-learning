@@ -7771,7 +7771,6 @@ window.ROADMAP = {
      "20",
      "155",
      "150",
-     "22",
      "739",
      "853",
      "84"
@@ -8258,7 +8257,7 @@ window.ROADMAP = {
     "math"
    ]
   ],
-  "now": "stack",
+  "now": "bs",
   "probs": {
    "242": {
     "n": "242",
@@ -8692,7 +8691,7 @@ window.ROADMAP = {
      false,
      false
     ],
-    "skip": ""
+    "skip": "使用者跳過"
    },
    "150": {
     "n": "150",
@@ -8776,7 +8775,7 @@ window.ROADMAP = {
      false,
      false
     ],
-    "skip": ""
+    "skip": "使用者跳過"
    },
    "155": {
     "n": "155",
@@ -8790,21 +8789,7 @@ window.ROADMAP = {
      false,
      false
     ],
-    "skip": ""
-   },
-   "22": {
-    "n": "22",
-    "t": "Generate Parentheses",
-    "zh": "",
-    "slug": "generate-parentheses",
-    "d": "M",
-    "st": "grad",
-    "r": [
-     false,
-     true,
-     false
-    ],
-    "skip": ""
+    "skip": "使用者跳過"
    },
    "853": {
     "n": "853",
@@ -10043,6 +10028,20 @@ window.ROADMAP = {
     "t": "Combination Sum II",
     "zh": "组合总和II",
     "slug": "combination-sum-ii",
+    "d": "M",
+    "st": "grad",
+    "r": [
+     false,
+     true,
+     false
+    ],
+    "skip": ""
+   },
+   "22": {
+    "n": "22",
+    "t": "Generate Parentheses",
+    "zh": "",
+    "slug": "generate-parentheses",
     "d": "M",
     "st": "grad",
     "r": [
