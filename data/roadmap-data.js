@@ -13,16 +13,23 @@ window.ROADMAP = {
        "zh": "二分查找",
        "slug": "binary-search",
        "star": "⭐",
-       "st": "y26",
+       "st": "grad",
        "d": "E",
        "hi": false,
        "base": "二分搜尋：區間不變量",
        "r": [
         true,
         true,
-        false
+        true
        ],
-       "ev": []
+       "ev": [
+        {
+         "date": "2026-11-17",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "Binary Search 章第一題。閉區間 left<=right、mid±1，一次就對。fuzz 30 萬筆全過。複雜度 O(log n)/O(1) 答對。"
+        }
+       ]
       },
       {
        "n": "27",
@@ -7669,6 +7676,27 @@ window.ROADMAP = {
      "note": "同日 NeetCode 再次重寫，作答途中沒有提示。自行用 bucket 依位置由近到遠處理，double 計算抵達時間，後車時間 <= 前車隊時間就合併，否則 push 成新車隊。20 萬組隨機測試對照排序標準解，0 mismatch。同日重寫只算短期驗收，仍需間隔後才能證明留存。"
     }
    ]
+  },
+  "704": {
+   "n": "704",
+   "t": "Binary Search",
+   "zh": "二分查找",
+   "slug": "binary-search",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-17",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "Binary Search 章第一題。閉區間 left<=right、mid±1，一次就對。fuzz 30 萬筆全過。複雜度 O(log n)/O(1) 答對。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8812,11 +8840,11 @@ window.ROADMAP = {
     "zh": "二分查找",
     "slug": "binary-search",
     "d": "E",
-    "st": "y26",
+    "st": "grad",
     "r": [
      true,
      true,
-     false
+     true
     ],
     "skip": ""
    },
