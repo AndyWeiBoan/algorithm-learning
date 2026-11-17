@@ -3822,6 +3822,30 @@ window.ROADMAP = {
      "g": "",
      "items": [
       {
+       "n": "35",
+       "t": "Search Insert Position",
+       "zh": "",
+       "slug": "search-insert-position",
+       "d": "E",
+       "st": "grad",
+       "r": [
+        true,
+        true,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-17",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "想法階段兩次說找不到時 left 停在「插入位置前一格」、一次說找到回 mid-1；我給 [1,3] target=2/3 讓他自己走，改成找到回 mid、找不到回 left。程式一次就對，fuzz 30 萬筆全過。複雜度 O(log n)/O(1) 答對。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "36",
        "t": "Valid Sudoku",
        "zh": "",
@@ -4586,18 +4610,6 @@ window.ROADMAP = {
    "st": "y26",
    "r": [
     false,
-    true,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "35",
-   "t": "Search Insert Position",
-   "slug": "search-insert-position",
-   "st": "y26",
-   "r": [
-    true,
     true,
     false
    ],
@@ -7697,6 +7709,27 @@ window.ROADMAP = {
      "note": "Binary Search 章第一題。閉區間 left<=right、mid±1，一次就對。fuzz 30 萬筆全過。複雜度 O(log n)/O(1) 答對。"
     }
    ]
+  },
+  "35": {
+   "n": "35",
+   "t": "Search Insert Position",
+   "zh": "",
+   "slug": "search-insert-position",
+   "d": "E",
+   "st": "grad",
+   "r": [
+    true,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-17",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "想法階段兩次說找不到時 left 停在「插入位置前一格」、一次說找到回 mid-1；我給 [1,3] target=2/3 讓他自己走，改成找到回 mid、找不到回 left。程式一次就對，fuzz 30 萬筆全過。複雜度 O(log n)/O(1) 答對。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8839,11 +8872,11 @@ window.ROADMAP = {
     "zh": "",
     "slug": "search-insert-position",
     "d": "E",
-    "st": "y26",
+    "st": "grad",
     "r": [
      true,
      true,
-     false
+     true
     ],
     "skip": ""
    },
