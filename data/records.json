@@ -880,6 +880,12 @@
       "kind": "閉卷",
       "level": "獨立",
       "note": "同日 NeetCode 再次重寫，作答途中沒有提示。自行用 bucket 依位置由近到遠處理，double 計算抵達時間，後車時間 <= 前車隊時間就合併，否則 push 成新車隊。20 萬組隨機測試對照排序標準解，0 mismatch。同日重寫只算短期驗收，仍需間隔後才能證明留存。"
+    },
+    {
+      "date": "2026-11-18",
+      "kind": "閉卷",
+      "level": "獨立",
+      "note": "隔 2 天閉卷。沒用排序，改用 position 當 index 開 bucket（位置不重複且 < target），從靠終點往回掃，到達時間 <= 棧頂就併入、否則 push。fuzz 30 萬筆全過。bucket 版時間 O(n + target)，空間 O(target)。"
     }
   ],
   "704": [
