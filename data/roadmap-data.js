@@ -3838,7 +3838,7 @@ window.ROADMAP = {
          "date": "2026-11-18",
          "kind": "閉卷",
          "level": "獨立",
-         "note": "兩次二分：找左界 >= 時 right=mid-1、回 left；找右界 <= 時 left=mid+1、回 right。找左界後檢查 left 越界或不等於 target 就回 [-1,-1]。下半部第一版錯（輸出 [5,4]），自己改對，沒看反例。fuzz 30 萬筆全過（含空陣列）。"
+         "note": "兩次二分：找左界 >= 時 right=mid-1、回 left；找右界 <= 時 left=mid+1、回 right。找左界後檢查 left 越界或不等於 target 就回 [-1,-1]。下半部第一版錯（輸出 [5,4]），自己改對，沒看反例。fuzz 30 萬筆全過（含空陣列）。 之後改寫成一個「第一個 >= x」函式呼叫兩次（target、target+1 再減 1），fuzz 30 萬筆全過。"
         }
        ],
        "star": "",
@@ -7760,7 +7760,7 @@ window.ROADMAP = {
      "date": "2026-11-18",
      "kind": "閉卷",
      "level": "獨立",
-     "note": "兩次二分：找左界 >= 時 right=mid-1、回 left；找右界 <= 時 left=mid+1、回 right。找左界後檢查 left 越界或不等於 target 就回 [-1,-1]。下半部第一版錯（輸出 [5,4]），自己改對，沒看反例。fuzz 30 萬筆全過（含空陣列）。"
+     "note": "兩次二分：找左界 >= 時 right=mid-1、回 left；找右界 <= 時 left=mid+1、回 right。找左界後檢查 left 越界或不等於 target 就回 [-1,-1]。下半部第一版錯（輸出 [5,4]），自己改對，沒看反例。fuzz 30 萬筆全過（含空陣列）。 之後改寫成一個「第一個 >= x」函式呼叫兩次（target、target+1 再減 1），fuzz 30 萬筆全過。"
     }
    ]
   }
