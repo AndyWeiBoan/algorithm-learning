@@ -3822,6 +3822,30 @@ window.ROADMAP = {
      "g": "",
      "items": [
       {
+       "n": "34",
+       "t": "Find First and Last Position of Element in Sorted Array",
+       "zh": "",
+       "slug": "find-first-and-last-position-of-element-in-sorted-array",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        false,
+        true,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-18",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "兩次二分：找左界 >= 時 right=mid-1、回 left；找右界 <= 時 left=mid+1、回 right。找左界後檢查 left 越界或不等於 target 就回 [-1,-1]。下半部第一版錯（輸出 [5,4]），自己改對，沒看反例。fuzz 30 萬筆全過（含空陣列）。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "35",
        "t": "Search Insert Position",
        "zh": "",
@@ -4595,18 +4619,6 @@ window.ROADMAP = {
    "n": "33",
    "t": "Search in Rotated Sorted Array",
    "slug": "search-in-rotated-sorted-array",
-   "st": "y26",
-   "r": [
-    false,
-    true,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "34",
-   "t": "Find First and Last Position of Element in Sorted Array",
-   "slug": "find-first-and-last-position-of-element-in-sorted-array",
    "st": "y26",
    "r": [
     false,
@@ -7730,6 +7742,27 @@ window.ROADMAP = {
      "note": "想法階段兩次說找不到時 left 停在「插入位置前一格」、一次說找到回 mid-1；我給 [1,3] target=2/3 讓他自己走，改成找到回 mid、找不到回 left。程式一次就對，fuzz 30 萬筆全過。複雜度 O(log n)/O(1) 答對。"
     }
    ]
+  },
+  "34": {
+   "n": "34",
+   "t": "Find First and Last Position of Element in Sorted Array",
+   "zh": "",
+   "slug": "find-first-and-last-position-of-element-in-sorted-array",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-18",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "兩次二分：找左界 >= 時 right=mid-1、回 left；找右界 <= 時 left=mid+1、回 right。找左界後檢查 left 越界或不等於 target 就回 [-1,-1]。下半部第一版錯（輸出 [5,4]），自己改對，沒看反例。fuzz 30 萬筆全過（含空陣列）。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -8886,11 +8919,11 @@ window.ROADMAP = {
     "zh": "",
     "slug": "find-first-and-last-position-of-element-in-sorted-array",
     "d": "M",
-    "st": "y26",
+    "st": "grad",
     "r": [
      false,
      true,
-     false
+     true
     ],
     "skip": ""
    },
@@ -11626,5 +11659,5 @@ window.ROADMAP = {
    }
   }
  },
- "stamp": "2026-11-17"
+ "stamp": "2026-11-18"
 };
