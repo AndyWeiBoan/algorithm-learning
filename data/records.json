@@ -712,6 +712,12 @@
       "kind": "閉卷",
       "level": "獨立",
       "note": "難題複習。快慢指針：left＝下一個寫入位置，nums[i]!=val 就寫到 nums[left++]，條件和方向都對了；20 萬組 fuzz 0 錯。"
+    },
+    {
+      "date": "2026-11-18",
+      "kind": "閉卷",
+      "level": "獨立",
+      "note": "難題清單 2/3。快慢指針：left＝下一個寫入位置，nums[i]!=val 就寫到 nums[left] 再 left++。一次就對，fuzz 30 萬筆全過。"
     }
   ],
   "977": [
