@@ -3976,7 +3976,7 @@ window.ROADMAP = {
          "date": "2026-11-19",
          "kind": "閉卷",
          "level": "獨立",
-         "note": "NeetCode Binary Search 測驗。兩次二分：先對每列第一個數找「最後一個 <= target 的列」（回 right，<0 就 false），再在該列二分。一次就對，fuzz 30 萬筆全過。複雜度 O(log m + log n)＝O(log mn)、O(1)。"
+         "note": "NeetCode Binary Search 測驗。兩次二分：先對每列第一個數找「最後一個 <= target 的列」（回 right，<0 就 false），再在該列二分。一次就對，fuzz 30 萬筆全過。複雜度 O(log m + log n)＝O(log mn)、O(1)。 之後改寫成攤平一次二分（列＝mid/n、行＝mid%n；為什麼除 n 是問來的），fuzz 30 萬筆全過。"
         }
        ],
        "star": "",
@@ -7862,7 +7862,7 @@ window.ROADMAP = {
      "date": "2026-11-19",
      "kind": "閉卷",
      "level": "獨立",
-     "note": "NeetCode Binary Search 測驗。兩次二分：先對每列第一個數找「最後一個 <= target 的列」（回 right，<0 就 false），再在該列二分。一次就對，fuzz 30 萬筆全過。複雜度 O(log m + log n)＝O(log mn)、O(1)。"
+     "note": "NeetCode Binary Search 測驗。兩次二分：先對每列第一個數找「最後一個 <= target 的列」（回 right，<0 就 false），再在該列二分。一次就對，fuzz 30 萬筆全過。複雜度 O(log m + log n)＝O(log mn)、O(1)。 之後改寫成攤平一次二分（列＝mid/n、行＝mid%n；為什麼除 n 是問來的），fuzz 30 萬筆全過。"
     }
    ]
   }
