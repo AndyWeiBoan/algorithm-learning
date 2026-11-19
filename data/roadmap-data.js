@@ -4284,6 +4284,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "875",
+       "t": "Koko Eating Bananas",
+       "zh": "",
+       "slug": "koko-eating-bananas",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-19",
+         "kind": "閉卷",
+         "level": "有小提示",
+         "note": "NeetCode Binary Search 測驗。自行想到對每小時吃香蕉速度做二分，每個速度加總 ceil(pile/k) 時數；超時往右、能完成就往左找最小速度，核心方向正確。第一版把 left 設成最小堆，反例單堆 312884470、h=312884469 時漏掉速度 2；AI 指出速度下界應為 1，並提醒 total 用 long。修正後固定案例與 30 萬組隨機測試對照暴力解 0 mismatch。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "1026",
        "t": "Maximum Difference Between Node and Ancestor",
        "zh": "",
@@ -7865,6 +7889,27 @@ window.ROADMAP = {
      "note": "NeetCode Binary Search 測驗。兩次二分：先對每列第一個數找「最後一個 <= target 的列」（回 right，<0 就 false），再在該列二分。一次就對，fuzz 30 萬筆全過。複雜度 O(log m + log n)＝O(log mn)、O(1)。 之後改寫成攤平一次二分（列＝mid/n、行＝mid%n；為什麼除 n 是問來的），fuzz 30 萬筆全過。"
     }
    ]
+  },
+  "875": {
+   "n": "875",
+   "t": "Koko Eating Bananas",
+   "zh": "",
+   "slug": "koko-eating-bananas",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-19",
+     "kind": "閉卷",
+     "level": "有小提示",
+     "note": "NeetCode Binary Search 測驗。自行想到對每小時吃香蕉速度做二分，每個速度加總 ceil(pile/k) 時數；超時往右、能完成就往左找最小速度，核心方向正確。第一版把 left 設成最小堆，反例單堆 312884470、h=312884469 時漏掉速度 2；AI 指出速度下界應為 1，並提醒 total 用 long。修正後固定案例與 30 萬組隨機測試對照暴力解 0 mismatch。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -9049,11 +9094,11 @@ window.ROADMAP = {
     "zh": "",
     "slug": "koko-eating-bananas",
     "d": "M",
-    "st": "none",
+    "st": "grad",
     "r": [
      false,
      false,
-     false
+     true
     ],
     "skip": ""
    },
