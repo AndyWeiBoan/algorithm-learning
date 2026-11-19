@@ -3960,6 +3960,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "74",
+       "t": "Search a 2D Matrix",
+       "zh": "",
+       "slug": "search-a-2d-matrix",
+       "d": "M",
+       "st": "grad",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-19",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "NeetCode Binary Search 測驗。兩次二分：先對每列第一個數找「最後一個 <= target 的列」（回 right，<0 就 false），再在該列二分。一次就對，fuzz 30 萬筆全過。複雜度 O(log m + log n)＝O(log mn)、O(1)。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "100",
        "t": "Same Tree",
        "zh": "",
@@ -4691,18 +4715,6 @@ window.ROADMAP = {
    "n": "67",
    "t": "Add Binary",
    "slug": "add-binary",
-   "st": "y19",
-   "r": [
-    true,
-    false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "74",
-   "t": "Search a 2D Matrix",
-   "slug": "search-a-2d-matrix",
    "st": "y19",
    "r": [
     true,
@@ -7832,6 +7844,27 @@ window.ROADMAP = {
      "note": "Binary Search 邊界加練。AI 只在作答前提醒平方計算要注意溢位；使用者自行寫出閉區間二分，命中平方數就回 mid，否則結束後回 right（最大的平方不超過 x 的整數）。固定極值與 30 萬組隨機測試 0 mismatch。"
     }
    ]
+  },
+  "74": {
+   "n": "74",
+   "t": "Search a 2D Matrix",
+   "zh": "",
+   "slug": "search-a-2d-matrix",
+   "d": "M",
+   "st": "grad",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-19",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "NeetCode Binary Search 測驗。兩次二分：先對每列第一個數找「最後一個 <= target 的列」（回 right，<0 就 false），再在該列二分。一次就對，fuzz 30 萬筆全過。複雜度 O(log m + log n)＝O(log mn)、O(1)。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -9002,11 +9035,11 @@ window.ROADMAP = {
     "zh": "",
     "slug": "search-a-2d-matrix",
     "d": "M",
-    "st": "y19",
+    "st": "grad",
     "r": [
      true,
      false,
-     false
+     true
     ],
     "skip": ""
    },
@@ -11728,5 +11761,5 @@ window.ROADMAP = {
    }
   }
  },
- "stamp": "2026-11-18"
+ "stamp": "2026-11-19"
 };
