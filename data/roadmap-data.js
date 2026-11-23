@@ -4116,6 +4116,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "153",
+       "t": "Find Minimum in Rotated Sorted Array",
+       "zh": "",
+       "slug": "find-minimum-in-rotated-sorted-array",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        false,
+        true,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-23",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "NeetCode Binary Search 測驗，舊題重寫。起初想用左右端大小判斷方向，AI 用 [4,5,6,7,0,1,2] 引導改成只比較 mid 與 right，並直接說明 mid>right 時排除 mid 往右、否則 mid 仍可能是答案所以必須保留。第一版又多加 nums[left]>nums[mid] 的條件，且把右界寫成 mid-1；反例 [3,1,2] 會丟掉正是答案的 mid，AI 指出兩處後修正。編譯 0 warning、30 萬組隨機旋轉嚴格遞增陣列 fuzz 0 mismatch。卡點：移動邊界前沒有先判斷 mid 是否已確定不可能是答案；沒有證明就不能用 ±1 越過它。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "167",
        "t": "Two Sum II - Input Array Is Sorted",
        "zh": "",
@@ -4845,18 +4869,6 @@ window.ROADMAP = {
    "r": [
     true,
     false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "153",
-   "t": "Find Minimum in Rotated Sorted Array",
-   "slug": "find-minimum-in-rotated-sorted-array",
-   "st": "y26",
-   "r": [
-    false,
-    true,
     false
    ],
    "ev": []
@@ -6126,6 +6138,27 @@ window.ROADMAP = {
      "kind": "閉卷",
      "level": "獨立",
      "note": "NeetCode Stack 測驗。沒有提示，HashSet 判斷運算子，Stack<string> 保存運算元；先 pop 的放右邊、後 pop 的放左邊，四則運算與往零截斷皆正確。20 萬組隨機合法 RPN 表達式對照生成時答案，0 mismatch。"
+    }
+   ]
+  },
+  "153": {
+   "n": "153",
+   "t": "Find Minimum in Rotated Sorted Array",
+   "zh": "",
+   "slug": "find-minimum-in-rotated-sorted-array",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-23",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "NeetCode Binary Search 測驗，舊題重寫。起初想用左右端大小判斷方向，AI 用 [4,5,6,7,0,1,2] 引導改成只比較 mid 與 right，並直接說明 mid>right 時排除 mid 往右、否則 mid 仍可能是答案所以必須保留。第一版又多加 nums[left]>nums[mid] 的條件，且把右界寫成 mid-1；反例 [3,1,2] 會丟掉正是答案的 mid，AI 指出兩處後修正。編譯 0 warning、30 萬組隨機旋轉嚴格遞增陣列 fuzz 0 mismatch。卡點：移動邊界前沒有先判斷 mid 是否已確定不可能是答案；沒有證明就不能用 ±1 越過它。"
     }
    ]
   },
@@ -9142,7 +9175,7 @@ window.ROADMAP = {
     "r": [
      false,
      true,
-     false
+     true
     ],
     "skip": ""
    },
