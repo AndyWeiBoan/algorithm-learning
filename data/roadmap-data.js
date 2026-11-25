@@ -4121,7 +4121,7 @@ window.ROADMAP = {
        "zh": "",
        "slug": "find-minimum-in-rotated-sorted-array",
        "d": "M",
-       "st": "y26",
+       "st": "grad",
        "r": [
         false,
         true,
@@ -4133,6 +4133,36 @@ window.ROADMAP = {
          "kind": "練習",
          "level": "靠引導",
          "note": "NeetCode Binary Search 測驗，舊題重寫。起初想用左右端大小判斷方向，AI 用 [4,5,6,7,0,1,2] 引導改成只比較 mid 與 right，並直接說明 mid>right 時排除 mid 往右、否則 mid 仍可能是答案所以必須保留。第一版又多加 nums[left]>nums[mid] 的條件，且把右界寫成 mid-1；反例 [3,1,2] 會丟掉正是答案的 mid，AI 指出兩處後修正。編譯 0 warning、30 萬組隨機旋轉嚴格遞增陣列 fuzz 0 mismatch。卡點：移動邊界前沒有先判斷 mid 是否已確定不可能是答案；沒有證明就不能用 ±1 越過它。"
+        },
+        {
+         "date": "2026-11-24",
+         "kind": "閉卷",
+         "level": "獨立",
+         "note": "重寫時自行決定何時保留 mid。依程式邏輯檢查 5,050 組旋轉位置，全過；時間與空間複雜度答對。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
+       "n": "162",
+       "t": "Find Peak Element",
+       "zh": "",
+       "slug": "find-peak-element",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        true,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-24",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "初版比較左鄰時越界，後續移動邊界也曾卡住或丟掉峰。經引導比較右鄰並釐清上坡與下坡的更新方向；使用者回報完成。"
         }
        ],
        "star": "",
@@ -4260,6 +4290,30 @@ window.ROADMAP = {
        "base": ""
       },
       {
+       "n": "540",
+       "t": "Single Element in a Sorted Array",
+       "zh": "",
+       "slug": "single-element-in-a-sorted-array",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-24",
+         "kind": "練習",
+         "level": "有小提示",
+         "note": "自行想到用索引奇偶判斷配對。看到反例後保留 mid 並補上奇數位分支。最後精簡邊界判斷。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "572",
        "t": "Subtree of Another Tree",
        "zh": "",
@@ -4277,6 +4331,30 @@ window.ROADMAP = {
          "kind": "閉卷",
          "level": "有小提示",
          "note": "NeetCode 樹章收尾。想法自己講對（走訪每個節點當起點＋same tree 比較）；複雜度先講 O(n)，AI 給『全是 1、只有最底形狀不同』的例子後改成 O(m×n)。主函式用迭代前序（stack）、IsSame 遞迴。30 萬組 fuzz 0 mismatch。小瑕疵：一開始先 Push(root) 又拿 current=root，root 會在最後被 pop 再走一次，整棵樹大約掃兩遍——結果對但多做一倍。nvim 中途被關，靠 swap 救回。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
+       "n": "658",
+       "t": "Find K Closest Elements",
+       "zh": "",
+       "slug": "find-k-closest-elements",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        false,
+        false,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-25",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "先自行用二分找插入點，再從兩側選數；依提示修正候選、平手及邊界。第二版在引導下改為二分窗口起點，理解右界為 n-k，完成後小陣列對照通過。"
         }
        ],
        "star": "",
@@ -6147,7 +6225,7 @@ window.ROADMAP = {
    "zh": "",
    "slug": "find-minimum-in-rotated-sorted-array",
    "d": "M",
-   "st": "y26",
+   "st": "grad",
    "r": [
     false,
     true,
@@ -6159,6 +6237,12 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "NeetCode Binary Search 測驗，舊題重寫。起初想用左右端大小判斷方向，AI 用 [4,5,6,7,0,1,2] 引導改成只比較 mid 與 right，並直接說明 mid>right 時排除 mid 往右、否則 mid 仍可能是答案所以必須保留。第一版又多加 nums[left]>nums[mid] 的條件，且把右界寫成 mid-1；反例 [3,1,2] 會丟掉正是答案的 mid，AI 指出兩處後修正。編譯 0 warning、30 萬組隨機旋轉嚴格遞增陣列 fuzz 0 mismatch。卡點：移動邊界前沒有先判斷 mid 是否已確定不可能是答案；沒有證明就不能用 ±1 越過它。"
+    },
+    {
+     "date": "2026-11-24",
+     "kind": "閉卷",
+     "level": "獨立",
+     "note": "重寫時自行決定何時保留 mid。依程式邏輯檢查 5,050 組旋轉位置，全過；時間與空間複雜度答對。"
     }
    ]
   },
@@ -7973,6 +8057,69 @@ window.ROADMAP = {
      "note": "隔天閉卷重寫。left=1、right=最大堆、能完成就往左回 left，方向都對。bug：sum 用 int 溢位，反例三堆各約 9.5 億、h≈9.9 億，預期 3 得 1；自己改成 long。fuzz 20 萬筆（含大數）全過。上次同樣被提醒 long，這次仍漏。"
     }
    ]
+  },
+  "162": {
+   "n": "162",
+   "t": "Find Peak Element",
+   "zh": "",
+   "slug": "find-peak-element",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    true,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-24",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "初版比較左鄰時越界，後續移動邊界也曾卡住或丟掉峰。經引導比較右鄰並釐清上坡與下坡的更新方向；使用者回報完成。"
+    }
+   ]
+  },
+  "540": {
+   "n": "540",
+   "t": "Single Element in a Sorted Array",
+   "zh": "",
+   "slug": "single-element-in-a-sorted-array",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-24",
+     "kind": "練習",
+     "level": "有小提示",
+     "note": "自行想到用索引奇偶判斷配對。看到反例後保留 mid 並補上奇數位分支。最後精簡邊界判斷。"
+    }
+   ]
+  },
+  "658": {
+   "n": "658",
+   "t": "Find K Closest Elements",
+   "zh": "",
+   "slug": "find-k-closest-elements",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    false,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-25",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "先自行用二分找插入點，再從兩側選數；依提示修正候選、平手及邊界。第二版在引導下改為二分窗口起點，理解右界為 n-k，完成後小陣列對照通過。"
+    }
+   ]
   }
  },
  "roadmap": {
@@ -9171,7 +9318,7 @@ window.ROADMAP = {
     "zh": "",
     "slug": "find-minimum-in-rotated-sorted-array",
     "d": "M",
-    "st": "y26",
+    "st": "grad",
     "r": [
      false,
      true,
@@ -11869,5 +12016,5 @@ window.ROADMAP = {
    }
   }
  },
- "stamp": "2026-11-23"
+ "stamp": "2026-11-25"
 };
