@@ -3840,6 +3840,30 @@ window.ROADMAP = {
      "g": "",
      "items": [
       {
+       "n": "33",
+       "t": "Search in Rotated Sorted Array",
+       "zh": "",
+       "slug": "search-in-rotated-sorted-array",
+       "d": "M",
+       "st": "y26",
+       "r": [
+        false,
+        true,
+        true
+       ],
+       "ev": [
+        {
+         "date": "2026-11-25",
+         "kind": "練習",
+         "level": "靠引導",
+         "note": "NeetCode Binary Search 測驗，舊題重寫。起初直接依 nums[mid] 與 target 大小移動，未先判斷有序半邊；也曾漏掉 mid 命中、同輪用兩個獨立 if 同時移動左右界。AI 先用最小反例逐項指出，後改為完整引導：先以 nums[left] <= nums[mid] 判斷左半有序，再用端點範圍決定 target 是否在該半；右半分支最後將 nums[mid] < target 誤寫成 >，經直接指出修正。C# 編譯通過，30 萬組隨機嚴格遞增旋轉陣列（含存在與不存在的 target）0 mismatch。本輪不算獨立完成。"
+        }
+       ],
+       "star": "",
+       "hi": false,
+       "base": ""
+      },
+      {
        "n": "34",
        "t": "Find First and Last Position of Element in Sorted Array",
        "zh": "",
@@ -4159,7 +4183,7 @@ window.ROADMAP = {
        "d": "M",
        "st": "grad",
        "r": [
-        true,
+        false,
         false,
         true
        ],
@@ -4827,18 +4851,6 @@ window.ROADMAP = {
    "r": [
     true,
     false,
-    false
-   ],
-   "ev": []
-  },
-  {
-   "n": "33",
-   "t": "Search in Rotated Sorted Array",
-   "slug": "search-in-rotated-sorted-array",
-   "st": "y26",
-   "r": [
-    false,
-    true,
     false
    ],
    "ev": []
@@ -8084,7 +8096,7 @@ window.ROADMAP = {
    "d": "M",
    "st": "grad",
    "r": [
-    true,
+    false,
     false,
     true
    ],
@@ -8142,6 +8154,27 @@ window.ROADMAP = {
      "kind": "練習",
      "level": "靠引導",
      "note": "先自行用二分找插入點，再從兩側選數；依提示修正候選、平手及邊界。第二版在引導下改為二分窗口起點，理解右界為 n-k，完成後小陣列對照通過。"
+    }
+   ]
+  },
+  "33": {
+   "n": "33",
+   "t": "Search in Rotated Sorted Array",
+   "zh": "",
+   "slug": "search-in-rotated-sorted-array",
+   "d": "M",
+   "st": "y26",
+   "r": [
+    false,
+    true,
+    true
+   ],
+   "ev": [
+    {
+     "date": "2026-11-25",
+     "kind": "練習",
+     "level": "靠引導",
+     "note": "NeetCode Binary Search 測驗，舊題重寫。起初直接依 nums[mid] 與 target 大小移動，未先判斷有序半邊；也曾漏掉 mid 命中、同輪用兩個獨立 if 同時移動左右界。AI 先用最小反例逐項指出，後改為完整引導：先以 nums[left] <= nums[mid] 判斷左半有序，再用端點範圍決定 target 是否在該半；右半分支最後將 nums[mid] < target 誤寫成 >，經直接指出修正。C# 編譯通過，30 萬組隨機嚴格遞增旋轉陣列（含存在與不存在的 target）0 mismatch。本輪不算獨立完成。"
     }
    ]
   }
@@ -9360,7 +9393,7 @@ window.ROADMAP = {
     "r": [
      false,
      true,
-     false
+     true
     ],
     "skip": ""
    },
